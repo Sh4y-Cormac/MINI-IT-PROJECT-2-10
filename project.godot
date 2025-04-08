@@ -14,8 +14,3 @@ config/name="MINI IT : 2-10"
 run/main_scene="uid://bxoqa7urc8i2t"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
