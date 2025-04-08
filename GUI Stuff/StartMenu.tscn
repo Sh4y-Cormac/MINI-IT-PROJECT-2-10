@@ -6,6 +6,20 @@
 texture = ExtResource("1_hif8q")
 modulate_color = Color(0.355314, 0.355314, 0.355314, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aeyej"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oqxn"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.764706)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.196078, 0.184314, 0.176471, 0.670588)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jp6q8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hif8q"]
@@ -43,20 +57,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aeyej"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oqxn"]
-bg_color = Color(0.294118, 0.294118, 0.294118, 0.764706)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.196078, 0.184314, 0.176471, 0.670588)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -73,24 +73,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 2
-offset_left = 80.0
-offset_top = 467.0
-offset_right = 373.0
-offset_bottom = 544.0
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
-theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = "START GAME"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -115,3 +97,21 @@ offset_right = 1013.0
 offset_bottom = 625.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2oqxn")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 467.0
+offset_right = 373.0
+offset_bottom = 544.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "START GAME"
