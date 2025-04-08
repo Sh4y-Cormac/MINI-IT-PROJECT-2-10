@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=14 format=3 uid="uid://u7yluuk8jor6"]
 
-[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/NotOfficialMainMenu.jpg" id="1_hif8q"]
+[ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
+[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_aeyej"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -8,13 +11,36 @@ modulate_color = Color(0.355314, 0.355314, 0.355314, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aeyej"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oqxn"]
-bg_color = Color(0.294118, 0.294118, 0.294118, 0.764706)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpgdu"]
+bg_color = Color(0.45098, 0.207843, 0.545098, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.196078, 0.184314, 0.176471, 0.670588)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhe0x"]
+bg_color = Color(0.639216, 0.34902, 0.760784, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oqxn"]
+bg_color = Color(0.639216, 0.34902, 0.760784, 0.592157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 corner_radius_top_left = 35
 corner_radius_top_right = 35
 corner_radius_bottom_right = 35
@@ -64,6 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2oqxn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -79,39 +106,71 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -495.0
-offset_top = 96.0
-offset_right = 75.0
-offset_bottom = 165.0
+offset_left = -516.0
+offset_top = 89.0
+offset_right = 204.0
+offset_bottom = 174.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 70
 text = "JOURNEY TO THE RIGHT"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 940.0
-offset_top = 556.0
-offset_right = 1013.0
-offset_bottom = 625.0
+offset_left = 1044.0
+offset_top = 553.0
+offset_right = 1117.0
+offset_bottom = 622.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aeyej")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpgdu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lhe0x")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2oqxn")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 2
-offset_left = 80.0
-offset_top = 467.0
-offset_right = 373.0
-offset_bottom = 544.0
+offset_left = 81.0
+offset_top = 407.0
+offset_right = 374.0
+offset_bottom = 484.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "START GAME"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 81.0
+offset_top = 503.0
+offset_right = 374.0
+offset_bottom = 580.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "CUZTOMIZE"
+
+[node name="Clicking And Hovering" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rpgdu")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
