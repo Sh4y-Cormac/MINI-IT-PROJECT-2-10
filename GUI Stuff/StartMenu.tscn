@@ -102,21 +102,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 166.0
+offset_right = 681.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.974205, 0.820676, 0, 1)
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 25
+text = "Are you ready for an amazing adventure!"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -516.0
-offset_top = 89.0
-offset_right = 204.0
-offset_bottom = 174.0
+offset_left = -509.0
+offset_top = 76.0
+offset_right = -85.0
+offset_bottom = 165.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 70
-text = "JOURNEY TO THE RIGHT"
+text = "The Voyage"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -132,9 +143,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2oqxn")
 [node name="Button2" type="Button" parent="."]
 layout_mode = 2
 offset_left = 81.0
-offset_top = 407.0
+offset_top = 323.0
 offset_right = 374.0
-offset_bottom = 484.0
+offset_bottom = 400.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -149,6 +160,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "START GAME"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 81.0
 offset_top = 503.0
 offset_right = 374.0
@@ -166,12 +178,30 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "CUZTOMIZE"
 
+[node name="Button4" type="Button" parent="."]
+offset_left = 81.0
+offset_top = 412.0
+offset_right = 374.0
+offset_bottom = 489.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "LOAD GAME"
+
 [node name="Clicking And Hovering" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rpgdu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rpgdu")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
@@ -180,3 +210,7 @@ autoplay = true
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="mouse_entered" from="Button3" to="." method="_on_button_3_mouse_entered"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="Button4" to="." method="_on_button_4_mouse_entered"]
+[connection signal="mouse_entered" from="Button4" to="." method="_on_button_2_mouse_entered"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

@@ -19,3 +19,9 @@ func _on_button_3_pressed() -> void:
 
 func _on_button_3_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
+
+func _on_button_4_pressed() -> void:
+	$"Clicking And Hovering".play()
+
+func _on_button_4_mouse_entered() -> void:
+	$"Clicking And Hovering".play()
