@@ -93,12 +93,16 @@ theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 25
 text = "Are you ready for an amazing adventure!"
 
-[node name="Start Button" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 339.0
+offset_right = 396.0
+offset_bottom = 562.0
+theme_override_constants/separation = 15
+
+[node name="Start Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 81.0
-offset_top = 328.0
-offset_right = 374.0
-offset_bottom = 405.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -112,12 +116,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "START GAME"
 
-[node name="Customise Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 81.0
-offset_top = 508.0
-offset_right = 374.0
-offset_bottom = 585.0
+[node name="Customise Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -131,12 +131,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "CUZTOMIZE"
 
-[node name="Load Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 81.0
-offset_top = 417.0
-offset_right = 374.0
-offset_bottom = 494.0
+[node name="Load Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -151,6 +147,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "LOAD GAME"
 
 [node name="Feedback Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1082.0
 offset_top = 577.0
 offset_right = 1139.0
@@ -178,15 +175,15 @@ stream = ExtResource("5_rpgdu")
 volume_db = -20.0
 autoplay = true
 
-[connection signal="mouse_entered" from="Start Button" to="." method="_on_button_2_mouse_entered"]
-[connection signal="pressed" from="Start Button" to="." method="_on_button_2_pressed"]
-[connection signal="mouse_entered" from="Customise Button" to="." method="_on_button_3_mouse_entered"]
-[connection signal="pressed" from="Customise Button" to="." method="_on_button_3_pressed"]
-[connection signal="mouse_entered" from="Load Button" to="." method="_on_button_4_mouse_entered"]
-[connection signal="mouse_entered" from="Load Button" to="." method="_on_button_2_mouse_entered"]
-[connection signal="pressed" from="Load Button" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Load Button" to="." method="_on_button_4_pressed"]
-[connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_4_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Start Button" to="." method="_on_button_2_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Customise Button" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Customise Button" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_button_4_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_button_2_pressed"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_2_mouse_entered"]
-[connection signal="pressed" from="Feedback Button" to="." method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_4_mouse_entered"]
 [connection signal="pressed" from="Feedback Button" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Feedback Button" to="." method="_on_button_2_pressed"]
