@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csgxwsdr5ee0i"]
+[gd_scene load_steps=4 format=3 uid="uid://csgxwsdr5ee0i"]
 
 [ext_resource type="Script" uid="uid://72ki21qxfb0f" path="res://animated_sprite_2d.gd" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://js4kihgrcm8y" path="res://tile_map_layer.gd" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://dve726n7yyrrw" path="res://movement1.tscn" id="3_epypp"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,9 @@ script = ExtResource("1_wtcfe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 script = ExtResource("2_0e48y")
+
+[node name="movement_jump" parent="." instance=ExtResource("3_epypp")]
+position = Vector2(109, 156)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(106, 98)
