@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=17 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
+[ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -48,20 +49,118 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="StartMenu" type="Control"]
+[sub_resource type="Animation" id="Animation_515jg"]
+resource_name = "hide_feedback"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -631)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_rojxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nvfa3"]
+resource_name = "show_feedback"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(246, -631), Vector2(246, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
+_data = {
+&"RESET": SubResource("Animation_rojxm"),
+&"hide_feedback": SubResource("Animation_515jg"),
+&"show_feedback": SubResource("Animation_nvfa3")
+}
+
+[node name="StartMenu" type="Control" node_paths=PackedStringArray("Options", "animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2oqxn")
+Options = NodePath("Options Menu")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -14.0
+offset_right = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
@@ -148,10 +247,10 @@ text = "LOAD GAME"
 
 [node name="Feedback Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1082.0
-offset_top = 577.0
-offset_right = 1139.0
-offset_bottom = 629.0
+offset_left = 1068.0
+offset_top = 579.0
+offset_right = 1125.0
+offset_bottom = 631.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -175,15 +274,37 @@ stream = ExtResource("5_rpgdu")
 volume_db = -20.0
 autoplay = true
 
-[connection signal="mouse_entered" from="VBoxContainer/Start Button" to="." method="_on_button_2_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_button_2_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Customise Button" to="." method="_on_button_3_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Customise Button" to="." method="_on_button_3_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_button_2_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_button_4_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_button_2_pressed"]
+[node name="Options Menu" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -286.0
+offset_right = 330.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_515jg")
+region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
+patch_margin_left = 59
+patch_margin_top = 60
+patch_margin_right = 59
+patch_margin_bottom = 55
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bos1j")
+}
+
+[connection signal="mouse_entered" from="VBoxContainer/Start Button" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Customise Button" to="." method="_on_customise_button_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_load_button_mouse_entered"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_2_mouse_entered"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_4_mouse_entered"]
-[connection signal="pressed" from="Feedback Button" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Feedback Button" to="." method="_on_feedback_button_pressed"]
 [connection signal="pressed" from="Feedback Button" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Feedback Button" to="." method="_on_button_4_pressed"]
