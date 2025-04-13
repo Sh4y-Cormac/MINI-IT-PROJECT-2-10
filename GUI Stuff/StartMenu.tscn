@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=20 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
 [ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
+[ext_resource type="Texture2D" uid="uid://dlxjfyff1e3qq" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -50,6 +51,8 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_515jg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rojxm"]
 
 [sub_resource type="Animation" id="Animation_rojxm"]
 length = 0.001
@@ -155,6 +158,7 @@ grow_vertical = 2
 script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
+metadata/_edit_horizontal_guides_ = [125.0]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -258,6 +262,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 39
 theme_override_icons/icon = ExtResource("5_515jg")
@@ -286,10 +291,11 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -330.0
 offset_top = -286.0
-offset_right = 330.0
+offset_right = 323.0
 offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("7_515jg")
 region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
 patch_margin_left = 59
@@ -304,19 +310,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = 173.0
-offset_right = 61.0
-offset_bottom = 222.0
+offset_left = 217.0
+offset_top = -233.0
+offset_right = 266.0
+offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/icon_max_width = 25
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("8_rojxm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = "EXIT"
+text = " "
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit Button" type="Button" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = 173.0
+offset_right = 68.5
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "QUIT GAME"
+
+[node name="Label" type="Label" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -159.0
+offset_right = -36.5
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
+text = "Music Sound"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -333,3 +381,5 @@ libraries = {
 [connection signal="pressed" from="Feedback Button" to="." method="_on_button_4_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Exit Button" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="Options Menu/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="Options Menu/Quit Button" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="Options Menu/Quit Button" to="." method="_on_quit_button_pressed"]

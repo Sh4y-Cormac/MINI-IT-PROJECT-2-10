@@ -33,3 +33,9 @@ func _on_exit_button_mouse_entered() -> void:
 
 func _on_exit_button_pressed() -> void:
 	hide_animation("feedback")
+	
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+func _on_quit_button_mouse_entered() -> void:
+	$"Clicking And Hovering".play()
