@@ -4,8 +4,11 @@ extends Control
 
 @export var animation_player : AnimationPlayer
 
-func hide_and_show(first : String):
+func show_animation(first : String):
 	animation_player.play("show_" + first)
+	
+func hide_animation(first : String):
+	animation_player.play("hide_" + first)
 
 enum STATE { FEEDBACK }
 
@@ -13,7 +16,7 @@ enum STATE { FEEDBACK }
 func _on_feedback_button_pressed() -> void:
 	STATE.FEEDBACK
 	$"Clicking And Hovering".play()
-	hide_and_show("feedback")
+	show_animation("feedback")
 
 
 func _on_start_button_mouse_entered() -> void:
@@ -28,3 +31,17 @@ func _on_load_button_mouse_entered() -> void:
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	
+
+
+func _on_exit_button_mouse_entered() -> void:
+	$"Clicking And Hovering".play()
+
+func _on_quit_button_mouse_entered() -> void:
+	$"Clicking And Hovering".play()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+func _on_exit_button_pressed() -> void:
+	hide_animation("feedback")
