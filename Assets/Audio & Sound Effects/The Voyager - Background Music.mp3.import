@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dh0cjtggqcel1"
-path="res://.godot/imported/The Voyager - Background Music.mp3-1c3452719fc8c82c5bfc9e9b09f3b0d0.mp3str"
+path="res://.godot/imported/The Voyager - Background Music.mp3-d0bd4680ddf76aba6ad3864fdd16bb55.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3"
-dest_files=["res://.godot/imported/The Voyager - Background Music.mp3-1c3452719fc8c82c5bfc9e9b09f3b0d0.mp3str"]
+source_file="res://assets/Audio & Sound Effects/The Voyager - Background Music.mp3"
+dest_files=["res://.godot/imported/The Voyager - Background Music.mp3-d0bd4680ddf76aba6ad3864fdd16bb55.mp3str"]
 
 [params]
 

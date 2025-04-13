@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
-[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_aeyej"]
-[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
-[ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
-[ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
+[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://assets/Fonts/PixelifySans.ttf" id="2_aeyej"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
+[ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://assets/Images/Feedback.png" id="5_515jg"]
+[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
+[ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://assets/Images/Options GUI.png" id="7_515jg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -49,6 +49,33 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="Animation" id="Animation_rojxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_515jg"]
 resource_name = "hide_feedback"
 length = 0.5
@@ -75,33 +102,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_rojxm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Options Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(246, 38)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options Menu:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nvfa3"]
@@ -305,6 +305,6 @@ libraries = {
 [connection signal="mouse_entered" from="VBoxContainer/Load Button" to="." method="_on_load_button_mouse_entered"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_2_mouse_entered"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_button_4_mouse_entered"]
-[connection signal="pressed" from="Feedback Button" to="." method="_on_feedback_button_pressed"]
-[connection signal="pressed" from="Feedback Button" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Feedback Button" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Feedback Button" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Feedback Button" to="." method="_on_feedback_button_pressed"]
