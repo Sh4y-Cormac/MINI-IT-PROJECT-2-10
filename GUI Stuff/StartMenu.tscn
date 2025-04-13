@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=22 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -54,6 +54,14 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_515jg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rojxm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvfa3"]
+bg_color = Color(0.298039, 0.12549, 0.368627, 0.529412)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="Animation" id="Animation_rojxm"]
 length = 0.001
@@ -298,6 +306,7 @@ offset_right = 330.0
 offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("7_515jg")
 region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
 patch_margin_left = 59
@@ -351,22 +360,115 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "QUIT GAME"
 
-[node name="Label" type="Label" parent="Options Menu"]
+[node name="Settings" type="Label" parent="Options Menu"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 53.0
+offset_right = 458.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Options Menu"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 123.0
+offset_right = 593.0
+offset_bottom = 144.0
+theme_override_constants/separation = 7
+
+[node name="Music Label" type="Label" parent="Options Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -266.0
-offset_top = -159.0
-offset_right = -40.0
-offset_bottom = -112.0
+offset_left = -276.0
+offset_top = -141.0
+offset_right = -50.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 39
 text = "Music Sound"
+
+[node name="CheckBox" type="CheckBox" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -414.0
+offset_right = -70.0
+offset_bottom = -390.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HSlider" type="HSlider" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -81.0
+offset_right = 263.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Music Label2" type="Label" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -43.0
+offset_right = -180.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
+text = " SfX"
+
+[node name="CheckBox2" type="CheckBox" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -314.0
+offset_right = -70.0
+offset_bottom = -290.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HSlider2" type="HSlider" parent="Options Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = 15.0
+offset_right = 263.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

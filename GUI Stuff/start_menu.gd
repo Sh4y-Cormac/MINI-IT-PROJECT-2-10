@@ -1,8 +1,12 @@
 extends Control
 
 @export var Options : NinePatchRect
-
 @export var animation_player : AnimationPlayer
+@onready var h_slider = $"Options Menu/HSlider" as HSlider
+
+@export_enum("Master", "Music", "SFX") var bus_name : String 
+
+var bus_index : int = 50
 
 func show_animation(first : String):
 	animation_player.play("show_" + first)
