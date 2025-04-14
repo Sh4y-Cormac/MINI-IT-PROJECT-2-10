@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=24 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -62,6 +62,10 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nvfa3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bos1j"]
 
 [sub_resource type="Animation" id="Animation_rojxm"]
 length = 0.001
@@ -184,23 +188,23 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -509.0
-offset_top = 76.0
-offset_right = -85.0
-offset_bottom = 165.0
+offset_left = -486.0
+offset_top = 91.0
+offset_right = 213.0
+offset_bottom = 180.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 70
-text = "The Voyage"
+text = "Journey To The Right"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 136.0
-offset_top = 153.0
-offset_right = 634.0
-offset_bottom = 183.0
+offset_left = 396.0
+offset_top = 161.0
+offset_right = 894.0
+offset_bottom = 191.0
 theme_override_colors/font_color = Color(0.974205, 0.820676, 0, 1)
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 25
@@ -410,6 +414,7 @@ offset_right = -70.0
 offset_bottom = -390.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
 
 [node name="HSlider" type="HSlider" parent="Options Menu"]
 layout_mode = 1
@@ -455,6 +460,7 @@ offset_right = -70.0
 offset_bottom = -290.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bos1j")
 
 [node name="HSlider2" type="HSlider" parent="Options Menu"]
 layout_mode = 1
