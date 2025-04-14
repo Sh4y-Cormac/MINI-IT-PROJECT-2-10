@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci6k3gehmsi5f"
-path="res://.godot/imported/tileSet2.png-58d12ab9ff105080b2562691e17d56bf.ctex"
+uid="uid://bjyj2riuxbpti"
+path="res://.godot/imported/characters proganist.png-ebdcf391dddd40c6fbd39ab9a7dad6d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/tileSet2.png"
-dest_files=["res://.godot/imported/tileSet2.png-58d12ab9ff105080b2562691e17d56bf.ctex"]
+source_file="res://Assets/sprites/characters proganist.png"
+dest_files=["res://.godot/imported/characters proganist.png-ebdcf391dddd40c6fbd39ab9a7dad6d3.ctex"]
 
 [params]
 
