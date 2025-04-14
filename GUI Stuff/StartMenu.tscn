@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=25 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -93,6 +93,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(246, 38)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_515jg"]
 resource_name = "hide_feedback"
@@ -150,8 +162,25 @@ tracks/1/keys = {
 "values": [Vector2(246, -631), Vector2(246, 38)]
 }
 
+[sub_resource type="Animation" id="Animation_bos1j"]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
 _data = {
+&"Fade In": SubResource("Animation_bos1j"),
 &"RESET": SubResource("Animation_rojxm"),
 &"hide_feedback": SubResource("Animation_515jg"),
 &"show_feedback": SubResource("Animation_nvfa3")
@@ -480,6 +509,17 @@ grow_vertical = 2
 libraries = {
 &"": SubResource("AnimationLibrary_bos1j")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -118.0
+offset_top = -50.0
+offset_right = 1257.0
+offset_bottom = 719.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
 
 [connection signal="mouse_entered" from="VBoxContainer/Start Button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]

@@ -8,6 +8,9 @@ extends Control
 
 var bus_index : int = 50
 
+func _ready():
+	$AnimationPlayer.play("Fade In")
+
 func show_animation(first : String):
 	animation_player.play("show_" + first)
 	

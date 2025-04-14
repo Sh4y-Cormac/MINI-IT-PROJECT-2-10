@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://l6c6hoatxtlh"]
+[gd_scene load_steps=11 format=3 uid="uid://l6c6hoatxtlh"]
 
 [ext_resource type="Script" uid="uid://x05mfdvhj0m3" path="res://GUI Stuff/intro.gd" id="1_420r8"]
 [ext_resource type="Texture2D" uid="uid://cm1q220fauk0m" path="res://Assets/Images/Background.png" id="2_jep0s"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_jep0s"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="4_sjhys"]
+[ext_resource type="Script" uid="uid://cbjyn756gnuax" path="res://GUI Stuff/audio_stream_player_2d.gd" id="5_0aahw"]
 
 [sub_resource type="Animation" id="Animation_hc4ph"]
 resource_name = "Fade in"
@@ -91,7 +93,8 @@ _data = {
 script = ExtResource("1_420r8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(645, 298)
+position = Vector2(593, 315)
+scale = Vector2(0.840625, 0.873148)
 texture = ExtResource("2_jep0s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -124,3 +127,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_vniyu")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sjhys")
+script = ExtResource("5_0aahw")
