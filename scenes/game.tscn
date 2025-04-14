@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://csgxwsdr5ee0i"]
+[gd_scene load_steps=15 format=4 uid="uid://csgxwsdr5ee0i"]
 
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ci6k3gehmsi5f" path="res://Assets/Sprites/tileSet2.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cbmbosbo3qwpq" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bcgr3itrqktmx" path="res://scenes/killzone.tscn" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -149,3 +150,8 @@ position = Vector2(315, 197)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(13, 16)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iywne")
+volume_db = -20.0
+autoplay = true
