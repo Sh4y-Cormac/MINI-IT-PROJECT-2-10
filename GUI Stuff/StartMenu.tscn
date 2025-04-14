@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
 [ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
-[ext_resource type="Script" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
+[ext_resource type="Script" uid="uid://b41n1pe2bymxj" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
