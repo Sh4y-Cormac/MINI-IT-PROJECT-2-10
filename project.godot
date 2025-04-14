@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MINI IT : 2-10"
-run/main_scene="uid://caifl5rqf6jkf"
+run/main_scene="uid://bc3g1mfm41up3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

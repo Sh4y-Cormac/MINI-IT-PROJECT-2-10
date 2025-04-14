@@ -1,8 +1,10 @@
 extends Node2D
 
-func introgame():
-	$AnimationPlayer.play("Fade In")
+func _ready():
+	$AnimationPlayer.play("Fade in")
 	await get_tree().create_timer(6).timeout
-	$AnimationPlayer.play("Fade Out")
+	$AnimationPlayer.play("Typewriter")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("Fade out")
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene("res://GUI Stuff/StartMenu.tscn")
+	get_tree().change_scene_to_file("res://GUI Stuff/StartMenu.tscn")
