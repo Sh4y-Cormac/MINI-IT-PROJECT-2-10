@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhacmlt5pinlp"]
+[gd_scene load_steps=6 format=3 uid="uid://cix3v6f2rc4d6"]
 
-[ext_resource type="Texture2D" path="res://Assets/sprites/movement sprite.png" id="1_u4p0t"]
+[ext_resource type="Texture2D" uid="uid://cdkuxd6k0q0uj" path="res://sprites/movement sprite.png" id="1_u4p0t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xywsj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4p0t"]
 atlas = ExtResource("1_u4p0t")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8y7dd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xywsj"]
 atlas = ExtResource("1_u4p0t")
 region = Rect2(64, 0, 64, 64)
 
@@ -14,10 +14,10 @@ region = Rect2(64, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xywsj")
+"texture": SubResource("AtlasTexture_u4p0t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8y7dd")
+"texture": SubResource("AtlasTexture_xywsj")
 }],
 "loop": true,
 "name": &"idle",
@@ -35,7 +35,6 @@ position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_1jt52")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
 frame_progress = 0.388284
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
