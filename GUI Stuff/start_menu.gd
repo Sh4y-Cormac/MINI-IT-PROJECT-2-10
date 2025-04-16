@@ -2,20 +2,26 @@ extends Control
 
 @export var Options : NinePatchRect
 @export var animation_player : AnimationPlayer
-@onready var h_slider = $"Options Menu/HSlider" as HSlider
+
+@onready var master_volume = $"Options Menu/Panel/Node2D/Master Volume" as Label
+@onready var master_volume_num =$"Options Menu/Panel/Node2D/Label" as Label
+@onready var master_slider = $"Options Menu/Panel/Node2D/HSlider" as HSlider
 
 @export_enum("Master", "Music", "SFX") var bus_name : String 
 
-var bus_index : int = 50
+var bus_index : int = 0
+
 
 func _ready():
 	$AnimationPlayer.play("Fade In")
+
 
 func show_animation(first : String):
 	animation_player.play("show_" + first)
 	
 func hide_animation(first : String):
 	animation_player.play("hide_" + first)
+
 
 enum STATE { FEEDBACK }
 

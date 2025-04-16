@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
 [ext_resource type="Script" uid="uid://b41n1pe2bymxj" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
 [ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="11_jc25w"]
+[ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -76,8 +77,6 @@ border_blend = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nvfa3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bos1j"]
-
 [sub_resource type="Animation" id="Animation_bos1j"]
 resource_name = "Fade In"
 length = 3.0
@@ -88,8 +87,8 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.73333),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
@@ -185,6 +184,34 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_teh54"]
+resource_name = "hide_feedback"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_mm8x2"]
 resource_name = "show_customize"
 length = 0.5
@@ -241,34 +268,6 @@ tracks/1/keys = {
 "values": [Vector2(246, -631), Vector2(246, 38)]
 }
 
-[sub_resource type="Animation" id="Animation_teh54"]
-resource_name = "hide_feedback"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Options Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -687)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options Menu:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
 _data = {
 &"Fade In": SubResource("Animation_bos1j"),
@@ -296,6 +295,7 @@ grow_vertical = 2
 script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
+bus_name = "Master"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -422,14 +422,17 @@ expand_icon = true
 [node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nvfa3")
 volume_db = 5.0
+bus = &"SFX"
 
 [node name="Clicking And Hovering" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rpgdu")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rpgdu")
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="Options Menu" type="NinePatchRect" parent="."]
 visible = false
@@ -521,7 +524,10 @@ theme_override_constants/separation = 7
 
 [node name="Panel" type="Panel" parent="Options Menu"]
 clip_children = 2
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0034965
+anchor_bottom = 0.0034965
 offset_left = 54.0
 offset_top = 142.0
 offset_right = 593.0
@@ -531,134 +537,203 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="Options Menu/Panel"]
 
-[node name="Master Volume" type="Label" parent="Options Menu/Panel/Node2D"]
+[node name="Control" type="Control" parent="Options Menu/Panel/Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_mm8x2")
+bus_name = "Master"
+
+[node name="Master Volume" type="Label" parent="Options Menu/Panel/Node2D/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 11.0
-offset_right = 304.0
-offset_bottom = 58.0
+offset_left = -5.0
+offset_top = 3.0
+offset_right = 287.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
-[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D"]
+[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control"]
+offset_left = 389.0
+offset_top = 23.0
+offset_right = 450.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 40
+text = "30"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 502.0
-offset_top = 33.0
-offset_right = 526.0
-offset_bottom = 57.0
+offset_left = 461.0
+offset_top = 6.0
+offset_right = 485.0
+offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
 
-[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 74.0
-offset_right = 525.0
-offset_bottom = 90.0
+offset_left = -1.0
+offset_top = 67.0
+offset_right = 504.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
+max_value = 1.0
+step = 0.001
 
-[node name="Music Volume" type="Label" parent="Options Menu/Panel/Node2D"]
+[node name="Control2" type="Control" parent="Options Menu/Panel/Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_mm8x2")
+bus_name = "Music"
+
+[node name="Music" type="Label" parent="Options Menu/Panel/Node2D/Control2"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 103.0
-offset_right = 261.0
-offset_bottom = 150.0
+offset_left = -1.0
+offset_top = 96.0
+offset_right = 291.0
+offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
-[node name="CheckBox3" type="CheckBox" parent="Options Menu/Panel/Node2D"]
+[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control2"]
+offset_left = 389.0
+offset_top = 116.0
+offset_right = 450.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 40
+text = "30"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control2"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 502.0
-offset_top = 130.0
-offset_right = 526.0
-offset_bottom = 154.0
+offset_left = 461.0
+offset_top = 90.0
+offset_right = 485.0
+offset_bottom = 114.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
 
-[node name="HSlider3" type="HSlider" parent="Options Menu/Panel/Node2D"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control2"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 161.0
-offset_right = 525.0
-offset_bottom = 177.0
+offset_left = -1.0
+offset_top = 159.0
+offset_right = 504.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+max_value = 1.0
+step = 0.001
 
-[node name="Music Label2" type="Label" parent="Options Menu/Panel/Node2D"]
+[node name="Control3" type="Control" parent="Options Menu/Panel/Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_mm8x2")
+bus_name = "SFX"
+
+[node name="SFX" type="Label" parent="Options Menu/Panel/Node2D/Control3"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 191.0
-offset_right = 116.0
-offset_bottom = 238.0
+offset_left = -1.0
+offset_top = 187.0
+offset_right = 291.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 39
-text = " SfX"
+theme_override_font_sizes/font_size = 40
+text = "SFX Volume"
 
-[node name="CheckBox2" type="CheckBox" parent="Options Menu/Panel/Node2D"]
+[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control3"]
+offset_left = 389.0
+offset_top = 207.0
+offset_right = 450.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 40
+text = "30"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control3"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 502.0
-offset_top = 218.0
-offset_right = 526.0
-offset_bottom = 242.0
+offset_left = 461.0
+offset_top = 181.0
+offset_right = 485.0
+offset_bottom = 205.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bos1j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
 
-[node name="HSlider2" type="HSlider" parent="Options Menu/Panel/Node2D"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control3"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 249.0
-offset_right = 525.0
-offset_bottom = 265.0
+offset_left = -1.0
+offset_top = 236.0
+offset_right = 504.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
+max_value = 1.0
+step = 0.001
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -675,6 +750,7 @@ position = Vector2(323, 292.5)
 shape = SubResource("RectangleShape2D_jc25w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
