@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=34 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -156,6 +156,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Feedback:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, 38)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Feedback:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jc25w"]
 resource_name = "hide_customize"
@@ -269,14 +293,72 @@ tracks/1/keys = {
 "values": [Vector2(246, -631), Vector2(246, 38)]
 }
 
+[sub_resource type="Animation" id="Animation_h8xle"]
+resource_name = "hide_option"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Feedback:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -701)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Feedback:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xnh7y"]
+resource_name = "show_option"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Feedback:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, -701), Vector2(246, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Feedback:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
 _data = {
 &"Fade In": SubResource("Animation_bos1j"),
 &"RESET": SubResource("Animation_rojxm"),
 &"hide_customize": SubResource("Animation_jc25w"),
 &"hide_feedback": SubResource("Animation_teh54"),
+&"hide_option": SubResource("Animation_h8xle"),
 &"show_customize": SubResource("Animation_mm8x2"),
-&"show_feedback": SubResource("Animation_nvfa3")
+&"show_feedback": SubResource("Animation_nvfa3"),
+&"show_option": SubResource("Animation_xnh7y")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc25w"]
@@ -874,6 +956,94 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "SAVE
 "
 
+[node name="Feedback" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -286.0
+offset_right = 330.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("7_515jg")
+region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
+patch_margin_left = 59
+patch_margin_top = 60
+patch_margin_right = 59
+patch_margin_bottom = 55
+
+[node name="Customize" type="Label" parent="Feedback"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 53.0
+offset_right = 465.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
+text = "Feedback"
+horizontal_alignment = 1
+
+[node name="Exit Button3" type="Button" parent="Feedback"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 213.5
+offset_top = -233.0
+offset_right = 262.5
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/icon_max_width = 25
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("8_rojxm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = " "
+icon_alignment = 1
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="Feedback"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 123.0
+offset_right = 593.0
+offset_bottom = 144.0
+theme_override_constants/separation = 7
+
+[node name="Save2" type="Button" parent="Feedback"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 173.0
+offset_right = 65.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "SAVE"
+
 [connection signal="mouse_entered" from="VBoxContainer/Start Button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Customise Button" to="." method="_on_customise_button_mouse_entered"]
@@ -882,6 +1052,8 @@ text = "SAVE
 [connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_load_button_pressed"]
 [connection signal="mouse_entered" from="Feedback Button" to="." method="_on_feedback_button_mouse_entered"]
 [connection signal="pressed" from="Feedback Button" to="." method="_on_feedback_button_pressed"]
+[connection signal="mouse_entered" from="Real Feedback" to="." method="_on_real_feedback_mouse_entered"]
+[connection signal="pressed" from="Real Feedback" to="." method="_on_real_feedback_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Exit Button" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="Options Menu/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Quit Button" to="." method="_on_quit_button_mouse_entered"]
@@ -890,3 +1062,7 @@ text = "SAVE
 [connection signal="pressed" from="Customize/Exit Button2" to="." method="_on_exit_button_2_pressed"]
 [connection signal="mouse_entered" from="Customize/Save" to="." method="_on_save_mouse_entered"]
 [connection signal="pressed" from="Customize/Save" to="." method="_on_save_pressed"]
+[connection signal="mouse_entered" from="Feedback/Exit Button3" to="." method="_on_exit_button_3_mouse_entered"]
+[connection signal="pressed" from="Feedback/Exit Button3" to="." method="_on_exit_button_3_pressed"]
+[connection signal="mouse_entered" from="Feedback/Save2" to="." method="_on_save_2_mouse_entered"]
+[connection signal="pressed" from="Feedback/Save2" to="." method="_on_save_2_pressed"]
