@@ -273,6 +273,62 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_wwly8"]
+resource_name = "hide_load"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Load:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -690)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Load:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_h8xle"]
+resource_name = "hide_option"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Feedback:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -701)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Feedback:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_mm8x2"]
 resource_name = "show_customize"
 length = 0.5
@@ -329,62 +385,6 @@ tracks/1/keys = {
 "values": [Vector2(246, -631), Vector2(246, 38)]
 }
 
-[sub_resource type="Animation" id="Animation_h8xle"]
-resource_name = "hide_option"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -701)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_xnh7y"]
-resource_name = "show_option"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, -701), Vector2(246, 38)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
 [sub_resource type="Animation" id="Animation_ts720"]
 resource_name = "show_load"
 length = 0.5
@@ -413,32 +413,32 @@ tracks/1/keys = {
 "values": [true, true]
 }
 
-[sub_resource type="Animation" id="Animation_wwly8"]
-resource_name = "hide_load"
+[sub_resource type="Animation" id="Animation_xnh7y"]
+resource_name = "show_option"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Load:position")
+tracks/0/path = NodePath("Feedback:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(246, 38), Vector2(246, -690)]
+"values": [Vector2(246, -701), Vector2(246, 38)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Load:visible")
+tracks/1/path = NodePath("Feedback:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
@@ -596,6 +596,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Real Feedback" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1002.0
 offset_top = 579.0
 offset_right = 1059.0
@@ -837,7 +838,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control2"]
+[node name="CheckBox2" type="CheckBox" parent="Options Menu/Panel/Node2D/Control2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -904,7 +905,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control3"]
+[node name="CheckBox3" type="CheckBox" parent="Options Menu/Panel/Node2D/Control3"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -927,9 +928,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1.0
-offset_top = 236.0
+offset_top = 247.0
 offset_right = 504.0
-offset_bottom = 252.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
@@ -950,6 +951,7 @@ position = Vector2(323, 292.5)
 shape = SubResource("RectangleShape2D_jc25w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
@@ -1218,6 +1220,9 @@ theme_override_constants/separation = 7
 [connection signal="pressed" from="Options Menu/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Quit Button" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="Options Menu/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="toggled" from="Options Menu/Panel/Node2D/Control/CheckBox" to="Options Menu/Panel/Node2D/Control" method="_on_check_box_toggled"]
+[connection signal="toggled" from="Options Menu/Panel/Node2D/Control2/CheckBox2" to="Options Menu/Panel/Node2D/Control2" method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="Options Menu/Panel/Node2D/Control3/CheckBox3" to="Options Menu/Panel/Node2D/Control3" method="_on_check_box_3_toggled"]
 [connection signal="mouse_entered" from="Customize/Exit Button2" to="." method="_on_exit_button_2_mouse_entered"]
 [connection signal="pressed" from="Customize/Exit Button2" to="." method="_on_exit_button_2_pressed"]
 [connection signal="mouse_entered" from="Customize/Save" to="." method="_on_save_mouse_entered"]

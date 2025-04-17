@@ -28,3 +28,6 @@ func on_value_changed(value : float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 	set_audio_num_label_text()
 	
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	get_bus_name_index()
+	AudioServer.set_bus_mute(0,toggled_on)

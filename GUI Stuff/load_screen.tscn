@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c31vy36jqspow"]
+
+[ext_resource type="Script" uid="uid://cu3ss8odp6cwi" path="res://GUI Stuff/load_screen.gd" id="1_1v8in"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_mcanp"]
+
+[sub_resource type="Gradient" id="Gradient_7c1vj"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_60kav"]
+gradient = SubResource("Gradient_7c1vj")
+
+[node name="Load Screen" type="CanvasLayer"]
+script = ExtResource("1_1v8in")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_60kav")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -30.0
+offset_right = 119.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_mcanp")
+theme_override_font_sizes/font_size = 50
+text = "LOADING...."

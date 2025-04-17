@@ -40,9 +40,8 @@ func _on_load_button_mouse_entered() -> void:
 func _on_start_button_pressed() -> void:
 	$"Enter Sound Effect".play()
 	await $"Enter Sound Effect".finished
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Functions.load_screen_to_scene("res://scenes/game.tscn")
 	
-
 
 func _on_exit_button_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
