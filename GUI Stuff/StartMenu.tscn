@@ -202,7 +202,19 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel/Default:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_jc25w"]
@@ -373,34 +385,6 @@ tracks/1/keys = {
 "values": [true, true]
 }
 
-[sub_resource type="Animation" id="Animation_wwly8"]
-resource_name = "hide_load"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Load:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -701)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Load:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_ts720"]
 resource_name = "show_load"
 length = 0.5
@@ -427,6 +411,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 2),
 "update": 1,
 "values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_wwly8"]
+resource_name = "hide_load"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Load:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -690)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Load:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
@@ -473,8 +485,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 
 [node name="Default" type="Sprite2D" parent="Panel"]
-position = Vector2(747, 482)
-scale = Vector2(4.61458, 3.77268)
+position = Vector2(764, 453.431)
+scale = Vector2(4.61458, 3.82598)
 texture = ExtResource("11_jc25w")
 flip_h = true
 
@@ -938,7 +950,6 @@ position = Vector2(323, 292.5)
 shape = SubResource("RectangleShape2D_jc25w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
@@ -1127,6 +1138,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "SAVE"
 
 [node name="Load" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
