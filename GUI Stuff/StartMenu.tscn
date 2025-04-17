@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=32 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="5_nvfa3"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
+[ext_resource type="Texture2D" uid="uid://bfepmdpc82khb" path="res://Assets/Images/icon.png" id="6_teh54"]
 [ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
 [ext_resource type="Script" uid="uid://b41n1pe2bymxj" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
@@ -295,7 +296,6 @@ grow_vertical = 2
 script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
-bus_name = "Master"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -411,6 +411,27 @@ theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 39
 theme_override_icons/icon = ExtResource("5_515jg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Real Feedback" type="Button" parent="."]
+offset_left = 1002.0
+offset_top = 579.0
+offset_right = 1059.0
+offset_bottom = 631.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_font_sizes/font_size = 39
+theme_override_icons/icon = ExtResource("6_teh54")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
@@ -563,6 +584,7 @@ theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
 [node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control"]
+layout_mode = 0
 offset_left = 389.0
 offset_top = 23.0
 offset_right = 450.0
@@ -629,6 +651,7 @@ theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
 [node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control2"]
+layout_mode = 0
 offset_left = 389.0
 offset_top = 116.0
 offset_right = 450.0
@@ -695,6 +718,7 @@ theme_override_font_sizes/font_size = 40
 text = "SFX Volume"
 
 [node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control3"]
+layout_mode = 0
 offset_left = 389.0
 offset_top = 207.0
 offset_right = 450.0
