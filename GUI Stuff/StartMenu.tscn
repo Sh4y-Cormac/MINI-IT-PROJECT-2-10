@@ -1,7 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=38 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
-[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/NotOfficialMainMenu.jpg" id="1_hif8q"]
+[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_aeyej"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b41n1pe2bymxj" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
 [ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="11_jc25w"]
 [ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
+[ext_resource type="Script" uid="uid://csfv0crwib5mn" path="res://GUI Stuff/camera_2d.gd" id="14_h8xle"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -245,6 +246,34 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_h8xle"]
+resource_name = "hide_feedback"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Feedback:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -701)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Feedback:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_wwly8"]
 resource_name = "hide_load"
 length = 0.5
@@ -273,6 +302,34 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_teh54"]
+resource_name = "hide_options"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, 38), Vector2(246, -687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_mm8x2"]
 resource_name = "show_customize"
 length = 0.5
@@ -292,6 +349,34 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Customize:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_xnh7y"]
+resource_name = "show_feedback"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Feedback:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, -701), Vector2(246, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Feedback:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -329,62 +414,6 @@ tracks/1/keys = {
 "values": [true, true]
 }
 
-[sub_resource type="Animation" id="Animation_teh54"]
-resource_name = "hide_options"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Options Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -687)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options Menu:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_h8xle"]
-resource_name = "hide_feedback"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -701)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_nvfa3"]
 resource_name = "show_options"
 length = 0.5
@@ -413,33 +442,8 @@ tracks/1/keys = {
 "values": [Vector2(246, -631), Vector2(246, 38)]
 }
 
-[sub_resource type="Animation" id="Animation_xnh7y"]
-resource_name = "show_feedback"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, -701), Vector2(246, 38)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
+[sub_resource type="Animation" id="Animation_h65rh"]
+resource_name = "idle"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bos1j"]
 _data = {
@@ -449,6 +453,7 @@ _data = {
 &"hide_feedback": SubResource("Animation_h8xle"),
 &"hide_load": SubResource("Animation_wwly8"),
 &"hide_options": SubResource("Animation_teh54"),
+&"idle": SubResource("Animation_h65rh"),
 &"show_customize": SubResource("Animation_mm8x2"),
 &"show_feedback": SubResource("Animation_xnh7y"),
 &"show_load": SubResource("Animation_ts720"),
@@ -480,6 +485,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -14.0
 offset_right = -8.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
@@ -1205,6 +1211,10 @@ offset_top = 123.0
 offset_right = 593.0
 offset_bottom = 144.0
 theme_override_constants/separation = 7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(569, 331)
+script = ExtResource("14_h8xle")
 
 [connection signal="mouse_entered" from="Main Buttons/Start Button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="Main Buttons/Start Button" to="." method="_on_start_button_pressed"]
