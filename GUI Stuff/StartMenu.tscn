@@ -951,7 +951,6 @@ position = Vector2(323, 292.5)
 shape = SubResource("RectangleShape2D_jc25w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
