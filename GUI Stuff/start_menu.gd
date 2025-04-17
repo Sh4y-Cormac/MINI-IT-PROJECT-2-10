@@ -23,6 +23,7 @@ func _on_feedback_button_pressed() -> void:
 	$"VBoxContainer/Start Button".disabled = true
 	$"VBoxContainer/Customise Button".disabled = true
 	$"VBoxContainer/Load Button".disabled = true
+	$"Real Feedback".disabled = true
 	
 	
 	
@@ -60,6 +61,7 @@ func _on_exit_button_pressed() -> void:
 	$"VBoxContainer/Start Button".disabled = false
 	$"VBoxContainer/Customise Button".disabled = false
 	$"VBoxContainer/Load Button".disabled = false
+	$"Real Feedback".disabled = false
 
 func _on_feedback_button_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
@@ -72,10 +74,17 @@ func _on_customise_button_pressed() -> void:
 	$"VBoxContainer/Customise Button".disabled = true
 	$"VBoxContainer/Load Button".disabled = true
 	$"Feedback Button".disabled = true
+	$"Real Feedback".disabled = true
 	
 func _on_load_button_pressed() -> void:
 	$"Enter Sound Effect".play()
 	await $"Enter Sound Effect".finished
+	show_animation("load")
+	$"VBoxContainer/Start Button".disabled = true
+	$"VBoxContainer/Customise Button".disabled = true
+	$"VBoxContainer/Load Button".disabled = true
+	$"Feedback Button".disabled = true
+	$"Real Feedback".disabled = true
 
 func _on_save_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
@@ -87,6 +96,7 @@ func _on_save_pressed() -> void:
 	$"VBoxContainer/Customise Button".disabled = false
 	$"VBoxContainer/Load Button".disabled = false
 	$"Feedback Button".disabled = false
+	$"Real Feedback".disabled = false
 
 func _on_exit_button_2_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
@@ -98,6 +108,7 @@ func _on_exit_button_2_pressed() -> void:
 	$"VBoxContainer/Customise Button".disabled = false
 	$"VBoxContainer/Load Button".disabled = false
 	$"Feedback Button".disabled = false
+	$"Real Feedback".disabled = false
 
 func _on_real_feedback_mouse_entered() -> void:
 	$"Clicking And Hovering".play()
@@ -133,3 +144,15 @@ func _on_save_2_pressed() -> void:
 	$"VBoxContainer/Customise Button".disabled = false
 	$"VBoxContainer/Load Button".disabled = false
 	$"Feedback Button".disabled = false
+
+func _on_exit_button_4_mouse_entered() -> void:
+	$"Clicking And Hovering".play()
+
+func _on_exit_button_4_pressed() -> void:
+	$"Enter Sound Effect".play()
+	hide_animation("load")
+	$"VBoxContainer/Start Button".disabled = false
+	$"VBoxContainer/Customise Button".disabled = false
+	$"VBoxContainer/Load Button".disabled = false
+	$"Feedback Button".disabled = false
+	$"Real Feedback".disabled = false
