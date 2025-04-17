@@ -1,6 +1,6 @@
 extends Camera2D
 
-const Dead_Zone = 300
+const Dead_Zone = 100
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

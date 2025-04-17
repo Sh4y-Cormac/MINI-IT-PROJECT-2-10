@@ -479,9 +479,6 @@ Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(566, 322)
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
 script = ExtResource("14_h8xle")
 
 [node name="Menu Background" type="Panel" parent="."]
@@ -489,16 +486,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -30.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 17.0
+offset_left = -27.0
+offset_right = 23.0
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 
 [node name="Default Character" type="Sprite2D" parent="Menu Background"]
-position = Vector2(764, 453.431)
+position = Vector2(780, 485)
 scale = Vector2(4.61458, 3.82598)
 texture = ExtResource("11_jc25w")
 flip_h = true
