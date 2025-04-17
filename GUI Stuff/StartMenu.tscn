@@ -478,14 +478,21 @@ script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(566, 322)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("14_h8xle")
+
 [node name="Menu Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -14.0
-offset_right = -8.0
-offset_bottom = 20.0
+offset_left = -30.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
@@ -513,7 +520,6 @@ theme_override_font_sizes/font_size = 70
 text = "Journey To The Right"
 
 [node name="Motivating Sub-Title" type="Label" parent="."]
-layout_mode = 0
 offset_left = 396.0
 offset_top = 161.0
 offset_right = 894.0
@@ -524,7 +530,6 @@ theme_override_font_sizes/font_size = 25
 text = "Are you ready for an amazing adventure!"
 
 [node name="Main Buttons" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_left = 90.0
 offset_top = 339.0
 offset_right = 396.0
@@ -580,7 +585,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "LOAD GAME"
 
 [node name="Settings Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 1068.0
 offset_top = 579.0
 offset_right = 1125.0
@@ -602,7 +606,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Feedback Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 1002.0
 offset_top = 579.0
 offset_right = 1059.0
@@ -624,11 +627,15 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(-98, 285)
 stream = ExtResource("5_nvfa3")
 volume_db = 5.0
 bus = &"SFX"
 
 [node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(-74, 218)
 stream = ExtResource("4_rpgdu")
 bus = &"SFX"
 
@@ -948,6 +955,7 @@ libraries = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
 position = Vector2(246, 38)
 script = ExtResource("10_bos1j")
 
@@ -959,7 +967,6 @@ shape = SubResource("RectangleShape2D_jc25w")
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 clip_contents = true
-layout_mode = 0
 offset_left = -118.0
 offset_top = -50.0
 offset_right = 1257.0
@@ -1211,10 +1218,6 @@ offset_top = 123.0
 offset_right = 593.0
 offset_bottom = 144.0
 theme_override_constants/separation = 7
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(569, 331)
-script = ExtResource("14_h8xle")
 
 [connection signal="mouse_entered" from="Main Buttons/Start Button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="Main Buttons/Start Button" to="." method="_on_start_button_pressed"]
