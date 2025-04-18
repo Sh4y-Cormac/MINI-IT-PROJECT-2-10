@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=35 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
@@ -10,10 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bfepmdpc82khb" path="res://Assets/Images/icon.png" id="6_teh54"]
 [ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
-[ext_resource type="Script" uid="uid://b41n1pe2bymxj" path="res://GUI Stuff/character_body_2d.gd" id="10_bos1j"]
 [ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="11_jc25w"]
 [ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
-[ext_resource type="Script" uid="uid://csfv0crwib5mn" path="res://GUI Stuff/camera_2d.gd" id="14_h8xle"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
 texture = ExtResource("1_hif8q")
@@ -68,7 +66,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bos1j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8xle"]
 bg_color = Color(0.556863, 0.498039, 0.603922, 1)
 border_width_left = 5
 border_width_top = 5
@@ -77,7 +75,7 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nvfa3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnh7y"]
 
 [sub_resource type="Animation" id="Animation_bos1j"]
 resource_name = "Fade In"
@@ -460,9 +458,6 @@ _data = {
 &"show_options": SubResource("Animation_nvfa3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc25w"]
-size = Vector2(532, 287)
-
 [node name="StartMenu" type="Control" node_paths=PackedStringArray("Options", "animation_player")]
 layout_mode = 3
 anchors_preset = 15
@@ -477,9 +472,6 @@ grow_vertical = 2
 script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("14_h8xle")
 
 [node name="Menu Background" type="Panel" parent="."]
 layout_mode = 1
@@ -516,6 +508,7 @@ theme_override_font_sizes/font_size = 70
 text = "Journey To The Right"
 
 [node name="Motivating Sub-Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 396.0
 offset_top = 161.0
 offset_right = 894.0
@@ -526,6 +519,7 @@ theme_override_font_sizes/font_size = 25
 text = "Are you ready for an amazing adventure!"
 
 [node name="Main Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 90.0
 offset_top = 339.0
 offset_right = 396.0
@@ -581,6 +575,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
 text = "LOAD GAME"
 
 [node name="Settings Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1068.0
 offset_top = 579.0
 offset_right = 1125.0
@@ -602,6 +597,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Feedback Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1002.0
 offset_top = 579.0
 offset_right = 1059.0
@@ -729,30 +725,32 @@ offset_right = 593.0
 offset_bottom = 144.0
 theme_override_constants/separation = 7
 
-[node name="Panel" type="Panel" parent="Options Menu"]
-clip_children = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0034965
-anchor_bottom = 0.0034965
+[node name="Node2D" type="Node2D" parent="Options Menu"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Options Menu/Node2D"]
 offset_left = 54.0
 offset_top = 142.0
 offset_right = 593.0
-offset_bottom = 444.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bos1j")
-metadata/_edit_use_anchors_ = true
+offset_bottom = 433.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h8xle")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="Node2D" type="Node2D" parent="Options Menu/Panel"]
+[node name="Control" type="Control" parent="Options Menu/Node2D/ScrollContainer"]
+custom_minimum_size = Vector2(539, 1000)
+layout_mode = 2
 
-[node name="Control" type="Control" parent="Options Menu/Panel/Node2D"]
+[node name="Control" type="Control" parent="Options Menu/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
 script = ExtResource("11_mm8x2")
 bus_name = "Master"
 
-[node name="Master Volume" type="Label" parent="Options Menu/Panel/Node2D/Control"]
+[node name="Master Volume" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -769,7 +767,7 @@ theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
-[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control"]
+[node name="Label" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 0
 offset_left = 389.0
 offset_top = 23.0
@@ -780,7 +778,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Options Menu/Panel/Node2D/Control"]
+[node name="CheckBox" type="CheckBox" parent="Options Menu/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -793,9 +791,9 @@ offset_right = 485.0
 offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xnh7y")
 
-[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -811,15 +809,17 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Control2" type="Control" parent="Options Menu/Panel/Node2D"]
+[node name="Control2" type="Control" parent="Options Menu/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
 script = ExtResource("11_mm8x2")
 bus_name = "Music"
 
-[node name="Music" type="Label" parent="Options Menu/Panel/Node2D/Control2"]
+[node name="Music" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -836,7 +836,7 @@ theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
-[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control2"]
+[node name="Label" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 0
 offset_left = 389.0
 offset_top = 116.0
@@ -847,7 +847,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox2" type="CheckBox" parent="Options Menu/Panel/Node2D/Control2"]
+[node name="CheckBox2" type="CheckBox" parent="Options Menu/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -860,9 +860,9 @@ offset_right = 485.0
 offset_bottom = 114.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xnh7y")
 
-[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control2"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -878,15 +878,17 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Control3" type="Control" parent="Options Menu/Panel/Node2D"]
+[node name="Control3" type="Control" parent="Options Menu/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
 script = ExtResource("11_mm8x2")
 bus_name = "SFX"
 
-[node name="SFX" type="Label" parent="Options Menu/Panel/Node2D/Control3"]
+[node name="SFX" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -903,7 +905,7 @@ theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 40
 text = "SFX Volume"
 
-[node name="Label" type="Label" parent="Options Menu/Panel/Node2D/Control3"]
+[node name="Label" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 0
 offset_left = 389.0
 offset_top = 207.0
@@ -914,7 +916,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox3" type="CheckBox" parent="Options Menu/Panel/Node2D/Control3"]
+[node name="CheckBox3" type="CheckBox" parent="Options Menu/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -927,9 +929,9 @@ offset_right = 485.0
 offset_bottom = 205.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nvfa3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xnh7y")
 
-[node name="HSlider" type="HSlider" parent="Options Menu/Panel/Node2D/Control3"]
+[node name="HSlider" type="HSlider" parent="Options Menu/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -950,19 +952,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_bos1j")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(246, 38)
-script = ExtResource("10_bos1j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(323, 292.5)
-shape = SubResource("RectangleShape2D_jc25w")
-
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 clip_contents = true
+layout_mode = 0
 offset_left = -118.0
 offset_top = -50.0
 offset_right = 1257.0
@@ -1229,9 +1222,9 @@ theme_override_constants/separation = 7
 [connection signal="pressed" from="Options Menu/Option Exit Button" to="." method="_on_option_exit_button_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Quit Button" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="Options Menu/Quit Button" to="." method="_on_quit_button_pressed"]
-[connection signal="toggled" from="Options Menu/Panel/Node2D/Control/CheckBox" to="Options Menu/Panel/Node2D/Control" method="_on_check_box_toggled"]
-[connection signal="toggled" from="Options Menu/Panel/Node2D/Control2/CheckBox2" to="Options Menu/Panel/Node2D/Control2" method="_on_check_box_2_toggled"]
-[connection signal="toggled" from="Options Menu/Panel/Node2D/Control3/CheckBox3" to="Options Menu/Panel/Node2D/Control3" method="_on_check_box_3_toggled"]
+[connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control/CheckBox" to="Options Menu/Node2D/ScrollContainer/Control/Control" method="_on_check_box_toggled"]
+[connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control2/CheckBox2" to="Options Menu/Node2D/ScrollContainer/Control/Control2" method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control3/CheckBox3" to="Options Menu/Node2D/ScrollContainer/Control/Control3" method="_on_check_box_3_toggled"]
 [connection signal="mouse_entered" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_mouse_entered"]
