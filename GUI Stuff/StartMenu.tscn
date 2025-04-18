@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=43 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
@@ -107,6 +107,10 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ts720"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8xle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwly8"]
 
 [sub_resource type="Animation" id="Animation_bos1j"]
 resource_name = "Fade In"
@@ -1023,7 +1027,7 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="Control" type="Control" parent="Options Menu/Node2D/Node2D/ScrollContainer"]
-custom_minimum_size = Vector2(539, 1000)
+custom_minimum_size = Vector2(539, 650)
 layout_mode = 2
 
 [node name="Sound Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control"]
@@ -1039,10 +1043,11 @@ text = "Sound"
 horizontal_alignment = 1
 
 [node name="Sound Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Sound Label"]
-offset_left = -35.0
-offset_top = 351.0
-offset_right = 202.0
-offset_bottom = 411.0
+layout_mode = 0
+offset_left = -38.0
+offset_top = 363.0
+offset_right = 199.0
+offset_bottom = 423.0
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_wwly8")
@@ -1086,7 +1091,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control"]
+[node name="Master Volume CheckBox" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1154,7 +1159,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox2" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control2"]
+[node name="Music Volume CheckBox" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1222,7 +1227,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="CheckBox3" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control3"]
+[node name="SFX CheckBox" type="CheckBox" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1255,10 +1260,10 @@ step = 0.001
 
 [node name="Control4" type="Control" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control"]
 anchors_preset = 0
-offset_left = 15.0
-offset_top = 365.0
-offset_right = 55.0
-offset_bottom = 405.0
+offset_left = 19.0
+offset_top = 394.0
+offset_right = 59.0
+offset_bottom = 434.0
 script = ExtResource("13_teh54")
 
 [node name="Window Mode HBoxContainer" type="HBoxContainer" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control4"]
@@ -1267,7 +1272,7 @@ offset_left = 4.0
 offset_top = 80.0
 offset_right = 500.0
 offset_bottom = 129.0
-theme_override_constants/separation = 100
+theme_override_constants/separation = 60
 
 [node name="Window Mode Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 layout_mode = 2
@@ -1278,14 +1283,15 @@ text = "Window Mode"
 [node name="Window Mode Option Button" type="OptionButton" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8xle")
 
 [node name="Control5" type="Control" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 15.0
-offset_top = 425.0
-offset_right = 55.0
-offset_bottom = 465.0
+offset_left = 19.0
+offset_top = 454.0
+offset_right = 59.0
+offset_bottom = 494.0
 script = ExtResource("14_h8xle")
 
 [node name="Resolution HboxContainer" type="HBoxContainer" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control5"]
@@ -1294,7 +1300,7 @@ offset_left = 4.0
 offset_top = 80.0
 offset_right = 500.0
 offset_bottom = 129.0
-theme_override_constants/separation = 141
+theme_override_constants/separation = 100
 
 [node name="Resolution Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control5/Resolution HboxContainer"]
 layout_mode = 2
@@ -1305,6 +1311,7 @@ text = "Resolution"
 [node name="Resolution OptionBox" type="OptionButton" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control5/Resolution HboxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wwly8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1584,9 +1591,7 @@ theme_override_constants/separation = 7
 [connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control/CheckBox" to="Options Menu/Node2D/ScrollContainer/Control/Control" method="_on_check_box_toggled"]
 [connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control2/CheckBox2" to="Options Menu/Node2D/ScrollContainer/Control/Control2" method="_on_check_box_2_toggled"]
 [connection signal="toggled" from="Options Menu/Node2D/ScrollContainer/Control/Control3/CheckBox3" to="Options Menu/Node2D/ScrollContainer/Control/Control3" method="_on_check_box_3_toggled"]
-[connection signal="toggled" from="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control/CheckBox" to="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control" method="_on_check_box_toggled"]
-[connection signal="toggled" from="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control2/CheckBox2" to="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control2" method="_on_check_box_2_toggled"]
-[connection signal="toggled" from="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control3/CheckBox3" to="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control3" method="_on_check_box_3_toggled"]
+[connection signal="toggled" from="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control/Master Volume CheckBox" to="Options Menu/Node2D/ScrollContainer/Control/Control" method="_on_master_volume_check_box_toggled"]
 [connection signal="mouse_entered" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_mouse_entered"]
