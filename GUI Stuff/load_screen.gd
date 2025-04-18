@@ -3,6 +3,7 @@ extends CanvasLayer
 @export_file("*.tscn") var next_scene_path: String
 
 func _ready():
+	$Control/AnimationPlayer.play("loading")
 	ResourceLoader.load_threaded_request(next_scene_path)
 	
 func _process(delta):
