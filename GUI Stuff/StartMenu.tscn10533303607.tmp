@@ -1461,7 +1461,6 @@ script = ExtResource("15_tiunh")
 layout_mode = 0
 offset_right = 539.0
 offset_bottom = 303.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xnh7y")
 
 [node name="MarginContainer" type="MarginContainer" parent="Customize/Customize Box/PanelContainer"]
 layout_mode = 2
@@ -1521,31 +1520,31 @@ size_flags_vertical = 6
 layout_mode = 2
 theme_override_constants/margin_left = 70
 
-[node name="Default" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
+[node name="TextureRect" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("11_jc25w")
 
-[node name="Character1" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
+[node name="TextureRect2" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("17_bttlb")
 
-[node name="Character2" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
+[node name="TextureRect3" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("18_4rrjx")
 
-[node name="Character3" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
+[node name="TextureRect4" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("19_686hr")
 
-[node name="Character4" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
+[node name="TextureRect5" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1797,9 +1796,7 @@ layout_mode = 2
 [connection signal="pressed" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_pressed"]
-[connection signal="mouse_entered" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow/Previous Button" to="Customize/Customize Box" method="_on_previous_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow/Previous Button" to="Customize/Customize Box" method="_on_previous_button_pressed"]
-[connection signal="mouse_entered" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_pressed"]
 [connection signal="mouse_entered" from="Feedback/Feedback Exit Button" to="." method="_on_feedback_exit_button_mouse_entered"]
 [connection signal="pressed" from="Feedback/Feedback Exit Button" to="." method="_on_feedback_exit_button_pressed"]
