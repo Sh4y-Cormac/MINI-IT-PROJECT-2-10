@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=4 uid="uid://csgxwsdr5ee0i"]
+[gd_scene load_steps=18 format=4 uid="uid://csgxwsdr5ee0i"]
 
 [ext_resource type="Texture2D" uid="uid://o6lthmc6dh3c" path="res://Assets/Sprites/tileSetRedone.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cbmbosbo3qwpq" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bcgr3itrqktmx" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://dj1g5fync5at" path="res://Assets/Sprites/background.png" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_iywne")
@@ -297,10 +296,6 @@ autoplay = "mobe"
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_repeat = 2
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(1152, 0)
+motion_mirroring = Vector2(2560, 0)
 
-[node name="Layer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 2
-texture = ExtResource("6_p57ef")
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
