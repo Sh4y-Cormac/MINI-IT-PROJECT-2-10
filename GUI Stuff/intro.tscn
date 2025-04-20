@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://du010qbhs6eoy"]
+[gd_scene load_steps=12 format=3 uid="uid://dfc6aohmr8b2y"]
 
-[ext_resource type="Script" uid="uid://x05mfdvhj0m3" path="res://GUI Stuff/intro.gd" id="1_420r8"]
+[ext_resource type="Script" path="res://GUI Stuff/intro.gd" id="1_420r8"]
 [ext_resource type="Texture2D" uid="uid://cm1q220fauk0m" path="res://Assets/Images/Background.png" id="2_jep0s"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_jep0s"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="4_sjhys"]
-[ext_resource type="Script" uid="uid://cbjyn756gnuax" path="res://GUI Stuff/audio_stream_player_2d.gd" id="5_0aahw"]
+[ext_resource type="Script" path="res://GUI Stuff/audio_stream_player_2d.gd" id="5_0aahw"]
 
 [sub_resource type="Animation" id="Animation_hc4ph"]
 resource_name = "Fade in"

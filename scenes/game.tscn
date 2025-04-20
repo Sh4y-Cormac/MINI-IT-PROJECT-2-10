@@ -1,10 +1,16 @@
-[gd_scene load_steps=18 format=4 uid="uid://csgxwsdr5ee0i"]
+[gd_scene load_steps=24 format=4 uid="uid://csgxwsdr5ee0i"]
 
 [ext_resource type="Texture2D" uid="uid://o6lthmc6dh3c" path="res://Assets/Sprites/tileSetRedone.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cbmbosbo3qwpq" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bcgr3itrqktmx" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://d3n8gipsaoqse" path="res://Assets/Sprites/background.png" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://djchjg3jr26po" path="res://Assets/Sprites/middleground.png" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://cbunkgxjbnm60" path="res://Assets/Sprites/whitemountainstuff.png" id="7_vtaks"]
+[ext_resource type="Texture2D" uid="uid://0es8capo4h3u" path="res://Assets/Sprites/middleground2.png" id="8_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://ruhyb4x44eju" path="res://Assets/Sprites/green.png" id="9_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://uknhwgtn0to6" path="res://Assets/Sprites/water.png" id="10_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_iywne")
@@ -296,6 +302,77 @@ autoplay = "mobe"
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(2560, 0)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(2304, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("6_p57ef")
+centered = false
+offset = Vector2(0, -400)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("6_p57ef")
+centered = false
+offset = Vector2(1152, -400)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("7_vtaks")
+centered = false
+offset = Vector2(0, 248)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("7_vtaks")
+centered = false
+offset = Vector2(1152, 248)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("7_gee14")
+centered = false
+offset = Vector2(0, -350)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("7_gee14")
+centered = false
+offset = Vector2(1152, -350)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("9_kvpfn")
+centered = false
+offset = Vector2(0, 290)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("9_kvpfn")
+centered = false
+offset = Vector2(1152, 290)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(2880, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_0tnpc")
+centered = false
+offset = Vector2(0, -400)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_0tnpc")
+centered = false
+offset = Vector2(1152, -400)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_kvpfn")
+centered = false
+offset = Vector2(0, 248)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_kvpfn")
+centered = false
+offset = Vector2(1152, 248)
