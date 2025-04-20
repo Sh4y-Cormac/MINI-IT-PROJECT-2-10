@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c34kqpe4ob305"]
+
+[ext_resource type="PackedScene" uid="uid://c7v6oifs7orjb" path="res://scenes/player_move.tscn" id="1_amtb4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_amtb4"]
+distance = 1.0
+
+[node name="movements" type="Node2D"]
+
+[node name="player_move" parent="." instance=ExtResource("1_amtb4")]
+position = Vector2(26, 32)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(25, 27)
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(26, 70)
+shape = SubResource("WorldBoundaryShape2D_amtb4")
