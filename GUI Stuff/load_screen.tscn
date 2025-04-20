@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c31vy36jqspow"]
 
-[ext_resource type="Script" uid="uid://cu3ss8odp6cwi" path="res://GUI Stuff/load_screen.gd" id="1_1v8in"]
+[ext_resource type="Script" path="res://GUI Stuff/load_screen.gd" id="1_1v8in"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_mcanp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v8in"]
