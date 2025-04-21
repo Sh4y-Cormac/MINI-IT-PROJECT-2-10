@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=4 uid="uid://csgxwsdr5ee0i"]
+[gd_scene load_steps=26 format=4 uid="uid://b3l6yk35py4hw"]
 
 [ext_resource type="Texture2D" uid="uid://c1wy3ljqvr2gq" path="res://Assets/Sprites/tileSetRedone.png" id="1_iywne"]
-[ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cbmbosbo3qwpq" path="res://scenes/platform.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bcgr3itrqktmx" path="res://scenes/killzone.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dyk6ggarhybd5" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://d3n8gipsaoqse" path="res://Assets/Sprites/background.png" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://djchjg3jr26po" path="res://Assets/Sprites/middleground.png" id="7_gee14"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="8_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ruhyb4x44eju" path="res://Assets/Sprites/green.png" id="9_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://uknhwgtn0to6" path="res://Assets/Sprites/water.png" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dp6mlw6aknl63" path="res://scenes/sign.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvuet"]
 texture = ExtResource("1_iywne")
@@ -61,7 +62,7 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9375, -15.9848, 15.9848, -15.9375, 16.0795, 16.1269, -15.9848, 16.1269)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9001, -15.984, -8.43249, -16.0679, 15.9001, -6.33486, 15.984, 0.125858, -15.9001, -10.3623)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -8.81007, -16, 16, -6.04119, 16, 1.00687, -16.6972, -10.9916)
 5:1/0 = 0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.0679, -5.99924, 16.1518, -6.08314, 15.984, 0.125858, -16.1518, 0.0419521)
 6:1/0 = 0
@@ -365,7 +366,7 @@ centered = false
 offset = Vector2(1152, 290)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(1.4, 1.4)
 motion_mirroring = Vector2(2880, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
@@ -391,3 +392,7 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("10_kvpfn")
 centered = false
 offset = Vector2(1152, 248)
+
+[node name="sign" parent="." instance=ExtResource("13_kvuet")]
+z_index = -1
+position = Vector2(1007, -16)

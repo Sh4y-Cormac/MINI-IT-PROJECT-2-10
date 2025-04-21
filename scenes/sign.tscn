@@ -14,4 +14,10 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_kd50q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("1_shbub")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press spacebar to jump."
