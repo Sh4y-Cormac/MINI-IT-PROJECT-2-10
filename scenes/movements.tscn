@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://b517er4e4jkau"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://djgyfgvp3fd7c"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://cj5htwm28vxec" path="res://scenes/player_move.tscn" id="1_amtb4"]
 
