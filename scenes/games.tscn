@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bawwngt20sve8"]
+[gd_scene load_steps=3 format=3 uid="uid://bawwngt20sve8"]
 
 [ext_resource type="PackedScene" uid="uid://b1h47drvxft2e" path="res://scenes/simple_movement.tscn" id="1_umruc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_umruc"]
+distance = -1.0
 
 [node name="games" type="Node2D"]
 
 [node name="simple_movement" parent="." instance=ExtResource("1_umruc")]
-position = Vector2(90, 126)
+position = Vector2(98, 136)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(194, 109)
 zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(99, 177)
+shape = SubResource("WorldBoundaryShape2D_umruc")
