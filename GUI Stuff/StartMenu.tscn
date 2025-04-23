@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=58 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
@@ -7,14 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="5_nvfa3"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
-[ext_resource type="Texture2D" uid="uid://bfepmdpc82khb" path="res://Assets/Images/icon.png" id="6_teh54"]
 [ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
 [ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="11_jc25w"]
-[ext_resource type="Script" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
-[ext_resource type="Script" path="res://GUI Stuff/control_4.gd" id="13_teh54"]
-[ext_resource type="Script" path="res://control_5.gd" id="14_h8xle"]
-[ext_resource type="Script" path="res://GUI Stuff/customize_box.gd" id="15_tiunh"]
+[ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
+[ext_resource type="Script" uid="uid://dumkqb4xlj0f1" path="res://GUI Stuff/control_4.gd" id="13_teh54"]
+[ext_resource type="Script" uid="uid://je02wp1judll" path="res://control_5.gd" id="14_h8xle"]
+[ext_resource type="Script" uid="uid://bvqsufom0iweh" path="res://GUI Stuff/customize_box.gd" id="15_tiunh"]
 [ext_resource type="Texture2D" uid="uid://dhgcil715rx23" path="res://Assets/Images/arrow.png" id="16_y7mvc"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="17_bttlb"]
 [ext_resource type="Texture2D" uid="uid://d1dux0vbhbdwh" path="res://Assets/Sprites/Character 3.png" id="18_4rrjx"]
@@ -247,7 +246,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Menu Background/Default Character:frame")
+tracks/9/path = NodePath("Responsive Background/Menu Background/Default Character:frame")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -276,34 +275,6 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Customize:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_h8xle"]
-resource_name = "hide_feedback"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, 38), Vector2(246, -701)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -400,34 +371,6 @@ tracks/1/keys = {
 "values": [true, true]
 }
 
-[sub_resource type="Animation" id="Animation_xnh7y"]
-resource_name = "show_feedback"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Feedback:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(246, -701), Vector2(246, 38)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Feedback:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
 [sub_resource type="Animation" id="Animation_ts720"]
 resource_name = "show_load"
 length = 0.5
@@ -489,12 +432,10 @@ _data = {
 &"Fade In": SubResource("Animation_bos1j"),
 &"RESET": SubResource("Animation_rojxm"),
 &"hide_customize": SubResource("Animation_jc25w"),
-&"hide_feedback": SubResource("Animation_h8xle"),
 &"hide_load": SubResource("Animation_wwly8"),
 &"hide_options": SubResource("Animation_teh54"),
 &"idle": SubResource("Animation_h65rh"),
 &"show_customize": SubResource("Animation_mm8x2"),
-&"show_feedback": SubResource("Animation_xnh7y"),
 &"show_load": SubResource("Animation_ts720"),
 &"show_options": SubResource("Animation_nvfa3")
 }
@@ -538,20 +479,29 @@ script = ExtResource("1_2oqxn")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Menu Background" type="Panel" parent="."]
+[node name="Responsive Background" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -27.0
-offset_right = 23.0
-offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu Background" type="Panel" parent="Responsive Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -50.0
+offset_right = 105.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 
-[node name="Default Character" type="Sprite2D" parent="Menu Background"]
-position = Vector2(780, 485)
+[node name="Default Character" type="Sprite2D" parent="Responsive Background/Menu Background"]
+position = Vector2(909, 535)
 scale = Vector2(4.61458, 3.82598)
 texture = ExtResource("11_jc25w")
 flip_h = true
@@ -653,28 +603,6 @@ theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1
 theme_override_fonts/font = ExtResource("2_aeyej")
 theme_override_font_sizes/font_size = 39
 theme_override_icons/icon = ExtResource("5_515jg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
-theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Feedback Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1002.0
-offset_top = 579.0
-offset_right = 1059.0
-offset_bottom = 631.0
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 39
-theme_override_icons/icon = ExtResource("6_teh54")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
@@ -1348,6 +1276,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
@@ -1604,9 +1533,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -330.0
-offset_top = -286.0
+offset_top = -1025.0
 offset_right = 330.0
-offset_bottom = 286.0
+offset_bottom = -453.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -1781,8 +1710,6 @@ layout_mode = 2
 [connection signal="pressed" from="Main Buttons/Load Button" to="." method="_on_load_button_pressed"]
 [connection signal="mouse_entered" from="Settings Button" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
-[connection signal="mouse_entered" from="Feedback Button" to="." method="_on_feedback_button_mouse_entered"]
-[connection signal="pressed" from="Feedback Button" to="." method="_on_feedback_button_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Option Exit Button" to="." method="_on_option_exit_button_mouse_entered"]
 [connection signal="pressed" from="Options Menu/Option Exit Button" to="." method="_on_option_exit_button_pressed"]
 [connection signal="mouse_entered" from="Options Menu/Quit Button" to="." method="_on_quit_button_mouse_entered"]

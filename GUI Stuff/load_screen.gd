@@ -2,7 +2,22 @@ extends CanvasLayer
 
 @export_file("*.tscn") var next_scene_path: String
 
+@export var scene_args : Array
+@export var tips : Array[Dictionary] = [
+	{"title": "Survival", "text": "Don't let your enemies kill you!"},
+	{"title": "Survival", "text": "Swords will always be useful!"},
+	{"title": "Survival", "text": "Potions might get you out of a sticky situation!"},
+	{"title": "Movement", "text": "Try pressing that space-bar 2 times!"},
+	{"title": "Movement", "text": "I wish we could go faster..."},
+	{"title": "Defense", "text": "No armor is best armor"},
+]
+
+
+
 func _ready():
+	var selected_tip := tips[randi() % tips.size()]
+	%"Tips Label".text = "Tip: %s" % selected_tip.title
+	%Tips.text = selected_tip.text
 	$Control/AnimationPlayer.play("loading")
 	ResourceLoader.load_threaded_request(next_scene_path)
 	
