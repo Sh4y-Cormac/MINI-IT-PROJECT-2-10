@@ -63,11 +63,13 @@ script = ExtResource("1_n4ho2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_2"]
 texture_filter = 1
+position = Vector2(0, 29)
 sprite_frames = SubResource("SpriteFrames_ya8lb")
 animation = &"player2_run"
+autoplay = "player2_run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_2"]
-position = Vector2(-1, -3)
+position = Vector2(-1, 25)
 shape = SubResource("RectangleShape2D_s8xup")
 
 [node name="dash_timer" type="Timer" parent="player_2"]
@@ -80,5 +82,5 @@ zoom = Vector2(3, 3)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -7)
+position = Vector2(0, 27)
 shape = SubResource("WorldBoundaryShape2D_vidsl")
