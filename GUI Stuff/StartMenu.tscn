@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=56 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
@@ -125,7 +125,7 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.73333),
+"times": PackedFloat32Array(0, 2.83333),
 "transitions": PackedFloat32Array(2, 2),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -196,7 +196,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Feedback:position")
+tracks/5/path = NodePath("Load:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -208,7 +208,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Feedback:visible")
+tracks/6/path = NodePath("Load:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -220,34 +220,10 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Load:position")
+tracks/7/path = NodePath("Responsive Background/Menu Background/Default Character:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(246, 38)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Load:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Responsive Background/Menu Background/Default Character:frame")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -460,8 +436,6 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfe0u"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h65rh"]
-
 [node name="StartMenu" type="Control" node_paths=PackedStringArray("Options", "animation_player")]
 layout_mode = 3
 anchors_preset = 15
@@ -505,16 +479,14 @@ texture = ExtResource("11_jc25w")
 flip_h = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Responsive Background/Menu Background"]
-position = Vector2(98, 372)
-scale = Vector2(200, 100)
-amount = 100
-emission_shape = 2
-emission_sphere_radius = 1.0
-gravity = Vector2(0, -200)
-initial_velocity_max = 40.4
-scale_amount_min = 10.0
-scale_amount_max = 20.0
-color = Color(0.0875325, 0.0478554, 0.168549, 1)
+position = Vector2(702, 11)
+amount = 400
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+gravity = Vector2(-200, 1500)
+scale_amount_min = 0.2
+scale_amount_max = 3.0
+color = Color(0.412602, 0.622639, 1, 1)
 
 [node name="Game Title" type="Label" parent="."]
 layout_mode = 1
@@ -606,18 +578,21 @@ offset_top = 579.0
 offset_right = 1125.0
 offset_bottom = 631.0
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.980392, 1, 0.937255, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 30
 theme_override_icons/icon = ExtResource("5_515jg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+alignment = 2
+text_overrun_behavior = 4
+autowrap_mode = 3
 icon_alignment = 1
 expand_icon = true
 
@@ -1241,7 +1216,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
@@ -1489,104 +1463,6 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Feedback" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -330.0
-offset_top = -286.0
-offset_right = 330.0
-offset_bottom = 286.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
-texture = ExtResource("7_515jg")
-region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
-patch_margin_left = 59
-patch_margin_top = 60
-patch_margin_right = 59
-patch_margin_bottom = 55
-
-[node name="Feedback" type="Label" parent="Feedback"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 53.0
-offset_right = 465.0
-offset_bottom = 123.0
-theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
-text = "Feedback"
-horizontal_alignment = 1
-
-[node name="Feedback Exit Button" type="Button" parent="Feedback"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 213.5
-offset_top = -233.0
-offset_right = 262.5
-offset_bottom = -185.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/icon_max_width = 25
-theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 30
-theme_override_icons/icon = ExtResource("8_rojxm")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
-theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = " "
-icon_alignment = 1
-expand_icon = true
-
-[node name="HSeparator" type="HSeparator" parent="Feedback"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 123.0
-offset_right = 593.0
-offset_bottom = 144.0
-theme_override_constants/separation = 7
-
-[node name="Feedback Save Button" type="Button" parent="Feedback"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 173.0
-offset_right = 65.0
-offset_bottom = 226.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
-theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = "SAVE"
-
-[node name="Feedback Box" type="LineEdit" parent="Feedback"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 142.0
-offset_right = 593.0
-offset_bottom = 447.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_h65rh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xnh7y")
-alignment = 1
-
 [node name="Load" type="NinePatchRect" parent="."]
 visible = false
 layout_mode = 1
@@ -1690,9 +1566,5 @@ layout_mode = 2
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow/Previous Button" to="Customize/Customize Box" method="_on_previous_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_pressed"]
-[connection signal="mouse_entered" from="Feedback/Feedback Exit Button" to="." method="_on_feedback_exit_button_mouse_entered"]
-[connection signal="pressed" from="Feedback/Feedback Exit Button" to="." method="_on_feedback_exit_button_pressed"]
-[connection signal="mouse_entered" from="Feedback/Feedback Save Button" to="." method="_on_feedback_save_button_mouse_entered"]
-[connection signal="pressed" from="Feedback/Feedback Save Button" to="." method="_on_feedback_save_button_pressed"]
 [connection signal="mouse_entered" from="Load/Load Exit Button" to="." method="_on_load_exit_button_mouse_entered"]
 [connection signal="pressed" from="Load/Load Exit Button" to="." method="_on_load_exit_button_pressed"]
