@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://8xfcx48xnobu"]
+[gd_scene load_steps=8 format=3 uid="uid://8xfcx48xnobu"]
 
 [ext_resource type="Texture2D" uid="uid://cbo65g5oj6xsd" path="res://Assets/Sprites/Inventory_style_01b.png" id="1_dse42"]
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Stuff/inventory.gd" id="1_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://ck2r8svp0bti" path="res://Assets/Sprites/swords.png" id="3_0msnl"]
 [ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="4_qayd1"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
+[ext_resource type="Texture2D" uid="uid://c226nnypmw0g5" path="res://Assets/Sprites/sign.png" id="5_f3dul"]
+[ext_resource type="Texture2D" uid="uid://bfepmdpc82khb" path="res://Assets/Images/icon.png" id="5_qayd1"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -15,158 +17,224 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y0k1r")
 
-[node name="Inventory GUI" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 149.0
-offset_right = 764.0
-offset_bottom = 494.0
+offset_left = 179.0
+offset_top = 104.0
+offset_right = 382.0
+offset_bottom = 202.0
+scale = Vector2(4, 4)
 texture = ExtResource("1_dse42")
 
-[node name="Bag" type="GridContainer" parent="Inventory GUI"]
+[node name="BagSlot" type="GridContainer" parent="TextureRect"]
 layout_mode = 0
-offset_left = 287.0
-offset_top = 21.0
-offset_right = 689.0
-offset_bottom = 225.0
-theme_override_constants/h_separation = 3
-theme_override_constants/v_separation = 5
+offset_left = 82.0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 64.0
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = -1
 columns = 6
 
-[node name="Bag Slot 1" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 1" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("3_0msnl")
+expand_mode = 1
 
-[node name="Bag Slot 2" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 2" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 3" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 3" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 4" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 4" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 5" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 5" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 6" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 6" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 7" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 7" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 8" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 8" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 9" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 9" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 10" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 10" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("5_f3dul")
+expand_mode = 1
 
-[node name="Bag Slot 11" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 11" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 12" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 12" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("3_0msnl")
+expand_mode = 1
 
-[node name="Bag Slot 13" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 13" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 14" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 14" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 15" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 15" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 16" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 16" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("3_0msnl")
+expand_mode = 1
 
-[node name="Bag Slot 17" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 17" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Bag Slot 18" type="TextureRect" parent="Inventory GUI/Bag"]
+[node name="BagSlot 18" type="TextureRect" parent="TextureRect/BagSlot"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Item Hotbar" type="GridContainer" parent="Inventory GUI"]
+[node name="Hotbar" type="GridContainer" parent="TextureRect"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 256.0
-offset_right = 688.0
-offset_bottom = 324.0
-theme_override_constants/h_separation = 3
+offset_left = 6.0
+offset_top = 72.0
+offset_right = 197.0
+offset_bottom = 92.0
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = -1
 columns = 10
 
-[node name="Hotbar Slot 1" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 1" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("3_0msnl")
+texture = ExtResource("5_qayd1")
+expand_mode = 1
 
-[node name="Hotbar Slot 2" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 2" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 3" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 3" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 4" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 4" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 5" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 5" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 6" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 6" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 7" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 7" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 8" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 8" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 9" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 9" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Hotbar Slot 10" type="TextureRect" parent="Inventory GUI/Item Hotbar"]
+[node name="Slot 10" type="TextureRect" parent="TextureRect/Hotbar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Equipment Left" type="GridContainer" parent="Inventory GUI"]
+[node name="Equipment_Left" type="GridContainer" parent="TextureRect"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 21.0
-offset_right = 91.0
-offset_bottom = 155.0
-theme_override_constants/v_separation = 5
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 26.0
+offset_bottom = 45.0
+theme_override_constants/v_separation = -1
 
-[node name="EquipmentLeft Slot 1" type="TextureRect" parent="Inventory GUI/Equipment Left"]
+[node name="Equipment_Left Slot 1" type="TextureRect" parent="TextureRect/Equipment_Left"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="EquipmentLeft Slot 2" type="TextureRect" parent="Inventory GUI/Equipment Left"]
+[node name="Equipment_Left Slot 2" type="TextureRect" parent="TextureRect/Equipment_Left"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Equipment Right" type="GridContainer" parent="Inventory GUI"]
-offset_left = 189.0
-offset_top = 22.0
-offset_right = 259.0
-offset_bottom = 156.0
-theme_override_constants/v_separation = 5
+[node name="Equipment_Right" type="GridContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 6.0
+offset_right = 74.0
+offset_bottom = 45.0
+theme_override_constants/v_separation = -1
 
-[node name="EquipmentRight Slot 1" type="TextureRect" parent="Inventory GUI/Equipment Right"]
+[node name="Equipment_Right Slot 1" type="TextureRect" parent="TextureRect/Equipment_Right"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="EquipmentRight Slot 2" type="TextureRect" parent="Inventory GUI/Equipment Right"]
+[node name="Equipment_Right Slot 2" type="TextureRect" parent="TextureRect/Equipment_Right"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Player" type="MarginContainer" parent="Inventory GUI"]
+[node name="Character" type="MarginContainer" parent="TextureRect"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 21.0
-offset_right = 192.0
-offset_bottom = 158.0
+offset_left = 25.0
+offset_top = 6.0
+offset_right = 55.0
+offset_bottom = 45.0
 
-[node name="Character" type="TextureRect" parent="Inventory GUI/Player"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect/Character"]
 layout_mode = 2
 texture = ExtResource("5_5k12h")
 expand_mode = 1

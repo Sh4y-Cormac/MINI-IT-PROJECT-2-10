@@ -1,44 +1,43 @@
 extends Control
 
-@onready var bagcontainer = $"Inventory GUI/Bag"
-@onready var itemHotbar = $"Inventory GUI/Item Hotbar"
-@onready var equiment_left = $"Inventory GUI/Equipment Left"
-@onready var equiment_right = $"Inventory GUI/Equipment Right"
+@onready var bagcontainer = $TextureRect/BagSlot
+@onready var Hotbarcontainer = $TextureRect/Hotbar
+@onready var equipment_left = $TextureRect/Equipment_Left
+@onready var equipment_right = $TextureRect/Equipment_Right
 
 func _get_drag_data(at_position):
-	var dragslotnode = _get_slot_node_position(at_position)
+	var dragslotnode = get_slot_node_position(at_position)
 	
-	if dragslotnode.texture == null: return
+	if dragslotnode == null or dragslotnode.texture == null: return
 	
 	var dragpreviewnode = dragslotnode.duplicate()
 	dragpreviewnode.custom_minimum_size = Vector2(60, 60)
-	
 	set_drag_preview(dragpreviewnode)
 	
 	return dragslotnode
 
-func _can_drop_data(at_position, data):
-	var targetslot = _get_slot_node_position(at_position)
-	
-	return targetslot != null
 
-func _drop_item(at_position, dragslotnode):
-	var targetslot = _get_slot_node_position(at_position)
-	var targettexture = targetslot.texture
+func _can_drop_data(at_position, data):
+	var targetslotnode = get_slot_node_position(at_position)
 	
-	targetslot.texture  = dragslotnode.texture
+	return targetslotnode != null
+
+func _drop_data(at_position, dragslotnode):
+	var targetslotnode = get_slot_node_position(at_position)
+	var targettexture = targetslotnode.texture
 	
-	if targetslot == null:
+	targetslotnode.texture  = dragslotnode.texture
+	
+	if targettexture == null:
 		dragslotnode.texture = null
 	
 	else:
 		dragslotnode.texture = targettexture
 
-func _get_slot_node_position(position):
-	var allSlotNodes = (bagcontainer.get_children() + itemHotbar.get_children() 
-	+ equiment_left.get_children() + equiment_right.get_children())
+func get_slot_node_position(position):
+	var allslotnodes = (bagcontainer.get_children() + Hotbarcontainer.get_children() + equipment_left.get_children() + equipment_right.get_children())
 	
-	for node in allSlotNodes:
-		var nodeRect = node.get_global_rect()
+	for node in allslotnodes:
+		var noderect = node.get_global_rect()
 		
-		if nodeRect.has_point(position): return node
+		if noderect.has_point(position): return node
