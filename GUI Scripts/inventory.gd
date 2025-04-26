@@ -3,6 +3,7 @@ extends Control
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var Hotbarcontainer = $"Inventory GUI/Hotbar"
 @onready var equipment = $"Inventory GUI/Equipment"
+@onready var trashcan = $"Inventory GUI/TrashCan"
 
 
 func _get_drag_data(at_position):
@@ -35,9 +36,20 @@ func _drop_data(at_position, dragslotnode):
 		dragslotnode.texture = targettexture
 
 func get_slot_node_position(position):
+	
 	var allslotnodes = (bagcontainer.get_children() + Hotbarcontainer.get_children() + equipment.get_children())
 	
 	for node in allslotnodes:
 		var noderect = node.get_global_rect()
 		
 		if noderect.has_point(position): return node
+
+
+
+
+func _on_bag_slot_1_mouse_entered() -> void:
+	StatPopus.ItemPopup(null, null)
+
+
+func _on_bag_slot_1_mouse_exited() -> void:
+	StatPopus.HideItemPopup()

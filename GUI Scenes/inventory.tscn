@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://8xfcx48xnobu"]
+[gd_scene load_steps=7 format=3 uid="uid://8xfcx48xnobu"]
 
-[ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Stuff/inventory.gd" id="1_y0k1r"]
-[ext_resource type="Texture2D" uid="uid://cmqnqb5jn1fqr" path="res://Assets/Images/new one.png" id="2_y0k1r"]
+[ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
+[ext_resource type="Texture2D" uid="uid://cmqnqb5jn1fqr" path="res://Assets/Images/Inventory GUI.png" id="2_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="4_qayd1"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
 [ext_resource type="Texture2D" uid="uid://bfepmdpc82khb" path="res://Assets/Images/icon.png" id="5_qayd1"]
+[ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -16,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_y0k1r")
 
 [node name="Inventory GUI" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 105.0
 offset_top = 96.0
 offset_right = 1078.0
@@ -23,6 +25,7 @@ offset_bottom = 540.0
 texture = ExtResource("2_y0k1r")
 
 [node name="BagSlot" type="GridContainer" parent="Inventory GUI"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 110.0
 offset_right = 586.0
@@ -37,95 +40,8 @@ layout_mode = 2
 texture = ExtResource("4_qayd1")
 expand_mode = 1
 
-[node name="BagSlot 2" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 3" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 4" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 5" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 6" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 7" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 8" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 9" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 10" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("4_qayd1")
-expand_mode = 1
-
-[node name="BagSlot 11" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 12" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("4_qayd1")
-expand_mode = 1
-
-[node name="BagSlot 13" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 14" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("4_qayd1")
-expand_mode = 1
-
-[node name="BagSlot 15" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 16" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 17" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
-[node name="BagSlot 18" type="TextureRect" parent="Inventory GUI/BagSlot"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-expand_mode = 1
-
 [node name="Hotbar" type="GridContainer" parent="Inventory GUI"]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 346.0
 offset_right = 593.0
@@ -186,6 +102,7 @@ layout_mode = 2
 expand_mode = 1
 
 [node name="Equipment" type="GridContainer" parent="Inventory GUI"]
+layout_mode = 0
 offset_left = 615.0
 offset_top = 36.0
 offset_right = 681.0
@@ -215,6 +132,7 @@ expand_mode = 1
 
 [node name="Character" type="MarginContainer" parent="Inventory GUI"]
 custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
 offset_left = 739.0
 offset_top = 60.0
 offset_right = 899.0
@@ -224,3 +142,20 @@ offset_bottom = 191.0
 layout_mode = 2
 texture = ExtResource("5_5k12h")
 expand_mode = 1
+
+[node name="TrashCan" type="MarginContainer" parent="Inventory GUI"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 0
+offset_left = 615.0
+offset_top = 289.0
+offset_right = 683.0
+offset_bottom = 346.0
+
+[node name="Trash Icon" type="TextureRect" parent="Inventory GUI/TrashCan"]
+layout_mode = 2
+texture = ExtResource("6_0msnl")
+expand_mode = 1
+stretch_mode = 3
+
+[connection signal="mouse_entered" from="Inventory GUI/BagSlot/BagSlot 1" to="." method="_on_bag_slot_1_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory GUI/BagSlot/BagSlot 1" to="." method="_on_bag_slot_1_mouse_exited"]

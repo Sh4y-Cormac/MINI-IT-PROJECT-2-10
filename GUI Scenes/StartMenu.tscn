@@ -1,27 +1,27 @@
 [gd_scene load_steps=56 format=3 uid="uid://u7yluuk8jor6"]
 
-[ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Stuff/start_menu.gd" id="1_2oqxn"]
-[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="1_hif8q"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_aeyej"]
-[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_rpgdu"]
-[ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_515jg"]
-[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="5_nvfa3"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_rpgdu"]
-[ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="7_515jg"]
-[ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="8_rojxm"]
-[ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="11_jc25w"]
-[ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Stuff/control.gd" id="11_mm8x2"]
-[ext_resource type="Script" uid="uid://dumkqb4xlj0f1" path="res://GUI Stuff/control_4.gd" id="13_teh54"]
-[ext_resource type="Script" uid="uid://je02wp1judll" path="res://control_5.gd" id="14_h8xle"]
-[ext_resource type="Script" uid="uid://bvqsufom0iweh" path="res://GUI Stuff/customize_box.gd" id="15_tiunh"]
-[ext_resource type="Texture2D" uid="uid://dhgcil715rx23" path="res://Assets/Images/arrow.png" id="16_y7mvc"]
-[ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="17_bttlb"]
-[ext_resource type="Texture2D" uid="uid://d1dux0vbhbdwh" path="res://Assets/Sprites/Character 3.png" id="18_4rrjx"]
-[ext_resource type="Texture2D" uid="uid://c3w1j1ggehe2o" path="res://Assets/Sprites/Character 4.png" id="19_686hr"]
-[ext_resource type="Texture2D" uid="uid://bv7vltfjcdhkh" path="res://Assets/Sprites/Character 5.png" id="20_7s2jj"]
+[ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://scripts/start_menu.gd" id="1_w42qb"]
+[ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="2_hii2u"]
+[ext_resource type="Texture2D" uid="uid://bfwefe8v1c2we" path="res://Assets/Sprites/Default.png" id="3_ij00v"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="4_05g5r"]
+[ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="5_r3qam"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="6_nhuqb"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="7_m8mc7"]
+[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="8_ej2lc"]
+[ext_resource type="Texture2D" uid="uid://bab27jg4bmocg" path="res://Assets/Images/Options GUI.png" id="9_py7ls"]
+[ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="10_3lcah"]
+[ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Scripts/control.gd" id="11_gy0ih"]
+[ext_resource type="Script" uid="uid://dumkqb4xlj0f1" path="res://GUI Scripts/control_4.gd" id="12_kaq8m"]
+[ext_resource type="Script" uid="uid://je02wp1judll" path="res://control_5.gd" id="13_634o4"]
+[ext_resource type="Script" uid="uid://bvqsufom0iweh" path="res://GUI Scripts/customize_box.gd" id="14_6svwt"]
+[ext_resource type="Texture2D" uid="uid://dhgcil715rx23" path="res://Assets/Images/arrow.png" id="15_fsuiw"]
+[ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="16_v2fsm"]
+[ext_resource type="Texture2D" uid="uid://d1dux0vbhbdwh" path="res://Assets/Sprites/Character 3.png" id="17_82rrg"]
+[ext_resource type="Texture2D" uid="uid://c3w1j1ggehe2o" path="res://Assets/Sprites/Character 4.png" id="18_8r1cu"]
+[ext_resource type="Texture2D" uid="uid://bv7vltfjcdhkh" path="res://Assets/Sprites/Character 5.png" id="19_m5xu7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeyej"]
-texture = ExtResource("1_hif8q")
+texture = ExtResource("2_hii2u")
 modulate_color = Color(0.355314, 0.355314, 0.355314, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jp6q8"]
@@ -447,7 +447,7 @@ offset_right = 10.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2oqxn")
+script = ExtResource("1_w42qb")
 Options = NodePath("Options Menu")
 animation_player = NodePath("AnimationPlayer")
 
@@ -475,7 +475,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 [node name="Default Character" type="Sprite2D" parent="Responsive Background/Menu Background"]
 position = Vector2(909, 535)
 scale = Vector2(4.61458, 3.82598)
-texture = ExtResource("11_jc25w")
+texture = ExtResource("3_ij00v")
 flip_h = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Responsive Background/Menu Background"]
@@ -500,7 +500,7 @@ offset_bottom = 180.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 70
 text = "Journey To The Right"
 
@@ -511,7 +511,7 @@ offset_top = 161.0
 offset_right = 894.0
 offset_bottom = 191.0
 theme_override_colors/font_color = Color(0.974205, 0.820676, 0, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 25
 text = "Are you ready for an amazing adventure!"
 
@@ -530,7 +530,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 39
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
@@ -546,7 +546,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 39
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
@@ -562,7 +562,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.912289, 0.912289, 0.912
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 39
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
@@ -582,9 +582,9 @@ theme_override_colors/font_hover_pressed_color = Color(0.980392, 1, 0.937255, 1)
 theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_focus_color = Color(0.912289, 0.912289, 0.912289, 1)
 theme_override_colors/font_pressed_color = Color(0.912289, 0.912289, 0.912289, 1)
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 30
-theme_override_icons/icon = ExtResource("5_515jg")
+theme_override_icons/icon = ExtResource("5_r3qam")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jp6q8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
@@ -599,18 +599,18 @@ expand_icon = true
 [node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-98, 285)
-stream = ExtResource("5_nvfa3")
+stream = ExtResource("6_nhuqb")
 volume_db = 5.0
 bus = &"SFX"
 
 [node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-74, 218)
-stream = ExtResource("4_rpgdu")
+stream = ExtResource("7_m8mc7")
 bus = &"SFX"
 
 [node name="Main Menu Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_rpgdu")
+stream = ExtResource("8_ej2lc")
 volume_db = -10.0
 autoplay = true
 
@@ -629,7 +629,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("7_515jg")
+texture = ExtResource("9_py7ls")
 region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
 patch_margin_left = 59
 patch_margin_top = 60
@@ -650,9 +650,9 @@ offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/icon_max_width = 25
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 30
-theme_override_icons/icon = ExtResource("8_rojxm")
+theme_override_icons/icon = ExtResource("10_3lcah")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
@@ -674,7 +674,7 @@ offset_right = 65.0
 offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
@@ -688,7 +688,7 @@ offset_left = 194.0
 offset_top = 53.0
 offset_right = 443.0
 offset_bottom = 123.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
 text = "Settings"
@@ -723,7 +723,7 @@ offset_left = 186.0
 offset_top = 14.0
 offset_right = 346.0
 offset_bottom = 74.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_mm8x2")
 text = "Sound"
@@ -735,7 +735,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "Master"
 
 [node name="Master Volume" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control"]
@@ -751,7 +751,7 @@ offset_right = 287.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
@@ -761,7 +761,7 @@ offset_left = 389.0
 offset_top = 23.0
 offset_right = 450.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -803,7 +803,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "Music"
 
 [node name="Music" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control2"]
@@ -819,7 +819,7 @@ offset_right = 291.0
 offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
@@ -829,7 +829,7 @@ offset_left = 389.0
 offset_top = 116.0
 offset_right = 450.0
 offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -871,7 +871,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "SFX"
 
 [node name="SFX" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control3"]
@@ -887,7 +887,7 @@ offset_right = 291.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "SFX Volume"
 
@@ -897,7 +897,7 @@ offset_left = 389.0
 offset_top = 207.0
 offset_right = 450.0
 offset_bottom = 256.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -939,7 +939,7 @@ offset_left = 15.0
 offset_top = 365.0
 offset_right = 55.0
 offset_bottom = 405.0
-script = ExtResource("13_teh54")
+script = ExtResource("12_kaq8m")
 
 [node name="Window Mode HBoxContainer" type="HBoxContainer" parent="Options Menu/Node2D/ScrollContainer/Control/Control4"]
 layout_mode = 0
@@ -949,7 +949,7 @@ theme_override_constants/separation = 100
 
 [node name="Window Mode Label" type="Label" parent="Options Menu/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Window Mode"
 
@@ -978,7 +978,7 @@ offset_left = 186.0
 offset_top = 14.0
 offset_right = 346.0
 offset_bottom = 74.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_wwly8")
 text = "Sound"
@@ -990,7 +990,7 @@ offset_left = -38.0
 offset_top = 363.0
 offset_right = 199.0
 offset_bottom = 423.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_wwly8")
 text = "Graphics"
@@ -1002,7 +1002,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "Master"
 
 [node name="Master Volume" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control"]
@@ -1018,7 +1018,7 @@ offset_right = 287.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
@@ -1028,7 +1028,7 @@ offset_left = 406.0
 offset_top = 23.0
 offset_right = 467.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -1055,7 +1055,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "Music"
 
 [node name="Music" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control2"]
@@ -1071,7 +1071,7 @@ offset_right = 291.0
 offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
@@ -1081,7 +1081,7 @@ offset_left = 406.0
 offset_top = 116.0
 offset_right = 467.0
 offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -1108,7 +1108,7 @@ anchors_preset = 0
 offset_top = 67.0
 offset_right = 40.0
 offset_bottom = 107.0
-script = ExtResource("11_mm8x2")
+script = ExtResource("11_gy0ih")
 bus_name = "SFX"
 
 [node name="SFX" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control3"]
@@ -1124,7 +1124,7 @@ offset_right = 291.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "SFX Volume"
 
@@ -1134,7 +1134,7 @@ offset_left = 406.0
 offset_top = 207.0
 offset_right = 467.0
 offset_bottom = 256.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
@@ -1161,7 +1161,7 @@ offset_left = 19.0
 offset_top = 394.0
 offset_right = 59.0
 offset_bottom = 434.0
-script = ExtResource("13_teh54")
+script = ExtResource("12_kaq8m")
 
 [node name="Window Mode HBoxContainer" type="HBoxContainer" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control4"]
 layout_mode = 0
@@ -1173,7 +1173,7 @@ theme_override_constants/separation = 60
 
 [node name="Window Mode Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Window Mode"
 
@@ -1189,7 +1189,7 @@ offset_left = 19.0
 offset_top = 454.0
 offset_right = 59.0
 offset_bottom = 494.0
-script = ExtResource("14_h8xle")
+script = ExtResource("13_634o4")
 
 [node name="Resolution HboxContainer" type="HBoxContainer" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control5"]
 layout_mode = 0
@@ -1201,7 +1201,7 @@ theme_override_constants/separation = 100
 
 [node name="Resolution Label" type="Label" parent="Options Menu/Node2D/Node2D/ScrollContainer/Control/Control5/Resolution HboxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 40
 text = "Resolution"
 
@@ -1241,7 +1241,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("7_515jg")
+texture = ExtResource("9_py7ls")
 region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
 patch_margin_left = 59
 patch_margin_top = 60
@@ -1254,7 +1254,7 @@ offset_left = 169.0
 offset_top = 53.0
 offset_right = 465.0
 offset_bottom = 123.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
 text = "Customize"
@@ -1274,9 +1274,9 @@ offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/icon_max_width = 25
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 30
-theme_override_icons/icon = ExtResource("8_rojxm")
+theme_override_icons/icon = ExtResource("10_3lcah")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
@@ -1306,7 +1306,7 @@ offset_right = 65.0
 offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
@@ -1321,7 +1321,7 @@ offset_left = 54.0
 offset_top = 144.0
 offset_right = 593.0
 offset_bottom = 439.0
-script = ExtResource("15_tiunh")
+script = ExtResource("14_6svwt")
 
 [node name="PanelContainer" type="PanelContainer" parent="Customize/Customize Box"]
 layout_mode = 0
@@ -1349,7 +1349,7 @@ custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("16_y7mvc")
+texture = ExtResource("15_fsuiw")
 
 [node name="Previous Button" type="Button" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow"]
 layout_mode = 1
@@ -1391,31 +1391,31 @@ theme_override_constants/margin_left = 70
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("11_jc25w")
+texture = ExtResource("3_ij00v")
 
 [node name="Character1" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("17_bttlb")
+texture = ExtResource("16_v2fsm")
 
 [node name="Character2" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("18_4rrjx")
+texture = ExtResource("17_82rrg")
 
 [node name="Character3" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("19_686hr")
+texture = ExtResource("18_8r1cu")
 
 [node name="Character4" type="TextureRect" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("20_7s2jj")
+texture = ExtResource("19_m5xu7")
 
 [node name="MarginContainer" type="MarginContainer" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/Character Box"]
 layout_mode = 2
@@ -1426,7 +1426,7 @@ custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("16_y7mvc")
+texture = ExtResource("15_fsuiw")
 flip_h = true
 
 [node name="Next Button" type="Button" parent="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow"]
@@ -1478,7 +1478,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("7_515jg")
+texture = ExtResource("9_py7ls")
 region_rect = Rect2(40.9825, 40.7993, 418.417, 420.135)
 patch_margin_left = 59
 patch_margin_top = 60
@@ -1491,7 +1491,7 @@ offset_left = 169.0
 offset_top = 53.0
 offset_right = 465.0
 offset_bottom = 123.0
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
 text = "Load Game"
@@ -1511,9 +1511,9 @@ offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/icon_max_width = 25
-theme_override_fonts/font = ExtResource("2_aeyej")
+theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 30
-theme_override_icons/icon = ExtResource("8_rojxm")
+theme_override_icons/icon = ExtResource("10_3lcah")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_515jg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
