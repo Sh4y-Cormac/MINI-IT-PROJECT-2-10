@@ -1,9 +1,9 @@
 extends Control
 
-@onready var bagcontainer = $TextureRect/BagSlot
-@onready var Hotbarcontainer = $TextureRect/Hotbar
-@onready var equipment_left = $TextureRect/Equipment_Left
-@onready var equipment_right = $TextureRect/Equipment_Right
+@onready var bagcontainer = $"Inventory GUI/BagSlot"
+@onready var Hotbarcontainer = $"Inventory GUI/Hotbar"
+@onready var equipment = $"Inventory GUI/Equipment"
+
 
 func _get_drag_data(at_position):
 	var dragslotnode = get_slot_node_position(at_position)
@@ -35,7 +35,7 @@ func _drop_data(at_position, dragslotnode):
 		dragslotnode.texture = targettexture
 
 func get_slot_node_position(position):
-	var allslotnodes = (bagcontainer.get_children() + Hotbarcontainer.get_children() + equipment_left.get_children() + equipment_right.get_children())
+	var allslotnodes = (bagcontainer.get_children() + Hotbarcontainer.get_children() + equipment.get_children())
 	
 	for node in allslotnodes:
 		var noderect = node.get_global_rect()
