@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Functions="*res://GUI Scripts/functions.gd"
-StatPopus="*res://GUI Scenes/Stat_popus.tscn"
 
 [display]
 

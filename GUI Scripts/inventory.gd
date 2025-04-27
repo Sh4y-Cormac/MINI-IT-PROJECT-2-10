@@ -43,13 +43,3 @@ func get_slot_node_position(position):
 		var noderect = node.get_global_rect()
 		
 		if noderect.has_point(position): return node
-
-
-
-
-func _on_bag_slot_1_mouse_entered() -> void:
-	StatPopus.ItemPopup(null, null)
-
-
-func _on_bag_slot_1_mouse_exited() -> void:
-	StatPopus.HideItemPopup()
