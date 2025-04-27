@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqlbexh1l48w7"]
+
+[ext_resource type="Script" uid="uid://ck7lp8ilt85f3" path="res://GUI Scenes/slot_nodes.gd" id="1_cwiyn"]
+
+[node name="BagSlot 1" type="TextureRect"]
+custom_minimum_size = Vector2(90, 70)
+expand_mode = 1
+script = ExtResource("1_cwiyn")

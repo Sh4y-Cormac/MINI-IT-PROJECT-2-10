@@ -25,7 +25,6 @@ offset_bottom = 540.0
 texture = ExtResource("2_y0k1r")
 
 [node name="BagSlot" type="GridContainer" parent="Inventory GUI"]
-layout_mode = 0
 offset_left = 21.0
 offset_top = 110.0
 offset_right = 586.0
@@ -38,6 +37,91 @@ columns = 6
 custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
 texture = ExtResource("4_qayd1")
+expand_mode = 1
+
+[node name="BagSlot 2" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 3" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 4" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 5" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 6" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 7" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 8" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 9" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 10" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 11" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 12" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 13" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 14" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 15" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 16" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 17" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+expand_mode = 1
+
+[node name="BagSlot 18" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
 expand_mode = 1
 
 [node name="Hotbar" type="GridContainer" parent="Inventory GUI"]
@@ -156,6 +240,3 @@ layout_mode = 2
 texture = ExtResource("6_0msnl")
 expand_mode = 1
 stretch_mode = 3
-
-[connection signal="mouse_entered" from="Inventory GUI/BagSlot/BagSlot 1" to="." method="_on_bag_slot_1_mouse_entered"]
-[connection signal="mouse_exited" from="Inventory GUI/BagSlot/BagSlot 1" to="." method="_on_bag_slot_1_mouse_exited"]

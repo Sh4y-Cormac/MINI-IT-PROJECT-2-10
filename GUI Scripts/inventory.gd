@@ -6,6 +6,7 @@ extends Control
 @onready var trashcan = $"Inventory GUI/TrashCan"
 
 
+
 func _get_drag_data(at_position):
 	var dragslotnode = get_slot_node_position(at_position)
 	
