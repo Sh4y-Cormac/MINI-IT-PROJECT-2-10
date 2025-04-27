@@ -3,7 +3,7 @@ extends Control
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var Hotbarcontainer = $"Inventory GUI/Hotbar"
 @onready var equipment = $"Inventory GUI/Equipment"
-@onready var trashcan = $"Inventory GUI/TrashCan/Trash Icon"
+@onready var trashcan = $"Inventory GUI/TrashCan"
 
 
 
@@ -28,13 +28,13 @@ func _drop_data(at_position, dragslotnode):
 	var targetslotnode = get_slot_node_position(at_position)
 	var targettexture = targetslotnode.texture
 	
-	targetslotnode.texture == dragslotnode.texture
+	targetslotnode.texture  = dragslotnode.texture
 	
 	if targettexture == null:
 		dragslotnode.texture = null
+	
 	else:
 		dragslotnode.texture = targettexture
-	
 
 func get_slot_node_position(position):
 	
