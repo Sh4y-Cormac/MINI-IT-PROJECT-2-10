@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://b3l6yk35py4hw"]
+[gd_scene load_steps=58 format=4 uid="uid://b3l6yk35py4hw"]
 
 [ext_resource type="Texture2D" uid="uid://c1wy3ljqvr2gq" path="res://Assets/Sprites/tileSetRedone.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dyk6ggarhybd5" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dp6mlw6aknl63" path="res://scenes/sign.tscn" id="13_kvuet"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="14_ir15t"]
 [ext_resource type="Texture2D" uid="uid://daxdi82vvqg2j" path="res://Assets/Images/Feedback.png" id="15_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bh6tbmbih8gl7" path="res://GUI Scenes/stats_window.tscn" id="24_e1j6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvuet"]
 texture = ExtResource("1_iywne")
@@ -538,9 +539,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -330.0
-offset_top = -1348.0
+offset_top = -286.0
 offset_right = 330.0
-offset_bottom = -776.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -1275,6 +1276,10 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_bhx41")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Stats Window" parent="CanvasLayer" instance=ExtResource("24_e1j6l")]
 
 [connection signal="mouse_entered" from="player/Control/CanvasLayer/Settings Button" to="player/Control" method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="player/Control/CanvasLayer/Settings Button" to="player/Control" method="_on_settings_button_pressed"]
