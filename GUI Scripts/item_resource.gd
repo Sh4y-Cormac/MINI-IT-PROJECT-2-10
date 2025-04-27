@@ -6,4 +6,4 @@ extends Resource
 @export var icon : CompressedTexture2D
 
 @export var inventarSlot : String
-@export var InventarPosition : int
+@export var inventarPosition : int
