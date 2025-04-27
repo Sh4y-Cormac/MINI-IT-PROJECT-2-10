@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1wy3ljqvr2gq"
-path="res://.godot/imported/tileSetRedone.png-fd6b039a65bdde642a74cb10f4aa6fca.ctex"
+uid="uid://dadb2iifonvsk"
+path="res://.godot/imported/slime.png-0079c41283c4a6c9999ec35ebeebe023.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/tileSetRedone.png"
-dest_files=["res://.godot/imported/tileSetRedone.png-fd6b039a65bdde642a74cb10f4aa6fca.ctex"]
+source_file="res://Assets/Sprites/slime.png"
+dest_files=["res://.godot/imported/slime.png-0079c41283c4a6c9999ec35ebeebe023.ctex"]
 
 [params]
 
