@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://cmqnqb5jn1fqr" path="res://Assets/Images/Inventory GUI.png" id="2_y0k1r"]
-[ext_resource type="PackedScene" uid="uid://bj0dao6npurd8" path="res://Nodes.tscn" id="3_dj775"]
+[ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="4_qayd1"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
 [ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
 
@@ -33,59 +33,96 @@ theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 0
 columns = 6
 
-[node name="Slot 1" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 1" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="Slot 2" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 2" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 3" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 3" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 4" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 4" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 5" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 5" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 6" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 6" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 7" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 7" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 8" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 8" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 9" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 9" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 10" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 10" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 11" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 11" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 12" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 12" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 13" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 13" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 14" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 14" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 15" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 15" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 16" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 16" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 17" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 17" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 18" parent="Inventory GUI/BagSlot" instance=ExtResource("3_dj775")]
+[node name="Slot 18" type="TextureRect" parent="Inventory GUI/BagSlot"]
+custom_minimum_size = Vector2(90, 70)
 layout_mode = 2
+expand_mode = 1
 
 [node name="Hotbar" type="GridContainer" parent="Inventory GUI"]
 layout_mode = 0
@@ -97,45 +134,56 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = -1
 columns = 10
 
-[node name="Slot 1" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 1" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="Slot 2" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 2" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 3" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 3" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 4" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 4" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 5" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 5" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 6" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 6" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 7" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 7" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 8" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 8" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 9" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 9" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
-[node name="Slot 10" parent="Inventory GUI/Hotbar" instance=ExtResource("3_dj775")]
+[node name="Slot 10" type="TextureRect" parent="Inventory GUI/Hotbar"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+expand_mode = 1
 
 [node name="Equipment" type="GridContainer" parent="Inventory GUI"]
 layout_mode = 0
@@ -145,21 +193,29 @@ offset_right = 681.0
 offset_bottom = 265.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 1" parent="Inventory GUI/Equipment" instance=ExtResource("3_dj775")]
+[node name="Slot 1" type="TextureRect" parent="Inventory GUI/Equipment"]
 custom_minimum_size = Vector2(64, 55)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="Slot 2" parent="Inventory GUI/Equipment" instance=ExtResource("3_dj775")]
+[node name="Slot 2" type="TextureRect" parent="Inventory GUI/Equipment"]
 custom_minimum_size = Vector2(64, 55)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="Slot 3" parent="Inventory GUI/Equipment" instance=ExtResource("3_dj775")]
+[node name="Slot 3" type="TextureRect" parent="Inventory GUI/Equipment"]
 custom_minimum_size = Vector2(64, 55)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
-[node name="Slot 4" parent="Inventory GUI/Equipment" instance=ExtResource("3_dj775")]
+[node name="Slot 4" type="TextureRect" parent="Inventory GUI/Equipment"]
 custom_minimum_size = Vector2(64, 55)
 layout_mode = 2
+texture = ExtResource("4_qayd1")
+expand_mode = 1
 
 [node name="Character" type="MarginContainer" parent="Inventory GUI"]
 custom_minimum_size = Vector2(20, 0)

@@ -14,7 +14,7 @@ func pause():
 func testEsc():
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().pause:
+	elif Input.is_action_just_pressed("esc") and get_tree().paused:
 		resume()
 
 

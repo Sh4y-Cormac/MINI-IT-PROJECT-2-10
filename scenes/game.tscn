@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://b3l6yk35py4hw"]
+[gd_scene load_steps=33 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://c1wy3ljqvr2gq" path="res://Assets/Sprites/tileSetRedone.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dyk6ggarhybd5" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://dp6mlw6aknl63" path="res://scenes/sign.tscn" id="13_kvuet"]
-[ext_resource type="PackedScene" uid="uid://dvftl3cl674tt" path="res://pause_menu.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://pause_menu.tscn" id="16_ca42v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvuet"]
 texture = ExtResource("1_iywne")

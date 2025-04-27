@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj0dao6npurd8"]
-
-[ext_resource type="Script" uid="uid://cnrr6w3t8myq4" path="res://nodes.gd" id="1_oaxbc"]
-
-[node name="Slot 1" type="TextureRect"]
-custom_minimum_size = Vector2(90, 70)
-expand_mode = 1
-script = ExtResource("1_oaxbc")
