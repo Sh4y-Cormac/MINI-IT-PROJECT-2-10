@@ -250,44 +250,39 @@ position = Vector2(302, 428)
 position = Vector2(13, 16)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_iywne")
-volume_db = -20.0
-autoplay = true
+[node name="platforms" type="Node" parent="."]
 
-[node name="Platforms" type="Node" parent="."]
-
-[node name="platform3" parent="Platforms" instance=ExtResource("3_lnu2h")]
+[node name="platform3" parent="platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(3630, -436)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform3"]
 libraries = {
 &"": SubResource("AnimationLibrary_rysoc")
 }
 autoplay = "move"
 
-[node name="platform4" parent="Platforms" instance=ExtResource("3_lnu2h")]
+[node name="platform4" parent="platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(2192, -244)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform4"]
 libraries = {
 &"": SubResource("AnimationLibrary_5newe")
 }
 autoplay = "new_animation"
 
-[node name="platform" parent="Platforms" instance=ExtResource("3_lnu2h")]
+[node name="platform" parent="platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(1903, 11)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform"]
 libraries = {
 &"": SubResource("AnimationLibrary_1kice")
 }
 autoplay = "movw"
 
-[node name="platform2" parent="Platforms" instance=ExtResource("3_lnu2h")]
+[node name="platform2" parent="platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(3280, -436)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform2"]
 libraries = {
 &"": SubResource("AnimationLibrary_bt5mj")
 }
@@ -381,19 +376,6 @@ texture = ExtResource("10_kvpfn")
 centered = false
 offset = Vector2(1152, 248)
 
-[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="."]
-visible = false
-position = Vector2(-98, 285)
-stream = ExtResource("11_bt5mj")
-volume_db = 5.0
-bus = &"SFX"
-
-[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="."]
-visible = false
-position = Vector2(-74, 218)
-stream = ExtResource("12_e1j6l")
-bus = &"SFX"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_bhx41")
@@ -408,3 +390,23 @@ position = Vector2(2544, -287)
 
 [node name="Slime2" parent="." instance=ExtResource("16_rysoc")]
 position = Vector2(2994, -318)
+
+[node name="audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("5_iywne")
+volume_db = -20.0
+autoplay = true
+
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("11_bt5mj")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-74, 218)
+stream = ExtResource("12_e1j6l")
+bus = &"SFX"
