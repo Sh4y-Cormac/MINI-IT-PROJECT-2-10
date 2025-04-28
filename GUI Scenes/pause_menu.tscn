@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd37f8q70m0gh"]
 
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://d3jno6x0xyhi1" path="res://GUI Scripts/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Script" uid="uid://s0mrbj3gffl4" path="res://GUI Scripts/pause_menu.gd" id="1_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
 bg_color = Color(0.247059, 0.196078, 0.176471, 1)
