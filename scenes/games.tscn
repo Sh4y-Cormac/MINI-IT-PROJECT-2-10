@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5ig6ejelbt48"]
+[gd_scene load_steps=3 format=3 uid="uid://0ci1f8ntgij8"]
 
 [ext_resource type="PackedScene" uid="uid://b1h47drvxft2e" path="res://scenes/simple_movement.tscn" id="1_umruc"]
 
@@ -9,6 +9,7 @@ distance = -1.0
 
 [node name="simple_movement" parent="." instance=ExtResource("1_umruc")]
 position = Vector2(98, 136)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(194, 109)
