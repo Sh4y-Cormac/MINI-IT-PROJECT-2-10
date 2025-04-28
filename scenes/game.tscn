@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://pause_menu.tscn" id="16_ca42v"]
-[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="16_rysoc"]
+[ext_resource type="PackedScene" uid="uid://rt8vlns85gol" path="res://scenes/slime.tscn" id="16_rysoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 texture = ExtResource("1_ir15t")
