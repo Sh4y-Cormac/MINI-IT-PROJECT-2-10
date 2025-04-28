@@ -46,7 +46,7 @@ func _on_load_button_mouse_entered() -> void:
 func _on_start_button_pressed() -> void:
 	$"Enter Sound Effect".play()
 	await $"Enter Sound Effect".finished
-	Functions.load_screen_to_scene("res://scenes/game.tscn")
+	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()
