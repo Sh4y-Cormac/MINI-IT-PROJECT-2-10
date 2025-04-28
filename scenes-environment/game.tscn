@@ -1,9 +1,9 @@
 [gd_scene load_steps=36 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
-[ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes/platform.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes/killzone.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes-environment/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://d3n8gipsaoqse" path="res://Assets/Sprites/background.png" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://djchjg3jr26po" path="res://Assets/Sprites/middleground.png" id="7_gee14"]
@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="16_ca42v"]
-[ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes/slime.tscn" id="16_rysoc"]
+[ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 texture = ExtResource("1_ir15t")
@@ -385,12 +385,6 @@ libraries = {
 
 [node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
 
-[node name="Slime" parent="." instance=ExtResource("16_rysoc")]
-position = Vector2(2544, -287)
-
-[node name="Slime2" parent="." instance=ExtResource("16_rysoc")]
-position = Vector2(2994, -318)
-
 [node name="audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
@@ -410,3 +404,11 @@ visible = false
 position = Vector2(-74, 218)
 stream = ExtResource("12_e1j6l")
 bus = &"SFX"
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="Slime" parent="enemies" instance=ExtResource("16_rysoc")]
+position = Vector2(2544, -287)
+
+[node name="Slime2" parent="enemies" instance=ExtResource("16_rysoc")]
+position = Vector2(2994, -318)
