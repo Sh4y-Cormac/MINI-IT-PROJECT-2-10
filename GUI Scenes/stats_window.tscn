@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3 uid="uid://bekay7gmvcxfp"]
+
+[ext_resource type="Texture2D" path="res://Assets/Images/Stat box.png" id="1_jrpsl"]
+[ext_resource type="Script" path="res://GUI Scripts/stats_window.gd" id="1_l0r8f"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_l0r8f"]
+
+[node name="Stats Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l0r8f")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.077
+anchor_right = 0.675
+anchor_bottom = 0.752
+offset_left = -50.576
+offset_top = 18.104
+offset_right = -50.6
+offset_bottom = 21.704
+texture = ExtResource("1_jrpsl")
+
+[node name="HP" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 0.29
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = -0.723999
+offset_top = 0.109993
+offset_right = 2.5
+offset_bottom = 1.83
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "HP "
+
+[node name="Label_HP" type="Label" parent="NinePatchRect/HP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4
+anchor_right = 1.914
+anchor_bottom = 1.0
+offset_left = 0.039978
+offset_top = -1.0
+offset_right = -1.95999
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+
+[node name="Atk" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17
+anchor_top = 0.397
+anchor_right = 0.511
+anchor_bottom = 0.485
+offset_left = 0.109993
+offset_top = -3.07701
+offset_right = 0.912979
+offset_bottom = 0.11499
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "Atk "
+
+[node name="Label_ATK" type="Label" parent="NinePatchRect/Atk"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.343
+anchor_right = 1.843
+anchor_bottom = 1.0
+offset_left = -0.0490265
+offset_top = 2.0
+offset_right = -0.0670166
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+
+[node name="Def" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.485
+anchor_right = 0.5
+anchor_bottom = 0.571
+offset_left = 0.0250015
+offset_top = 0.11499
+offset_right = 1.5
+offset_bottom = 0.18898
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "Def "
+
+[node name="Label_DEF" type="Label" parent="NinePatchRect/Def"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4
+anchor_right = 1.914
+anchor_bottom = 1.0
+offset_left = 0.0599976
+offset_top = -1.0
+offset_right = -1.95999
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+
+[node name="LVL" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.601
+anchor_right = 0.506
+anchor_bottom = 0.698
+offset_left = 0.19101
+offset_top = -0.0410156
+offset_right = -0.00201416
+offset_bottom = 0.182007
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "LVL "
+
+[node name="Label_LVL" type="Label" parent="NinePatchRect/LVL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4
+anchor_right = 1.914
+anchor_bottom = 1.0
+offset_left = 0.0599976
+offset_top = -1.0
+offset_right = -1.95999
+theme_override_fonts/font = ExtResource("2_l0r8f")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
