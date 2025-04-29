@@ -217,7 +217,7 @@ layout_mode = 2
 texture = ExtResource("4_qayd1")
 expand_mode = 1
 
-[node name="Character" type="MarginContainer" parent="Inventory GUI"]
+[node name="Character Display" type="MarginContainer" parent="Inventory GUI"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 0
 offset_left = 739.0
@@ -225,7 +225,7 @@ offset_top = 60.0
 offset_right = 899.0
 offset_bottom = 191.0
 
-[node name="TextureRect" type="TextureRect" parent="Inventory GUI/Character"]
+[node name="TextureRect" type="TextureRect" parent="Inventory GUI/Character Display"]
 layout_mode = 2
 texture = ExtResource("5_5k12h")
 expand_mode = 1
