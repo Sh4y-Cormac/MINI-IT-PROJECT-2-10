@@ -19,14 +19,28 @@ func testEsc():
 
 
 func _on_resume_pressed() -> void:
+	$"Enter Sound Effect".play()
+	await $"Enter Sound Effect".finished
 	resume()
 
 func _on_option_pressed() -> void:
-	pass # Replace with function body.
+	$"Enter Sound Effect".play()
+	await $"Enter Sound Effect".finished
 
 
 func _on_quit_pressed() -> void:
+	$"Enter Sound Effect".play()
+	await $"Enter Sound Effect".finished
 	get_tree().quit()
 	
 func _process(delta):
 	testEsc()
+
+func _on_resume_mouse_entered() -> void:
+	$"Hovering Sound Effect".play()
+
+func _on_option_mouse_entered() -> void:
+	$"Hovering Sound Effect".play()
+
+func _on_quit_mouse_entered() -> void:
+	$"Hovering Sound Effect".play()
