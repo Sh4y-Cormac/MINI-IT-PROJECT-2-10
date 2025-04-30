@@ -624,6 +624,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_n8moy")
 text = "QUIT GAME"
 
 [node name="Settings Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 47.0
 offset_right = 448.0
@@ -635,6 +636,7 @@ text = "Settings"
 horizontal_alignment = 1
 
 [node name="Label Separator" type="HSeparator" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 123.0
 offset_right = 593.0
