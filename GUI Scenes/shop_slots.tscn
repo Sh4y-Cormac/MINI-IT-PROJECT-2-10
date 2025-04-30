@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bci5cpqqlsnb4"]
+
+[ext_resource type="Texture2D" uid="uid://nqepyobxgl4t" path="res://Assets/Images/Panel.png" id="1_gfmxd"]
+
+[node name="Shop Slots" type="PanelContainer"]
+offset_right = 208.0
+offset_bottom = 187.0
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_gfmxd")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2

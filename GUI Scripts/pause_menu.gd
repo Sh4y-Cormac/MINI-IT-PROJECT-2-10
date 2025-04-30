@@ -26,6 +26,7 @@ func _on_resume_pressed() -> void:
 func _on_option_pressed() -> void:
 	$"Enter Sound Effect".play()
 	await $"Enter Sound Effect".finished
+	$NinePatchRect.show()
 
 
 func _on_quit_pressed() -> void:

@@ -460,7 +460,7 @@ flip_h = true
 
 [node name="Rain Particles" type="CPUParticles2D" parent="Responsive Background/Menu Background"]
 position = Vector2(702, 11)
-amount = 400
+amount = 500
 emission_shape = 3
 emission_rect_extents = Vector2(1000, 1)
 gravity = Vector2(-200, 1500)
@@ -942,7 +942,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
