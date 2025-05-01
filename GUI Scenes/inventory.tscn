@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://8xfcx48xnobu"]
+[gd_scene load_steps=18 format=3 uid="uid://8xfcx48xnobu"]
 
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://cmqnqb5jn1fqr" path="res://Assets/Images/Inventory GUI.png" id="2_y0k1r"]
 [ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scenes/inventory_slot.tscn" id="3_w243r"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
 [ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
+[ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj775"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jr73w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr30h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ji5u1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgs8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg4rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo8w5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsuan"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unkn6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bttqd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8g3m6"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -237,6 +260,31 @@ offset_right = -7.0
 offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="Exit Button" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 455.0
+offset_right = 777.0
+offset_bottom = 495.0
+texture = ExtResource("6_w243r")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Exit Button"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 40.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj775")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jr73w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rr30h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ji5u1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bgs8n")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pg4rd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qo8w5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wsuan")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_unkn6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bttqd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8g3m6")
 
 [connection signal="mouse_entered" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_entered"]
 [connection signal="mouse_exited" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_exited"]

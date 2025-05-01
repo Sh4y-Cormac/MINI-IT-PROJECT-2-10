@@ -5,9 +5,10 @@
 
 [resource]
 script = ExtResource("2_37dta")
-title = "Short Sword"
+title = "Long Sword"
 icon = ExtResource("1_eh0qa")
-description = "Short Sword for quick stabbing. It is very handy when dealing with enemy at close distance."
+description = "Long Sword for long range slashing. It is very handy when dealing with enemy at great distance."
+costs = ""
 name = "Offense"
 inventarSlot = "BagSlot"
 InventarPosition = 1
