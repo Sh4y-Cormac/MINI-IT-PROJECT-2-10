@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bci5cpqqlsnb4"]
+[gd_scene load_steps=3 format=3 uid="uid://bci5cpqqlsnb4"]
 
+[ext_resource type="Script" uid="uid://dtbxo276yxkc3" path="res://GUI Scripts/shop_slots.gd" id="1_60fch"]
 [ext_resource type="Texture2D" uid="uid://nqepyobxgl4t" path="res://Assets/Images/Panel.png" id="1_gfmxd"]
 
 [node name="Shop Slots" type="PanelContainer"]
 offset_right = 208.0
 offset_bottom = 187.0
+script = ExtResource("1_60fch")
 
 [node name="BackGround" type="TextureRect" parent="."]
 layout_mode = 2
@@ -12,3 +14,6 @@ texture = ExtResource("1_gfmxd")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
+expand_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

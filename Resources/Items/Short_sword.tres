@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://yvfr0qu7hq15"]
+
+[ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="1_eh0qa"]
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="2_37dta"]
+
+[resource]
+script = ExtResource("2_37dta")
+title = "Short Sword"
+icon = ExtResource("1_eh0qa")
+description = "Short Sword for quick stabbing. It is very handy when dealing with enemy at close distance."
+metadata/_custom_type_script = "uid://b05mrq30fldgf"
