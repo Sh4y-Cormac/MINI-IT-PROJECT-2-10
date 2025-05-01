@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdhhdxl3b04v4"]
+[gd_scene load_steps=6 format=3 uid="uid://bdhhdxl3b04v4"]
 
 [ext_resource type="Script" uid="uid://blvwy6m85kt20" path="res://scripts-environment/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="2_g2els"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(21, 64)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kq5nu"]
+distance = -32.0
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
@@ -26,3 +29,9 @@ sprite_frames = SubResource("SpriteFrames_qhqgy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_kq5nu")
