@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=12 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/Sprites/tilemap-stage1-sheet.png" id="1_bb13u"]
 [ext_resource type="PackedScene" uid="uid://cbd0ov7ogyucj" path="res://scenes-environment/platform_level_1.tscn" id="2_ax42v"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_0lq06"]
+[ext_resource type="Texture2D" uid="uid://cwtir0mpl6ers" path="res://Assets/Sprites/background_level1-sheet.png" id="4_xgemp"]
+[ext_resource type="Texture2D" uid="uid://bcfafusvbn15g" path="res://Assets/Sprites/backgroundlayer1-sheet.png" id="5_xgemp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_bb13u")
@@ -196,10 +198,11 @@ layer_0/tile_data = PackedInt32Array(131071, 0, 4, 65536, 0, 4, 65537, 0, 4, 655
 position = Vector2(1503, -86)
 
 [node name="player" parent="." instance=ExtResource("3_0lq06")]
-position = Vector2(1, -16)
+position = Vector2(-1, -22)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
+position = Vector2(147, 8)
+zoom = Vector2(2.5, 2.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -215,3 +218,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_xgemp")
 }
 autoplay = "moving_platform_L1"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(93, -7)
+motion_mirroring = Vector2(1350, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(461, -82)
+scale = Vector2(0.173964, 0.116846)
+texture = ExtResource("4_xgemp")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(113, 0)
+motion_mirroring = Vector2(670, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(108, -14)
+scale = Vector2(0.114446, 0.110129)
+texture = ExtResource("5_xgemp")
