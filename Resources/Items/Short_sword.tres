@@ -7,8 +7,7 @@
 script = ExtResource("2_37dta")
 title = "Long Sword"
 icon = ExtResource("1_eh0qa")
-description = "Long Sword for long range slashing. It is very handy when dealing with enemy at great distance."
-costs = ""
+description = "Long Sword for long range slashing. It is very handy when dealing with enemy at greatdistance."
 name = "Offense"
 inventarSlot = "BagSlot"
 InventarPosition = 1
