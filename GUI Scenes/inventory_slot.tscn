@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6h40evjkb501"]
+
+[ext_resource type="Script" uid="uid://d2p2klhx4s5le" path="res://GUI Scripts/inventory_slot.gd" id="1_2oepo"]
+
+[node name="Slot 1" type="TextureRect"]
+custom_minimum_size = Vector2(90, 70)
+expand_mode = 1
+script = ExtResource("1_2oepo")

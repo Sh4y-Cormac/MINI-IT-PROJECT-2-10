@@ -5,7 +5,30 @@ extends Control
 @onready var equipment = $"Inventory GUI/Equipment"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 
+var inventoryDict = {}
 
+var items = ["res://Resources/Items/Short_sword.tres"]
+
+func _ready():
+	inventoryDict = {
+		"BagSlot": bagcontainer,
+		"Hotbar": Hotbarcontainer,
+		"Equipment": equipment
+	}
+	
+	_refresh_ui()
+
+func add_item(item: Item):
+	item.inventarSlot = "BagSlot"
+	item.InventarPosition = _get_next_empty_bag_slot()
+	
+	item.add(item.resource_path)
+
+func _get_next_empty_bag_slot():
+	for slot in inventoryDict["BagSlot"].get_children():
+		if slot.texture == null:
+			var slotnumber = int(slot.name.split("Slot")[1])
+			return slotnumber
 
 func _get_drag_data(at_position):
 	var dragslotnode = get_slot_node_position(at_position)
@@ -27,14 +50,10 @@ func _can_drop_data(at_position, data):
 func _drop_data(at_position, dragslotnode):
 	var targetslotnode = get_slot_node_position(at_position)
 	var targettexture = targetslotnode.texture
+	var targetResource = targetslotnode.itemResource
 	
-	targetslotnode.texture  = dragslotnode.texture
-	
-	if targettexture == null:
-		dragslotnode.texture = null
-	
-	else:
-		dragslotnode.texture = targettexture
+	targetslotnode.set_new_data(dragslotnode.itemResource)
+	dragslotnode.set_new_data(targetResource)
 
 func get_slot_node_position(position):
 	
@@ -44,3 +63,17 @@ func get_slot_node_position(position):
 		var noderect = node.get_global_rect()
 		
 		if noderect.has_point(position): return node
+
+func _refresh_ui():
+	for item in items:
+		item = load(item)
+		
+		var inventarSlot = item["inventarSlot"]
+		var inventarPosition = item["InventarPosition"]
+		var icon = item["icon"]
+		
+		for slot in inventoryDict[inventarSlot].get_children():
+			var slotNumber = int(slot.name.split("Slot")[1])
+			
+			if slotNumber == inventarPosition:
+				slot.set_new_data(item)
