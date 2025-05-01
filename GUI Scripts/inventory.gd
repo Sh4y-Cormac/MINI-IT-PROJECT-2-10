@@ -44,16 +44,23 @@ func _get_drag_data(at_position):
 
 func _can_drop_data(at_position, data):
 	var targetslotnode = get_slot_node_position(at_position)
+	var onTrashCan = _on_trash_can(at_position)
 	
-	return targetslotnode != null
+	return targetslotnode != null || onTrashCan
 
 func _drop_data(at_position, dragslotnode):
-	var targetslotnode = get_slot_node_position(at_position)
-	var targettexture = targetslotnode.texture
-	var targetResource = targetslotnode.itemResource
+	var onTrashCan = _on_trash_can(at_position)
 	
-	targetslotnode.set_new_data(dragslotnode.itemResource)
-	dragslotnode.set_new_data(targetResource)
+	if onTrashCan:
+		dragslotnode.set_new_data(null)
+	
+	else:
+		var targetslotnode = get_slot_node_position(at_position)
+		var targettexture = targetslotnode.texture
+		var targetResource = targetslotnode.itemResource
+		
+		targetslotnode.set_new_data(dragslotnode.itemResource)
+		dragslotnode.set_new_data(targetResource)
 
 func get_slot_node_position(position):
 	
@@ -63,6 +70,10 @@ func get_slot_node_position(position):
 		var noderect = node.get_global_rect()
 		
 		if noderect.has_point(position): return node
+
+func _on_trash_can(position):
+	return trashcan.get_global_rect().has_point(position)
+	
 
 func _refresh_ui():
 	for item in items:
