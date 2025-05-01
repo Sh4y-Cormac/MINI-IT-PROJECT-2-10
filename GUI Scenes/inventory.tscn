@@ -237,3 +237,6 @@ offset_right = -7.0
 offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[connection signal="mouse_entered" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_exited"]

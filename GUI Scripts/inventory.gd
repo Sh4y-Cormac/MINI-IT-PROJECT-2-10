@@ -1,13 +1,15 @@
 extends Control
 
+signal dropOut
+
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var Hotbarcontainer = $"Inventory GUI/Hotbar"
 @onready var equipment = $"Inventory GUI/Equipment"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 
 var inventoryDict = {}
-
 var items = ["res://Resources/Items/Short_sword.tres"]
+var onInventory = false
 
 func _ready():
 	inventoryDict = {
@@ -46,12 +48,16 @@ func _can_drop_data(at_position, data):
 	var targetslotnode = get_slot_node_position(at_position)
 	var onTrashCan = _on_trash_can(at_position)
 	
-	return targetslotnode != null || onTrashCan
+	return targetslotnode != null || onTrashCan || not onInventory
 
 func _drop_data(at_position, dragslotnode):
 	var onTrashCan = _on_trash_can(at_position)
 	
 	if onTrashCan:
+		dragslotnode.set_new_data(null)
+	
+	elif not onInventory:
+		dropOut.emit(dragslotnode.itemResource, at_position)
 		dragslotnode.set_new_data(null)
 	
 	else:
@@ -88,3 +94,11 @@ func _refresh_ui():
 			
 			if slotNumber == inventarPosition:
 				slot.set_new_data(item)
+
+
+func _on_inventory_gui_mouse_entered() -> void:
+	onInventory = true
+
+
+func _on_inventory_gui_mouse_exited() -> void:
+	onInventory = false
