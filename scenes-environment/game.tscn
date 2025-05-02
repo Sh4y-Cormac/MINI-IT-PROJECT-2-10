@@ -388,9 +388,11 @@ libraries = {
 [node name="audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+process_mode = 3
 stream = ExtResource("5_iywne")
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
 visible = false
