@@ -241,6 +241,7 @@ text = "PAUSED"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Pause"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 73.0
 offset_right = 372.0
@@ -304,12 +305,14 @@ visible = false
 position = Vector2(-98, 285)
 stream = ExtResource("3_ao0pm")
 volume_db = 5.0
+max_distance = 1e+10
 bus = &"SFX"
 
 [node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-74, 218)
 stream = ExtResource("4_ndr50")
+max_distance = 1e+10
 bus = &"SFX"
 
 [node name="Options" type="NinePatchRect" parent="."]

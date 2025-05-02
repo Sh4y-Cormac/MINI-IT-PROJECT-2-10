@@ -1,7 +1,7 @@
 extends Control
 
 @export var description : NinePatchRect
-
+@export var gold : int
 
 
 func set_description(item : Item):
