@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://p8a145kemlr7"]
+[gd_scene load_steps=25 format=3 uid="uid://p8a145kemlr7"]
 
 [ext_resource type="Script" uid="uid://co8bl3fqwcla0" path="res://GUI Scripts/shop_gui.gd" id="1_4ba3t"]
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="1_jtdgj"]
@@ -13,6 +13,46 @@ Label/colors/font_shadow_color = Color(0, 0, 0, 0.607843)
 Label/font_sizes/font_size = 20
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.658824)
 RichTextLabel/font_sizes/normal_font_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnexr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mca05"]
+bg_color = Color(0.129412, 0.109804, 0, 0.698039)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.74558, 0.74558, 0.74558, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wj6w"]
+bg_color = Color(0.129412, 0.109804, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.74558, 0.74558, 0.74558, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb6we"]
+bg_color = Color(0.129412, 0.109804, 0, 0.368627)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.74558, 0.74558, 0.74558, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j8a4"]
 
@@ -35,6 +75,17 @@ RichTextLabel/font_sizes/normal_font_size = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uypci"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t01xl"]
+
+[sub_resource type="GDScript" id="GDScript_quggr"]
+resource_name = "gold"
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Gold : \" + \"10000\"
+	
+"
 
 [node name="Shop GUI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -185,10 +236,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -307.0
-offset_top = -153.0
-offset_right = -49.0
-offset_bottom = 76.0
+offset_left = -309.0
+offset_top = -121.0
+offset_right = -51.0
+offset_bottom = 108.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("3_g5vqq")
@@ -215,21 +266,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scroll_active = false
 
-[node name="Cost" type="RichTextLabel" parent="NinePatchRect/Description"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = 50.5
-offset_right = -10.0
-offset_bottom = 90.5
-grow_horizontal = 2
-grow_vertical = 2
-scroll_active = false
-
 [node name="Icon" type="TextureRect" parent="NinePatchRect/Description"]
 layout_mode = 1
 anchors_preset = 3
@@ -244,12 +280,40 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 
+[node name="Cost" type="Label" parent="NinePatchRect/Description"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 160.0
+offset_right = 142.0
+offset_bottom = 210.0
+horizontal_alignment = 1
+
 [node name="VSeparator" type="VSeparator" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 82.0
 offset_right = 451.0
 offset_bottom = 453.0
+
+[node name="Buy" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -117.0
+offset_right = -141.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_77pke")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vnexr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mca05")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4wj6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sb6we")
+text = "BUY"
 
 [node name="Exit Button" type="TextureRect" parent="."]
 layout_mode = 0
@@ -297,14 +361,7 @@ offset_top = 8.0
 offset_right = 186.0
 offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("3_77pke")
-text = "Coins : $10000"
 horizontal_alignment = 1
+script = SubResource("GDScript_quggr")
 
-[node name="Price Display" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 670.0
-offset_top = 413.0
-offset_right = 926.0
-offset_bottom = 475.0
-texture = ExtResource("3_g5vqq")
-region_rect = Rect2(0, 0, 30, 30)
+[connection signal="pressed" from="NinePatchRect/Buy" to="." method="_on_buy_pressed"]

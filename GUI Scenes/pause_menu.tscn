@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bd37f8q70m0gh"]
+[gd_scene load_steps=29 format=3 uid="uid://bd37f8q70m0gh"]
 
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_hdmo1"]
 [ext_resource type="Script" uid="uid://d3jno6x0xyhi1" path="res://GUI Scripts/pause_menu.gd" id="1_nwcfo"]
@@ -9,18 +9,6 @@
 [ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Scripts/control.gd" id="7_agixi"]
 [ext_resource type="Script" uid="uid://dumkqb4xlj0f1" path="res://GUI Scripts/control_4.gd" id="8_l1o8a"]
 [ext_resource type="Script" uid="uid://je02wp1judll" path="res://GUI Scripts/control_5.gd" id="9_amgxq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
-bg_color = Color(0.247059, 0.196078, 0.176471, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.184314, 0.184314, 0.184314, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05uyy"]
 
@@ -71,7 +59,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HSeparator:modulate")
+tracks/1/path = NodePath("Pause:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -79,138 +67,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Resume:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/Option:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/Quit:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PanelContainer2:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("VBoxContainer/Quit:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("VBoxContainer/Resume:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("VBoxContainer/Option:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("NinePatchRect:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("NinePatchRect:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_d3xb4"]
@@ -226,12 +82,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.0941176)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.572549)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HSeparator:modulate")
+tracks/1/path = NodePath("Pause:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -239,114 +95,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Resume:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/Option:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/Quit:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PanelContainer2:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("VBoxContainer/Quit:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("VBoxContainer/Resume:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("VBoxContainer/Option:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mxa3g"]
@@ -446,17 +194,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nwcfo")
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_left = 392.0
-offset_top = 158.0
-offset_right = 765.0
-offset_bottom = 431.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nwcfo")
-
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -467,26 +204,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="HSeparator" type="HSeparator" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 409.0
-offset_top = 244.0
-offset_right = 741.0
-offset_bottom = 248.0
-
-[node name="Label" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 464.0
-offset_top = 182.0
-offset_right = 689.0
-offset_bottom = 231.0
-theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 40
-text = "PAUSE MENU"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Pause" type="NinePatchRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -494,17 +212,57 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = -67.0
-offset_right = 134.0
-offset_bottom = 88.0
+offset_left = -203.5
+offset_top = -140.0
+offset_right = 203.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1wlk1")
+region_rect = Rect2(0, 0, 48, 32)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Pause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 17.0
+offset_right = 112.5
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Pause"]
+offset_left = 27.0
+offset_top = 73.0
+offset_right = 372.0
+offset_bottom = 77.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -43.0
+offset_right = 133.5
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 7
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="Resume" type="Button" parent="Pause/VBoxContainer"]
+process_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 30
@@ -514,9 +272,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p81d2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nc7s")
 text = "RESUME"
 
-[node name="Option" type="Button" parent="VBoxContainer"]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="Option" type="Button" parent="Pause/VBoxContainer"]
+process_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 30
@@ -526,9 +283,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p81d2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nc7s")
 text = "OPTIONS"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="Quit" type="Button" parent="Pause/VBoxContainer"]
+process_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 30
@@ -556,19 +312,18 @@ position = Vector2(-74, 218)
 stream = ExtResource("4_ndr50")
 bus = &"SFX"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="Options" type="NinePatchRect" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 742.0
-offset_top = -252.0
-offset_right = 1403.0
-offset_bottom = 304.0
+offset_left = -330.5
+offset_top = -278.0
+offset_right = 330.5
+offset_bottom = 278.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_1wlk1")
@@ -577,7 +332,7 @@ patch_margin_top = 5
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Option Exit Button" type="Button" parent="NinePatchRect"]
+[node name="Option Exit Button" type="Button" parent="Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -602,16 +357,16 @@ text = " "
 icon_alignment = 1
 expand_icon = true
 
-[node name="Quit Button" type="Button" parent="NinePatchRect"]
+[node name="Return" type="Button" parent="Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -84.5
+offset_left = -130.5
 offset_top = 190.0
-offset_right = 65.5
+offset_right = 107.5
 offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -621,9 +376,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_3cwdm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1wlk1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bvlpm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n8moy")
-text = "QUIT GAME"
+text = "RETURN TO MENU"
 
-[node name="Settings Label" type="Label" parent="NinePatchRect"]
+[node name="Settings Label" type="Label" parent="Options"]
 layout_mode = 0
 offset_left = 199.0
 offset_top = 47.0
@@ -635,7 +390,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4b0gv")
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Label Separator" type="HSeparator" parent="NinePatchRect"]
+[node name="Label Separator" type="HSeparator" parent="Options"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 123.0
@@ -643,9 +398,9 @@ offset_right = 593.0
 offset_bottom = 144.0
 theme_override_constants/separation = 7
 
-[node name="Node2D2" type="Node2D" parent="NinePatchRect"]
+[node name="Node2D" type="Node2D" parent="Options"]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/Node2D2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Options/Node2D"]
 offset_left = 54.0
 offset_top = 142.0
 offset_right = 611.0
@@ -654,11 +409,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_hp4f2")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="Control" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer"]
+[node name="Control" type="Control" parent="Options/Node2D/ScrollContainer"]
 custom_minimum_size = Vector2(539, 650)
 layout_mode = 2
 
-[node name="Sound Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Sound Label" type="Label" parent="Options/Node2D/ScrollContainer/Control"]
 layout_mode = 0
 offset_left = 186.0
 offset_top = 14.0
@@ -670,7 +425,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_agixi")
 text = "Sound"
 horizontal_alignment = 1
 
-[node name="Sound Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Sound Label"]
+[node name="Sound Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Sound Label"]
 layout_mode = 0
 offset_left = -38.0
 offset_top = 363.0
@@ -682,7 +437,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xjygv")
 text = "Graphics"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Control" type="Control" parent="Options/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 67.0
@@ -691,7 +446,7 @@ offset_bottom = 107.0
 script = ExtResource("7_agixi")
 bus_name = "Master"
 
-[node name="Master Volume" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control"]
+[node name="Master Volume" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -708,7 +463,7 @@ theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
-[node name="Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control"]
+[node name="Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 0
 offset_left = 408.0
 offset_top = 29.0
@@ -719,7 +474,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control"]
+[node name="HSlider" type="HSlider" parent="Options/Node2D/ScrollContainer/Control/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -735,7 +490,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Control2" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Control2" type="Control" parent="Options/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 67.0
@@ -744,7 +499,7 @@ offset_bottom = 107.0
 script = ExtResource("7_agixi")
 bus_name = "Music"
 
-[node name="Music" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control2"]
+[node name="Music" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -761,7 +516,7 @@ theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
-[node name="Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control2"]
+[node name="Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 0
 offset_left = 406.0
 offset_top = 116.0
@@ -772,7 +527,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control2"]
+[node name="HSlider" type="HSlider" parent="Options/Node2D/ScrollContainer/Control/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -788,7 +543,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Control3" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Control3" type="Control" parent="Options/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 67.0
@@ -797,7 +552,7 @@ offset_bottom = 107.0
 script = ExtResource("7_agixi")
 bus_name = "SFX"
 
-[node name="SFX" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control3"]
+[node name="SFX" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -814,7 +569,7 @@ theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 40
 text = "SFX Volume"
 
-[node name="Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control3"]
+[node name="Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 0
 offset_left = 406.0
 offset_top = 207.0
@@ -825,7 +580,7 @@ theme_override_font_sizes/font_size = 40
 text = "30"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control3"]
+[node name="HSlider" type="HSlider" parent="Options/Node2D/ScrollContainer/Control/Control3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -841,7 +596,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Control4" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Control4" type="Control" parent="Options/Node2D/ScrollContainer/Control"]
 anchors_preset = 0
 offset_left = 19.0
 offset_top = 394.0
@@ -849,7 +604,7 @@ offset_right = 59.0
 offset_bottom = 434.0
 script = ExtResource("8_l1o8a")
 
-[node name="Window Mode HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control4"]
+[node name="Window Mode HBoxContainer" type="HBoxContainer" parent="Options/Node2D/ScrollContainer/Control/Control4"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 80.0
@@ -857,18 +612,18 @@ offset_right = 500.0
 offset_bottom = 129.0
 theme_override_constants/separation = 60
 
-[node name="Window Mode Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
+[node name="Window Mode Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 40
 text = "Window Mode"
 
-[node name="Window Mode Option Button" type="OptionButton" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
+[node name="Window Mode Option Button" type="OptionButton" parent="Options/Node2D/ScrollContainer/Control/Control4/Window Mode HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7c6wy")
 
-[node name="Control5" type="Control" parent="NinePatchRect/Node2D2/ScrollContainer/Control"]
+[node name="Control5" type="Control" parent="Options/Node2D/ScrollContainer/Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 19.0
@@ -877,7 +632,7 @@ offset_right = 59.0
 offset_bottom = 494.0
 script = ExtResource("9_amgxq")
 
-[node name="Resolution HboxContainer" type="HBoxContainer" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control5"]
+[node name="Resolution HboxContainer" type="HBoxContainer" parent="Options/Node2D/ScrollContainer/Control/Control5"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 80.0
@@ -885,20 +640,24 @@ offset_right = 500.0
 offset_bottom = 129.0
 theme_override_constants/separation = 100
 
-[node name="Resolution Label" type="Label" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control5/Resolution HboxContainer"]
+[node name="Resolution Label" type="Label" parent="Options/Node2D/ScrollContainer/Control/Control5/Resolution HboxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 40
 text = "Resolution"
 
-[node name="Resolution OptionBox" type="OptionButton" parent="NinePatchRect/Node2D2/ScrollContainer/Control/Control5/Resolution HboxContainer"]
+[node name="Resolution OptionBox" type="OptionButton" parent="Options/Node2D/ScrollContainer/Control/Control5/Resolution HboxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p0gpb")
 
-[connection signal="mouse_entered" from="VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Option" to="." method="_on_option_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_option_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Pause/VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="pressed" from="Pause/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="Pause/VBoxContainer/Option" to="." method="_on_option_mouse_entered"]
+[connection signal="pressed" from="Pause/VBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="mouse_entered" from="Pause/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Pause/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Options/Option Exit Button" to="." method="_on_option_exit_button_mouse_entered"]
+[connection signal="pressed" from="Options/Option Exit Button" to="." method="_on_option_exit_button_pressed"]
+[connection signal="mouse_entered" from="Options/Return" to="." method="_on_return_mouse_entered"]
+[connection signal="pressed" from="Options/Return" to="." method="_on_return_pressed"]
