@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=20 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/Sprites/tilemap-stage1-sheet.png" id="1_bb13u"]
 [ext_resource type="PackedScene" uid="uid://cbd0ov7ogyucj" path="res://scenes-environment/platform_level_1.tscn" id="2_ax42v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwtir0mpl6ers" path="res://Assets/Sprites/background_level1-sheet.png" id="4_xgemp"]
 [ext_resource type="Texture2D" uid="uid://bcfafusvbn15g" path="res://Assets/Sprites/backgroundlayer1-sheet.png" id="5_xgemp"]
 [ext_resource type="PackedScene" uid="uid://djnn01iskqn06" path="res://scenes-environment/platform_2_level_1.tscn" id="6_hwu6i"]
+[ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="7_fn2ot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_bb13u")
@@ -341,3 +342,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_qtdfb")
 }
 autoplay = "platform3_level1"
+
+[node name="Laser" parent="." instance=ExtResource("7_fn2ot")]
+position = Vector2(3589, -159)
