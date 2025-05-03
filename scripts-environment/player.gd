@@ -21,14 +21,18 @@ var dash_timer = 0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var jump_count = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		jump_count = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_wall()):
+	if Input.is_action_just_pressed("jump") and (jump_count < 2 or is_on_wall()):
+		jump_count += 1
 		velocity.y = jump_force
 	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
