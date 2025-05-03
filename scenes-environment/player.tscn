@@ -1,7 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdhhdxl3b04v4"]
+[gd_scene load_steps=11 format=3 uid="uid://bdhhdxl3b04v4"]
 
 [ext_resource type="Script" uid="uid://blvwy6m85kt20" path="res://scripts-environment/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dk0rrdnd43n7s" path="res://scenes-player-movement/player-sprites/idle-keyframes.png" id="2_kq5nu"]
+
+[sub_resource type="Curve" id="Curve_kq5nu"]
+_data = [Vector2(0.00535714, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.375247), -1.89708, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tuig"]
 atlas = ExtResource("2_kq5nu")
@@ -51,6 +55,7 @@ size = Vector2(21, 64)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+dash_curve = SubResource("Curve_kq5nu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
