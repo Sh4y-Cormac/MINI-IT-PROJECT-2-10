@@ -255,6 +255,7 @@ collision_layer = 2
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_bottom = 400
 limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="killzone" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(302, 428)
