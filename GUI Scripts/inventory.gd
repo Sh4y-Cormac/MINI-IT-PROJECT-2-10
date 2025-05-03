@@ -102,3 +102,14 @@ func _on_inventory_gui_mouse_entered() -> void:
 
 func _on_inventory_gui_mouse_exited() -> void:
 	onInventory = false
+
+
+
+func _on_button_pressed() -> void:
+	$"../../audio/Enter Sound Effect".play()
+	$"Inventory GUI".visible = false
+
+
+
+func _on_button_mouse_entered() -> void:
+	$"../../audio/Hovering Sound Effect".play()

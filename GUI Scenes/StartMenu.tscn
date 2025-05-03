@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://u7yluuk8jor6"]
+[gd_scene load_steps=52 format=3 uid="uid://u7yluuk8jor6"]
 
 [ext_resource type="Script" uid="uid://d4dlpwcfj4lhp" path="res://GUI Scripts/start_menu.gd" id="1_w42qb"]
 [ext_resource type="Texture2D" uid="uid://cvc446vm5vbqe" path="res://Assets/Images/MainMenuBackground.jpg" id="2_hii2u"]
@@ -209,6 +209,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Responsive Background/Menu Background/Default Character:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.615, 3.743)]
+}
 
 [sub_resource type="Animation" id="Animation_jc25w"]
 resource_name = "hide_customize"
@@ -293,9 +305,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_h65rh"]
-resource_name = "idle"
 
 [sub_resource type="Animation" id="Animation_mm8x2"]
 resource_name = "show_customize"
@@ -388,7 +397,6 @@ _data = {
 &"hide_customize": SubResource("Animation_jc25w"),
 &"hide_load": SubResource("Animation_wwly8"),
 &"hide_options": SubResource("Animation_teh54"),
-&"idle": SubResource("Animation_h65rh"),
 &"show_customize": SubResource("Animation_mm8x2"),
 &"show_load": SubResource("Animation_ts720"),
 &"show_options": SubResource("Animation_nvfa3")
@@ -453,8 +461,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeyej")
 
 [node name="Default Character" type="Sprite2D" parent="Responsive Background/Menu Background"]
-position = Vector2(909, 535)
-scale = Vector2(4.61458, 3.82598)
+position = Vector2(909, 535.388)
+scale = Vector2(4.615, 3.743)
 texture = ExtResource("3_ij00v")
 flip_h = true
 
@@ -942,6 +950,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0
