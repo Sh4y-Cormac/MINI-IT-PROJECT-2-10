@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="5_1wlk1"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_bvlpm"]
 [ext_resource type="Script" uid="uid://bnsddfc20lcyw" path="res://GUI Scripts/control.gd" id="7_agixi"]
-[ext_resource type="Script" uid="uid://dumkqb4xlj0f1" path="res://GUI Scripts/control_4.gd" id="8_l1o8a"]
-[ext_resource type="Script" uid="uid://je02wp1judll" path="res://GUI Scripts/control_5.gd" id="9_amgxq"]
+[ext_resource type="Script" path="res://GUI Scripts/control_4.gd" id="8_l1o8a"]
+[ext_resource type="Script" path="res://GUI Scripts/control_5.gd" id="9_amgxq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05uyy"]
 
