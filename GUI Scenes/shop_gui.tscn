@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://p8a145kemlr7"]
+[gd_scene load_steps=24 format=3 uid="uid://p8a145kemlr7"]
 
 [ext_resource type="Script" uid="uid://co8bl3fqwcla0" path="res://GUI Scripts/shop_gui.gd" id="1_4ba3t"]
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="1_jtdgj"]
@@ -75,17 +75,6 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uypci"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t01xl"]
-
-[sub_resource type="GDScript" id="GDScript_quggr"]
-resource_name = "gold"
-script/source = "extends Label
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	text = \"Gold : \" + \"10000\"
-	
-"
 
 [node name="Shop GUI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -361,7 +350,7 @@ offset_top = 8.0
 offset_right = 186.0
 offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("3_77pke")
+text = "Gold: 10000"
 horizontal_alignment = 1
-script = SubResource("GDScript_quggr")
 
 [connection signal="pressed" from="NinePatchRect/Buy" to="." method="_on_buy_pressed"]
