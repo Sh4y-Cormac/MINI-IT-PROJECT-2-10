@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const gravity = 1999
+
 
 @export var walk_speed = 200.0
 @export var run_speed = 400.0
