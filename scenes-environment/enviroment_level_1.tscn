@@ -311,19 +311,19 @@ position = Vector2(93, -7)
 motion_mirroring = Vector2(1350, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(211, -245.813)
-scale = Vector2(0.173964, 0.169551)
+position = Vector2(211, -380.406)
+scale = Vector2(0.173964, 0.236738)
 texture = ExtResource("4_xgemp")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 position = Vector2(113, 0)
-motion_mirroring = Vector2(1100, 0)
+motion_mirroring = Vector2(1660, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(78.7638, 6)
-scale = Vector2(0.186877, 0.215374)
+position = Vector2(331.191, -29)
+scale = Vector2(0.273204, 0.299985)
 texture = ExtResource("5_xgemp")
 
 [node name="platform2_level_1" parent="." instance=ExtResource("6_hwu6i")]
