@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ray = $RayCast2D
 @onready var line = $Line2D
+@onready var laser_sfx = $laser_sfx
 
 func _ready():
 	hide_laser()
@@ -16,6 +17,7 @@ func _laser_cycle():
 	await get_tree().create_timer(randf_range(2.0, 4.0)).timeout
 	show_laser()
 	check_for_hit()
+	laser_sfx.play()
 
 	await get_tree().create_timer(1.0).timeout
 	hide_laser()
