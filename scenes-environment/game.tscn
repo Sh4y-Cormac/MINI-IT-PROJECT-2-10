@@ -15,12 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://uknhwgtn0to6" path="res://Assets/Sprites/water.png" id="10_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="13_t7ioi"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="14_18nrj"]
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="15_18nrj"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="16_ca42v"]
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
+[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 texture = ExtResource("1_ir15t")
@@ -429,32 +429,20 @@ speed_scale = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
-
-[node name="Coins Display" type="NinePatchRect" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 199.0
-offset_bottom = 48.0
-texture = ExtResource("13_t7ioi")
-patch_margin_left = 7
-patch_margin_top = 7
-patch_margin_right = 7
-patch_margin_bottom = 7
-
-[node name="Label" type="Label" parent="CanvasLayer/Coins Display"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 187.0
-offset_bottom = 35.0
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_fonts/font = ExtResource("14_18nrj")
 theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
 script = SubResource("GDScript_ysgvo")
 
+[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
+
 [node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(-55, 67)
+position = Vector2(-55, 97)
 scale = Vector2(1.75, 1.71875)
 texture = ExtResource("15_18nrj")
 offset = Vector2(47.5035, -1.63266)
@@ -478,6 +466,11 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0o6od")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_3v0pm")]
 visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(84, 27.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("17_ci8an")
 
 [node name="audio" type="Node" parent="."]
 
