@@ -287,6 +287,8 @@ position = Vector2(54, -19)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(147, 8)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(68, 19)
@@ -308,22 +310,22 @@ autoplay = "moving_platform_L1"
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(93, -7)
-motion_mirroring = Vector2(1350, 0)
+motion_mirroring = Vector2(2705, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(211, -380.406)
-scale = Vector2(0.173964, 0.236738)
+position = Vector2(886.727, -719.406)
+scale = Vector2(0.347205, 0.406196)
 texture = ExtResource("4_xgemp")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 position = Vector2(113, 0)
-motion_mirroring = Vector2(1660, 0)
+motion_mirroring = Vector2(2265, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(331.191, -29)
-scale = Vector2(0.273204, 0.299985)
+position = Vector2(632, -72)
+scale = Vector2(0.374194, 0.408835)
 texture = ExtResource("5_xgemp")
 
 [node name="platform2_level_1" parent="." instance=ExtResource("6_hwu6i")]
