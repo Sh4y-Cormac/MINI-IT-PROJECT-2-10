@@ -11,3 +11,9 @@ func set_new_data(resource: Item):
 	else:
 		itemResource = null
 		texture = null
+		
+func get_slot_name():
+	var ParentName = get_parent().name
+	var slotNumber = name.split("Slot 1")[1]
+	
+	return ParentName + slotNumber

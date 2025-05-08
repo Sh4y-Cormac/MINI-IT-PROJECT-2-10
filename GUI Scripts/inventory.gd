@@ -47,8 +47,11 @@ func _get_drag_data(at_position):
 func _can_drop_data(at_position, data):
 	var targetslotnode = get_slot_node_position(at_position)
 	var onTrashCan = _on_trash_can(at_position)
+	var dragItem = data.itemResource
 	
-	return targetslotnode != null || onTrashCan || not onInventory
+	var itemAllowed = _is_item_allowed(dragItem, targetslotnode)
+	
+	return targetslotnode != null || onTrashCan || not onInventory && itemAllowed
 
 func _drop_data(at_position, dragslotnode):
 	var onTrashCan = _on_trash_can(at_position)
@@ -95,6 +98,24 @@ func _refresh_ui():
 			if slotNumber == inventarPosition:
 				slot.set_new_data(item)
 
+func _is_item_allowed(item, slotNode):
+	if slotNode ==  null:return
+	
+	var slotName = slotNode.get_slot_name()
+	var itemType = item.type
+	var isequipmentslot = "Equipment" in slotName
+	
+	if not isequipmentslot: return true
+	
+	var accessSlot1 = slotName == "Slot 1" &&  itemType == "HeadArmor"
+	var accessSlot2 = slotName == "Slot 2" &&  itemType == "Armor"
+	var accessSlot3 = slotName == "Slot 3" &&  itemType == "Weapon"
+	var accessSlot4 = slotName == "Slot 4" &&  itemType == "Shield"
+	
+	if accessSlot1 || accessSlot2 || accessSlot3 || accessSlot4:
+		return true
+	else:
+		return false
 
 func _on_inventory_gui_mouse_entered() -> void:
 	onInventory = true
