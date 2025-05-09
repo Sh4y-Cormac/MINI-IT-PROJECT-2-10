@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=33 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/Sprites/tilemap-stage1-sheet.png" id="1_bb13u"]
 [ext_resource type="PackedScene" uid="uid://cbd0ov7ogyucj" path="res://scenes-obstacles/platform_level_1.tscn" id="2_ax42v"]
@@ -219,9 +219,6 @@ texture = ExtResource("2_qyluh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d2yfn")
 sources/1 = SubResource("TileSetAtlasSource_qtdfb")
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ax42v"]
-distance = 13.0
 
 [sub_resource type="Animation" id="Animation_wao5v"]
 length = 0.001
@@ -501,13 +498,6 @@ position = Vector2(54, -19)
 position = Vector2(147, 8)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(68, 19)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-13, 27)
-shape = SubResource("WorldBoundaryShape2D_ax42v")
 
 [node name="platforms" type="Node" parent="."]
 
