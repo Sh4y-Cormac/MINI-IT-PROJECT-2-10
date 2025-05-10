@@ -14,6 +14,10 @@ func set_new_data(resource: Item):
 		
 func get_slot_name():
 	var ParentName = get_parent().name
-	var slotNumber = name.split("Slot 1")[1]
+	var parts = name.split("Slot ")
 	
-	return ParentName + slotNumber
+	if parts.size() > 1:
+		var slotNumber = parts[1]
+		return ParentName + slotNumber
+	else:
+		return ParentName + "_UnknownSlot"
