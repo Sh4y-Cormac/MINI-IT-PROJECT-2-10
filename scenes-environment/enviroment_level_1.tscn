@@ -617,7 +617,7 @@ position = Vector2(113, 0)
 motion_mirroring = Vector2(2265, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(632, -72)
+position = Vector2(644, -78)
 scale = Vector2(0.374194, 0.408835)
 texture = ExtResource("5_xgemp")
 
@@ -631,8 +631,7 @@ position = Vector2(2601, -221)
 position = Vector2(5004, -230)
 
 [node name="death_point" parent="." instance=ExtResource("9_qyluh")]
-position = Vector2(211, 241)
+position = Vector2(218, 276)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death_point"]
-position = Vector2(-2, 6)
 shape = SubResource("WorldBoundaryShape2D_qyluh")
