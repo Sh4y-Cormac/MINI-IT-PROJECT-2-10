@@ -40,15 +40,15 @@ func _process(delta):
 	testEsc()
 
 func _on_resume_mouse_entered() -> void:
-	if $Pause.visible == true:
+	if get_tree().paused == true:
 		$"Hovering Sound Effect".play()
 
 func _on_option_mouse_entered() -> void:
-	if $Pause.visible == true:
+	if get_tree().paused == true:
 		$"Hovering Sound Effect".play()
 
 func _on_quit_mouse_entered() -> void:
-	if $Pause.visible == true:
+	if get_tree().paused == true:
 		$"Hovering Sound Effect".play()
 
 
