@@ -3,8 +3,9 @@ extends Control
 signal dropOut
 
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
-@onready var Hotbarcontainer = $"Inventory GUI/Hotbar"
-@onready var equipment = $"Inventory GUI/Equipment"
+@onready var ArmorSlot = $"Inventory GUI/Equipment"
+@onready var WeaponSlot1 = $"Inventory GUI/Equipment2"
+@onready var WeaponSlot2 = $"Inventory GUI/Equipment3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 
 var inventoryDict = {}
@@ -14,8 +15,9 @@ var onInventory = false
 func _ready():
 	inventoryDict = {
 		"BagSlot": bagcontainer,
-		"Hotbar": Hotbarcontainer,
-		"Equipment": equipment
+		"Armor": ArmorSlot,
+		"Weapon1": WeaponSlot1,
+		"Weapon2": WeaponSlot2
 	}
 	
 	_refresh_ui()
@@ -73,7 +75,7 @@ func _drop_data(at_position, dragslotnode):
 
 func get_slot_node_position(position):
 	
-	var allslotnodes = (bagcontainer.get_children() + Hotbarcontainer.get_children() + equipment.get_children())
+	var allslotnodes = (bagcontainer.get_children() + ArmorSlot.get_children() + WeaponSlot1.get_children() + WeaponSlot2.get_children())
 	
 	for node in allslotnodes:
 		var noderect = node.get_global_rect()
@@ -110,9 +112,8 @@ func _is_item_allowed(item, slotNode):
 	var accessSlot1 = slotName == "Slot 1" &&  itemType == "HeadArmor"
 	var accessSlot2 = slotName == "Slot 2" &&  itemType == "Armor"
 	var accessSlot3 = slotName == "Slot 3" &&  itemType == "Weapon"
-	var accessSlot4 = slotName == "Slot 4" &&  itemType == "Shield"
 	
-	if accessSlot1 || accessSlot2 || accessSlot3 || accessSlot4:
+	if accessSlot1 || accessSlot2 || accessSlot3:
 		return true
 	else:
 		return false
