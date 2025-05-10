@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cbd0ov7ogyucj" path="res://scenes-obstacles/platform_level_1.tscn" id="2_ax42v"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/Sprites/tilemap-stage 1.2.png" id="2_qyluh"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_0lq06"]
-[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_qyluh"]
 [ext_resource type="Texture2D" uid="uid://cwtir0mpl6ers" path="res://Assets/Sprites/background_level1-sheet.png" id="4_xgemp"]
 [ext_resource type="Texture2D" uid="uid://bcfafusvbn15g" path="res://Assets/Sprites/backgroundlayer1-sheet.png" id="5_xgemp"]
 [ext_resource type="PackedScene" uid="uid://djnn01iskqn06" path="res://scenes-obstacles/platform_2_level_1.tscn" id="6_hwu6i"]
 [ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="7_fn2ot"]
+[ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="9_qyluh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_bb13u")
@@ -220,8 +220,6 @@ texture = ExtResource("2_qyluh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d2yfn")
 sources/1 = SubResource("TileSetAtlasSource_qtdfb")
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qyluh"]
 
 [sub_resource type="Animation" id="Animation_wao5v"]
 length = 0.001
@@ -485,6 +483,8 @@ _data = {
 &"moving updown 4": SubResource("Animation_nfkn2")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qtdfb"]
+
 [node name="enviroment_level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -503,12 +503,6 @@ limit_bottom = 315
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
-[node name="killzone" parent="." instance=ExtResource("4_qyluh")]
-position = Vector2(200, 333)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-shape = SubResource("WorldBoundaryShape2D_qyluh")
 
 [node name="platforms" type="Node" parent="."]
 
@@ -635,3 +629,9 @@ position = Vector2(2601, -221)
 
 [node name="Laser3" parent="." instance=ExtResource("7_fn2ot")]
 position = Vector2(5004, -230)
+
+[node name="death_point" parent="." instance=ExtResource("9_qyluh")]
+position = Vector2(262, 342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_point"]
+shape = SubResource("WorldBoundaryShape2D_qtdfb")
