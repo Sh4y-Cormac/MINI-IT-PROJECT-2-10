@@ -40,13 +40,16 @@ func _process(delta):
 	testEsc()
 
 func _on_resume_mouse_entered() -> void:
-	$"Hovering Sound Effect".play()
+	if $Pause.visible == true:
+		$"Hovering Sound Effect".play()
 
 func _on_option_mouse_entered() -> void:
-	$"Hovering Sound Effect".play()
+	if $Pause.visible == true:
+		$"Hovering Sound Effect".play()
 
 func _on_quit_mouse_entered() -> void:
-	$"Hovering Sound Effect".play()
+	if $Pause.visible == true:
+		$"Hovering Sound Effect".play()
 
 
 func _on_option_exit_button_pressed() -> void:
@@ -68,4 +71,4 @@ func _on_return_pressed() -> void:
 
 
 func _on_return_mouse_entered() -> void:
-	$"Hovering Sound Effect".play()
+	$"Hovering Sound Effect"

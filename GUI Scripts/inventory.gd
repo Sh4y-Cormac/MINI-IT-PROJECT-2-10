@@ -15,9 +15,9 @@ var onInventory = false
 func _ready():
 	inventoryDict = {
 		"BagSlot": bagcontainer,
-		"Armor": ArmorSlot,
-		"Weapon1": WeaponSlot1,
-		"Weapon2": WeaponSlot2
+		"Equipment": ArmorSlot,
+		"Equipment1": WeaponSlot1,
+		"Equipment2": WeaponSlot2
 	}
 	
 	_refresh_ui()
