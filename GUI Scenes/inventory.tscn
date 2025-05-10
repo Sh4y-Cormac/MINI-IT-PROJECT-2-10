@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://8xfcx48xnobu"]
+[gd_scene load_steps=21 format=3 uid="uid://8xfcx48xnobu"]
 
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://cmqnqb5jn1fqr" path="res://Assets/Images/Inventory GUI.png" id="2_y0k1r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="7_jr73w"]
 [ext_resource type="Texture2D" uid="uid://nqepyobxgl4t" path="res://Assets/Images/Panel.png" id="8_rr30h"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="9_rr30h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj775"]
 
@@ -310,13 +311,82 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 69.0
+offset_right = 908.0
+offset_bottom = 415.0
+texture = ExtResource("8_rr30h")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/TextureRect"]
+position = Vector2(233, 175)
+scale = Vector2(3.29492, 3.31836)
+texture = ExtResource("5_5k12h")
+
+[node name="Panel" type="Panel" parent="NinePatchRect/TextureRect"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 70.0
+offset_top = 199.0
+offset_right = 160.0
+offset_bottom = 269.0
+
+[node name="Panel2" type="Panel" parent="NinePatchRect/TextureRect"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 302.0
+offset_top = 66.0
+offset_right = 392.0
+offset_bottom = 136.0
+
+[node name="Panel3" type="Panel" parent="NinePatchRect/TextureRect"]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 301.0
+offset_top = 198.0
+offset_right = 391.0
+offset_bottom = 268.0
+
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect/TextureRect"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 166.0
+offset_right = 310.0
+offset_bottom = 170.0
+rotation = -0.552758
+
+[node name="Label" type="Label" parent="NinePatchRect/TextureRect"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 39.0
+offset_right = 369.0
+offset_bottom = 62.0
+text = "Armor"
+
+[node name="Label2" type="Label" parent="NinePatchRect/TextureRect"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 171.0
+offset_right = 370.0
+offset_bottom = 194.0
+text = "Armor"
+
+[node name="Label3" type="Label" parent="NinePatchRect/TextureRect"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 172.0
+offset_right = 135.0
+offset_bottom = 195.0
+text = "Armor"
+
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 43.0
+offset_left = 40.0
 offset_top = 47.0
-offset_right = 509.0
+offset_right = 412.0
 offset_bottom = 413.0
-columns = 5
+columns = 4
 
 [node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(90, 70)
@@ -438,35 +508,16 @@ layout_mode = 2
 texture = ExtResource("8_rr30h")
 expand_mode = 1
 
-[node name="TextureRect21" type="TextureRect" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("8_rr30h")
-expand_mode = 1
-
-[node name="TextureRect22" type="TextureRect" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("8_rr30h")
-expand_mode = 1
-
-[node name="TextureRect23" type="TextureRect" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("8_rr30h")
-expand_mode = 1
-
-[node name="TextureRect24" type="TextureRect" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("8_rr30h")
-expand_mode = 1
-
-[node name="TextureRect25" type="TextureRect" parent="NinePatchRect/GridContainer"]
-custom_minimum_size = Vector2(90, 70)
-layout_mode = 2
-texture = ExtResource("8_rr30h")
-expand_mode = 1
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 18.0
+offset_right = 742.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("9_rr30h")
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_entered"]
 [connection signal="mouse_exited" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_exited"]
