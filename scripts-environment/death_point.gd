@@ -1,6 +1,6 @@
 extends Area2D
 
-
-
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.has_method("respawn"):
+		print("Killzone touched by: ", body.name)
+		body.respawn()

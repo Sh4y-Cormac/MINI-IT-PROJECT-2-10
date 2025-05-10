@@ -34,5 +34,5 @@ func hide_laser():
 func check_for_hit():
 	if ray.is_colliding():
 		var hit = ray.get_collider()
-		if hit and hit.name == "Player":  
+		if hit and hit.name == "player":  
 			hit.take_damage()  

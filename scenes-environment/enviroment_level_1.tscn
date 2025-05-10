@@ -484,6 +484,7 @@ _data = {
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qtdfb"]
+distance = 6.0
 
 [node name="enviroment_level1" type="Node2D"]
 
@@ -634,4 +635,5 @@ position = Vector2(5004, -230)
 position = Vector2(262, 342)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death_point"]
+position = Vector2(-39, -41)
 shape = SubResource("WorldBoundaryShape2D_qtdfb")

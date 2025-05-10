@@ -86,6 +86,9 @@ func _physics_process(delta: float) -> void:
 	if dash_timer > 0:
 		dash_timer -= delta
 		
-
    
 	move_and_slide()
+
+
+func _on_death_point_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
