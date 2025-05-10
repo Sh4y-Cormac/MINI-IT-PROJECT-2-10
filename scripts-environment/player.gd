@@ -85,5 +85,7 @@ func _physics_process(delta: float) -> void:
 	#reduces dash timer
 	if dash_timer > 0:
 		dash_timer -= delta
-	
+		
+		
+   
 	move_and_slide()
