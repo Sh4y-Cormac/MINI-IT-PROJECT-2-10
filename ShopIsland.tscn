@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=6 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://cilcow2kh3u2a" path="res://Assets/Sprites/nature-paltformer-tileset-16x16.png" id="1_v2316"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="2_ver52"]
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="3_jaque"]
-[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_jve7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ver52"]
 texture = ExtResource("1_v2316")
@@ -207,7 +206,3 @@ position = Vector2(1173, 1684)
 texture = ExtResource("3_jaque")
 centered = false
 offset = Vector2(0, -1048)
-
-[node name="killzone" parent="." instance=ExtResource("4_jve7i")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
