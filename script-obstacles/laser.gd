@@ -38,12 +38,18 @@ func check_for_hit():
 	if ray.is_colliding():
 		var hit = ray.get_collider()
 		if hit and hit.name == "player":
+			var col = hit.get_node_or_null("CollisionShape2D")
+			if col:
+				col.disabled = true  # Disable collision
 			lasertimer.start()
 
 func _on_laserkill_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-		if body.name == "player":
-			body.get_node("CollisionShape2D")
-			lasertimer.start()
+	if body.name == "player":
+		var col = body.get_node_or_null("CollisionShape2D")
+		if col:
+			col.queue_free()
+		lasertimer.start()
 
 func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+		Engine.time_scale = 1.0
+		get_tree().reload_current_scene()
