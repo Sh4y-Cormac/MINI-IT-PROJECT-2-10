@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://doo5drn1yrnv3" path="res://scenes-environment/tutorial.gd" id="1_ysgvo"]
+[ext_resource type="Script" path="res://scenes-environment/tutorial.gd" id="1_ysgvo"]
 [ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes-environment/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
+[ext_resource type="PackedScene" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 texture = ExtResource("1_ir15t")
