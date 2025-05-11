@@ -3,6 +3,7 @@ extends Node2D
 @onready var ray = $RayCast2D
 @onready var line = $Line2D
 @onready var laser_sfx = $laser_sfx
+@onready var lasertimer = $laserkill/Timer
 
 func _ready():
 	hide_laser()
@@ -26,13 +27,23 @@ func _laser_cycle():
 func show_laser():
 	ray.enabled = true
 	line.visible = true
+	$laserkill.monitoring = true
 
 func hide_laser():
 	ray.enabled = false
 	line.visible = false
-
+	$laserkill.monitoring = false
+	
 func check_for_hit():
 	if ray.is_colliding():
 		var hit = ray.get_collider()
-		if hit and hit.name == "player":  
-			hit.take_damage()  
+		if hit and hit.name == "player":
+			lasertimer.start()
+
+func _on_laserkill_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+		if body.name == "player":
+			body.get_node("CollisionShape2D")
+			lasertimer.start()
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
