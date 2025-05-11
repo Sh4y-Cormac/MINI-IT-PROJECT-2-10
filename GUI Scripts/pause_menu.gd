@@ -71,4 +71,4 @@ func _on_return_pressed() -> void:
 
 
 func _on_return_mouse_entered() -> void:
-	$"Hovering Sound Effect"
+	$"Hovering Sound Effect".play()
