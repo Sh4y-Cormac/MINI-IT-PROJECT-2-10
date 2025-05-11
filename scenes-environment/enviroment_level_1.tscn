@@ -217,7 +217,8 @@ texture = ExtResource("2_qyluh")
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.93534, -8, -5.39576, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ax42v"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_d2yfn")
 sources/1 = SubResource("TileSetAtlasSource_qtdfb")
 
@@ -496,10 +497,11 @@ layer_0/tile_data = PackedInt32Array(131071, 0, 4, 65536, 0, 4, 65537, 0, 4, 655
 
 [node name="player" parent="." instance=ExtResource("3_0lq06")]
 position = Vector2(54, -19)
+collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(147, 8)
-limit_bottom = 315
+limit_bottom = 330
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -508,6 +510,8 @@ rotation_smoothing_enabled = true
 
 [node name="platform_level1_2" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(893, -14)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform_level1_2"]
 libraries = {
@@ -517,6 +521,8 @@ autoplay = "moving platform"
 
 [node name="platform2_level_1" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(2143, 36)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform2_level_1"]
 libraries = {
@@ -526,6 +532,8 @@ autoplay = "moving platform updown"
 
 [node name="platform_level1" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(3535, 42)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform_level1"]
 libraries = {
@@ -535,36 +543,58 @@ autoplay = "platform3_level1"
 
 [node name="platform2_L1_1" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(4338, -22)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_2" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(4431, -61)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform2_L1_3" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(4537, -16)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_4" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(4614, -66)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform2_L1_5" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(4757, -43)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform2_level1" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(6089, -204)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_Stairs1" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(6464, -175)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_Stairs2" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(6554, -220)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_level1_1" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(1503, -86)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_Stairs3" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(6631, -265)
+collision_layer = 2
+collision_mask = 0
 
 [node name="platform_L1_UD1" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(8184, -282)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform_L1_UD1"]
 libraries = {
@@ -574,6 +604,8 @@ autoplay = "moving updown 1"
 
 [node name="platform2_L1_UD2" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(8295, -458)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform2_L1_UD2"]
 libraries = {
@@ -583,6 +615,8 @@ autoplay = "moving updown 2"
 
 [node name="platform_L1_UD3" parent="platforms" instance=ExtResource("2_ax42v")]
 position = Vector2(8417, -342)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform_L1_UD3"]
 libraries = {
@@ -592,6 +626,8 @@ autoplay = "moving updown 3"
 
 [node name="platform2_L1_UD4" parent="platforms" instance=ExtResource("6_hwu6i")]
 position = Vector2(8533, -559)
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/platform2_L1_UD4"]
 libraries = {
@@ -631,7 +667,9 @@ position = Vector2(2601, -221)
 position = Vector2(5004, -230)
 
 [node name="death_point" parent="." instance=ExtResource("9_qyluh")]
-position = Vector2(218, 276)
+position = Vector2(214, 305)
+collision_layer = 2
+collision_mask = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death_point"]
 shape = SubResource("WorldBoundaryShape2D_qyluh")
