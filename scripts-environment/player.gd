@@ -20,7 +20,12 @@ var dash_start_position = 0
 var dash_direction = 0
 var dash_timer = 0
 
+var isAttacking = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var attack_area: CollisionShape2D = $AttackArea/CollisionShape2D
+@onready var long_attack_area: CollisionShape2D = $LongAttackArea/CollisionShape2D
+
 
 var jump_count = 0
 
@@ -55,18 +60,33 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack_area.position = Vector2(20,12)
+		long_attack_area.position = Vector2(27.5,0)
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		
+		attack_area.position = Vector2(-20,12)
+		long_attack_area.position = Vector2(-27.5,0)
 	# Play animation
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
+	if isAttacking == false:
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
 		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
-		
+			animated_sprite.play("jump")
+	
+	#shortsword attack
+	if Input.is_action_just_pressed("attack"):
+		animated_sprite.play("shortsword")
+		isAttacking = true
+		attack_area.disabled = false
+	
+	if Input.is_action_just_pressed("longattack"):
+		animated_sprite.play("longsword")
+		isAttacking = true
+		long_attack_area.disabled = false
+	
 	#dash mechanic
 	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
 		is_dashing = true
@@ -89,3 +109,13 @@ func _physics_process(delta: float) -> void:
 		
    
 	move_and_slide()
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "shortsword" or animated_sprite.animation == "longsword":
+		if animated_sprite.animation == "shortsword":
+			attack_area.disabled = true
+			isAttacking = false
+		else:
+			long_attack_area.disabled = true
+			isAttacking = false
+	
