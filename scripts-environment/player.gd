@@ -60,9 +60,12 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack_area.position = Vector2(20,12)
+		long_attack_area.position = Vector2(27.5,0)
 	elif direction < 0:
 		animated_sprite.flip_h = true
-	
+		attack_area.position = Vector2(-20,12)
+		long_attack_area.position = Vector2(-27.5,0)
 	# Play animation
 	if isAttacking == false:
 		if is_on_floor():
