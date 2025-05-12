@@ -1,7 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxos7y7mxetm5"]
+[gd_scene load_steps=14 format=3 uid="uid://bxos7y7mxetm5"]
 
 [ext_resource type="Script" uid="uid://cn1mxyj3y8luj" path="res://scenes-environment/robot.gd" id="1_uon6x"]
 [ext_resource type="Texture2D" uid="uid://n1dw50luxtcc" path="res://scenes-player-movement/enemy-sprites/robot-spritesheet-photo.png" id="2_msmv8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uon6x"]
+atlas = ExtResource("2_msmv8")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msmv8"]
+atlas = ExtResource("2_msmv8")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyw4s"]
+atlas = ExtResource("2_msmv8")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv77v"]
+atlas = ExtResource("2_msmv8")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgjie"]
+atlas = ExtResource("2_msmv8")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jafc"]
 atlas = ExtResource("2_msmv8")
@@ -21,6 +41,31 @@ region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyw4s"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uon6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msmv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyw4s")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv77v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgjie")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6jafc")
@@ -47,7 +92,7 @@ script = ExtResource("1_uon6x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cyw4s")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -55,3 +100,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_gv77v")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdhhdxl3b04v4"]
+[gd_scene load_steps=28 format=3 uid="uid://bdhhdxl3b04v4"]
 
 [ext_resource type="Script" uid="uid://blvwy6m85kt20" path="res://scripts-environment/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dk0rrdnd43n7s" path="res://scenes-player-movement/player-sprites/idle-keyframes.png" id="2_kq5nu"]
 [ext_resource type="Texture2D" uid="uid://bujdxjmp7ds7i" path="res://scenes-player-movement/player-sprites/movement-keyframes.png" id="3_7tuig"]
 [ext_resource type="Texture2D" uid="uid://tjxm2v7brxjw" path="res://scenes-player-movement/player-sprites/shortsword-keyframes.png" id="4_2s6cm"]
+[ext_resource type="Texture2D" uid="uid://c6xbrq7sj0asg" path="res://scenes-player-movement/player-sprites/longsword-keyframes.png" id="4_h78hk"]
 
 [sub_resource type="Curve" id="Curve_kq5nu"]
 _data = [Vector2(0.00535714, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.375247), -1.89708, 0.0, 0, 0]
@@ -16,6 +17,38 @@ region = Rect2(64, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fam07"]
 atlas = ExtResource("3_7tuig")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf6ws"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prqfj"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjm18"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkra5"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha141"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxe42"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmgj"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxjgg"]
+atlas = ExtResource("4_h78hk")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0ci6"]
 atlas = ExtResource("3_7tuig")
@@ -65,6 +98,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mf6ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prqfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjm18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkra5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha141")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxe42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxjgg")
+}],
+"loop": false,
+"name": &"longsword",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e0ci6")
 }, {
 "duration": 1.0,
@@ -101,23 +163,34 @@ size = Vector2(21, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s6cm"]
 size = Vector2(20, 41)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h78hk"]
+size = Vector2(35, 64)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
-animation = &"idle"
+animation = &"longsword"
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dqkch")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." groups=["Sword"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(20, 11.5)
 shape = SubResource("RectangleShape2D_2s6cm")
+disabled = true
+
+[node name="LongAttackArea" type="Area2D" parent="." groups=["Longsword"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LongAttackArea"]
+position = Vector2(27.5, 0)
+shape = SubResource("RectangleShape2D_h78hk")
 disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
