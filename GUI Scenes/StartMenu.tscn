@@ -1027,28 +1027,6 @@ offset_right = 593.0
 offset_bottom = 144.0
 theme_override_constants/separation = 7
 
-[node name="Customize Save Button" type="Button" parent="Customize"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 173.0
-offset_right = 65.0
-offset_bottom = 226.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_05g5r")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
-theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = "SAVE
-"
-
 [node name="Customize Box" type="Control" parent="Customize"]
 anchors_preset = 0
 offset_left = 54.0
@@ -1182,6 +1160,28 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7gql3")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rpb0h")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lfe0u")
 
+[node name="Customize Save Button" type="Button" parent="Customize/Customize Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 167.5
+offset_right = 71.5
+offset_bottom = 220.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_05g5r")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rojxm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
+text = "SAVE
+"
+
 [node name="Selection Marker" type="Control" parent="Customize/Customize Box"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -1291,11 +1291,12 @@ layout_mode = 2
 [connection signal="pressed" from="Options Menu/Quit Button" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Exit Button" to="." method="_on_customize_exit_button_pressed"]
-[connection signal="mouse_entered" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_mouse_entered"]
-[connection signal="pressed" from="Customize/Customize Save Button" to="." method="_on_customize_save_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow/Previous Button" to="Customize/Customize Box" method="_on_previous_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Left Arrow/Previous Button" to="Customize/Customize Box" method="_on_previous_button_pressed"]
 [connection signal="mouse_entered" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_mouse_entered"]
 [connection signal="pressed" from="Customize/Customize Box/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Right Arrow/Next Button" to="Customize/Customize Box" method="_on_next_button_pressed"]
+[connection signal="mouse_entered" from="Customize/Customize Box/Customize Save Button" to="." method="_on_customize_save_button_mouse_entered"]
+[connection signal="pressed" from="Customize/Customize Box/Customize Save Button" to="." method="_on_customize_save_button_pressed"]
+[connection signal="pressed" from="Customize/Customize Box/Customize Save Button" to="Customize/Customize Box" method="_on_customize_save_button_pressed"]
 [connection signal="mouse_entered" from="Load/Load Exit Button" to="." method="_on_load_exit_button_mouse_entered"]
 [connection signal="pressed" from="Load/Load Exit Button" to="." method="_on_load_exit_button_pressed"]
