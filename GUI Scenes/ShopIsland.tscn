@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=13 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_13hmj"]
+[ext_resource type="Script" uid="uid://bdo6ruhfgugth" path="res://GUI Scenes/shop_island.gd" id="1_dr1pm"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="2_ver52"]
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="3_jaque"]
 [ext_resource type="PackedScene" uid="uid://bknnjlb1ywhyn" path="res://GUI Scenes/door.tscn" id="4_13hmj"]
 [ext_resource type="Texture2D" uid="uid://bwj5ohfjvsyk6" path="res://Assets/Sprites/portal.png" id="5_ulm3l"]
+[ext_resource type="Texture2D" uid="uid://c56eys5f5ph5p" path="res://Assets/Images/Dogs.png" id="7_v43vc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulm3l"]
 texture = ExtResource("1_13hmj")
@@ -46,7 +48,46 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ulm3l")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id="Animation_pttj7"]
+resource_name = "Dog_Sleep"
+length = 0.6333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dog:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 2),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_8pjuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dog:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cr8pq"]
+_data = {
+&"Dog_Sleep": SubResource("Animation_pttj7"),
+&"RESET": SubResource("Animation_8pjuw")
+}
+
+[node name="ShopIsland" type="Node2D"]
+script = ExtResource("1_dr1pm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hwcyb")
@@ -153,7 +194,8 @@ centered = false
 offset = Vector2(0, -1048)
 
 [node name="Sprite2D19" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1173, 1684)
+position = Vector2(-1998, 3739)
+scale = Vector2(6.06771, 5.19136)
 texture = ExtResource("3_jaque")
 centered = false
 offset = Vector2(0, -1048)
@@ -176,5 +218,17 @@ position = Vector2(85, 4)
 position = Vector2(139, -5)
 scale = Vector2(0.152, 0.198)
 texture = ExtResource("5_ulm3l")
+
+[node name="Dog" type="Sprite2D" parent="."]
+position = Vector2(1779, -144)
+scale = Vector2(1, 0.986328)
+texture = ExtResource("7_v43vc")
+flip_h = true
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cr8pq")
+}
 
 [editable path="Node/Door"]
