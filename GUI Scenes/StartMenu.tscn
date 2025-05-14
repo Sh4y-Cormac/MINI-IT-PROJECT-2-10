@@ -557,7 +557,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_8s7a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hif8q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aeyej")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s7a6")
-text = "LOAD GAME"
+text = "LEADERBOARD"
 
 [node name="Settings Button" type="Button" parent="."]
 layout_mode = 0
@@ -1221,14 +1221,14 @@ patch_margin_bottom = 55
 
 [node name="Load" type="Label" parent="Load"]
 layout_mode = 0
-offset_left = 169.0
+offset_left = 151.0
 offset_top = 53.0
-offset_right = 465.0
+offset_right = 500.0
 offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("4_05g5r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_nvfa3")
-text = "Load Game"
+text = "Leaderboard"
 horizontal_alignment = 1
 
 [node name="Load Exit Button" type="Button" parent="Load"]
