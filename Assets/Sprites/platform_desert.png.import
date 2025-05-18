@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd0ahlmfmoaey"
-path="res://.godot/imported/platfrom_desert.png-8a41dd25eb47264818055d44d9f37447.ctex"
+uid="uid://byvbjh52enlpi"
+path="res://.godot/imported/platform_desert.png-cecb6f4f2854703b08ecb1dece713850.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/platfrom_desert.png"
-dest_files=["res://.godot/imported/platfrom_desert.png-8a41dd25eb47264818055d44d9f37447.ctex"]
+source_file="res://Assets/Sprites/platform_desert.png"
+dest_files=["res://.godot/imported/platform_desert.png-cecb6f4f2854703b08ecb1dece713850.ctex"]
 
 [params]
 
