@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=46 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -273,12 +273,6 @@ func _process(delta: float) -> void:
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o6od"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci8an"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfnhq"]
-bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ysgvo")
 
@@ -491,23 +485,6 @@ offset_right = 1.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="EXPBar" type="ProgressBar" parent="CanvasLayer"]
-z_index = 1
-custom_minimum_size = Vector2(0, -1)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -45.0
-offset_right = 327.0
-offset_bottom = -35.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_ci8an")
-theme_override_styles/fill = SubResource("StyleBoxFlat_nfnhq")
-value = 20.0
-show_percentage = false
-metadata/_edit_use_anchors_ = true
 
 [node name="audio" type="Node" parent="."]
 
