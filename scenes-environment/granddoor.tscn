@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5giydp6dvecv"]
+
+[ext_resource type="Texture2D" uid="uid://f6be4dxsketi" path="res://Assets/Grassland Sprites/granddoor.png" id="1_5hd6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sidlv"]
+size = Vector2(20, 96)
+
+[node name="granddoor" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5hd6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sidlv")
