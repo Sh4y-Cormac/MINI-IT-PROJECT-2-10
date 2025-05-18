@@ -1,22 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cixwt7eo83l8t"]
+[gd_scene load_steps=4 format=3 uid="uid://c78h3q770dh8b"]
 
-[ext_resource type="Script" uid="uid://b4wo681u1l1lw" path="res://door.gd" id="1_fcllb"]
-[ext_resource type="PackedScene" uid="uid://bkxacktrcdo7t" path="res://GUI Scenes/insideshop.tscn" id="2_msnm8"]
-[ext_resource type="Texture2D" uid="uid://chvn5o40ymnwc" path="res://Assets/Sprites/Shop.png" id="2_wkn2v"]
+[ext_resource type="Script" uid="uid://b2g3ooiunks2u" path="res://GUI Scenes/door.gd" id="1_fcllb"]
+[ext_resource type="Texture2D" uid="uid://csw5x2ocjcme6" path="res://Assets/Images/doors.png" id="1_h7tad"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_msnm8"]
-size = Vector2(60, 70)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkn2v"]
+size = Vector2(88, 75)
 
 [node name="Door" type="Area2D"]
-collision_layer = 2
+collision_layer = 0
 script = ExtResource("1_fcllb")
-target_scene = ExtResource("2_msnm8")
 
-[node name="Shop" type="Sprite2D" parent="."]
-position = Vector2(-57.0001, 0)
-scale = Vector2(3.29625, 2.76)
-texture = ExtResource("2_wkn2v")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, -47)
+scale = Vector2(2.63635, 2.84481)
+texture = ExtResource("1_h7tad")
+vframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_msnm8")
+position = Vector2(45, -38.5)
+shape = SubResource("RectangleShape2D_wkn2v")
