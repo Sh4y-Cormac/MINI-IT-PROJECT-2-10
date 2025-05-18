@@ -3,8 +3,9 @@ extends TextureRect
 @export var itemResource : Item
 
 func set_new_data(resource: Item):
+	itemResource = resource
+	
 	if resource != null:
-		itemResource = resource
 		texture = itemResource.icon
 		itemResource.inventarSlot = get_parent().name
 		itemResource.InventarPosition = int(name.split("Slot")[1])
@@ -13,11 +14,11 @@ func set_new_data(resource: Item):
 		texture = null
 		
 func get_slot_name():
-	var ParentName = get_parent().name
-	var parts = name.split("Slot ")
+	var parentName = get_parent().name
+	var slotNumber = name.split("Slot")[1]
 	
-	if parts.size() > 1:
-		var slotNumber = parts[1]
-		return ParentName + slotNumber
-	else:
-		return ParentName + "_UnknownSlot"
+	return parentName + slotNumber
+
+func delete_resource():
+	texture = null
+	itemResource = null
