@@ -1,18 +1,31 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdhhdxl3b04v4"]
+[gd_scene load_steps=32 format=3 uid="uid://bdhhdxl3b04v4"]
 
 [ext_resource type="Script" uid="uid://blvwy6m85kt20" path="res://scripts-environment/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dk0rrdnd43n7s" path="res://scenes-player-movement/player-sprites/idle-keyframes.png" id="2_kq5nu"]
+[ext_resource type="Texture2D" uid="uid://cprw2s7vte8c7" path="res://scenes-player-movement/player-sprites/player-idle-keyframes.png" id="2_pv6nf"]
 [ext_resource type="Texture2D" uid="uid://bujdxjmp7ds7i" path="res://scenes-player-movement/player-sprites/movement-keyframes.png" id="3_7tuig"]
 [ext_resource type="Texture2D" uid="uid://tjxm2v7brxjw" path="res://scenes-player-movement/player-sprites/shortsword-keyframes.png" id="4_2s6cm"]
 [ext_resource type="Texture2D" uid="uid://c6xbrq7sj0asg" path="res://scenes-player-movement/player-sprites/longsword-keyframes.png" id="4_h78hk"]
+[ext_resource type="Texture2D" uid="uid://buvbvubhreipg" path="res://scenes-player-movement/player-sprites/movement-keyframes1.png" id="5_pv6nf"]
 
 [sub_resource type="Curve" id="Curve_kq5nu"]
 _data = [Vector2(0.00535714, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.375247), -1.89708, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7tuig"]
-atlas = ExtResource("2_kq5nu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6umm"]
+atlas = ExtResource("2_pv6nf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pku7j"]
+atlas = ExtResource("2_pv6nf")
 region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpmxc"]
+atlas = ExtResource("2_pv6nf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n41w7"]
+atlas = ExtResource("2_pv6nf")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fam07"]
 atlas = ExtResource("3_7tuig")
@@ -51,11 +64,11 @@ atlas = ExtResource("4_h78hk")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0ci6"]
-atlas = ExtResource("3_7tuig")
+atlas = ExtResource("5_pv6nf")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6n7lb"]
-atlas = ExtResource("3_7tuig")
+atlas = ExtResource("5_pv6nf")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h78hk"]
@@ -82,7 +95,16 @@ region = Rect2(256, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7tuig")
+"texture": SubResource("AtlasTexture_j6umm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pku7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpmxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n41w7")
 }],
 "loop": false,
 "name": &"idle",
