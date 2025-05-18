@@ -117,10 +117,10 @@ offset_right = 699.5
 offset_bottom = 199.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 1" parent="Inventory GUI/Equipment" instance=ExtResource("3_w243r")]
+[node name="Equipment_Slot1" parent="Inventory GUI/Equipment" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Equipment2" type="GridContainer" parent="Inventory GUI"]
+[node name="Equipment_2" type="GridContainer" parent="Inventory GUI"]
 layout_mode = 0
 offset_left = 608.5
 offset_top = 263.0
@@ -128,10 +128,10 @@ offset_right = 698.5
 offset_bottom = 333.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 2" parent="Inventory GUI/Equipment2" instance=ExtResource("3_w243r")]
+[node name="Equipment_Slot2" parent="Inventory GUI/Equipment_2" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Equipment3" type="GridContainer" parent="Inventory GUI"]
+[node name="Equipment_3" type="GridContainer" parent="Inventory GUI"]
 layout_mode = 0
 offset_left = 385.5
 offset_top = 261.0
@@ -139,7 +139,7 @@ offset_right = 475.5
 offset_bottom = 331.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 3" parent="Inventory GUI/Equipment3" instance=ExtResource("3_w243r")]
+[node name="Equipment_Slot3" parent="Inventory GUI/Equipment_3" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
 [node name="Character Display" type="MarginContainer" parent="Inventory GUI"]

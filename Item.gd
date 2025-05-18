@@ -8,7 +8,7 @@ var gold = 10000
 @export var icon : CompressedTexture2D
 @export_multiline var description : String
 @export var price : String
-@export_enum("Weapon", "HeadArmor", "Armor", "Shield") var type: String
+@export_enum("Armor", "Weapon") var type: String
 
 
 
