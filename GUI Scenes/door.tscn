@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c78h3q770dh8b"]
+[gd_scene load_steps=6 format=3 uid="uid://cixwt7eo83l8t"]
 
 [ext_resource type="Script" uid="uid://b2g3ooiunks2u" path="res://GUI Scenes/door.gd" id="1_fcllb"]
 [ext_resource type="Texture2D" uid="uid://csw5x2ocjcme6" path="res://Assets/Images/doors.png" id="1_h7tad"]
+
+[sub_resource type="Animation" id="Animation_fcllb"]
+resource_name = "Open"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wkn2v"]
+_data = {
+&"Open": SubResource("Animation_fcllb")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkn2v"]
 size = Vector2(88, 75)
 
 [node name="Door" type="Area2D"]
-collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_fcllb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,6 +25,9 @@ texture = ExtResource("1_h7tad")
 vframes = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wkn2v")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(45, -38.5)

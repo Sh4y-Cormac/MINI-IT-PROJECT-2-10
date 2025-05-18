@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
 [ext_resource type="Texture2D" uid="uid://cilcow2kh3u2a" path="res://Assets/Sprites/nature-paltformer-tileset-16x16.png" id="1_vgxvw"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="2_wg5q0"]
-[ext_resource type="PackedScene" uid="uid://c78h3q770dh8b" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
+[ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
 [ext_resource type="Script" uid="uid://hl6vqijph7i3" path="res://GUI Scenes/area_2d.gd" id="5_6ttlq"]
 [ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="6_b5lwv"]
 
@@ -108,7 +108,8 @@ size = Vector2(52, 42)
 [node name="Shop" type="Node2D"]
 
 [node name="Door" parent="." instance=ExtResource("3_mx4nm")]
-position = Vector2(73, 33)
+position = Vector2(60, 34)
+target_scene = "uid://c1qslm2ws1vck"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_27drf")
@@ -124,7 +125,7 @@ flip_h = true
 [node name="Node" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("1_ujdir")]
-position = Vector2(113, -1)
+position = Vector2(108, 0)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]

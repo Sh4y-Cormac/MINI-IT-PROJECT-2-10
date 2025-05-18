@@ -1,10 +1,21 @@
 extends Area2D
 
+@export_file("*.tscn", "*.scn")
+var target_scene: String
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 func _input(event):
 	if event.is_action_pressed("Enter"):
-		print(get_overlapping_bodies().size())
+		if !target_scene:
+			print("no scene in this door")
+			return
+		if get_overlapping_bodies().size() > 0:
+			next_level()
+
+func next_level():
+	var ERR = get_tree().change_scene_to_file(target_scene)
+	
+	if ERR != OK:
+		print("something failedin the door scene")
