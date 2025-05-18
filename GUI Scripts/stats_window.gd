@@ -1,8 +1,8 @@
 extends Control
 
 var hp = 100
-var atk = 15
-var def = 10
+var atk = 10
+var def = 5
 var level = 1
 var exp = 0 
 var exp_max = level * 100
@@ -24,8 +24,8 @@ var fade_hold_time = 2.0
 @onready var label_atk: Label = $NinePatchRect/Atk/Label_ATK
 @onready var label_def: Label = $NinePatchRect/Def/Label_DEF
 @onready var label_lvl: Label = $NinePatchRect/LVL/Label_LVL
-@onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
 @onready var exp_bar: ProgressBar = $"../EXPBar"
+@onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,18 +33,24 @@ func _ready() -> void:
 	update_stats()
 	visible = false
 
-
+func update_stats_display(stats: Dictionary) -> void:
+	hp = stats["hp"]
+	atk = stats["atk"]
+	def = stats["def"]
+	update_stats()
+	
 func update_stats():
 	exp_max = level * 100
-	label_hp.text = " %d" % hp
-	label_atk.text = " %d" % atk
-	label_def.text = " %d" % def
-	label_lvl.text = " %d" % level
+	label_hp.text = str(hp)
+	label_atk.text = str(atk)
+	label_def.text = str(def)
+	label_lvl.text = str(level)
 
 	if exp_bar:
 		exp_bar.max_value = exp_max
 		exp_bar.value = exp
-			
+		
+	
 func gain_exp(amount:int):
 	exp += amount
 	while exp >= exp_max:

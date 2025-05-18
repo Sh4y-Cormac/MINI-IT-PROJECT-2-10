@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=48 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
 [ext_resource type="PackedScene" uid="uid://bxos7y7mxetm5" path="res://scenes-environment/robot.tscn" id="23_ubas8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
@@ -480,8 +479,6 @@ position = Vector2(84, 27.5)
 scale = Vector2(2.3125, 2.1875)
 texture = ExtResource("17_ci8an")
 
-[node name="Stats Window" parent="CanvasLayer" instance=ExtResource("18_ci8an")]
-
 [node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -510,6 +507,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ci8an")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nfnhq")
 value = 20.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="audio" type="Node" parent="."]
 

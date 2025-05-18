@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bqlpxbfk2xlnu"]
+
+[ext_resource type="Texture2D" uid="uid://bolarxepsob5t" path="res://Assets/Card Sprite/sharpness.png" id="1_p8igj"]
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_sk1ij"]
+
+[resource]
+script = ExtResource("1_sk1ij")
+name = "Sharpness"
+title = "Sharpness"
+icon = ExtResource("1_p8igj")
+description = "+10% attack boost"
+price = "100"
+type = "Card"
+inventarSlot = "BagSlot"
+InventarPosition = -1
+stat_name = "atk"
+effect_type = "percent"
+value = 0.1
+metadata/_custom_type_script = "uid://b05mrq30fldgf"
