@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://Global.gd"
 Functions="*res://GUI Scripts/functions.gd"
 NavigationManager="*res://navigation_manager.gd"
 

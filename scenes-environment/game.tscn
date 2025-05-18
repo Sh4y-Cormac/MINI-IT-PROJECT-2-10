@@ -26,9 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
-[ext_resource type="PackedScene" uid="uid://bxos7y7mxetm5" path="res://scenes-environment/robot.tscn" id="23_ubas8"]
-[ext_resource type="PackedScene" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
-[ext_resource type="PackedScene" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
+[ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -309,7 +309,7 @@ tile_map_data = PackedByteArray("AAACAAAAAQADAAAAAAACAAIAAQABAAAAAAACAAMAAQABAAE
 tile_set = SubResource("TileSet_trtic")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(147, -261)
+position = Vector2(147, 32)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -549,10 +549,6 @@ position = Vector2(2544, -225)
 [node name="Slime2" parent="enemies" instance=ExtResource("16_rysoc")]
 position = Vector2(2993, -224)
 
-[node name="Robot" parent="." instance=ExtResource("23_ubas8")]
-position = Vector2(305, -269)
-scale = Vector2(2, 2)
-
 [node name="Doors" type="Node" parent="."]
 
 [node name="granddoor" parent="Doors" instance=ExtResource("29_ujqrk")]
@@ -560,6 +556,17 @@ position = Vector2(970, 16)
 
 [node name="StaticBody2D" parent="Doors" instance=ExtResource("29_ujqrk")]
 position = Vector2(4874, 16)
+
+[node name="robotEnemy" parent="." instance=ExtResource("29_uokai")]
+position = Vector2(1259, 32)
+scale = Vector2(2, 2)
+
+[node name="RobotOnlyCollision" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RobotOnlyCollision"]
+polygon = PackedVector2Array(1312, 64, 1312, 1, 1279, 1, 1239, 1, 980, 1, 980, 64, 1311, 64, 1311, 75, 973, 73, 974, -6, 1177, -6, 1312, -7, 1325, -7, 1325, 64, 1311, 64)
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
