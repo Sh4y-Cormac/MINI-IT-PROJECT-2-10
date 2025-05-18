@@ -1,8 +1,8 @@
 extends Node
 
 
-const scene_outside_shop = preload("res://GUI Scenes/ShopIsland.tscn")
-const scene_inside_shop = preload("res://GUI Scenes/insideshop.tscn")
+const scene_lobby = preload("res://GUI Scenes/ShopIsland.tscn")
+const scene_level1 = preload("res://GUI Scenes/insideshop.tscn")
 
 var spawn_door_tag
 
@@ -10,13 +10,14 @@ func go_to_level(level_tag, destination_tag):
 	var scene_to_load
 	
 	match level_tag:
-		"Outside Shop":
-			scene_to_load = scene_outside_shop
+		"lobby":
+			scene_to_load = scene_lobby
 		
-		"Inside shop":
-			scene_to_load = scene_inside_shop
+		"level_1":
+			scene_to_load = scene_level1
 		
 	if scene_to_load != null: 
 		spawn_door_tag = destination_tag
 		get_tree().change_scene_to_packed(scene_to_load)
 		
+ 
