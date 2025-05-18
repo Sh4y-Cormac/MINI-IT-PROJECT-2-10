@@ -167,6 +167,7 @@ size = Vector2(20, 41)
 size = Vector2(35, 64)
 
 [node name="player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
 

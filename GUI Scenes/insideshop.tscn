@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=10 format=3 uid="uid://bkxacktrcdo7t"]
 
+[ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
 [ext_resource type="Texture2D" uid="uid://cilcow2kh3u2a" path="res://Assets/Sprites/nature-paltformer-tileset-16x16.png" id="1_vgxvw"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="2_wg5q0"]
-[ext_resource type="PackedScene" uid="uid://bknnjlb1ywhyn" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
+[ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
+[ext_resource type="Script" uid="uid://hl6vqijph7i3" path="res://GUI Scenes/area_2d.gd" id="5_6ttlq"]
+[ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="6_b5lwv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxwcb"]
 texture = ExtResource("1_vgxvw")
@@ -13,33 +16,47 @@ texture = ExtResource("1_vgxvw")
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
 3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -47,9 +64,13 @@ texture = ExtResource("1_vgxvw")
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:6/0 = 0
 4:6/0 = 0
 5:6/0 = 0
@@ -78,7 +99,11 @@ texture = ExtResource("1_vgxvw")
 4:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_27drf"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sxwcb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad5hl"]
+size = Vector2(52, 42)
 
 [node name="Shop" type="Node2D"]
 
@@ -96,14 +121,43 @@ flip_h = true
 [node name="Node" type="Node" parent="."]
 
 [node name="Door" parent="Node" instance=ExtResource("3_mx4nm")]
-destination_level_tag = "lobby"
-destination_door_tag = "W"
-spawn_direction = "left"
 
-[node name="CollisionShape2D" parent="Node/Door" index="0"]
+[node name="Shop" parent="Node/Door" index="0"]
+position = Vector2(-295, 101)
+
+[node name="CollisionShape2D" parent="Node/Door" index="1"]
 position = Vector2(112, -8.5)
 
-[node name="Spawn" parent="Node/Door" index="1"]
-position = Vector2(162, -12)
+[node name="player" parent="." instance=ExtResource("1_ujdir")]
+position = Vector2(113, -1)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_bottom = 400
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(543, 14)
+script = ExtResource("5_6ttlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9, -4)
+shape = SubResource("RectangleShape2D_ad5hl")
+
+[node name="Shop GUI" parent="Area2D" instance=ExtResource("6_b5lwv")]
+offset_left = -28.0
+offset_top = -141.0
+offset_right = -28.0
+offset_bottom = -141.0
+
+[node name="NinePatchRect" parent="Area2D/Shop GUI" index="0"]
+offset_left = 176.0
+offset_top = -700.0
+offset_right = 976.0
+offset_bottom = -210.0
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 
 [editable path="Node/Door"]
+[editable path="Area2D/Shop GUI"]
