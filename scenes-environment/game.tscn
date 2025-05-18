@@ -561,6 +561,13 @@ position = Vector2(4874, 16)
 position = Vector2(1259, 32)
 scale = Vector2(2, 2)
 
+[node name="RobotOnlyCollision" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RobotOnlyCollision"]
+polygon = PackedVector2Array(1312, 64, 1312, 1, 1279, 1, 1239, 1, 980, 1, 980, 64, 1311, 64, 1311, 75, 973, 73, 974, -6, 1177, -6, 1312, -7, 1325, -7, 1325, 64, 1311, 64)
+
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]

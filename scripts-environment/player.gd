@@ -29,6 +29,9 @@ var isAttacking = false
 
 var jump_count = 0
 
+func _ready() -> void:
+	Global.playerBody = self
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
