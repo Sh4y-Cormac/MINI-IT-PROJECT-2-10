@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bcy26wmoa3j68"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bcy26wmoa3j68"]
 
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_8q4oa"]
+[ext_resource type="Texture2D" uid="uid://doeri1a5us1y4" path="res://Assets/Card Sprite/HP up.png" id="1_enwuq"]
 
 [resource]
 script = ExtResource("1_8q4oa")
 name = "HP up"
 title = "HP up"
+icon = ExtResource("1_enwuq")
 description = "+20 hp "
 price = ""
 type = "Card"
