@@ -43,7 +43,8 @@ var inventoryDict = {}
 var items = [
 	"res://Resources/Items/Short_sword.tres",
 	"res://Resources/Items/Sharpness.tres",
-	"res://Resources/Items/Atk_up.tres"
+	"res://Resources/Items/Atk_up.tres",
+	"res://Resources/Items/Hp up.tres"
 	]
 var onInventory = false
 

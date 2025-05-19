@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bcy26wmoa3j68"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_8q4oa"]
+
+[resource]
+script = ExtResource("1_8q4oa")
+name = "HP up"
+title = "HP up"
+description = "+20 hp "
+price = ""
+type = "Card"
+inventarSlot = "BagSlot"
+InventarPosition = -1
+stat_name = "hp"
+effect_type = "flat"
+value = 20.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"
