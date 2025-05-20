@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8kc4lpo1mlht"]
+
+[ext_resource type="Texture2D" uid="uid://datw0e0txf5xj" path="res://Assets/Sprites/platform_winter.png" id="1_6b0rq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_git1d"]
+size = Vector2(97, 19)
+
+[node name="platform_winter" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_6b0rq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_git1d")
