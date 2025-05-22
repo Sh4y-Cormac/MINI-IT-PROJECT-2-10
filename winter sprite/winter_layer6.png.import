@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwbe5qsc80myv"
-path="res://.godot/imported/winter_layer2.png-6cad785b03c7d714d10cb09d1f14cd83.ctex"
+uid="uid://b584bcsichmco"
+path="res://.godot/imported/winter_layer6.png-c1da0fe152f23a4c893fe0f741c171f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/winter_layer2.png"
-dest_files=["res://.godot/imported/winter_layer2.png-6cad785b03c7d714d10cb09d1f14cd83.ctex"]
+source_file="res://winter sprite/winter_layer6.png"
+dest_files=["res://.godot/imported/winter_layer6.png-c1da0fe152f23a4c893fe0f741c171f7.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8kc4lpo1mlht"]
 
-[ext_resource type="Texture2D" uid="uid://datw0e0txf5xj" path="res://Assets/Sprites/platform_winter.png" id="1_6b0rq"]
+[ext_resource type="Texture2D" uid="uid://datw0e0txf5xj" path="res://winter sprite/platform_winter.png" id="1_6b0rq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_git1d"]
 size = Vector2(97, 19)

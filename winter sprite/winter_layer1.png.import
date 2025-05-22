@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cor1cexxp2ngm"
-path="res://.godot/imported/winter_tilemaps.png-c3bb6e265972ddcc5b0fb8163a8a577c.ctex"
+uid="uid://ch2y48kq645gc"
+path="res://.godot/imported/winter_layer1.png-d939ec7748a865c033102f4968636d3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilemap/winter_tilemaps.png"
-dest_files=["res://.godot/imported/winter_tilemaps.png-c3bb6e265972ddcc5b0fb8163a8a577c.ctex"]
+source_file="res://winter sprite/winter_layer1.png"
+dest_files=["res://.godot/imported/winter_layer1.png-d939ec7748a865c033102f4968636d3c.ctex"]
 
 [params]
 

@@ -26,7 +26,6 @@ var isAttacking = false
 @onready var attack_area: CollisionShape2D = $AttackArea/CollisionShape2D
 @onready var long_attack_area: CollisionShape2D = $LongAttackArea/CollisionShape2D
 
-
 var jump_count = 0
 
 func _ready() -> void:
