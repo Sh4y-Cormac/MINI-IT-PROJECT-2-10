@@ -12,6 +12,8 @@ func _input(event):
 			print("no scene in this door")
 			return
 		if get_overlapping_bodies().size() > 0:
+			$AnimatedSprite2D.play("opening")
+			await $AnimatedSprite2D.animation_finished
 			next_level()
 
 func next_level():
