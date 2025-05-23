@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0o3qkcka8qs5"]
 
 [ext_resource type="Texture2D" uid="uid://ckclgee4ftk4n" path="res://winter sprite/ice_winter.png" id="1_8vkie"]
-[ext_resource type="Script" path="res://script-obstacles/ice_winter.gd" id="1_whfl4"]
+[ext_resource type="Script" uid="uid://clge2e62k1y1o" path="res://script-obstacles/ice_winter.gd" id="1_whfl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltny8"]
 size = Vector2(164, 496)
