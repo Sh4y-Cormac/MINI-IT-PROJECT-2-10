@@ -24,7 +24,6 @@ script = SubResource("GDScript_ksptm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/waterkill"]
 position = Vector2(-1.11116, 8.69611)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_570fi")
 
 [node name="Timer" type="Timer" parent="Sprite2D/waterkill"]
