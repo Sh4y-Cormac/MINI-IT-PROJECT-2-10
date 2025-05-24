@@ -55,6 +55,7 @@ stream = ExtResource("5_cr8vu")
 stream = ExtResource("6_4o31u")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1447, 17)
@@ -62,7 +63,7 @@ motion_mirroring = Vector2(0, 500)
 
 [node name="Stars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(54, 352)
+position = Vector2(110, 389)
 scale = Vector2(1.64844, 1.96484)
 texture = ExtResource("4_1iiuc")
 
@@ -74,6 +75,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_egeto")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+clip_children = 1
+layout_mode = 2
 
 [node name="UI layer" type="CanvasLayer" parent="."]
 
