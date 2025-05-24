@@ -4,6 +4,8 @@ class_name SpaceShip extends CharacterBody2D
 @onready var guns = $PlayerShip/Guns
 
 signal laser_shot(laser_scene, location)
+signal killed
+
 var laser_scene = preload("res://GUI Scenes/shiplaser.tscn")
 var cooldown := false
 
@@ -29,4 +31,5 @@ func shoot():
 	laser_shot.emit(laser_scene, guns.global_position)
 
 func destroyed():
+	killed.emit()
 	queue_free()

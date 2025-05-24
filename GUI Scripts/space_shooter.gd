@@ -7,6 +7,7 @@ extends Control
 @onready var spawnrate = $EnemySpawnRate
 @onready var enemy_container = $EnemyContainer
 @onready var HUD = $"UI layer/HUD"
+@onready var GameOverScreen = $"UI layer/SpaceShipGameOver"
 
 var SpaceShip = null
 var score := 0:
@@ -19,6 +20,14 @@ func _ready():
 	SpaceShip = get_tree().get_first_node_in_group("spaceship")
 	SpaceShip.global_position = spawn_position.global_position
 	SpaceShip.laser_shot.connect(_on_player_laser_shot)
+	SpaceShip.killed.connect(on_player_killed)
+
+func _process(delta):
+	if spawnrate.wait_time > 0.5:
+		spawnrate.wait_time -= delta * 0.05
+		
+	elif spawnrate.wait_time < 0.5:
+		spawnrate.wait_time = 0.5
 
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
@@ -35,3 +44,8 @@ func _on_enemy_spawn_rate_timeout() -> void:
 func on_enemy_killed(gold_earned):
 	score += gold_earned
 	print(score)
+
+func on_player_killed():
+	GameOverScreen.set_score(score)
+	await get_tree().create_timer(1).timeout
+	GameOverScreen.visible = true
