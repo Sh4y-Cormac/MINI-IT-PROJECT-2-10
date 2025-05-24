@@ -24,3 +24,13 @@ func _on_buy_pressed() -> void:
 			update_gold_label()
 		else:
 			print("Not enough gold!")
+
+
+func _on_button_mouse_entered() -> void:
+	$"../../audio/Hovering Sound Effect".play()
+
+
+func _on_button_pressed() -> void:
+	$"../../audio/Enter Sound Effect".play()
+	await $"../../audio/Enter Sound Effect".finished
+	$"../../Animations/ShopAnimation".play("Shop_Hide")

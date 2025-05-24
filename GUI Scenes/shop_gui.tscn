@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://p8a145kemlr7"]
+[gd_scene load_steps=24 format=3 uid="uid://p8a145kemlr7"]
 
 [ext_resource type="Script" uid="uid://co8bl3fqwcla0" path="res://GUI Scripts/shop_gui.gd" id="1_4ba3t"]
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="1_jtdgj"]
@@ -13,6 +13,28 @@ Label/colors/font_shadow_color = Color(0, 0, 0, 0.607843)
 Label/font_sizes/font_size = 20
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.658824)
 RichTextLabel/font_sizes/normal_font_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcqcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unskk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfxul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l76ir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ex8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2deip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh0dq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8lwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uypci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t01xl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mca05"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnexr"]
 
@@ -54,80 +76,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="Animation" id="Animation_dcqcn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(176, -700)]
-}
-
-[sub_resource type="Animation" id="Animation_77pke"]
-resource_name = "TransIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(176, -700), Vector2(176, 79)]
-}
-
-[sub_resource type="Animation" id="Animation_0j8a4"]
-resource_name = "TransOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NinePatchRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(176, 79)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_unskk"]
-_data = {
-&"RESET": SubResource("Animation_dcqcn"),
-&"TransIn": SubResource("Animation_77pke"),
-&"TransOut": SubResource("Animation_0j8a4")
-}
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcqcn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unskk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfxul"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l76ir"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ex8r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2deip"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh0dq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8lwv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uypci"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t01xl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mca05"]
-
 [node name="Shop GUI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
 anchors_preset = 15
@@ -158,6 +106,31 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="Exit Button" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 721.0
+offset_top = 26.0
+offset_right = 769.0
+offset_bottom = 66.0
+texture = ExtResource("7_0j8a4")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="NinePatchRect/Exit Button"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 40.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dcqcn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_unskk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lfxul")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_l76ir")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1ex8r")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2deip")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fh0dq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_m8lwv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uypci")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t01xl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mca05")
 
 [node name="Coins Display" type="NinePatchRect" parent="NinePatchRect"]
 layout_mode = 0
@@ -377,35 +350,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mca05")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4wj6w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sb6we")
 text = "BUY"
-
-[node name="Transition" type="AnimationPlayer" parent="."]
-process_mode = 3
-libraries = {
-&"": SubResource("AnimationLibrary_unskk")
-}
-
-[node name="Exit Button" type="TextureRect" parent="."]
-offset_left = 897.0
-offset_top = 105.0
-offset_right = 945.0
-offset_bottom = 145.0
-texture = ExtResource("7_0j8a4")
-expand_mode = 1
-
-[node name="Button" type="Button" parent="Exit Button"]
-layout_mode = 0
-offset_right = 48.0
-offset_bottom = 40.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dcqcn")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_unskk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_lfxul")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_l76ir")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1ex8r")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2deip")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_fh0dq")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_m8lwv")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_uypci")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t01xl")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_mca05")
 
 [connection signal="pressed" from="NinePatchRect/Buy" to="." method="_on_buy_pressed"]
