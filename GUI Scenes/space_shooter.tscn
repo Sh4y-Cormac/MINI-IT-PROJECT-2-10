@@ -34,11 +34,11 @@ enemyscenes = Array[PackedScene]([ExtResource("5_u3338"), ExtResource("6_ddcqd")
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 5000)
+motion_mirroring = Vector2(0, 500)
 
 [node name="Stars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(576, 355.5)
+position = Vector2(54, 352)
 scale = Vector2(1.64844, 1.96484)
 texture = ExtResource("4_1iiuc")
 
