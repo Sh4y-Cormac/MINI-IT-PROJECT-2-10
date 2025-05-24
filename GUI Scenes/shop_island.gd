@@ -1,9 +1,11 @@
 extends Node2D
 
+@onready var player_position = $SpawnPosition
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$animation/DogAnimation.play("Dog_Sleep")
+
 
 func _on_bag_icon_button_mouse_entered() -> void:
 	$"audio/Hovering Sound Effect".play()
