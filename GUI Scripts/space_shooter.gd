@@ -8,12 +8,14 @@ extends Control
 @onready var enemy_container = $EnemyContainer
 @onready var HUD = $"UI layer/HUD"
 @onready var GameOverScreen = $"UI layer/SpaceShipGameOver"
+@onready var background = $ParallaxBackground
 
 var SpaceShip = null
 var score := 0:
 	set(value):
 		score = value
 		HUD.score = score
+var scroll_speed = 100
 
 func _ready():
 	score = 0
@@ -28,6 +30,8 @@ func _process(delta):
 		
 	elif spawnrate.wait_time < 0.5:
 		spawnrate.wait_time = 0.5
+	
+	background.scroll_offset.y += delta * scroll_speed
 
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
