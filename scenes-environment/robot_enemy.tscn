@@ -1,7 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1palfvwh5ykp"]
+[gd_scene load_steps=26 format=3 uid="uid://b1palfvwh5ykp"]
 
 [ext_resource type="Script" uid="uid://berosbwo8qdpo" path="res://scenes-environment/robot_enemy.gd" id="1_02dxi"]
 [ext_resource type="Texture2D" uid="uid://n1dw50luxtcc" path="res://scenes-player-movement/enemy-sprites/robot-spritesheet-photo.png" id="1_in2xl"]
+[ext_resource type="Texture2D" uid="uid://nm2n48c1cdaa" path="res://scenes-player-movement/enemy-sprites/robot-attack-flame.png" id="3_x837y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd3tr"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jrsg"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuecp"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(256, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02dxi"]
 atlas = ExtResource("1_in2xl")
@@ -49,8 +62,17 @@ region = Rect2(256, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgt13"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd3tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jrsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuecp")
+}],
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -108,6 +130,49 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti26l"]
+atlas = ExtResource("3_x837y")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ort7o"]
+atlas = ExtResource("3_x837y")
+region = Rect2(96, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ftt"]
+atlas = ExtResource("3_x837y")
+region = Rect2(192, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtljg"]
+atlas = ExtResource("3_x837y")
+region = Rect2(0, 32, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hn7y"]
+atlas = ExtResource("3_x837y")
+region = Rect2(96, 32, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bc37h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti26l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ort7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ftt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtljg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hn7y")
+}],
+"loop": false,
+"name": &"flames",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x837y"]
 size = Vector2(20, 31)
 
@@ -118,7 +183,15 @@ script = ExtResource("1_02dxi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgt13")
-animation = &"move"
+animation = &"attack"
+frame = 2
+
+[node name="AttackAnims" type="AnimatedSprite2D" parent="."]
+position = Vector2(-34, 0)
+sprite_frames = SubResource("SpriteFrames_bc37h")
+animation = &"flames"
+frame = 1
+frame_progress = 0.921706
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

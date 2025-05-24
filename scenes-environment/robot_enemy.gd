@@ -2,11 +2,20 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const add = 30
+
 const speed = 30
+var is_enemy_chasing: bool
+
+var health = 80
+var health_max = 0
+var health_min = 0 
+var dead: bool = false
+var taking_damage: bool = false
+
 var dir: Vector2
 var player: CharacterBody2D
-var is_enemy_chasing: bool
+
+var is_enemy_attacking: bool
 
 func _ready() -> void:
 	is_enemy_chasing = true

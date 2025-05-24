@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+var health = 100.0
+var damage = 10.0
 @export var walk_speed = 200.0
 @export var run_speed = 400.0
 @export_range(0,1) var acceleration = 0.2
