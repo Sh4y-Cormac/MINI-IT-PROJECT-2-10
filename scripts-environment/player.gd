@@ -66,16 +66,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 	
-	#shortsword attack
-	#if Input.is_action_just_pressed("attack"):
-		#animated_sprite.play("shortsword")
-		#isAttacking = true
-		#
-	##longsword attack
-	#if Input.is_action_just_pressed("longattack"):
-		#animated_sprite.play("longsword")
-		#isAttacking = true
-		
 	#dash mechanic
 	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
 		is_dashing = true
@@ -103,19 +93,12 @@ func _physics_process(delta: float) -> void:
 				attack_type = "shortsword"
 			elif Input.is_action_just_pressed("right_mouse"):
 				attack_type = "longsword"
+			
+			set_damage(attack_type)
 			handle_attack_animation(attack_type)
+			
 	handle_movement_animation(direction)	
 	move_and_slide()
-
-#handle shortsword and longsword collision
-#func _on_animated_sprite_2d_animation_finished() -> void:
-	#if animated_sprite.animation == "shortsword" or animated_sprite.animation == "longsword":
-		#if animated_sprite.animation == "shortsword":
-			#attack_area.disabled = true
-			#isAttacking = false
-		#else:
-			#long_attack_area.disabled = true
-			#isAttacking = false
 
 func handle_movement_animation(direction):
 	if is_on_floor() and !current_attack:
@@ -161,3 +144,12 @@ func toggle_damage_collisions(attack_type):
 		
 func _on_animated_sprite_2d_animation_finished() -> void:
 	current_attack = false
+
+func set_damage(attack_type):
+	var current_damage_to_deal: int
+	if attack_type == "shortsword":
+		current_damage_to_deal = 10
+	elif attack_type == "longsword":
+		current_damage_to_deal = 25
+	Global.playerDamageAmount = current_damage_to_deal
+		
