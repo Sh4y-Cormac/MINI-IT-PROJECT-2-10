@@ -23,23 +23,20 @@ var dash_timer = 0
 var isAttacking = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var attack_area: CollisionShape2D = $AttackArea/CollisionShape2D
-@onready var long_attack_area: CollisionShape2D = $LongAttackArea/CollisionShape2D
+@onready var deal_damage_zone: Area2D = $DealDamageZone
 
 var jump_count = 0
 
 var attack_type: String
 var current_attack: bool 
-var weapon_equip: bool
+
 
 
 func _ready() -> void:
 	Global.playerBody = self
-	weapon_equip = false
 	current_attack = false
 
 func _physics_process(delta: float) -> void:
-	weapon_equip = Global.player_weapon_equip
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -69,17 +66,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 	
 	#shortsword attack
-	if Input.is_action_just_pressed("attack"):
-		animated_sprite.play("shortsword")
-		isAttacking = true
-		attack_area.disabled = false
+	#if Input.is_action_just_pressed("attack"):
+		#animated_sprite.play("shortsword")
+		#isAttacking = true
+		#
+	##longsword attack
+	#if Input.is_action_just_pressed("longattack"):
+		#animated_sprite.play("longsword")
+		#isAttacking = true
 		
-	#longsword attack
-	if Input.is_action_just_pressed("longattack"):
-		animated_sprite.play("longsword")
-		isAttacking = true
-		long_attack_area.disabled = false
-	
 	#dash mechanic
 	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
 		is_dashing = true
@@ -100,9 +95,14 @@ func _physics_process(delta: float) -> void:
 	if dash_timer > 0:
 		dash_timer -= delta
 	
-	if weapon_equip and !current_attack:
+	if !current_attack:
 		if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
 			current_attack = true
+			if Input.is_action_just_pressed("left_mouse"):
+				attack_type = "shortsword"
+			elif Input.is_action_just_pressed("right_mouse"):
+				attack_type = "longsword"
+			handle_attack_animation(attack_type)
 	handle_movement_animation(direction)	
 	move_and_slide()
 
@@ -117,22 +117,32 @@ func _physics_process(delta: float) -> void:
 			#isAttacking = false
 
 func handle_movement_animation(direction):
-	if !weapon_equip:
-		if is_on_floor():
-			if !velocity:
-				animated_sprite.play("idle")
-			if velocity:
-				animated_sprite.play("run")
-				toggle_flip_sprite(direction)
-		elif !is_on_floor():
-			animated_sprite.play("jump")
+	if is_on_floor() and !current_attack:
+		if !velocity:
+			animated_sprite.play("idle")
+		if velocity:
+			animated_sprite.play("run")
 			toggle_flip_sprite(direction)
+	elif !is_on_floor() and !current_attack:
+		animated_sprite.play("jump")
+		toggle_flip_sprite(direction)
 
 func toggle_flip_sprite(direction):
 	if direction == 1:
 		animated_sprite.flip_h = false
+		deal_damage_zone.scale.x = 1
 	if direction == -1:
 		animated_sprite.flip_h = true
-		
+		deal_damage_zone.scale.x = -1
+
+func handle_attack_animation(attack_type):
+	if current_attack:
+		var animation = str(attack_type, "_attack")
+		animated_sprite.play(animation)
+		toggle_damage_collisions(attack_type)
+
+func toggle_damage_collisions(attack_type):
+	pass
 	
-	
+func _on_animated_sprite_2d_animation_finished() -> void:
+	current_attack = false
