@@ -3,15 +3,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Dog_Sleep")
-
+	$Node/DogAnimation.play("Dog_Sleep", -1, 1)
 
 func _on_bag_icon_button_mouse_entered() -> void:
 	$"audio/Hovering Sound Effect".play()
-	$AnimationPlayer.play("bag_animation")
+	$animation/BagAnimation.play("bag_animation")
 
 func _on_bag_icon_button_mouse_exited() -> void:
-	$AnimationPlayer.play_backwards("bag_animation")
+	$animation/BagAnimation.play_backwards("bag_animation")
 
 
 func _on_bag_icon_button_pressed() -> void:

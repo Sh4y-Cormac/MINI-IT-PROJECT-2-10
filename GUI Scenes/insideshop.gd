@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	$AnimationPlayer.play("org_animation")
+	$Animations/OrgAnimation.play("org_animation")
 
 func _on_bag_icon_button_mouse_entered() -> void:
 	$"audio/Hovering Sound Effect".play()

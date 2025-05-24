@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=34 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_13hmj"]
 [ext_resource type="Script" uid="uid://bdo6ruhfgugth" path="res://GUI Scenes/shop_island.gd" id="1_dr1pm"]
@@ -369,6 +369,31 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ulm3l")
 sources/4 = SubResource("TileSetAtlasSource_8pjuw")
 
+[sub_resource type="GDScript" id="GDScript_lo1pf"]
+resource_name = "gold"
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Gold : \" + \"10000\"
+	
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hqus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dlyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlxjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0f6a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2yil"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us43i"]
+bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
+
 [sub_resource type="Animation" id="Animation_pttj7"]
 resource_name = "Dog_Sleep"
 length = 0.6333
@@ -401,13 +426,19 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cr8pq"]
+_data = {
+&"Dog_Sleep": SubResource("Animation_pttj7"),
+&"RESET": SubResource("Animation_8pjuw")
+}
+
 [sub_resource type="Animation" id="Animation_dg8pe"]
 resource_name = "bag_animation"
 length = 1.3333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Bag Icon:frame")
+tracks/0/path = NodePath("../CanvasLayer/Bag Icon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -417,37 +448,10 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cr8pq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8j5p"]
 _data = {
-&"Dog_Sleep": SubResource("Animation_pttj7"),
-&"RESET": SubResource("Animation_8pjuw"),
 &"bag_animation": SubResource("Animation_dg8pe")
 }
-
-[sub_resource type="GDScript" id="GDScript_lo1pf"]
-resource_name = "gold"
-script/source = "extends Label
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	text = \"Gold : \" + \"10000\"
-	
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hqus"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dlyc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlxjd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0f6a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2yil"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us43i"]
-bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
 
 [node name="ShopIsland" type="Node2D"]
 script = ExtResource("1_dr1pm")
@@ -494,11 +498,6 @@ offset = Vector2(0, -1048)
 position = Vector2(139, -5)
 scale = Vector2(0.152, 0.198)
 texture = ExtResource("5_ulm3l")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_cr8pq")
-}
 
 [node name="Dog" type="Sprite2D" parent="."]
 position = Vector2(1779, -144)
@@ -606,6 +605,20 @@ position = Vector2(-74, 218)
 stream = ExtResource("18_bcwrm")
 max_distance = 100000.0
 bus = &"SFX"
+
+[node name="animation" type="Node" parent="."]
+
+[node name="DogAnimation" type="AnimationPlayer" parent="animation"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_cr8pq")
+}
+
+[node name="BagAnimation" type="AnimationPlayer" parent="animation"]
+libraries = {
+&"": SubResource("AnimationLibrary_t8j5p")
+}
+speed_scale = 4.0
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
