@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgfhwdfy73kb2"]
+[gd_scene load_steps=7 format=3 uid="uid://bgfhwdfy73kb2"]
 
 [ext_resource type="Script" uid="uid://b58858bycdlxv" path="res://GUI Scripts/space_shooter.gd" id="1_1a5ep"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_df6eo"]
 [ext_resource type="PackedScene" uid="uid://bd5dbqh2vgscj" path="res://GUI Scenes/space_ship.tscn" id="2_egeto"]
 [ext_resource type="PackedScene" uid="uid://cn63dknpjj4ky" path="res://GUI Scenes/shiplaser.tscn" id="4_yyomn"]
+[ext_resource type="PackedScene" uid="uid://d1g1uyyw0qowb" path="res://GUI Scenes/enemy_ships.tscn" id="5_u3338"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egeto"]
 texture = ExtResource("1_df6eo")
@@ -44,3 +45,6 @@ position = Vector2(171, 547)
 
 [node name="LaserContainer" type="Node2D" parent="."]
 position = Vector2(-351, -35)
+
+[node name="EnemyShip" parent="." instance=ExtResource("5_u3338")]
+position = Vector2(204, 79)
