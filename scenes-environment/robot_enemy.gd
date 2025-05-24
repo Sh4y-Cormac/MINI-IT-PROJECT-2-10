@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
+const add = 30
 const speed = 30
 var dir: Vector2
 var player: CharacterBody2D
