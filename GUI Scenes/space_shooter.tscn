@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgfhwdfy73kb2"]
+[gd_scene load_steps=8 format=3 uid="uid://bgfhwdfy73kb2"]
 
 [ext_resource type="Script" uid="uid://b58858bycdlxv" path="res://GUI Scripts/space_shooter.gd" id="1_1a5ep"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_df6eo"]
 [ext_resource type="PackedScene" uid="uid://bd5dbqh2vgscj" path="res://GUI Scenes/space_ship.tscn" id="2_egeto"]
 [ext_resource type="PackedScene" uid="uid://cn63dknpjj4ky" path="res://GUI Scenes/shiplaser.tscn" id="4_yyomn"]
 [ext_resource type="PackedScene" uid="uid://d1g1uyyw0qowb" path="res://GUI Scenes/enemy_ships.tscn" id="5_u3338"]
+[ext_resource type="PackedScene" uid="uid://cb2s2x7k73gan" path="res://GUI Scenes/elite_space_enemy.tscn" id="6_ddcqd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egeto"]
 texture = ExtResource("1_df6eo")
@@ -24,6 +25,7 @@ offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1a5ep")
+enemyscenes = Array[PackedScene]([ExtResource("5_u3338"), ExtResource("6_ddcqd")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -46,5 +48,9 @@ position = Vector2(171, 547)
 [node name="LaserContainer" type="Node2D" parent="."]
 position = Vector2(-351, -35)
 
-[node name="EnemyShip" parent="." instance=ExtResource("5_u3338")]
-position = Vector2(204, 79)
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="EnemySpawnRate" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="EnemySpawnRate" to="." method="_on_enemy_spawn_rate_timeout"]
