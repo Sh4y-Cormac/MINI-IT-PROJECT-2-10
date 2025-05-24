@@ -192,7 +192,7 @@ dash_curve = SubResource("Curve_kq5nu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
-animation = &"shortsword_attack"
+animation = &"longsword_attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -203,5 +203,6 @@ shape = SubResource("RectangleShape2D_dqkch")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
 position = Vector2(20.5, 13.5)
 shape = SubResource("RectangleShape2D_pv6nf")
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

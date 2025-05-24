@@ -37,6 +37,7 @@ func _ready() -> void:
 	current_attack = false
 
 func _physics_process(delta: float) -> void:
+	Global.playerDamageZone = deal_damage_zone
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -142,7 +143,21 @@ func handle_attack_animation(attack_type):
 		toggle_damage_collisions(attack_type)
 
 func toggle_damage_collisions(attack_type):
-	pass
-	
+	var damage_zone_collision  = deal_damage_zone.get_node("CollisionShape2D")
+	var origin: Vector2 = damage_zone_collision.position
+	var originSize: Vector2 = damage_zone_collision.shape.extents
+	var wait_time: float
+	if attack_type == "shortsword":
+		wait_time = 0.4
+	elif attack_type == "longsword":
+		damage_zone_collision.position = Vector2(30.0,0.0)  # size of longsword collision
+		damage_zone_collision.shape.extents = Vector2(20.0,35.0) # size of longsword collision
+		wait_time = 0.7
+	damage_zone_collision.disabled = false
+	await get_tree().create_timer(wait_time).timeout
+	damage_zone_collision.position = origin
+	damage_zone_collision.shape.extents = originSize
+	damage_zone_collision.disabled = true
+		
 func _on_animated_sprite_2d_animation_finished() -> void:
 	current_attack = false
