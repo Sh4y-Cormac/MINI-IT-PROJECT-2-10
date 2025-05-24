@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 
 signal kill(gold_earned)
+signal hit
 
 @export var speed = 150
 @export var hp = 1
@@ -26,4 +27,6 @@ func damage(amount):
 	if hp <= 0:
 		kill.emit(gold_earned)
 		destroyed()
+	else:
+		hit.emit()
 	

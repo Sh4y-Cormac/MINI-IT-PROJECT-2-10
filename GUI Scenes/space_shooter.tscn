@@ -1,17 +1,30 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgfhwdfy73kb2"]
+[gd_scene load_steps=15 format=3 uid="uid://bgfhwdfy73kb2"]
 
 [ext_resource type="Script" uid="uid://b58858bycdlxv" path="res://GUI Scripts/space_shooter.gd" id="1_1a5ep"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_df6eo"]
 [ext_resource type="PackedScene" uid="uid://bd5dbqh2vgscj" path="res://GUI Scenes/space_ship.tscn" id="2_egeto"]
 [ext_resource type="Texture2D" uid="uid://dsqd71b7hjn5d" path="res://Assets/Images/darkPurple.png" id="4_1iiuc"]
+[ext_resource type="AudioStream" uid="uid://dv6r6cgkwvenq" path="res://Assets/Audio & Sound Effects/laser.ogg" id="4_u2qws"]
 [ext_resource type="PackedScene" uid="uid://cn63dknpjj4ky" path="res://GUI Scenes/shiplaser.tscn" id="4_yyomn"]
 [ext_resource type="PackedScene" uid="uid://c1eueho8pw4yu" path="res://GUI Scenes/spaceshooterhud.tscn" id="5_5xv8v"]
+[ext_resource type="AudioStream" uid="uid://bfnkyv2x1sl2j" path="res://Assets/Audio & Sound Effects/Explosion Sound Effect.mp3" id="5_cr8vu"]
 [ext_resource type="PackedScene" uid="uid://d1g1uyyw0qowb" path="res://GUI Scenes/enemy_ships.tscn" id="5_u3338"]
+[ext_resource type="AudioStream" uid="uid://b7b30w0up41mm" path="res://Assets/Audio & Sound Effects/Hit Sound Effect.mp3" id="6_4o31u"]
 [ext_resource type="PackedScene" uid="uid://cb2s2x7k73gan" path="res://GUI Scenes/elite_space_enemy.tscn" id="6_ddcqd"]
 [ext_resource type="PackedScene" uid="uid://0ykyiawmntci" path="res://GUI Scenes/space_ship_game_over.tscn" id="6_ur8aa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egeto"]
 texture = ExtResource("1_df6eo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1iiuc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(250, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -100.0
+gravity = Vector3(0, 0, 0)
 
 [node name="SpaceShooter" type="Control"]
 custom_minimum_size = Vector2(450, 600)
@@ -30,10 +43,21 @@ grow_vertical = 2
 script = ExtResource("1_1a5ep")
 enemyscenes = Array[PackedScene]([ExtResource("5_u3338"), ExtResource("6_ddcqd")])
 
+[node name="SFX" type="Node" parent="."]
+
+[node name="LaserShootingSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_u2qws")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_cr8vu")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_4o31u")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1447, 17)
 motion_mirroring = Vector2(0, 500)
 
 [node name="Stars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -57,6 +81,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_egeto")
 
 [node name="SpaceShipGameOver" parent="UI layer" instance=ExtResource("6_ur8aa")]
 visible = false
+
+[node name="StarsParticle" type="GPUParticles2D" parent="."]
+position = Vector2(1146, 75)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_1iiuc")
 
 [node name="SpaceShip" parent="." instance=ExtResource("2_egeto")]
 position = Vector2(-351, -5)

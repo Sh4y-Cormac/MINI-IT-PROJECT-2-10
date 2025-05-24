@@ -10,6 +10,10 @@ extends Control
 @onready var GameOverScreen = $"UI layer/SpaceShipGameOver"
 @onready var background = $ParallaxBackground
 
+@onready var laser_sound = $SFX/LaserShootingSound
+@onready var explosion_sound = $SFX/ExplosionSound
+@onready var hit_sound = $SFX/HitSound
+
 var SpaceShip = null
 var score := 0:
 	set(value):
@@ -32,24 +36,33 @@ func _process(delta):
 		spawnrate.wait_time = 0.5
 	
 	background.scroll_offset.y += delta * scroll_speed
+	if background.scroll_offset.y > 500:
+		background.scroll_offset.y = 0
 
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	laser_container.add_child(laser)
- 
+	laser_sound.play()
 
 func _on_enemy_spawn_rate_timeout() -> void:
 	var enemy = enemyscenes.pick_random().instantiate()
 	enemy.global_position = Vector2(randf_range(50, 400), 60)
 	enemy.kill.connect(on_enemy_killed)
+	enemy.hit.connect(on_enemy_hit)
 	enemy_container.add_child(enemy)
 
 func on_enemy_killed(gold_earned):
+	hit_sound.play()
 	score += gold_earned
 	print(score)
 
+func on_enemy_hit():
+	hit_sound.play()
+
+
 func on_player_killed():
+	explosion_sound.play()
 	GameOverScreen.set_score(score)
 	await get_tree().create_timer(1).timeout
 	GameOverScreen.visible = true
