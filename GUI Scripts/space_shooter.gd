@@ -1,7 +1,11 @@
 extends Control
 
+@export var enemyscenes: Array[PackedScene] = []
+
 @onready var spawn_position = $SpawnPoint
 @onready var laser_container = $LaserContainer
+@onready var spawnrate = $EnemySpawnRate
+@onready var enemy_container = $EnemyContainer
 
 var SpaceShip = null
 
@@ -15,3 +19,8 @@ func _on_player_laser_shot(laser_scene, location):
 	laser.global_position = location
 	laser_container.add_child(laser)
  
+
+func _on_enemy_spawn_rate_timeout() -> void:
+	var enemy = enemyscenes.pick_random().instantiate()
+	enemy.global_position = Vector2(300, 60)
+	enemy_container.add_child(enemy)

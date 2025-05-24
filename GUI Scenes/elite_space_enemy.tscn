@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2s2x7k73gan"]
+
+[ext_resource type="PackedScene" uid="uid://d1g1uyyw0qowb" path="res://GUI Scenes/enemy_ships.tscn" id="1_xbf4k"]
+[ext_resource type="Texture2D" uid="uid://cayxr47grgxie" path="res://Assets/Images/enemyBlack5.png" id="2_by6i1"]
+
+[node name="EliteSpaceEnemy" instance=ExtResource("1_xbf4k")]
+speed = 400
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_by6i1")
