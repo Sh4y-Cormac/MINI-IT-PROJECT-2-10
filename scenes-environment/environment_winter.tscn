@@ -762,5 +762,5 @@ position = Vector2(9121, 887)
 [node name="ice_winter15" parent="ice" instance=ExtResource("12_etgca")]
 position = Vector2(9281, 887)
 
-[node name="ice_winter" parent="." instance=ExtResource("12_etgca")]
+[node name="ice_winter16" parent="ice" instance=ExtResource("12_etgca")]
 position = Vector2(1008, 124)
