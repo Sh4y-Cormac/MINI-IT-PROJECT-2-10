@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
-[ext_resource type="PackedScene" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
-[ext_resource type="PackedScene" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
+[ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]

@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 class_name Player
 
-var health = 100.0
-var damage = 10.0
 @export var walk_speed = 200.0
 @export var run_speed = 400.0
 @export_range(0,1) var acceleration = 0.2
@@ -30,11 +28,19 @@ var isAttacking = false
 
 var jump_count = 0
 
+var attack_type: String
+var current_attack: bool 
+var weapon_equip: bool
+
+
 func _ready() -> void:
 	Global.playerBody = self
+	weapon_equip = false
+	current_attack = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	weapon_equip = Global.player_weapon_equip
+	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
@@ -62,30 +68,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 	
-	if direction > 0:
-		animated_sprite.flip_h = false
-		attack_area.position = Vector2(20,12)
-		long_attack_area.position = Vector2(27.5,0)
-	elif direction < 0:
-		animated_sprite.flip_h = true
-		attack_area.position = Vector2(-20,12)
-		long_attack_area.position = Vector2(-27.5,0)
-	# Play animation
-	if isAttacking == false:
-		if is_on_floor():
-			if direction == 0:
-				animated_sprite.play("idle")
-			else:
-				animated_sprite.play("run")
-		else:
-			animated_sprite.play("jump")
-	
 	#shortsword attack
 	if Input.is_action_just_pressed("attack"):
 		animated_sprite.play("shortsword")
 		isAttacking = true
 		attack_area.disabled = false
-	
+		
+	#longsword attack
 	if Input.is_action_just_pressed("longattack"):
 		animated_sprite.play("longsword")
 		isAttacking = true
@@ -110,16 +99,40 @@ func _physics_process(delta: float) -> void:
 	#reduces dash timer
 	if dash_timer > 0:
 		dash_timer -= delta
-		
-   
+	
+	if weapon_equip and !current_attack:
+		if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
+			current_attack = true
+	handle_movement_animation(direction)	
 	move_and_slide()
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation == "shortsword" or animated_sprite.animation == "longsword":
-		if animated_sprite.animation == "shortsword":
-			attack_area.disabled = true
-			isAttacking = false
-		else:
-			long_attack_area.disabled = true
-			isAttacking = false
+#handle shortsword and longsword collision
+#func _on_animated_sprite_2d_animation_finished() -> void:
+	#if animated_sprite.animation == "shortsword" or animated_sprite.animation == "longsword":
+		#if animated_sprite.animation == "shortsword":
+			#attack_area.disabled = true
+			#isAttacking = false
+		#else:
+			#long_attack_area.disabled = true
+			#isAttacking = false
+
+func handle_movement_animation(direction):
+	if !weapon_equip:
+		if is_on_floor():
+			if !velocity:
+				animated_sprite.play("idle")
+			if velocity:
+				animated_sprite.play("run")
+				toggle_flip_sprite(direction)
+		elif !is_on_floor():
+			animated_sprite.play("jump")
+			toggle_flip_sprite(direction)
+
+func toggle_flip_sprite(direction):
+	if direction == 1:
+		animated_sprite.flip_h = false
+	if direction == -1:
+		animated_sprite.flip_h = true
+		
+	
 	
