@@ -6,6 +6,7 @@
 [node name="EliteSpaceEnemy" instance=ExtResource("1_xbf4k")]
 speed = 400
 hp = 1
+gold_earned = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_by6i1")

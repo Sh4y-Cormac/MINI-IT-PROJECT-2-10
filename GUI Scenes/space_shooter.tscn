@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgfhwdfy73kb2"]
+[gd_scene load_steps=9 format=3 uid="uid://bgfhwdfy73kb2"]
 
 [ext_resource type="Script" uid="uid://b58858bycdlxv" path="res://GUI Scripts/space_shooter.gd" id="1_1a5ep"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_df6eo"]
 [ext_resource type="PackedScene" uid="uid://bd5dbqh2vgscj" path="res://GUI Scenes/space_ship.tscn" id="2_egeto"]
 [ext_resource type="PackedScene" uid="uid://cn63dknpjj4ky" path="res://GUI Scenes/shiplaser.tscn" id="4_yyomn"]
+[ext_resource type="PackedScene" uid="uid://c1eueho8pw4yu" path="res://GUI Scenes/spaceshooterhud.tscn" id="5_5xv8v"]
 [ext_resource type="PackedScene" uid="uid://d1g1uyyw0qowb" path="res://GUI Scenes/enemy_ships.tscn" id="5_u3338"]
 [ext_resource type="PackedScene" uid="uid://cb2s2x7k73gan" path="res://GUI Scenes/elite_space_enemy.tscn" id="6_ddcqd"]
 
@@ -35,6 +36,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_egeto")
+
+[node name="UI layer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI layer" instance=ExtResource("5_5xv8v")]
 
 [node name="SpaceShip" parent="." instance=ExtResource("2_egeto")]
 position = Vector2(-351, -5)
