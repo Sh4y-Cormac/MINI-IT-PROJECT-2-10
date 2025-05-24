@@ -55,7 +55,7 @@ func _on_enemy_spawn_rate_timeout() -> void:
 func on_enemy_killed(gold_earned):
 	hit_sound.play()
 	score += gold_earned
-	print(score)
+
 
 func on_enemy_hit():
 	hit_sound.play()
