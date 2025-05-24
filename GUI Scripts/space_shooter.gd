@@ -22,5 +22,5 @@ func _on_player_laser_shot(laser_scene, location):
 
 func _on_enemy_spawn_rate_timeout() -> void:
 	var enemy = enemyscenes.pick_random().instantiate()
-	enemy.global_position = Vector2(300, 60)
+	enemy.global_position = Vector2(randf_range(50, 400), 60)
 	enemy_container.add_child(enemy)

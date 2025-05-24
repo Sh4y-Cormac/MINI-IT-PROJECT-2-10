@@ -10,6 +10,7 @@ radius = 23.5372
 collision_layer = 16
 collision_mask = 40
 script = ExtResource("1_3wtv2")
+hp = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
