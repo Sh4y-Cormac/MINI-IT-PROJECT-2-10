@@ -148,6 +148,9 @@ Ship_Shoot={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Door"
 2d_physics/layer_3="Shop"
+2d_physics/layer_4="SpaceShip"
+2d_physics/layer_5="EnemyShip"
+2d_physics/layer_6="LaserShip"
 
 [rendering]
 
