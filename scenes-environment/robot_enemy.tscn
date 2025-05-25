@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b1palfvwh5ykp"]
+[gd_scene load_steps=31 format=3 uid="uid://b1palfvwh5ykp"]
 
 [ext_resource type="Script" uid="uid://berosbwo8qdpo" path="res://scenes-environment/robot_enemy.gd" id="1_02dxi"]
 [ext_resource type="Texture2D" uid="uid://n1dw50luxtcc" path="res://scenes-player-movement/enemy-sprites/robot-spritesheet-photo.png" id="1_in2xl"]
@@ -15,6 +15,18 @@ region = Rect2(160, 128, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kuecp"]
 atlas = ExtResource("1_in2xl")
 region = Rect2(256, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc37h"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5lei"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke3oc"]
+atlas = ExtResource("1_in2xl")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02dxi"]
 atlas = ExtResource("1_in2xl")
@@ -76,8 +88,17 @@ animations = [{
 "name": &"attack",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc37h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5lei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke3oc")
+}],
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -179,6 +200,9 @@ size = Vector2(20, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flpon"]
 size = Vector2(22, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5dfp"]
+size = Vector2(24, 35)
+
 [node name="robotEnemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 4
@@ -186,10 +210,10 @@ script = ExtResource("1_02dxi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgt13")
-animation = &"attack"
-frame = 2
+animation = &"death"
 
 [node name="AttackAnims" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-34, 0)
 sprite_frames = SubResource("SpriteFrames_bc37h")
 animation = &"flames"
@@ -208,6 +232,12 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RobotHitbox"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_flpon")
+
+[node name="RobotDealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RobotDealDamageArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_n5dfp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="RobotHitbox" to="." method="_on_robot_hitbox_area_entered"]

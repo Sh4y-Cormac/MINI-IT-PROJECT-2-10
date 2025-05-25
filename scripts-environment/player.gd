@@ -30,11 +30,17 @@ var jump_count = 0
 var attack_type: String
 var current_attack: bool 
 
-
+var health = 100
+var health_max = 100
+var health_min = 0
+var can_take_damage: bool
+var dead: bool 
 
 func _ready() -> void:
 	Global.playerBody = self
 	current_attack = false
+	dead = false
+	can_take_damage = true
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
@@ -43,61 +49,63 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		jump_count = 0
+	#test if the player is not dead
+	if !dead: 
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (jump_count < 2 or is_on_wall()):
-		jump_count += 1
-		velocity.y = jump_force
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and (jump_count < 2 or is_on_wall()):
+			jump_count += 1
+			velocity.y = jump_force
 	
-	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y *= decelerate_on_jump_release
+		if Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y *= decelerate_on_jump_release
 	
 	#handles running
-	var speed
-	if Input.is_action_pressed("run"):
-		speed = run_speed
-	else:
-		speed = walk_speed
+		var speed
+		if Input.is_action_pressed("run"):
+			speed = run_speed
+		else:
+			speed = walk_speed
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("left", "right")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
+		var direction := Input.get_axis("left", "right")
+		if direction:
+			velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
+		else:
+			velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 	
 	#dash mechanic
-	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
-		is_dashing = true
-		dash_start_position = position.x
-		dash_direction = direction
-		dash_timer = dash_cooldown
+		if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
+			is_dashing = true
+			dash_start_position = position.x
+			dash_direction = direction
+			dash_timer = dash_cooldown
 	
 	#performs actual dash
-	if is_dashing:
-		var current_distance = abs(position.x - dash_start_position)
-		if current_distance >= dash_max_distance or is_on_wall():
-			is_dashing = false
-		else:
-			velocity.x = dash_direction * dash_speed * dash_curve.sample(current_distance/dash_max_distance)
-			velocity.y = 0
+		if is_dashing:
+			var current_distance = abs(position.x - dash_start_position)
+			if current_distance >= dash_max_distance or is_on_wall():
+				is_dashing = false
+			else:
+				velocity.x = dash_direction * dash_speed * dash_curve.sample(current_distance/dash_max_distance)
+				velocity.y = 0
 	
 	#reduces dash timer
-	if dash_timer > 0:
-		dash_timer -= delta
+		if dash_timer > 0:
+			dash_timer -= delta
 	
-	if !current_attack:
-		if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
-			current_attack = true
-			if Input.is_action_just_pressed("left_mouse"):
-				attack_type = "shortsword"
-			elif Input.is_action_just_pressed("right_mouse"):
-				attack_type = "longsword"
+		if !current_attack:
+			if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
+				current_attack = true
+				if Input.is_action_just_pressed("left_mouse"):
+					attack_type = "shortsword"
+				elif Input.is_action_just_pressed("right_mouse"):
+					attack_type = "longsword"
 			
-			set_damage(attack_type)
-			handle_attack_animation(attack_type)
+				set_damage(attack_type)
+				handle_attack_animation(attack_type)
 			
-	handle_movement_animation(direction)	
+		handle_movement_animation(direction)	
 	move_and_slide()
 
 func handle_movement_animation(direction):
