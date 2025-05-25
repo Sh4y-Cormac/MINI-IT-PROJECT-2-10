@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://x14cbbaggkwy"]
+[gd_scene load_steps=8 format=3 uid="uid://x14cbbaggkwy"]
 
 [ext_resource type="Script" uid="uid://1nqbev5hvpsl" path="res://GUI Scripts/spaceshipwindow.gd" id="1_b0wcw"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_bdmmy"]
+[ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_k8sv5"]
 [ext_resource type="PackedScene" uid="uid://bgfhwdfy73kb2" path="res://GUI Scenes/space_shooter.tscn" id="1_vgk7d"]
 [ext_resource type="Texture2D" uid="uid://dsqd71b7hjn5d" path="res://Assets/Images/darkPurple.png" id="2_awpnu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wifu4"]
+texture = ExtResource("1_k8sv5")
+expand_margin_left = 15.0
+expand_margin_top = 20.0
+expand_margin_right = 15.0
+expand_margin_bottom = 20.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b0wcw"]
 particle_flag_disable_z = true
@@ -21,6 +30,14 @@ audio_listener_enable_2d = true
 title = "Space Shooter Minigame"
 initial_position = 1
 size = Vector2i(450, 600)
+theme_override_colors/title_color = Color(1, 1, 1, 1)
+theme_override_constants/title_outline_size = 2
+theme_override_constants/title_height = 16
+theme_override_constants/close_h_offset = 14
+theme_override_constants/close_v_offset = 16
+theme_override_fonts/title_font = ExtResource("1_bdmmy")
+theme_override_font_sizes/title_font_size = 10
+theme_override_styles/embedded_border = SubResource("StyleBoxTexture_wifu4")
 script = ExtResource("1_b0wcw")
 
 [node name="SpaceShooter" parent="Window" instance=ExtResource("1_vgk7d")]
@@ -38,6 +55,6 @@ motion_mirroring = Vector2(0, 300)
 
 [node name="Stars" type="Sprite2D" parent="Window/ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(139, 120)
+position = Vector2(139, 223)
 scale = Vector2(1.9, 3)
 texture = ExtResource("2_awpnu")
