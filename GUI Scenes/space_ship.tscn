@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd5dbqh2vgscj"]
+
+[ext_resource type="Texture2D" uid="uid://do5n0d51psck5" path="res://Assets/Images/playerShip1_red.png" id="1_016tx"]
+[ext_resource type="Script" uid="uid://dj83260kgu77b" path="res://GUI Scripts/space_ship.gd" id="1_igf0e"]
+
+[node name="SpaceShip" type="CharacterBody2D" groups=["spaceship"]]
+process_mode = 3
+collision_layer = 8
+collision_mask = 16
+motion_mode = 1
+script = ExtResource("1_igf0e")
+
+[node name="PlayerShip" type="Sprite2D" parent="."]
+position = Vector2(-0.125, 0.125001)
+scale = Vector2(0.64899, 0.616667)
+texture = ExtResource("1_016tx")
+
+[node name="Guns" type="Marker2D" parent="PlayerShip"]
+position = Vector2(0.192612, -48.8514)
+scale = Vector2(1.54086, 1.62162)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, 15, -32, -3, -24, 1, -8, -8, -6, -23, 5, -23, 8, -7, 23, 1, 32, -4, 30, 16, 9, 17, 5, 24, -5, 24, -9, 17)

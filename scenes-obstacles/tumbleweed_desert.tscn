@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxaw3pk3bv5x5"]
+[gd_scene load_steps=4 format=3 uid="uid://dxaw3pk3bv5x5"]
 
 [ext_resource type="Script" uid="uid://it0dpm1st1yx" path="res://script-obstacles/tumbleweed.gd" id="1_iqtns"]
 [ext_resource type="Texture2D" uid="uid://b4i0d00gqdo5q" path="res://Assets/Sprites/tumbleweed.png" id="2_qb5gx"]
@@ -6,12 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfy2a"]
 radius = 17.0294
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqtns"]
-size = Vector2(24.5, 12.5)
-
 [node name="tumbleweed_desert" type="Node2D"]
 
 [node name="tumbleweed" type="CharacterBody2D" parent="."]
+collision_layer = 2
 script = ExtResource("1_iqtns")
 
 [node name="Sprite2D" type="Sprite2D" parent="tumbleweed"]
@@ -22,16 +20,3 @@ texture = ExtResource("2_qb5gx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tumbleweed"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_qfy2a")
-
-[node name="tumbleweedkill" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tumbleweedkill"]
-position = Vector2(0, 9)
-shape = SubResource("RectangleShape2D_iqtns")
-
-[node name="Timer" type="Timer" parent="tumbleweedkill"]
-wait_time = 0.5
-one_shot = true
-
-[connection signal="body_entered" from="tumbleweedkill" to="tumbleweed" method="_on_tumbleweedkill_body_entered"]
-[connection signal="timeout" from="tumbleweedkill/Timer" to="tumbleweed" method="_on_timer_timeout"]

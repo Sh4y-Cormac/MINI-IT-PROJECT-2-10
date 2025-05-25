@@ -4,8 +4,8 @@ signal dropOut
 
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var ArmorSlot = $"Inventory GUI/Equipment"
-@onready var WeaponSlot1 = $"Inventory GUI/Equipment2"
-@onready var WeaponSlot2 = $"Inventory GUI/Equipment3"
+@onready var WeaponSlot1 = $"Inventory GUI/Equipment_2"
+@onready var WeaponSlot2 = $"Inventory GUI/Equipment_3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 @onready var stats_window: Control = $"Inventory GUI/CanvasLayer/Stats Window"
 
@@ -130,17 +130,17 @@ func _can_drop_data(at_position, data):
 	
 	var itemAllowed = _is_item_allowed(dragItem, targetslotnode)
 	
-	return targetslotnode != null || onTrashCan || not onInventory && itemAllowed
+	return targetslotnode != null || onTrashCan || not onInventory
 
 func _drop_data(at_position, dragslotnode):
 	var onTrashCan = _on_trash_can(at_position)
 	
 	if onTrashCan:
-		dragslotnode.set_new_data(null)
+		dragslotnode.delete_resource()
 	
 	elif not onInventory:
 		dropOut.emit(dragslotnode.itemResource, at_position)
-		dragslotnode.set_new_data(null)
+		dragslotnode.delete_resource()
 	
 	else:
 		var targetslotnode = get_slot_node_position(at_position)
@@ -163,7 +163,6 @@ func _on_trash_can(position):
 	return trashcan.get_global_rect().has_point(position)
 	
 
-
 func _is_item_allowed(item, slotNode):
 	if slotNode ==  null:return
 	
@@ -173,9 +172,9 @@ func _is_item_allowed(item, slotNode):
 	
 	if not isequipmentslot: return true
 	
-	var accessSlot1 = slotName == "Slot 1" &&  itemType == "HeadArmor"
-	var accessSlot2 = slotName == "Slot 2" &&  itemType == "Armor"
-	var accessSlot3 = slotName == "Slot 3" &&  itemType == "Weapon"
+	var accessSlot1 = slotName == "Equipment_Slot1" &&  itemType == "Weapon"
+	var accessSlot2 = slotName == "Equipment_Slot2" &&  itemType == "Armor"
+	var accessSlot3 = slotName == "Equipment_Slot3" &&  itemType == "Weapon"
 	
 	if accessSlot1 || accessSlot2 || accessSlot3:
 		return true
@@ -184,20 +183,16 @@ func _is_item_allowed(item, slotNode):
 
 
 
-func _on_inventory_gui_mouse_entered() -> void:
-	onInventory = true
-
-
-func _on_inventory_gui_mouse_exited() -> void:
-	onInventory = false
-
-
-
 func _on_button_pressed() -> void:
 	$"../../audio/Enter Sound Effect".play()
 	$".".visible = false
 
-
-
 func _on_button_mouse_entered() -> void:
 	$"../../audio/Hovering Sound Effect".play()
+
+
+func _on_inventory_gui_mouse_entered() -> void:
+	onInventory = true
+
+func _on_inventory_gui_mouse_exited() -> void:
+	onInventory = false

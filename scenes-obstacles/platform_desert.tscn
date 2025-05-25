@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl34wby45sp3h"]
 
-[ext_resource type="Texture2D" uid="uid://bd0ahlmfmoaey" path="res://Assets/Sprites/platfrom_desert.png" id="1_mcuen"]
+[ext_resource type="Texture2D" uid="uid://byvbjh52enlpi" path="res://Assets/Sprites/platform_desert.png" id="1_lhb4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23ifu"]
-size = Vector2(64, 17)
+size = Vector2(80, 17)
 
 [node name="platform_desert" type="AnimatableBody2D"]
 collision_layer = 2
@@ -11,9 +11,9 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_mcuen")
+texture = ExtResource("1_lhb4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -0.5)
+position = Vector2(-6, -0.5)
 shape = SubResource("RectangleShape2D_23ifu")
 one_way_collision = true

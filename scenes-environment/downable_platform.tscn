@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://byhi50i48ibis"]
+
+[ext_resource type="Script" uid="uid://dopcwiy41s462" path="res://scripts-environment/downable_platform.gd" id="1_f58n4"]
+[ext_resource type="Texture2D" uid="uid://bb4v1ht6uqsrx" path="res://Assets/Grassland Sprites/downablePlatform.png" id="2_f58n4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wak0"]
+size = Vector2(96, 19)
+
+[node name="downablePlatform" type="StaticBody2D"]
+script = ExtResource("1_f58n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 16)
+texture = ExtResource("2_f58n4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 9.5)
+shape = SubResource("RectangleShape2D_5wak0")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

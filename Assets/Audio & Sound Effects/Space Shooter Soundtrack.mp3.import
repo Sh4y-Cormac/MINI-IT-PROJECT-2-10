@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2s3r3av8qwxq"
+path="res://.godot/imported/Space Shooter Soundtrack.mp3-7bdfc4f180695caaf8ff3f3e2ceb5254.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio & Sound Effects/Space Shooter Soundtrack.mp3"
+dest_files=["res://.godot/imported/Space Shooter Soundtrack.mp3-7bdfc4f180695caaf8ff3f3e2ceb5254.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
