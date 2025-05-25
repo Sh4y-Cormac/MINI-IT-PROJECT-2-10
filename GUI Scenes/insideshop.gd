@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var minigame = $Node/Window
+@onready var window = $SpaceShooter/Window
 
 func _ready():
-	minigame.hide()
+	window.hide()
 	$Animations/OrgAnimation.play("org_animation")
 
 func _on_bag_icon_button_mouse_entered() -> void:
@@ -27,10 +27,13 @@ func _on_arcade_machine_mouse_entered() -> void:
 func _on_arcade_machine_pressed() -> void:
 	$"audio/Enter Sound Effect".play()
 	await $"audio/Enter Sound Effect".finished
-	get_tree().paused = true
-	minigame.show()
+	#get_tree().paused = true
+	window.show()
 
 
 func _on_window_close_requested() -> void:
-	get_tree().paused = false
-	minigame.hide()
+	window.show()
+
+func _on_quit_pressed() -> void:
+	#get_tree().paused = false
+	window.hide()
