@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=29 format=3 uid="uid://d4kg8q6yhdrrb"]
 
+[ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_12bb1"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="1_qe70r"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="2_t44pw"]
 [ext_resource type="Texture2D" uid="uid://dt44y2ee2o5d2" path="res://Assets/tilemap/desert_tilemaps2.png" id="2_y3qsk"]
@@ -425,6 +426,7 @@ _data = {
 }
 
 [node name="environment_desert" type="Node2D"]
+script = ExtResource("1_12bb1")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dq8k4")
@@ -437,7 +439,8 @@ collision_mask = 2
 
 [node name="Camera2D2" type="Camera2D" parent="player"]
 position = Vector2(48, -8)
-limit_bottom = 290
+limit_bottom = 260
+limit_smoothed = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -494,14 +497,16 @@ texture = ExtResource("8_33rl5")
 motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-position = Vector2(401, -28)
+position = Vector2(401, 77)
+scale = Vector2(1, 1.19444)
 texture = ExtResource("9_a78xd")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-position = Vector2(401, -28)
+position = Vector2(407.5, 149.5)
+scale = Vector2(1.00677, 1.3287)
 texture = ExtResource("10_crs1x")
 
 [node name="death_point" parent="." instance=ExtResource("11_t44pw")]
@@ -569,3 +574,9 @@ position = Vector2(5780, -351)
 
 [node name="tumbleweed3_desert" parent="tumbleweed" instance=ExtResource("13_1q4qf")]
 position = Vector2(8619, -752)
+
+[node name="fireball_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]
