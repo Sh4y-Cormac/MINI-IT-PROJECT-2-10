@@ -324,10 +324,13 @@ texture = ExtResource("2_gu718")
 position = Vector2(60, 34)
 target_scene = "uid://c1qslm2ws1vck"
 
-[node name="Node" parent="." instance=ExtResource("4_d6jjc")]
+[node name="SpaceShooter" parent="." instance=ExtResource("4_d6jjc")]
 
-[node name="Window" parent="Node" index="0"]
+[node name="Window" parent="SpaceShooter" index="0"]
 process_mode = 2
+
+[node name="SpaceShooter" parent="SpaceShooter/Window" index="0"]
+process_mode = 3
 
 [node name="ArcadeMachine" type="Sprite2D" parent="."]
 position = Vector2(230.375, -21)
@@ -335,9 +338,9 @@ scale = Vector2(1.43644, 1.625)
 texture = ExtResource("18_aphbl")
 
 [node name="ArcadeMachine" type="Button" parent="ArcadeMachine"]
-offset_left = -14.0
+offset_left = -13.0
 offset_top = -16.0
-offset_right = 12.0
+offset_right = 11.0
 offset_bottom = 1.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aphbl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d6jjc")
@@ -367,7 +370,6 @@ collision_mask = 7
 position = Vector2(0, -63)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 11.0
@@ -489,6 +491,7 @@ stream = ExtResource("15_aphbl")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
 visible = false
@@ -505,7 +508,7 @@ stream = ExtResource("15_gu718")
 max_distance = 100000.0
 bus = &"SFX"
 
-[connection signal="close_requested" from="Node/Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="SpaceShooter/Window/SpaceShooter/UI layer/SpaceShipGameOver/Panel/Quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_mouse_entered"]
 [connection signal="pressed" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
@@ -515,7 +518,8 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_pressed"]
 [connection signal="body_entered" from="Shop Area" to="Shop Area" method="_on_body_entered"]
 
-[editable path="Node"]
-[editable path="Node/Window/SpaceShooter"]
+[editable path="SpaceShooter"]
+[editable path="SpaceShooter/Window/SpaceShooter"]
+[editable path="SpaceShooter/Window/SpaceShooter/UI layer/SpaceShipGameOver"]
 [editable path="player"]
 [editable path="CanvasLayer/Shop GUI"]

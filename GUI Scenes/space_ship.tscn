@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dj83260kgu77b" path="res://GUI Scripts/space_ship.gd" id="1_igf0e"]
 
 [node name="SpaceShip" type="CharacterBody2D" groups=["spaceship"]]
+process_mode = 3
 collision_layer = 8
 collision_mask = 16
 motion_mode = 1

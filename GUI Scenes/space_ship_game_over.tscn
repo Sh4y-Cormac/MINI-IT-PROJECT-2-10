@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ykyiawmntci"]
+[gd_scene load_steps=7 format=3 uid="uid://0ykyiawmntci"]
 
 [ext_resource type="Script" uid="uid://0kw8m7pnquo2" path="res://GUI Scripts/space_ship_game_over.gd" id="1_atxdk"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_vmrel"]
@@ -11,6 +11,8 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_px2ph"]
 
 [node name="SpaceShipGameOver" type="Control"]
 custom_minimum_size = Vector2(450, 0)
@@ -94,8 +96,10 @@ offset_right = 86.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_vmrel")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_px2ph")
 text = "RESTART"
 
 [node name="Quit" type="Button" parent="Panel"]
@@ -111,8 +115,10 @@ offset_right = 86.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_vmrel")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_px2ph")
 text = "QUIT"
 
 [node name="Sound Effects" type="Node" parent="."]
