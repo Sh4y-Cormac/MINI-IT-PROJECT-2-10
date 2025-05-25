@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5tljf2w2c2uo"
+path="res://.godot/imported/Shop Soundtrack.mp3-0e28eeb441a28a2156b6b6ad2b7a8cbb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3"
+dest_files=["res://.godot/imported/Shop Soundtrack.mp3-0e28eeb441a28a2156b6b6ad2b7a8cbb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="13_dg8pe"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="14_t8j5p"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="15_bcwrm"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="16_dg8pe"]
+[ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]
 [ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="19_t8j5p"]
@@ -481,11 +481,6 @@ layer_1/tile_data = PackedInt32Array(-65501, 851972, 15, 29, 851972, 15, 28, 851
 position = Vector2(147, -10)
 collision_layer = 2
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-limit_bottom = 400
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -589,7 +584,7 @@ show_percentage = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("16_dg8pe")
+stream = ExtResource("16_t8j5p")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"

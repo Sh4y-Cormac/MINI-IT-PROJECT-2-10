@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="10_6qaus"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="12_gu718"]
 [ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="13_6qaus"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="13_kr45k"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="14_6qaus"]
+[ext_resource type="AudioStream" uid="uid://c5tljf2w2c2uo" path="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3" id="15_aphbl"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxwcb"]
@@ -326,12 +326,6 @@ position = Vector2(108, 0)
 collision_layer = 6
 collision_mask = 7
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(1, -29)
-limit_bottom = 400
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -449,7 +443,7 @@ speed_scale = 4.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("13_kr45k")
+stream = ExtResource("15_aphbl")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
