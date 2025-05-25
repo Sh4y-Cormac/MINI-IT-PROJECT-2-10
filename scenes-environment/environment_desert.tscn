@@ -435,7 +435,7 @@ layer_0/tile_data = PackedInt32Array(5, 65536, 3, 6, 131072, 3, 8, 131072, 3, 10
 position = Vector2(141, -31)
 collision_mask = 2
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D2" type="Camera2D" parent="player"]
 position = Vector2(48, -8)
 limit_bottom = 290
 
