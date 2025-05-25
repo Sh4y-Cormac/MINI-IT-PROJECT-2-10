@@ -194,6 +194,10 @@ collision_mask = 3
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
 animation = &"idle"

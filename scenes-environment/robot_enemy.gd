@@ -26,6 +26,11 @@ func _process(delta: float) -> void:
 	Global.robotDamageAmount = damage_to_deal
 	Global.robotDamageZone = robot_deal_damage_area
 	
+	if Global.playerAlive:
+		is_enemy_chasing = true
+	if !Global.playerAlive:
+		is_enemy_chasing = false
+	
 	if is_on_floor() and dead:
 		await get_tree().create_timer(3.0).timeout
 		self.queue_free()
@@ -37,7 +42,7 @@ func move(delta):
 	player = Global.playerBody
 	if !dead:
 		is_roaming = true
-		if !taking_damage and is_enemy_chasing:
+		if !taking_damage and is_enemy_chasing and Global.playerAlive:
 			velocity = position.direction_to(player.position) * speed
 			dir.x = abs(velocity.x) / velocity.x
 		elif taking_damage:

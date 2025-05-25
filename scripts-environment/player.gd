@@ -38,6 +38,8 @@ var dead: bool
 
 func _ready() -> void:
 	Global.playerBody = self
+	Global.playerAlive = true
+	
 	current_attack = false
 	dead = false
 	can_take_damage = true
@@ -105,8 +107,48 @@ func _physics_process(delta: float) -> void:
 				set_damage(attack_type)
 				handle_attack_animation(attack_type)
 			
-		handle_movement_animation(direction)	
+		handle_movement_animation(direction)
+		check_hitbox()	
 	move_and_slide()
+
+#checks hitboxes for ALL enemies, refer to this block to add new enemies' damage values
+func check_hitbox():
+	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
+	var damage: int
+	if hitbox_areas:
+		var hitbox = hitbox_areas.front()
+		if hitbox.get_parent() is RobotEnemy:
+			damage = Global.robotDamageAmount
+	if can_take_damage:
+		take_damage(damage)
+
+func take_damage(damage):
+	if damage != 0:
+		if health > 0:
+			health -= damage
+			print("player health :", health)
+			if health <= 0:
+				health = 0
+				dead = true
+				Global.playerAlive = false
+				handle_death_animation()
+			take_damage_cooldown(1.0)
+
+func handle_death_animation():
+	$CollisionShape2D.position.y = 5
+	#animated_sprite.play("death")
+	await get_tree().create_timer(0.5).timeout
+	$Camera2D.zoom.x = 4
+	$Camera2D.zoom.y = 4
+	await get_tree().create_timer(3.5).timeout
+	self.queue_free()
+
+
+func take_damage_cooldown(wait_time):
+	can_take_damage = false
+	await get_tree().create_timer(wait_time).timeout
+	can_take_damage = true
+		
 
 func handle_movement_animation(direction):
 	if is_on_floor() and !current_attack:
@@ -163,4 +205,3 @@ func set_damage(attack_type):
 	elif attack_type == "longsword":
 		current_damage_to_deal = 25
 	Global.playerDamageAmount = current_damage_to_deal
-		
