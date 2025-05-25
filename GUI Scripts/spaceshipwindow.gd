@@ -2,6 +2,7 @@ extends Window
 
 @onready var background = $ParallaxBackground
 
+
 var scroll_speed = 100
 
 func _process(delta):
