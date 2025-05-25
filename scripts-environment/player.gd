@@ -130,17 +130,18 @@ func take_damage(damage):
 			if health <= 0:
 				health = 0
 				dead = true
-				Global.playerAlive = false
 				handle_death_animation()
 			take_damage_cooldown(1.0)
 
 func handle_death_animation():
 	$CollisionShape2D.position.y = 5
-	#animated_sprite.play("death")
-	await get_tree().create_timer(0.5).timeout
+	animated_sprite.play("death")
+	await get_tree().create_timer(0.6).timeout
 	$Camera2D.zoom.x = 4
 	$Camera2D.zoom.y = 4
-	await get_tree().create_timer(3.5).timeout
+	await get_tree().create_timer(3.0).timeout
+	Global.playerAlive = false
+	await get_tree().create_timer(0.5).timeout
 	self.queue_free()
 
 
