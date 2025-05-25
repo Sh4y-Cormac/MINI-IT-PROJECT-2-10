@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name Player
-
+const yay = 50
 @export var walk_speed = 200.0
 @export var run_speed = 400.0
 @export_range(0,1) var acceleration = 0.2
