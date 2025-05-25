@@ -565,7 +565,7 @@ dash_speed = null
 dash_max_distance = null
 dash_cooldown = null
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D2" type="Camera2D" parent="player"]
 position = Vector2(-4, -2)
 limit_bottom = 180
 
