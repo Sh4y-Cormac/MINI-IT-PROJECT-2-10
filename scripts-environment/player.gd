@@ -119,12 +119,15 @@ func toggle_flip_sprite(direction):
 		animated_sprite.flip_h = true
 		deal_damage_zone.scale.x = -1
 
+#when making attack anims, make sure to put _attack behind it.
 func handle_attack_animation(attack_type):
 	if current_attack:
 		var animation = str(attack_type, "_attack")
 		animated_sprite.play(animation)
 		toggle_damage_collisions(attack_type)
 
+#turns on damage hitbox for when we are attacking
+#also changes into a bigger hitbox for longsword attack. 
 func toggle_damage_collisions(attack_type):
 	var damage_zone_collision  = deal_damage_zone.get_node("CollisionShape2D")
 	var origin: Vector2 = damage_zone_collision.position
