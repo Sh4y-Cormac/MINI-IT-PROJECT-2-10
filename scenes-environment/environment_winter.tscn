@@ -555,6 +555,15 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 1, 65536, 0, 65537, 6
 
 [node name="player" parent="." instance=ExtResource("1_25uoo")]
 position = Vector2(108, -32)
+walk_speed = null
+run_speed = null
+acceleration = null
+deceleration = null
+jump_force = null
+decelerate_on_jump_release = null
+dash_speed = null
+dash_max_distance = null
+dash_cooldown = null
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-4, -2)
