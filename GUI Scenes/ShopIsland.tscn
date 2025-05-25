@@ -459,6 +459,9 @@ _data = {
 [node name="ShopIsland" type="Node2D"]
 script = ExtResource("1_dr1pm")
 
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(1912, -178)
+
 [node name="Shop(2)" type="Sprite2D" parent="."]
 position = Vector2(1833, -177)
 scale = Vector2(4.385, 3.16)
@@ -624,9 +627,6 @@ position = Vector2(302, 428)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(13, 16)
 shape = SubResource("WorldBoundaryShape2D_bcwrm")
-
-[node name="SpawnPosition" type="Marker2D" parent="."]
-position = Vector2(1912, -178)
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]

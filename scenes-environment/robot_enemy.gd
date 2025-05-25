@@ -83,7 +83,7 @@ func choose(array):
 	array.shuffle()
 	return array.front()
 
-
+#handles taking damage from player
 func _on_robot_hitbox_area_entered(area: Area2D) -> void:
 	if area == Global.playerDamageZone:
 		var damage = Global.playerDamageAmount
