@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
-[ext_resource type="PackedScene" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
-[ext_resource type="PackedScene" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
+[ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
@@ -312,11 +312,6 @@ tile_set = SubResource("TileSet_trtic")
 position = Vector2(147, 32)
 collision_layer = 2
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-limit_bottom = 400
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="killzone" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(302, 428)
 
@@ -566,7 +561,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RobotOnlyCollision"]
-polygon = PackedVector2Array(1312, 64, 1312, 1, 1279, 1, 1239, 1, 980, 1, 980, 64, 1311, 64, 1311, 75, 973, 73, 974, -6, 1177, -6, 1312, -7, 1325, -7, 1325, 64, 1311, 64)
+polygon = PackedVector2Array(1312, 64, 1313, -13, 1284, -15, 1228, -28, 981, -26, 980, 64, 1311, 64, 1311, 75, 973, 73, 975, -32, 1178, -46, 1312, -24, 1325, -7, 1325, 64, 1311, 64)
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]

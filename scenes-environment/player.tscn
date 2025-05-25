@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n41w7")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -144,7 +144,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wxjgg")
 }],
 "loop": false,
-"name": &"longsword",
+"name": &"longsword_attack",
 "speed": 10.0
 }, {
 "frames": [{
@@ -175,23 +175,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_2lnsl")
 }],
 "loop": false,
-"name": &"shortsword",
+"name": &"shortsword_attack",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(21, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s6cm"]
-size = Vector2(20, 41)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv6nf"]
+size = Vector2(21, 37)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h78hk"]
-size = Vector2(35, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pv6nf"]
+radius = 16.0
+height = 64.0
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
@@ -201,18 +206,16 @@ animation = &"idle"
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dqkch")
 
-[node name="AttackArea" type="Area2D" parent="." groups=["Sword"]]
+[node name="DealDamageZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(20, 12)
-shape = SubResource("RectangleShape2D_2s6cm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
+position = Vector2(20.5, 13.5)
+shape = SubResource("RectangleShape2D_pv6nf")
 disabled = true
 
-[node name="LongAttackArea" type="Area2D" parent="." groups=["Longsword"]]
+[node name="PlayerHitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LongAttackArea"]
-position = Vector2(27.5, 0)
-shape = SubResource("RectangleShape2D_h78hk")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+shape = SubResource("CapsuleShape2D_pv6nf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
