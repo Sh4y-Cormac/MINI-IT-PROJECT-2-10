@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://x14cbbaggkwy"]
+
+[ext_resource type="Script" uid="uid://1nqbev5hvpsl" path="res://GUI Scripts/spaceshipwindow.gd" id="1_b0wcw"]
+[ext_resource type="PackedScene" uid="uid://bgfhwdfy73kb2" path="res://GUI Scenes/space_shooter.tscn" id="1_vgk7d"]
+[ext_resource type="Texture2D" uid="uid://dsqd71b7hjn5d" path="res://Assets/Images/darkPurple.png" id="2_awpnu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b0wcw"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(250, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -100.0
+gravity = Vector3(0, 0, 0)
+
+[node name="Node" type="Node"]
+
+[node name="Window" type="Window" parent="."]
+audio_listener_enable_2d = true
+title = "Space Shooter Minigame"
+initial_position = 1
+size = Vector2i(450, 600)
+script = ExtResource("1_b0wcw")
+
+[node name="SpaceShooter" parent="Window" instance=ExtResource("1_vgk7d")]
+
+[node name="StarsParticle" type="GPUParticles2D" parent="Window"]
+position = Vector2(218, -66)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_b0wcw")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Window"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Window/ParallaxBackground"]
+position = Vector2(86, 162)
+motion_mirroring = Vector2(0, 300)
+
+[node name="Stars" type="Sprite2D" parent="Window/ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(139, 120)
+scale = Vector2(1.9, 3)
+texture = ExtResource("2_awpnu")
