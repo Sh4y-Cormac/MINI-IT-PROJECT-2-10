@@ -4,8 +4,11 @@ var hp = 100
 var atk = 10
 var def = 5
 var level = 1
+@warning_ignore("shadowed_global_identifier")
 var exp = 0 
 var exp_max = level * 100
+var max_hp = 100 
+var max_atk = 10
 
 var last_hp = hp
 var last_atk = atk
@@ -18,7 +21,14 @@ var fading_out = false
 var fade_wait_timer = 0.0
 var fade_hold_time = 2.0
 
+var regen_timer := 0.0
+var regen_interval := 0.0
+var regen_amount := 0.0
+var has_regen := false
 
+var lifesteal_percent := 0.0
+
+signal leveled_up
 
 @onready var label_hp: Label = $NinePatchRect/HP/Label_HP
 @onready var label_atk: Label = $NinePatchRect/Atk/Label_ATK
@@ -32,18 +42,46 @@ var fade_hold_time = 2.0
 func _ready() -> void:
 	update_stats()
 	visible = false
+	
+func apply_regen_card(card):
+	has_regen = true
+	regen_interval = card.regen_interval
+	regen_amount = card.regen_amount
+	regen_timer = 0.0  
+	
+func set_lifesteal(value: float):
+	lifesteal_percent = value
+	print("Lifesteal set to:", lifesteal_percent * 100, "%")#this might need to be in player script but we put here for now
+	
+func on_player_dealt_damage(amount: float):
+	if lifesteal_percent > 0:
+		var healed = amount * lifesteal_percent
+		hp = min(hp + healed, max_hp)
+		update_stats()
+		print("Lifesteal: Recovered", healed, "HP")#this might need to be in player script but we put here for now
+		
+func heal(amount: float):
+	if amount <= 0: return
+	var actual = min(amount, max_hp - hp)
+	hp += actual
+	update_stats()
+	print("Healed:", actual, "HP")
 
 func update_stats_display(stats: Dictionary) -> void:
 	hp = stats["hp"]
 	atk = stats["atk"]
 	def = stats["def"]
+	
+	max_hp = max(hp, max_hp)
+	max_atk = max(atk, max_atk)
+	
 	update_stats()
 	
 func update_stats():
 	exp_max = level * 100
-	label_hp.text = str(hp)
-	label_atk.text = str(atk)
-	label_def.text = str(def)
+	label_hp.text = str(int(hp))
+	label_atk.text = str(int(atk))
+	label_def.text = str(int(def))
 	label_lvl.text = str(level)
 
 	if exp_bar:
@@ -69,10 +107,13 @@ func level_up():
 	hp += 20
 	atk += 10
 	def += 5
+	max_hp += 20
+	max_atk += 10
 	
 	show_stat_gains()
 	show_level_up_message("Level Up! %d" % level)
 	print("Level Up! %d" % level)
+	emit_signal("leveled_up")
 	
 func show_stat_gains():
 	var stat_message = "Level Up!\n"
@@ -82,8 +123,8 @@ func show_stat_gains():
 	print(stat_message)
 	
 func _input(event):
-	if event.is_action_pressed("toggle_stat"):
-		visible = not visible
+	#if event.is_action_pressed("toggle_stat"):
+		#visible = not visible
 		
 	if event.is_action_pressed("test_gain_exp"):
 		gain_exp(50)
@@ -119,3 +160,11 @@ func _process(delta: float) -> void:
 		if alpha <= 0.0:
 			fading_out = false
 			level_up_announcement.visible = false
+
+	if has_regen:
+		regen_timer += delta
+		if regen_timer >= regen_interval:
+			var healed = regen_amount
+			hp = min(hp + healed, max_hp)  # ✅ Clamp heal
+			update_stats()
+			regen_timer = 0.0
