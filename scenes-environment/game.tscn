@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=54 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="18_ci8an"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
@@ -296,12 +295,6 @@ func _process(delta: float) -> void:
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o6od"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci8an"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfnhq"]
-bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqrk"]
 size = Vector2(79, 43)
 
@@ -489,8 +482,6 @@ position = Vector2(84, 27.5)
 scale = Vector2(2.3125, 2.1875)
 texture = ExtResource("17_ci8an")
 
-[node name="Stats Window" parent="CanvasLayer" instance=ExtResource("18_ci8an")]
-
 [node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -503,22 +494,6 @@ offset_right = 1.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="EXPBar" type="ProgressBar" parent="CanvasLayer"]
-z_index = 1
-custom_minimum_size = Vector2(0, -1)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -45.0
-offset_right = 327.0
-offset_bottom = -35.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_ci8an")
-theme_override_styles/fill = SubResource("StyleBoxFlat_nfnhq")
-value = 20.0
-show_percentage = false
 
 [node name="audio" type="Node" parent="."]
 

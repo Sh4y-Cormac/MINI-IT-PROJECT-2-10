@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cmaqfaggp7i6v"]
+
+[ext_resource type="Texture2D" uid="uid://et22h0f3ye08" path="res://Assets/Card Sprite/Atk up.png" id="1_a8x2v"]
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_eoga4"]
+
+[resource]
+script = ExtResource("1_eoga4")
+name = "Atk Up"
+title = "Atk Up"
+icon = ExtResource("1_a8x2v")
+description = "+5 atk boost"
+price = ""
+type = "Card"
+inventarSlot = "BagSlot"
+InventarPosition = -1
+stat_name = "atk"
+effect_type = "flat"
+value = 5.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"

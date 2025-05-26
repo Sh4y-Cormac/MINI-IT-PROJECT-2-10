@@ -13,4 +13,7 @@ price = "Price : $ 100"
 type = "Weapon"
 inventarSlot = "BagSlot"
 InventarPosition = 1
+stat_name = ""
+effect_type = "flat"
+value = 0.0
 metadata/_custom_type_script = "uid://b05mrq30fldgf"

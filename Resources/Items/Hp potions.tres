@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c03fp13fplt72"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_jlbeu"]
+[ext_resource type="Texture2D" uid="uid://d2ueipcdu7tsq" path="res://Assets/Card Sprite/Healing Potion.png" id="1_sb57q"]
+
+[resource]
+script = ExtResource("1_jlbeu")
+name = "Hp Potions"
+title = "Hp Potions"
+icon = ExtResource("1_sb57q")
+description = "Heals 50 Hp"
+price = "100"
+type = ""
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
+inventarSlot = "BagSlot"
+InventarPosition = -1
+is_lifesteal_card = false
+lifesteal_percent = 0.0
+stat_name = "hp"
+effect_type = "flat"
+value = 50.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"

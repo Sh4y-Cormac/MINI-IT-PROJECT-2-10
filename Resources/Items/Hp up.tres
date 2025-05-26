@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bcy26wmoa3j68"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_8q4oa"]
+[ext_resource type="Texture2D" uid="uid://doeri1a5us1y4" path="res://Assets/Card Sprite/HP up.png" id="1_enwuq"]
+
+[resource]
+script = ExtResource("1_8q4oa")
+name = "HP up"
+title = "HP up"
+icon = ExtResource("1_enwuq")
+description = "+20 hp "
+price = ""
+type = "Card"
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
+inventarSlot = "BagSlot"
+InventarPosition = -1
+is_lifesteal_card = false
+lifesteal_percent = 0.0
+stat_name = "hp"
+effect_type = "flat"
+value = 20.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"
