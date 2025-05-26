@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://fhi5lubojf64"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_csgpi"]
+[ext_resource type="Texture2D" uid="uid://dui0wxm7mo670" path="res://Assets/Card Sprite/armor plate.png" id="1_nfkjc"]
+
+[resource]
+script = ExtResource("1_csgpi")
+name = "Armor Plate"
+title = "Armor Plate"
+icon = ExtResource("1_nfkjc")
+description = "+10 % hp "
+price = ""
+type = "Card"
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
+inventarSlot = "BagSlot"
+InventarPosition = -1
+is_lifesteal_card = false
+lifesteal_percent = 0.0
+stat_name = "hp"
+effect_type = "percent"
+value = 0.1
+metadata/_custom_type_script = "uid://b05mrq30fldgf"

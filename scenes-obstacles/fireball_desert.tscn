@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://1h7j2pymor03"]
+
+[ext_resource type="Script" uid="uid://dl6koqd2wpi00" path="res://script-obstacles/fireball_desert.gd" id="1_g0tpe"]
+
+[sub_resource type="Curve" id="Curve_4u8j7"]
+_data = [Vector2(0.0171821, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.397472), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_g0tpe"]
+offsets = PackedFloat32Array(0, 0.188679, 0.366038, 0.633962, 1)
+colors = PackedColorArray(0.68676, 0.270151, 0.105167, 1, 0.811765, 0.270588, 0.101961, 1, 0.768627, 0.486275, 0.14902, 1, 0.905882, 0.796078, 0.658824, 0.141176, 1, 1, 1, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qey4x"]
+height = 50.0
+
+[node name="fireball_desert" type="Node2D"]
+script = ExtResource("1_g0tpe")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 2000
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2(0, -600)
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_4u8j7")
+color_ramp = SubResource("Gradient_g0tpe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D_C" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_qey4x")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]

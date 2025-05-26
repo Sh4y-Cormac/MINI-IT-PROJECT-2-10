@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bicf0iglcglr"]
+[gd_scene load_steps=3 format=3 uid="uid://bicf0iglcglr"]
 
-[ext_resource type="Texture2D" uid="uid://g0epd8i2wxa5" path="res://Assets/Images/Stat box.png" id="1_jrpsl"]
 [ext_resource type="Script" uid="uid://cd62k6ka1gglm" path="res://GUI Scripts/stats_window.gd" id="1_l0r8f"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_l0r8f"]
 
@@ -9,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
+offset_left = 6.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -22,11 +21,10 @@ anchor_left = 0.32
 anchor_top = 0.17
 anchor_right = 0.675
 anchor_bottom = 0.85
-offset_left = 0.359985
-offset_top = -0.160004
-offset_right = 8.40002
-offset_bottom = 0.200012
-texture = ExtResource("1_jrpsl")
+offset_left = -3.63998
+offset_top = 1.84
+offset_right = 4.40009
+offset_bottom = 2.20001
 
 [node name="HP" type="Label" parent="NinePatchRect"]
 layout_mode = 1
@@ -53,6 +51,7 @@ offset_left = -10.0001
 offset_top = -3.0
 offset_right = -12.0
 offset_bottom = -2.0
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "1"
@@ -83,6 +82,7 @@ offset_left = -0.0490265
 offset_top = 2.0
 offset_right = -0.0670166
 offset_bottom = 3.0
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "1"
@@ -112,6 +112,7 @@ anchor_bottom = 1.0
 offset_left = 0.0599976
 offset_top = -1.0
 offset_right = -1.95999
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "1"

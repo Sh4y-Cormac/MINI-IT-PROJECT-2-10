@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://uqnm2c4v3bl2"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_e7eeb"]
+[ext_resource type="Texture2D" uid="uid://cq14ys0xuvune" path="res://Assets/Card Sprite/Regeneration.png" id="1_x6rlh"]
+
+[resource]
+script = ExtResource("1_e7eeb")
+name = "Regeneration"
+title = "Regeneration"
+icon = ExtResource("1_x6rlh")
+description = "Heals 5 hp every 3 seconds"
+price = ""
+type = "Card"
+is_regen_card = true
+regen_amount = 5.0
+regen_interval = 3.0
+inventarSlot = "BagSlot"
+InventarPosition = -1
+stat_name = ""
+effect_type = "flat"
+value = 0.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"

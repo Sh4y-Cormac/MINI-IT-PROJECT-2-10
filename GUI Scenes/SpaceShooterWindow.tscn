@@ -23,7 +23,7 @@ initial_velocity_min = -1000.0
 initial_velocity_max = -100.0
 gravity = Vector3(0, 0, 0)
 
-[node name="Node" type="Node"]
+[node name="SpaceShooter" type="Node2D"]
 
 [node name="Window" type="Window" parent="."]
 audio_listener_enable_2d = true

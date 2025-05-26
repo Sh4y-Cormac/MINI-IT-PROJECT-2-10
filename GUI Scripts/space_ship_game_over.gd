@@ -1,8 +1,6 @@
 extends Control
 
 
-
-
 func _on_restart_pressed() -> void:
 	$"Sound Effects/Enter Sound Effect".play()
 	await $"Sound Effects/Enter Sound Effect".finished
@@ -18,7 +16,7 @@ func set_score(value):
 func _on_quit_pressed() -> void:
 	$"Sound Effects/Enter Sound Effect".play()
 	await $"Sound Effects/Enter Sound Effect".finished
-	get_tree().quit()
+
 
 func _on_quit_mouse_entered() -> void:
 	$"Sound Effects/Hovering Sound Effect".play()
