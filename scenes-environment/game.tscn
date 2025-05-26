@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=55 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
+[ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -302,6 +303,7 @@ size = Vector2(79, 43)
 script = ExtResource("1_ysgvo")
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("2_uokai")]
+visible = false
 top_level = true
 z_index = 2
 
@@ -558,6 +560,9 @@ light_mask = 3
 visibility_layer = 3
 position = Vector2(4512, -39)
 shape = SubResource("RectangleShape2D_ujqrk")
+
+[node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
+position = Vector2(478, 30)
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
