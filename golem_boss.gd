@@ -16,7 +16,7 @@ var is_dealing_damage: bool = false
 
 var dir: Vector2
 const gravity = 900 
-var knockback_force = 200
+var knockback_force = -20
 var is_roaming: bool = false
 
 var player: CharacterBody2D
@@ -39,6 +39,9 @@ func move(delta):
 			var dir_to_player = position.direction_to(player.position) * speed
 			velocity.x = dir_to_player.x
 			dir.x = abs(velocity.x) / velocity.x
+		elif taking_damage:
+			var knockback_dir = position.direction_to(player.position) * knockback_force
+			velocity.x = knockback_dir.x
 		is_roaming = true
 	elif dead:
 		velocity.x = 0
