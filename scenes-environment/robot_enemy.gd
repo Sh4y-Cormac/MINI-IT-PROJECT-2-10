@@ -18,6 +18,8 @@ var dead: bool = false
 var taking_damage: bool = false
 var is_roaming: bool
 var damage_to_deal = 20
+var knockback_force = -200
+var droppedGold = 100
 
 func _ready() -> void:
 	is_enemy_chasing = true
@@ -33,26 +35,44 @@ func _process(delta: float) -> void:
 	
 	if is_on_floor() and dead:
 		await get_tree().create_timer(3.0).timeout
+		Global.playerGold += droppedGold
 		self.queue_free()
 		
 	move(delta)
 	animation()
+	move_and_slide()
 
 func move(delta):
 	player = Global.playerBody
 	if !dead:
-		is_roaming = true
-		if !taking_damage and is_enemy_chasing and Global.playerAlive:
-			velocity = position.direction_to(player.position) * speed
+		if !is_enemy_chasing:
+			velocity += dir * speed * delta
+		elif is_enemy_chasing and !taking_damage:
+			var dir_to_player = position.direction_to(player.position) * speed
+			velocity.x = dir_to_player.x
 			dir.x = abs(velocity.x) / velocity.x
 		elif taking_damage:
-			var knockback_dir = position.direction_to(player.position) * -100 #adjust knockback power
-			velocity = knockback_dir
-		else: 
-			velocity += dir * speed * delta
+			var knockback_dir = position.direction_to(player.position) * knockback_force
+			velocity.x = knockback_dir.x
+		is_roaming = true
 	elif dead:
 		velocity.x = 0
-	move_and_slide()
+		
+	#player = Global.playerBody
+	#if !dead:
+		#is_roaming = true
+		#if !taking_damage and is_enemy_chasing and Global.playerAlive:
+			#var dir_to_player = position.direction_to(player.position) * speed
+			#velocity.x = dir_to_player.x
+			#dir.x = abs(velocity.x) / velocity.x
+		#elif taking_damage:
+			#var knockback_dir = position.direction_to(player.position) * -100 #adjust knockback power
+			#velocity = knockback_dir
+		#else: 
+			#velocity += dir * speed * delta
+	#elif dead:
+		#velocity.x = 0
+	
 
 func animation():
 	if !dead and !taking_damage:

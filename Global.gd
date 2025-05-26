@@ -16,3 +16,6 @@ var playerAlive: bool
 ## Entity Values
 var robotDamageZone: Area2D
 var robotDamageAmount: int
+
+var golemDamageZone: Area2D
+var golemDamageAmount: int

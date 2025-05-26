@@ -119,6 +119,9 @@ func check_hitbox():
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is RobotEnemy:
 			damage = Global.robotDamageAmount
+		elif hitbox.get_parent() is GolemBoss:
+			damage = Global.golemDamageAmount
+			
 	if can_take_damage:
 		take_damage(damage)
 

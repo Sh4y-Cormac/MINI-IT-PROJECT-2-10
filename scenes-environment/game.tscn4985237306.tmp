@@ -282,13 +282,10 @@ _data = {
 resource_name = "gold"
 script/source = "extends Label
 
-@onready var label: Label = $\".\"
-
 var goldAmount = Global.playerGold
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = \"Gold : \" + str(goldAmount)
-	
+	text = \"Gold : \" + str(goldAmount)
 	
 "
 
@@ -533,7 +530,6 @@ position = Vector2(2544, -225)
 position = Vector2(2993, -224)
 
 [node name="robotEnemy" parent="enemies" instance=ExtResource("29_uokai")]
-visible = false
 position = Vector2(1259, 32)
 scale = Vector2(2, 2)
 
@@ -543,7 +539,7 @@ scale = Vector2(2, 2)
 position = Vector2(970, 16)
 
 [node name="StaticBody2D" parent="doors" instance=ExtResource("29_ujqrk")]
-position = Vector2(4875, 116)
+position = Vector2(4874, 16)
 
 [node name="StartGameDetector" type="Area2D" parent="."]
 position = Vector2(881, 33)
@@ -557,7 +553,7 @@ position = Vector2(4512, -39)
 shape = SubResource("RectangleShape2D_ujqrk")
 
 [node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
-position = Vector2(784, -5)
+position = Vector2(4567, -15)
 
 [node name="portal" parent="." instance=ExtResource("31_4at0j")]
 position = Vector2(5393, -32)

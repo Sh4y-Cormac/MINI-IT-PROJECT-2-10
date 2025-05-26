@@ -16,14 +16,19 @@ var is_dealing_damage: bool = false
 
 var dir: Vector2
 const gravity = 900 
-var knockback_force = -20
+var knockback_force = -200
 var is_roaming: bool = false
 
 var player: CharacterBody2D
 var player_in_area = false
 
+var droppedGold = 500
+
 func _process(delta: float) -> void:
+	Global.golemDamageAmount = damage_to_deal
+	Global.golemDamageZone = $GolemDealDamageArea
 	player = Global.playerBody
+	
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		velocity.x = 0
@@ -56,15 +61,16 @@ func handle_animation():
 			animated_sprite.flip_h = false
 	elif !dead and taking_damage and !is_dealing_damage:
 		animated_sprite.play("hurt")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.2).timeout
 		taking_damage = false
 	elif dead and is_roaming:
 		is_roaming = false
 		animated_sprite.play("death")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.2).timeout
 		handle_death()
 
 func handle_death():
+	Global.playerGold += droppedGold
 	self.queue_free()
 	
 
@@ -77,3 +83,17 @@ func _on_direction_timer_timeout() -> void:
 func choose(array):
 	array.shuffle()
 	return array.front()
+
+
+func _on_golem_hitbox_area_entered(area: Area2D) -> void:
+	var damage = Global.playerDamageAmount
+	if area == Global.playerDamageZone:
+		take_damage(damage)
+		
+func take_damage(damage):
+	health -= damage
+	taking_damage = true
+	if health <= health_min:
+		health = health_min
+		dead = true
+	print(str(self), "current health is: ", health)
