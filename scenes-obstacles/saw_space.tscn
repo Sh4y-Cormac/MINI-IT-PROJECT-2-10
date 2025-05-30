@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg30f4111qwxg"]
+[gd_scene load_steps=18 format=3 uid="uid://cg30f4111qwxg"]
 
 [ext_resource type="Texture2D" uid="uid://dn0nynch4ydr6" path="res://space sprite/saw_activate.png" id="1_mvg7s"]
+[ext_resource type="Script" uid="uid://b5ibqepxnw8c7" path="res://script-obstacles/saw_space.gd" id="1_ysjl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvg7s"]
 atlas = ExtResource("1_mvg7s")
@@ -101,7 +102,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn4ii"]
+radius = 15.0333
+
 [node name="saw_space" type="Node2D"]
+script = ExtResource("1_ysjl1")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -110,3 +115,11 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uhesh")
 animation = &"saw_animation"
 frame_progress = 0.916163
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_bn4ii")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
