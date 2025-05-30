@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6i81ix1i46ag"]
+
+[ext_resource type="Texture2D" uid="uid://vvgstrqbelse" path="res://space sprite/platfrom-space2-sheet.png" id="1_ee3yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci3on"]
+size = Vector2(73, 16)
+
+[node name="platform_spacever2" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ee3yo")
+region_enabled = true
+region_rect = Rect2(0, 16, 80, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ci3on")
