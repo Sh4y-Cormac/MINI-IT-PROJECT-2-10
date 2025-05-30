@@ -57,7 +57,7 @@ region = Rect2(0, 384, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_uhesh"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_mvg7s")
 }, {
 "duration": 1.0,
@@ -98,7 +98,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"saw_animation",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [node name="saw_space" type="Node2D"]
@@ -109,3 +109,4 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uhesh")
 animation = &"saw_animation"
+frame_progress = 0.916163

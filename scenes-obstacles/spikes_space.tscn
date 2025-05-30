@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://c380pt0w5lq1g"]
+
+[ext_resource type="Texture2D" uid="uid://cjwhugkx3pp4s" path="res://space sprite/laser_spikes_activate.png" id="1_ajxhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bo22"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prk8y"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imcd5"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssns1"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41bwo"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jru7o"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xiqu"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scbht"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kunax"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf5by"]
+atlas = ExtResource("1_ajxhc")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2l7g"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_4bo22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prk8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imcd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssns1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41bwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jru7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xiqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scbht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kunax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf5by")
+}],
+"loop": true,
+"name": &"spikes_animation",
+"speed": 5.0
+}]
+
+[node name="spikes_space" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w2l7g")
+animation = &"spikes_animation"
+frame_progress = 0.0665672

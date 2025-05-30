@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://dfu0sead5flvy"]
+
+[ext_resource type="Texture2D" uid="uid://yuoc47f51bqd" path="res://space sprite/laser_deactivate.png" id="1_ts0wp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24kjf"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np60e"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miqsi"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmhvv"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwka8"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tw35"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynclm"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s13fj"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvwak"]
+atlas = ExtResource("1_ts0wp")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5raxo"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_24kjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np60e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miqsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmhvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwka8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tw35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynclm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s13fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvwak")
+}],
+"loop": true,
+"name": &"laser_ver2",
+"speed": 5.0
+}]
+
+[node name="laser_ver2_space" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(2, -9)
+scale = Vector2(1.21875, 1.71875)
+sprite_frames = SubResource("SpriteFrames_5raxo")
+animation = &"laser_ver2"
+frame_progress = 0.816397
