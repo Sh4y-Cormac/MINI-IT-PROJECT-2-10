@@ -86,6 +86,8 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
+scale = Vector2(1.60938, 1)
 sprite_frames = SubResource("SpriteFrames_w2l7g")
 animation = &"spikes_animation"
-frame_progress = 0.0665672
+frame = 4
+frame_progress = 0.402025
