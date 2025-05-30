@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://cg30f4111qwxg"]
+
+[ext_resource type="Texture2D" uid="uid://dn0nynch4ydr6" path="res://space sprite/saw_activate.png" id="1_mvg7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvg7s"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysjl1"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn4ii"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hha5"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n5t4"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45ggu"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7605"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiwfc"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xqb3"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul00j"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k8of"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbfk"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvirc"]
+atlas = ExtResource("1_mvg7s")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhesh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvg7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysjl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn4ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hha5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n5t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45ggu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7605")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiwfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xqb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul00j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k8of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdbfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvirc")
+}],
+"loop": true,
+"name": &"saw_animation",
+"speed": 4.0
+}]
+
+[node name="saw_space" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uhesh")
+animation = &"saw_animation"
