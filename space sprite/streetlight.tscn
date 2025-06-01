@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3w3vac8o1vcu"]
+
+[ext_resource type="Texture2D" uid="uid://dmg3qo2y10b2u" path="res://space sprite/streetlight_space.png" id="1_pwvjl"]
+
+[sub_resource type="Gradient" id="Gradient_hwq5a"]
+offsets = PackedFloat32Array(0, 0.00492611, 0.812808)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wxajs"]
+gradient = SubResource("Gradient_hwq5a")
+width = 70
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="streetlight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -4)
+scale = Vector2(1.36923, 1.7037)
+texture = ExtResource("1_pwvjl")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visibility_layer = 4
+position = Vector2(20, -17)
+scale = Vector2(0.206027, 0.296875)
+texture = SubResource("GradientTexture2D_wxajs")
+texture_scale = 2.0

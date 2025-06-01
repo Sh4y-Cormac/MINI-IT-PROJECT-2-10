@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c380pt0w5lq1g"]
+[gd_scene load_steps=15 format=3 uid="uid://c380pt0w5lq1g"]
 
+[ext_resource type="Script" uid="uid://cc1k1pnj4o45p" path="res://script-obstacles/spikes_space.gd" id="1_4bo22"]
 [ext_resource type="Texture2D" uid="uid://cjwhugkx3pp4s" path="res://space sprite/laser_spikes_activate.png" id="1_ajxhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bo22"]
@@ -80,14 +81,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajxhc"]
+size = Vector2(43, 11)
+
 [node name="spikes_space" type="Node2D"]
+script = ExtResource("1_4bo22")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.60938, 1)
 sprite_frames = SubResource("SpriteFrames_w2l7g")
 animation = &"spikes_animation"
-frame = 4
-frame_progress = 0.402025
+frame = 9
+frame_progress = 0.465966
+
+[node name="spike_killzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike_killzone"]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_ajxhc")
+
+[connection signal="body_entered" from="spike_killzone" to="." method="_on_spike_killzone_body_entered"]
