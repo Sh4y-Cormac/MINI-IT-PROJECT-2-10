@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ecl677uxq2vd"]
+[gd_scene load_steps=16 format=3 uid="uid://ecl677uxq2vd"]
 
 [ext_resource type="Texture2D" uid="uid://nrc3ewfpo0lq" path="res://space sprite/laser_activate.png" id="1_lhe00"]
 
@@ -53,7 +53,7 @@ region = Rect2(352, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_04a7e"]
 animations = [{
 "frames": [{
-"duration": 0.8,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_nr85c")
 }, {
 "duration": 1.0,
@@ -94,14 +94,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhe00"]
+size = Vector2(15, 80)
+
 [node name="laser_ver1_space" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.19209e-07, 15)
-scale = Vector2(1.125, 1.96875)
+position = Vector2(-1, 1)
+scale = Vector2(1.46875, 3.66406)
 sprite_frames = SubResource("SpriteFrames_04a7e")
 animation = &"laser_ver1"
-frame_progress = 0.85506
+frame = 10
+frame_progress = 0.997078
+
+[node name="laserver1_killzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laserver1_killzone"]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_lhe00")
+
+[node name="Timer" type="Timer" parent="laserver1_killzone"]
+one_shot = true
