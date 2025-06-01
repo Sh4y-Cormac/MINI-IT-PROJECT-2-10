@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wocqy8ol8l5g"
-path="res://.godot/imported/wall_blades.png-7ab459f651ea618d76db2f7ffdc5e2e1.ctex"
+uid="uid://dmg3qo2y10b2u"
+path="res://.godot/imported/streetlight_space.png-00038dd1c5ab84d4d26584e380a1e71b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://space sprite/wall_blades.png"
-dest_files=["res://.godot/imported/wall_blades.png-7ab459f651ea618d76db2f7ffdc5e2e1.ctex"]
+source_file="res://space sprite/streetlight_space.png"
+dest_files=["res://.godot/imported/streetlight_space.png-00038dd1c5ab84d4d26584e380a1e71b.ctex"]
 
 [params]
 
