@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfu0sead5flvy"]
+[gd_scene load_steps=13 format=3 uid="uid://dfu0sead5flvy"]
 
 [ext_resource type="Texture2D" uid="uid://yuoc47f51bqd" path="res://space sprite/laser_deactivate.png" id="1_ts0wp"]
 
@@ -73,13 +73,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts0wp"]
+size = Vector2(8.20513, 22.0819)
+
 [node name="laser_ver2_space" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(2, -9)
-scale = Vector2(1.21875, 1.71875)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -24.25)
+scale = Vector2(1.21875, 2.67188)
 sprite_frames = SubResource("SpriteFrames_5raxo")
 animation = &"laser_ver2"
 frame_progress = 0.816397
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -24.5)
+scale = Vector2(1.21875, 2.67188)
+shape = SubResource("RectangleShape2D_ts0wp")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+one_shot = true
