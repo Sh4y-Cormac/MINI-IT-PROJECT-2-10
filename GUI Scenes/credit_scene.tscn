@@ -1,6 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt81xf3wyf0bk"]
+[gd_scene load_steps=5 format=3 uid="uid://dt81xf3wyf0bk"]
 
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_odel2"]
+
+[sub_resource type="Animation" id="Animation_odel2"]
+resource_name = "Credit_Scene"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-277, 700), Vector2(-277, -1500)]
+}
+
+[sub_resource type="Animation" id="Animation_j42vu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-277, 700)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikl2p"]
+_data = {
+&"Credit_Scene": SubResource("Animation_odel2"),
+&"RESET": SubResource("Animation_j42vu")
+}
 
 [node name="Credit Scene" type="Control"]
 layout_mode = 3
@@ -26,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -468.0
-offset_top = -133.0
-offset_right = 469.0
-offset_bottom = 562.0
+offset_left = -853.0
+offset_top = 376.0
+offset_right = 854.0
+offset_bottom = 1844.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -87,24 +124,89 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
-text = "Aisyah - "
+text = "Aisyah - Player Movement and Environment"
 horizontal_alignment = 1
 
 [node name="Name3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
-text = "Umar - "
+text = "Umar - Environment and Enemy"
 horizontal_alignment = 1
 
 [node name="Name4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
-text = "Aiman - "
+text = "Aiman - Core Game Mechanics"
 horizontal_alignment = 1
 
 [node name="Space2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+
+[node name="Space6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+
+[node name="AssetsTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Assets Used:"
+horizontal_alignment = 1
+
+[node name="Assets1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Explosion SFX - https://www.youtube.com/watch?v=EA4h8l2zZ1g"
+horizontal_alignment = 1
+
+[node name="Assets2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Hit SFX - https://www.youtube.com/watch?v=mcXDrIfnpLE"
+horizontal_alignment = 1
+
+[node name="Assets3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Shop Soundtrack - https://www.youtube.com/
+watch?v=D5L36JDKxR0&list=PLdsGes2mFh92eHpOZVJQgoubb6rF0CcvU"
+horizontal_alignment = 1
+
+[node name="Assets4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Shop Soundtrack - https://www.youtube.com/
+watch?v=D5L36JDKxR0&list=PLdsGes2mFh92eHpOZVJQgoubb6rF0CcvU"
+horizontal_alignment = 1
+
+[node name="Assets5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Shop Island Soundtrack - https://www.youtube.com/
+watch?v=tQR6jyfK6Ps&list=PLdsGes2mFh92eH
+pOZVJQgoubb6rF0CcvU&index=3"
+horizontal_alignment = 1
+
+[node name="Assets6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "End Credits Soundtrack - https://www.youtube.com/
+watch?v=3qLWFdsssM0
+"
+horizontal_alignment = 1
+
+[node name="Space7" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
@@ -132,4 +234,40 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
+text = "Aisyah - Created each character (Handrawn)"
 horizontal_alignment = 1
+
+[node name="SpecialThanks3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Itch.io - Providing with tons of free assets"
+horizontal_alignment = 1
+
+[node name="SpecialThanks4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Godot - Game Engine Used"
+horizontal_alignment = 1
+
+[node name="SpecialThanks5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "GitHub - Allowed to collaborate with members"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ikl2p")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0702882, 0.20556, 0.266244, 0.109804)
