@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt81xf3wyf0bk"]
+[gd_scene load_steps=7 format=3 uid="uid://dt81xf3wyf0bk"]
 
+[ext_resource type="Script" uid="uid://dbb0dgqsyd1hq" path="res://GUI Scripts/credit_scene.gd" id="1_ikl2p"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_odel2"]
+[ext_resource type="AudioStream" uid="uid://csynhpbxt4yxy" path="res://Assets/Audio & Sound Effects/End Credits.mp3" id="3_fjccj"]
 
 [sub_resource type="Animation" id="Animation_odel2"]
 resource_name = "Credit_Scene"
@@ -46,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ikl2p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -271,3 +274,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0702882, 0.20556, 0.266244, 0.109804)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("3_fjccj")
+autoplay = true
