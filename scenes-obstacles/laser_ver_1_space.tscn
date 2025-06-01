@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://ecl677uxq2vd"]
+[gd_scene load_steps=17 format=3 uid="uid://ecl677uxq2vd"]
 
 [ext_resource type="Texture2D" uid="uid://nrc3ewfpo0lq" path="res://space sprite/laser_activate.png" id="1_lhe00"]
+[ext_resource type="Script" uid="uid://bouswkakab2j8" path="res://script-obstacles/laser_ver_1_space.gd" id="1_nr85c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr85c"]
 atlas = ExtResource("1_lhe00")
@@ -95,24 +96,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhe00"]
-size = Vector2(15, 80)
+size = Vector2(15, 93)
 
 [node name="laser_ver1_space" type="Node2D"]
+script = ExtResource("1_nr85c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1, 1)
-scale = Vector2(1.46875, 3.66406)
+position = Vector2(-0.250002, -3.68752)
+scale = Vector2(1.42187, 3.95703)
 sprite_frames = SubResource("SpriteFrames_04a7e")
 animation = &"laser_ver1"
+autoplay = "laser_ver1"
 frame = 10
 frame_progress = 0.997078
 
 [node name="laserver1_killzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laserver1_killzone"]
-position = Vector2(-2, 1)
+position = Vector2(-2, -5.5)
 shape = SubResource("RectangleShape2D_lhe00")
 
-[node name="Timer" type="Timer" parent="laserver1_killzone"]
+[node name="laser1_timer" type="Timer" parent="laserver1_killzone"]
 one_shot = true
+
+[connection signal="body_entered" from="laserver1_killzone" to="." method="_on_laserver_1_killzone_body_entered"]
+[connection signal="timeout" from="laserver1_killzone/laser1_timer" to="." method="_on_laser_1_timer_timeout"]

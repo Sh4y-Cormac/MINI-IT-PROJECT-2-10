@@ -103,13 +103,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bn4ii"]
-radius = 15.0333
+radius = 22.0
 
 [node name="saw_space" type="Node2D"]
 script = ExtResource("1_ysjl1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -4)
+scale = Vector2(1.5, 1.34375)
 sprite_frames = SubResource("SpriteFrames_uhesh")
 animation = &"saw_animation"
 autoplay = "saw_animation"
@@ -119,10 +121,11 @@ frame_progress = 0.255048
 [node name="saw_killzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saw_killzone"]
-position = Vector2(0, 12)
+position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_bn4ii")
 
 [node name="saw_timer" type="Timer" parent="saw_killzone"]
+wait_time = 0.8
 one_shot = true
 
 [connection signal="body_entered" from="saw_killzone" to="." method="_on_area_2d_body_entered"]
