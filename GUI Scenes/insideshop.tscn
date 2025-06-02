@@ -1,11 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=41 format=3 uid="uid://bkxacktrcdo7t"]
 
 [ext_resource type="Script" uid="uid://b4khxb37t87ry" path="res://GUI Scenes/insideshop.gd" id="1_pq4d1"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
 [ext_resource type="Texture2D" uid="uid://cilcow2kh3u2a" path="res://Assets/Sprites/nature-paltformer-tileset-16x16.png" id="1_vgxvw"]
 [ext_resource type="Texture2D" uid="uid://bbb1jslclxqdb" path="res://Assets/Images/Inside Shop.png" id="2_gu718"]
 [ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
-[ext_resource type="PackedScene" uid="uid://x14cbbaggkwy" path="res://GUI Scenes/SpaceShooterWindow.tscn" id="4_d6jjc"]
 [ext_resource type="Script" uid="uid://hl6vqijph7i3" path="res://GUI Scenes/area_2d.gd" id="5_6ttlq"]
 [ext_resource type="Texture2D" uid="uid://jrpb4dfo067m" path="res://Assets/Images/Orc Dealer.png" id="5_gu718"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="6_pq4d1"]
@@ -324,14 +323,6 @@ texture = ExtResource("2_gu718")
 position = Vector2(60, 34)
 target_scene = "uid://c1qslm2ws1vck"
 
-[node name="SpaceShooter" parent="." instance=ExtResource("4_d6jjc")]
-
-[node name="Window" parent="SpaceShooter" index="0"]
-process_mode = 2
-
-[node name="SpaceShooter" parent="SpaceShooter/Window" index="0"]
-process_mode = 3
-
 [node name="ArcadeMachine" type="Sprite2D" parent="."]
 position = Vector2(230.375, -21)
 scale = Vector2(1.43644, 1.625)
@@ -382,6 +373,7 @@ theme_override_font_sizes/font_size = 25
 script = SubResource("GDScript_n5db7")
 
 [node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("7_t126v")]
+visible = false
 
 [node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(-55, 97)
@@ -508,7 +500,6 @@ stream = ExtResource("15_gu718")
 max_distance = 100000.0
 bus = &"SFX"
 
-[connection signal="pressed" from="SpaceShooter/Window/SpaceShooter/UI layer/SpaceShipGameOver/Panel/Quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_mouse_entered"]
 [connection signal="pressed" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
@@ -518,8 +509,5 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_pressed"]
 [connection signal="body_entered" from="Shop Area" to="Shop Area" method="_on_body_entered"]
 
-[editable path="SpaceShooter"]
-[editable path="SpaceShooter/Window/SpaceShooter"]
-[editable path="SpaceShooter/Window/SpaceShooter/UI layer/SpaceShipGameOver"]
 [editable path="player"]
 [editable path="CanvasLayer/Shop GUI"]

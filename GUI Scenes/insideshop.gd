@@ -1,9 +1,7 @@
 extends Node2D
 
-@onready var window = $SpaceShooter/Window
 
 func _ready():
-	window.hide()
 	$Animations/OrgAnimation.play("org_animation")
 
 func _on_bag_icon_button_mouse_entered() -> void:
@@ -27,13 +25,12 @@ func _on_arcade_machine_mouse_entered() -> void:
 func _on_arcade_machine_pressed() -> void:
 	$"audio/Enter Sound Effect".play()
 	await $"audio/Enter Sound Effect".finished
-	#get_tree().paused = true
-	window.show()
+	start_minigame()
 
 
-func _on_window_close_requested() -> void:
-	window.show()
-
-func _on_quit_pressed() -> void:
-	#get_tree().paused = false
-	window.hide()
+func start_minigame():
+	get_tree().paused = true
+	PhysicsServer2D.set_active(true)
+	
+	var spaceshooter = preload("res://GUI Scenes/SpaceShooterWindow.tscn").instantiate()
+	get_tree().current_scene.add_child(spaceshooter)
