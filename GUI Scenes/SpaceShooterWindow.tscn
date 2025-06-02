@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://x14cbbaggkwy"]
+[gd_scene load_steps=9 format=3 uid="uid://x14cbbaggkwy"]
 
 [ext_resource type="Script" uid="uid://1nqbev5hvpsl" path="res://GUI Scripts/spaceshipwindow.gd" id="1_b0wcw"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_bdmmy"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_k8sv5"]
 [ext_resource type="PackedScene" uid="uid://bgfhwdfy73kb2" path="res://GUI Scenes/space_shooter.tscn" id="1_vgk7d"]
 [ext_resource type="Texture2D" uid="uid://dsqd71b7hjn5d" path="res://Assets/Images/darkPurple.png" id="2_awpnu"]
+[ext_resource type="Script" uid="uid://gmu4ga4b0jpq" path="res://GUI Scripts/parallax_background.gd" id="5_wifu4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wifu4"]
 texture = ExtResource("1_k8sv5")
@@ -33,7 +34,7 @@ size = Vector2i(450, 600)
 theme_override_colors/title_color = Color(1, 1, 1, 1)
 theme_override_constants/title_outline_size = 2
 theme_override_constants/title_height = 16
-theme_override_constants/close_h_offset = 14
+theme_override_constants/close_h_offset = 16
 theme_override_constants/close_v_offset = 16
 theme_override_fonts/title_font = ExtResource("1_bdmmy")
 theme_override_font_sizes/title_font_size = 10
@@ -41,13 +42,17 @@ theme_override_styles/embedded_border = SubResource("StyleBoxTexture_wifu4")
 script = ExtResource("1_b0wcw")
 
 [node name="SpaceShooter" parent="Window" instance=ExtResource("1_vgk7d")]
+process_mode = 2
 
 [node name="StarsParticle" type="GPUParticles2D" parent="Window"]
+process_mode = 2
 position = Vector2(218, -66)
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_b0wcw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Window"]
+process_mode = 2
+script = ExtResource("5_wifu4")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Window/ParallaxBackground"]
 position = Vector2(86, 162)
