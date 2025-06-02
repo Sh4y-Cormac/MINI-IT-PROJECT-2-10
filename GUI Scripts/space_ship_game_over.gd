@@ -17,7 +17,14 @@ func set_score(value):
 func _on_quit_pressed() -> void:
 	$"Sound Effects/Enter Sound Effect".play()
 	await $"Sound Effects/Enter Sound Effect".finished
+	close()
 
 
 func _on_quit_mouse_entered() -> void:
 	$"Sound Effects/Hovering Sound Effect".play()
+
+func close():
+	get_tree().paused = false
+	var exist = get_node_or_null("SpaceShooterWindow")
+	if exist:
+		exist.queue_free()
