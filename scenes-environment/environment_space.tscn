@@ -701,6 +701,9 @@ position = Vector2(4570, -832)
 [node name="spikes_space7" parent="spike" instance=ExtResource("7_ls7sh")]
 position = Vector2(11490, -608)
 
+[node name="spikes_space" parent="spike" instance=ExtResource("7_ls7sh")]
+position = Vector2(7805, -625)
+
 [node name="laser ver1" type="Node" parent="."]
 
 [node name="laser_ver1_space" parent="laser ver1" instance=ExtResource("9_4dl7w")]
@@ -719,7 +722,7 @@ position = Vector2(7358, -655)
 position = Vector2(7358, -655)
 
 [node name="laser_ver1_space6" parent="laser ver1" instance=ExtResource("9_4dl7w")]
-position = Vector2(4204, -748)
+position = Vector2(4203, -748)
 
 [node name="laser_ver1_space7" parent="laser ver1" instance=ExtResource("9_4dl7w")]
 position = Vector2(4360, -748)
@@ -737,6 +740,9 @@ position = Vector2(9822, -624)
 
 [node name="laser_ver2_space4" parent="laser ver2" instance=ExtResource("9_bdfum")]
 position = Vector2(7952, -628)
+
+[node name="laser_ver2_space5" parent="laser ver2" instance=ExtResource("9_bdfum")]
+position = Vector2(4746, -464)
 
 [node name="saw" type="Node" parent="."]
 
@@ -760,6 +766,15 @@ position = Vector2(9191, -402)
 
 [node name="saw_space7" parent="saw" instance=ExtResource("8_dm4un")]
 position = Vector2(11788, -610)
+
+[node name="saw_space8" parent="saw" instance=ExtResource("8_dm4un")]
+position = Vector2(5628, -595)
+
+[node name="saw_space9" parent="saw" instance=ExtResource("8_dm4un")]
+position = Vector2(6912, -625)
+
+[node name="saw_space10" parent="saw" instance=ExtResource("8_dm4un")]
+position = Vector2(6959, -625)
 
 [node name="platform_ver1" type="Node" parent="."]
 
