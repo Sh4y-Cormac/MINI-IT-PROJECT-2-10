@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsilx7i0v6oma"]
+
+[ext_resource type="Texture2D" uid="uid://c5sjmdytv3ff5" path="res://cutscene/img/cutscene1_news.png" id="1_te8fy"]
+[ext_resource type="FontFile" uid="uid://cumt7bfqpoxeo" path="res://cutscene/Retro Gaming.ttf" id="2_yxrjt"]
+
+[sub_resource type="FontVariation" id="FontVariation_cs2f7"]
+base_font = ExtResource("2_yxrjt")
+
+[node name="cutscene_1_news" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -16.0
+offset_right = 1170.0
+offset_bottom = 677.0
+texture = ExtResource("1_te8fy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 501.0
+offset_right = 1089.0
+offset_bottom = 599.0
+theme_override_colors/font_color = Color(0.810598, 0.615532, 0.049782, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = SubResource("FontVariation_cs2f7")
+theme_override_font_sizes/font_size = 35
+text = "test test"

@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cumt7bfqpoxeo"
+path="res://.godot/imported/Retro Gaming.ttf-0f1c7f808f756478cb60b128689c2d9a.fontdata"
+
+[deps]
+
+source_file="res://cutscene/Retro Gaming.ttf"
+dest_files=["res://.godot/imported/Retro Gaming.ttf-0f1c7f808f756478cb60b128689c2d9a.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
