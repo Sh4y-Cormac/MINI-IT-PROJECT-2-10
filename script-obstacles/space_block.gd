@@ -13,7 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func start_collapse():
 	print("Collapse started")
 	await get_tree().create_timer(0.3).timeout
-	$StaticBody2D/CollisionShape2D_A.disabled = true 
+	$StaticBody2D/CollisionShape2D_s.disabled = true 
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", position.y + 200, 0.5)
 	tween.tween_callback(Callable(self, "queue_free"))

@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://bw13krssj2q6j"]
+
+[ext_resource type="Script" uid="uid://dobudvw66vct" path="res://bridge_paths/bridge_path_desert.gd" id="1_5vo77"]
+[ext_resource type="Texture2D" uid="uid://deiwvgplpib53" path="res://Assets/Sprites/bridge_path-sheet.png" id="1_k2dhc"]
+[ext_resource type="Texture2D" uid="uid://b4wf1wmehmpjq" path="res://Assets/Sprites/brifge_riddle2.png" id="3_uequ6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vo77"]
+size = Vector2(20, 195)
+
+[sub_resource type="Animation" id="Animation_uequ6"]
+resource_name = "fall"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_54nhb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ii5b7"]
+_data = {
+&"RESET": SubResource("Animation_54nhb"),
+&"fall": SubResource("Animation_uequ6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54nhb"]
+size = Vector2(32.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii5b7"]
+size = Vector2(35, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esl82"]
+size = Vector2(32.5, 32)
+
+[node name="bridge_path_desert" type="Node2D"]
+script = ExtResource("1_5vo77")
+
+[node name="bridge_desert" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="bridge_desert"]
+position = Vector2(12, -11)
+texture = ExtResource("1_k2dhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bridge_desert"]
+position = Vector2(0, -85.5)
+shape = SubResource("RectangleShape2D_5vo77")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bridge_desert"]
+libraries = {
+&"": SubResource("AnimationLibrary_ii5b7")
+}
+
+[node name="reds" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="reds"]
+position = Vector2(-186, -240)
+texture = ExtResource("3_uequ6")
+region_enabled = true
+region_rect = Rect2(2, 26, 41, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reds"]
+position = Vector2(-187, -239)
+shape = SubResource("RectangleShape2D_54nhb")
+
+[node name="purple" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="purple"]
+position = Vector2(-291, -209)
+texture = ExtResource("3_uequ6")
+region_enabled = true
+region_rect = Rect2(49, 38, 38, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="purple"]
+position = Vector2(-291.5, -209)
+shape = SubResource("RectangleShape2D_ii5b7")
+
+[node name="blue" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="blue"]
+position = Vector2(-241, -225)
+texture = ExtResource("3_uequ6")
+region_enabled = true
+region_rect = Rect2(8, 64, 39, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blue"]
+position = Vector2(-241.25, -223)
+shape = SubResource("RectangleShape2D_esl82")
+
+[connection signal="input_event" from="reds" to="." method="_on_reds_input_event"]
+[connection signal="input_event" from="purple" to="." method="_on_purple_input_event"]
+[connection signal="input_event" from="blue" to="." method="_on_blue_input_event"]

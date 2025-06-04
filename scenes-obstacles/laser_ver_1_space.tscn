@@ -96,15 +96,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhe00"]
-size = Vector2(15, 93)
+size = Vector2(15, 76)
 
 [node name="laser_ver1_space" type="Node2D"]
 script = ExtResource("1_nr85c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-0.250002, -3.68752)
-scale = Vector2(1.42187, 3.95703)
+position = Vector2(-0.250002, 3.81248)
+scale = Vector2(1.42187, 3.48828)
 sprite_frames = SubResource("SpriteFrames_04a7e")
 animation = &"laser_ver1"
 autoplay = "laser_ver1"
@@ -114,7 +114,7 @@ frame_progress = 0.997078
 [node name="laserver1_killzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laserver1_killzone"]
-position = Vector2(-2, -5.5)
+position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_lhe00")
 
 [node name="laser1_timer" type="Timer" parent="laserver1_killzone"]
