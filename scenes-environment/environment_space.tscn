@@ -934,6 +934,3 @@ position = Vector2(14592, -1840)
 
 [node name="space_block14" parent="spaceblock" instance=ExtResource("15_h7c45")]
 position = Vector2(14620, -1840)
-
-[node name="bridge_path_space" parent="spaceblock" instance=ExtResource("14_pkb6w")]
-position = Vector2(1049, -105)

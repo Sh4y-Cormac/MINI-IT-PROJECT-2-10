@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bc2occvxo6iel" path="res://Assets/Sprites/bridge_riddle.png" id="2_urpbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyyca"]
-size = Vector2(20, 193)
+size = Vector2(20, 195.5)
 
 [sub_resource type="Animation" id="Animation_eas2c"]
 length = 0.001
@@ -32,7 +32,7 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.58),
+"times": PackedFloat32Array(0, 1.65),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.5708]
@@ -58,11 +58,12 @@ script = ExtResource("1_urpbc")
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="bridge_city"]
-position = Vector2(11, 3)
+position = Vector2(12, -12)
+scale = Vector2(1, 1.014)
 texture = ExtResource("2_7xcil")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bridge_city"]
-position = Vector2(0, -71.5)
+position = Vector2(1, -87)
 shape = SubResource("RectangleShape2D_qyyca")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bridge_city"]
