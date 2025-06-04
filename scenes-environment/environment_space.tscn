@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6i81ix1i46ag" path="res://scenes-obstacles/platform_spacever_2.tscn" id="11_nk2m3"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="12_nk2m3"]
 [ext_resource type="PackedScene" uid="uid://c3w3vac8o1vcu" path="res://space sprite/streetlight.tscn" id="13_lii4y"]
-[ext_resource type="PackedScene" uid="uid://dc5oj4efja2ly" path="res://scenes-obstacles/bridge_path.tscn" id="14_pkb6w"]
+[ext_resource type="PackedScene" uid="uid://dc5oj4efja2ly" path="res://bridge_paths/bridge_path.tscn" id="14_pkb6w"]
 [ext_resource type="PackedScene" uid="uid://bi2xjv8sqe58d" path="res://scenes-obstacles/space_block.tscn" id="15_h7c45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
@@ -882,6 +882,15 @@ position = Vector2(11630, -657)
 [node name="streetlight3" parent="streetlights" instance=ExtResource("13_lii4y")]
 position = Vector2(11971, -655)
 
+[node name="streetlight4" parent="streetlights" instance=ExtResource("13_lii4y")]
+position = Vector2(2679, -480)
+
+[node name="streetlight5" parent="streetlights" instance=ExtResource("13_lii4y")]
+position = Vector2(6282, -671)
+
+[node name="streetlight6" parent="streetlights" instance=ExtResource("13_lii4y")]
+position = Vector2(7588, -672)
+
 [node name="spaceblock" type="Node" parent="."]
 
 [node name="space_block" parent="spaceblock" instance=ExtResource("15_h7c45")]
@@ -926,14 +935,5 @@ position = Vector2(14592, -1840)
 [node name="space_block14" parent="spaceblock" instance=ExtResource("15_h7c45")]
 position = Vector2(14620, -1840)
 
-[node name="streetlight" parent="." instance=ExtResource("13_lii4y")]
-position = Vector2(2679, -480)
-
-[node name="streetlight2" parent="." instance=ExtResource("13_lii4y")]
-position = Vector2(6282, -671)
-
-[node name="streetlight3" parent="." instance=ExtResource("13_lii4y")]
-position = Vector2(7588, -672)
-
-[node name="bridge_path" parent="." instance=ExtResource("14_pkb6w")]
-position = Vector2(1267, -104)
+[node name="bridge_path_space" parent="spaceblock" instance=ExtResource("14_pkb6w")]
+position = Vector2(1049, -105)

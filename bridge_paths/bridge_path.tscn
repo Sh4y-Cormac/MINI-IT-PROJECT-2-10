@@ -1,11 +1,38 @@
 [gd_scene load_steps=11 format=3 uid="uid://dc5oj4efja2ly"]
 
-[ext_resource type="Texture2D" uid="uid://8wo5tg2vcdlw" path="res://Assets/Sprites/bridge_path.png" id="1_5xuko"]
-[ext_resource type="Script" uid="uid://cnj0ne4q528oi" path="res://script-obstacles/bridge_path.gd" id="1_sxdea"]
+[ext_resource type="Script" uid="uid://cnj0ne4q528oi" path="res://bridge_paths/bridge_path.gd" id="1_sxdea"]
+[ext_resource type="Texture2D" uid="uid://deiwvgplpib53" path="res://Assets/Sprites/bridge_path-sheet.png" id="2_hmn5p"]
 [ext_resource type="Texture2D" uid="uid://bc2occvxo6iel" path="res://Assets/Sprites/bridge_riddle.png" id="2_sxdea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_effr2"]
 size = Vector2(20, 193)
+
+[sub_resource type="Animation" id="Animation_effr2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5xwep"]
 resource_name = "fall"
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "values": []
 }
 
-[sub_resource type="Animation" id="Animation_effr2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vqbw6"]
 _data = {
 &"RESET": SubResource("Animation_effr2"),
@@ -76,7 +76,7 @@ radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74n5u"]
 
-[node name="bridge_path" type="Node2D"]
+[node name="bridge_path_space" type="Node2D"]
 script = ExtResource("1_sxdea")
 
 [node name="bridge" type="StaticBody2D" parent="."]
@@ -84,10 +84,10 @@ position = Vector2(2, 0)
 
 [node name="BridgePath" type="Sprite2D" parent="bridge"]
 position = Vector2(9, -13)
-texture = ExtResource("1_5xuko")
+texture = ExtResource("2_hmn5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bridge"]
-position = Vector2(0, -87)
+position = Vector2(-2, -88)
 shape = SubResource("RectangleShape2D_effr2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bridge"]
