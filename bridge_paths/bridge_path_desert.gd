@@ -1,6 +1,6 @@
 extends Node2D
 
-var correct_answer := "reds"
+var correct_answer := "mushroom"
 var bridge_opened := false
 
 func open_bridge(answer: String) -> void:
@@ -16,14 +16,4 @@ func open_bridge(answer: String) -> void:
 
 func _on_reds_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		open_bridge("reds")
-
-
-func _on_purple_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		open_bridge("purple")
-
-
-func _on_blue_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		open_bridge("blue")
+		open_bridge("mushroom")

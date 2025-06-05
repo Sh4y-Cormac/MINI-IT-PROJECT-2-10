@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dknhlq2thq25b"]
+[gd_scene load_steps=9 format=3 uid="uid://dknhlq2thq25b"]
 
 [ext_resource type="Script" uid="uid://dd8sr0bsh2dgt" path="res://bridge_paths/bridge_path_city.gd" id="1_urpbc"]
 [ext_resource type="Texture2D" uid="uid://deiwvgplpib53" path="res://Assets/Sprites/bridge_path-sheet.png" id="2_7xcil"]
@@ -46,11 +46,6 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eas2c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1hk70"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ojcrl"]
-radius = 11.1803
-
 [node name="bridge_path_city" type="Node2D"]
 script = ExtResource("1_urpbc")
 
@@ -74,39 +69,13 @@ libraries = {
 [node name="red" type="Area2D" parent="."]
 
 [node name="Sprite_red" type="Sprite2D" parent="red"]
-position = Vector2(-168, -204)
+position = Vector2(-76, -169)
 texture = ExtResource("2_urpbc")
 region_enabled = true
 region_rect = Rect2(18, 0, 27, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red"]
-position = Vector2(-167, -203)
+position = Vector2(-75, -169)
 shape = SubResource("CircleShape2D_eas2c")
 
-[node name="green" type="Area2D" parent="."]
-
-[node name="Sprite_green" type="Sprite2D" parent="green"]
-position = Vector2(-132, -206)
-texture = ExtResource("2_urpbc")
-region_enabled = true
-region_rect = Rect2(51, 0, 28, 28)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="green"]
-position = Vector2(-133, -204)
-shape = SubResource("CircleShape2D_1hk70")
-
-[node name="yellow" type="Area2D" parent="."]
-
-[node name="Sprite_yellow" type="Sprite2D" parent="yellow"]
-position = Vector2(-99, -206)
-texture = ExtResource("2_urpbc")
-region_enabled = true
-region_rect = Rect2(85, 0, 23, 28)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="yellow"]
-position = Vector2(-100, -204)
-shape = SubResource("CircleShape2D_ojcrl")
-
 [connection signal="input_event" from="red" to="." method="_on_red_input_event"]
-[connection signal="input_event" from="green" to="." method="_on_green_input_event"]
-[connection signal="input_event" from="yellow" to="." method="_on_yellow_input_event"]
