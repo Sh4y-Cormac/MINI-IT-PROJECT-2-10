@@ -11,6 +11,7 @@ var playerDamageZone: Area2D
 var playerDamageAmount: int
 var playerGold: int #amount of gold player has
 var playerAlive: bool
+var playerSkin: int #what skin the player has. Will determine the animations and stuff
 
 
 ## Entity Values
