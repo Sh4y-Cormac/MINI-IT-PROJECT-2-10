@@ -1,5 +1,7 @@
 extends Window
 
+signal restart
+
 @onready var background = $ParallaxBackground
 
 
@@ -21,8 +23,14 @@ func _on_quit_pressed() -> void:
 func _on_restart_pressed() -> void:
 	$"SpaceShooter/UI layer/SpaceShipGameOver/Sound Effects/Enter Sound Effect".play()
 	await $"SpaceShooter/UI layer/SpaceShipGameOver/Sound Effects/Enter Sound Effect".finished
-
-
+	emit_signal("restart")
+	queue_free()
+	
+	PhysicsServer2D.set_active(true)
+	
+	var spaceshooter = preload("res://GUI Scenes/SpaceShooterWindow.tscn").instantiate()
+	
+	get_tree().current_scene.add_child(spaceshooter)
 
 func _on_close_requested() -> void:
 	get_tree().paused = false
