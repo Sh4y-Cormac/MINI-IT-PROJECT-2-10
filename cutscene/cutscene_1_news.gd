@@ -19,25 +19,56 @@ func _process(delta):
 			skip_typing()
 		else:
 			if dialogue_count == 1:
-				start_dialogue("The Zephyrus has landed with one goal — 
-				total control over human evolution.")
+				start_dialogue("The Zephyrus has landed with one goal —\ntotal control over human evolution.")
 				dialogue_count += 1
 			elif dialogue_count == 2:
-				start_dialogue("Instead of peace, they’ve chosen destruction. 
-				Cities are crumbling. Panic is everywhere.")
+				start_dialogue("Instead of peace, they’ve chosen destruction.\nCities are crumbling. Panic is everywhere.")
 				dialogue_count += 1
 			elif dialogue_count == 3:
-				start_dialogue("Worse, they’ve released a fast-spreading virus, 
-				infecting our own fallen soldiers.")
+				start_dialogue("Worse, they’ve released a fast-spreading virus,\ninfecting our own fallen soldiers.")
 				dialogue_count += 1
 			elif dialogue_count == 4:
-				start_dialogue("Most of our defenses are down... 
-				only one soldier remains.")
+				start_dialogue("Most of our defenses are down...\nonly one soldier remains.")
 				dialogue_count += 1
 			elif dialogue_count == 5:
-				start_dialogue("Oh—hold on. We’re getting a transmission from one of our experts. 
-				A message for the last hope.")
+				start_dialogue("Oh—hold on. We’re getting a transmission from one of our experts.\nA message for the last hope...")
 				dialogue_count += 1
+			elif dialogue_count ==6:
+				start_dialogue("Hello,sir? Can you hear us?")
+				dialogue_count +=1
+			elif dialogue_count == 7:
+				start_dialogue("Unknown: Hi... yes yes..")
+				dialogue_count +=1
+			elif dialogue_count == 8:
+				start_dialogue("Sir, what is your message to the last warrior who is out there?")
+				dialogue_count +=1
+			elif dialogue_count ==9:
+				start_dialogue("Unknown: Warrior, I hope you are listening to me right now. You must stop them before it's too late.")
+				dialogue_count +=1
+			elif dialogue_count == 10:
+				start_dialogue("Unknown: There are five locations... each crawling with enemies.")
+				dialogue_count +=1
+			elif dialogue_count == 11:
+				start_dialogue("Unknown: You must travel to each place and stop the enemy before they plunge the world into chaos.")
+				dialogue_count +=1
+			elif dialogue_count == 12:
+				start_dialogue("Unknown: But beware — at every location, a powerful boss awaits. Only by defeating them can you hope to end this nightmare.")
+				dialogue_count +=1
+			elif dialogue_count == 13:
+				start_dialogue("Unknown: Before facing each boss, there is a special object.\nYou must interact with it to unlock the path forward.")
+				dialogue_count +=1
+			elif dialogue_count == 14:
+				start_dialogue("Unknown: The fate of everything rests on your shoulders now. Your journey to the right is the only path to end this war..*kzzt— BEEP —connection lost...*")
+				dialogue_count +=1
+			elif dialogue_count == 15:
+				start_dialogue("Seems like we’ve lost his connection...")
+				dialogue_count += 1
+			elif dialogue_count == 16:
+				start_dialogue("To the warrior out there — if you’re still listening... we need you. The enemy is getting stronger, and people are losing hope.")
+				dialogue_count += 1
+			elif dialogue_count == 17:
+				start_dialogue("You're the only one who can turn this around.")
+				
 			else:
 				print("No more dialogue.")
 
