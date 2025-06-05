@@ -31,7 +31,7 @@ func _on_settings_button_pressed() -> void:
 	show_animation("options")
 	$"Main Buttons/Start Button".disabled = true
 	$"Main Buttons/Customise Button".disabled = true
-	$"Main Buttons/Load Button".disabled = true
+	$"Main Buttons/Credits Button".disabled = true
 
 func _on_start_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()
@@ -66,7 +66,7 @@ func _on_option_exit_button_pressed() -> void:
 	hide_animation("options")
 	$"Main Buttons/Start Button".disabled = false
 	$"Main Buttons/Customise Button".disabled = false
-	$"Main Buttons/Load Button".disabled = false
+	$"Main Buttons/Credits Button".disabled = false
 
 func _on_settings_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()
@@ -78,16 +78,7 @@ func _on_customise_button_pressed() -> void:
 	show_animation("customize")
 	$"Main Buttons/Start Button".disabled = true
 	$"Main Buttons/Customise Button".disabled = true
-	$"Main Buttons/Load Button".disabled = true
-	$"Settings Button".disabled = true
-
-func _on_load_button_pressed() -> void:
-	$"Enter Sound Effect".play()
-	await $"Enter Sound Effect".finished
-	show_animation("load")
-	$"Main Buttons/Start Button".disabled = true
-	$"Main Buttons/Customise Button".disabled = true
-	$"Main Buttons/Load Button".disabled = true
+	$"Main Buttons/Credits Button".disabled = true
 	$"Settings Button".disabled = true
 
 
@@ -99,7 +90,7 @@ func _on_customize_save_button_pressed() -> void:
 	hide_animation("customize")
 	$"Main Buttons/Start Button".disabled = false
 	$"Main Buttons/Customise Button".disabled = false
-	$"Main Buttons/Load Button".disabled = false
+	$"Main Buttons/Credits Button".disabled = false
 	$"Settings Button".disabled = false
 
 
@@ -111,18 +102,14 @@ func _on_customize_exit_button_pressed() -> void:
 	hide_animation("customize")
 	$"Main Buttons/Start Button".disabled = false
 	$"Main Buttons/Customise Button".disabled = false
-	$"Main Buttons/Load Button".disabled = false
+	$"Main Buttons/Credits Button".disabled = false
 	$"Settings Button".disabled = false
 
 
-
-func _on_load_exit_button_mouse_entered() -> void:
-	$"Hovering Sound Effect".play()
-
-func _on_load_exit_button_pressed() -> void:
+func _on_credits_button_pressed() -> void:
 	$"Enter Sound Effect".play()
-	hide_animation("load")
-	$"Main Buttons/Start Button".disabled = false
-	$"Main Buttons/Customise Button".disabled = false
-	$"Main Buttons/Load Button".disabled = false
-	$"Settings Button".disabled = false
+	await $"Enter Sound Effect".finished
+	Functions.load_screen_to_scene("res://GUI Scenes/credit_scene.tscn")
+
+func _on_credits_button_mouse_entered() -> void:
+	$"Hovering Sound Effect"
