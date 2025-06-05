@@ -54,7 +54,7 @@ frame = 2
 frame_progress = 0.225207
 
 [node name="killzone" parent="." instance=ExtResource("2_n6pvg")]
-collision_mask = 3
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(0, -14.5)

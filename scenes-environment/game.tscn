@@ -127,7 +127,7 @@ sources/3 = SubResource("TileSetAtlasSource_ftps5")
 sources/4 = SubResource("TileSetAtlasSource_4at0j")
 sources/5 = SubResource("TileSetAtlasSource_wic44")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ftps5"]
 
 [sub_resource type="Animation" id="Animation_1kice"]
 length = 0.001
@@ -319,11 +319,11 @@ tile_set = SubResource("TileSet_trtic")
 position = Vector2(147, 32)
 
 [node name="killzone" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(302, 428)
+position = Vector2(-12, 448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(13, 16)
-shape = SubResource("WorldBoundaryShape2D_lbhrr")
+shape = SubResource("WorldBoundaryShape2D_ftps5")
 
 [node name="platforms" type="Node" parent="."]
 
