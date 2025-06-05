@@ -141,6 +141,11 @@ animations = [{
 "name": &"death",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"death_0",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j6umm")
@@ -158,12 +163,22 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"idle_0",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fam07")
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -195,6 +210,11 @@ animations = [{
 "name": &"longsword_attack",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"longsword_attack_0",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e0ci6")
@@ -204,6 +224,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -225,6 +250,11 @@ animations = [{
 "loop": false,
 "name": &"shortsword_attack",
 "speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shortsword_attack_0",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
@@ -248,7 +278,7 @@ position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
-animation = &"death"
+animation = &"shortsword_attack_0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)

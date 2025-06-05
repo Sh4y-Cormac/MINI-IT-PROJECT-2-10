@@ -38,6 +38,12 @@ var dead: bool
 
 var skin = Global.playerSkin
 
+var deathAnim: String
+var idleAnim: String
+var jumpAnim: String
+var longswordAttackAnim: String
+var runAnim: String
+var shortswordAttackAnim: String
 
 func _ready() -> void:
 	Global.playerBody = self
@@ -110,7 +116,7 @@ func _physics_process(delta: float) -> void:
 					attack_type = "longsword"
 			
 				set_damage(attack_type)
-				handle_attack_animation(attack_type)
+				handle_attack_animation(attack_type) ##NOTE: MIGHT NEED TO CHANGE THIS DUE TO HAVING DIFFERENT ATTACK NAMES FOR DIFFERENT SKINS
 			
 		handle_movement_animation(direction)
 		check_hitbox()	
@@ -120,7 +126,12 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 	if skin == 0:
 		pass
 	elif skin == 1:
-		pass
+		runAnim = str("run")
+		idleAnim = str("idle")
+		jumpAnim = str("jump")
+		longswordAttackAnim = str("longsword_attack")
+		shortswordAttackAnim = str("shortsword_attack")
+		deathAnim = str("death")
 	elif skin == 2:
 		pass
 	elif skin == 3:
@@ -156,10 +167,11 @@ func take_damage(damage):
 				handle_death_animation()
 			take_damage_cooldown(1.0)
 
+## Runs code when the player dies
 func handle_death_animation():
-	print("working")
+	print("player has died!")
 	$CollisionShape2D.position.y = 5
-	animated_sprite.play("death")
+	animated_sprite.play(deathAnim)
 	await get_tree().create_timer(0.6).timeout
 	$Camera2D.zoom.x = 4
 	$Camera2D.zoom.y = 4
@@ -175,15 +187,16 @@ func take_damage_cooldown(wait_time):
 	can_take_damage = true
 		
 
+## handles movement animations (running,jumping,idling)
 func handle_movement_animation(direction):
 	if is_on_floor() and !current_attack:
 		if !velocity:
-			animated_sprite.play("idle")
+			animated_sprite.play(idleAnim)
 		if velocity:
-			animated_sprite.play("run")
+			animated_sprite.play(runAnim)
 			toggle_flip_sprite(direction)
 	elif !is_on_floor() and !current_attack:
-		animated_sprite.play("jump")
+		animated_sprite.play(jumpAnim)
 		toggle_flip_sprite(direction)
 
 func toggle_flip_sprite(direction):
@@ -197,6 +210,8 @@ func toggle_flip_sprite(direction):
 #when making attack anims, make sure to put _attack behind it.
 func handle_attack_animation(attack_type):
 	if current_attack:
+		var skinVariation = grab_skin()
+		print(skinVariation)
 		var animation = str(attack_type, "_attack")
 		animated_sprite.play(animation)
 		toggle_damage_collisions(attack_type)
@@ -230,3 +245,8 @@ func set_damage(attack_type):
 	elif attack_type == "longsword":
 		current_damage_to_deal = 25
 	Global.playerDamageAmount = current_damage_to_deal
+
+#this function's whole purpose is to return the 'index' of the skin so that i know which attack anim to use because the attack anim is different for each skin
+func grab_skin():
+	var skin = Global.playerSkin
+	return skin
