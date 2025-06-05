@@ -1073,5 +1073,8 @@ position = Vector2(11816, -1528)
 [node name="bridge_path_winter" parent="." instance=ExtResource("13_vi2ca")]
 position = Vector2(12550, -1544)
 
+[node name="bridge_path_winter2" parent="." instance=ExtResource("13_vi2ca")]
+position = Vector2(410, -76)
+
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]

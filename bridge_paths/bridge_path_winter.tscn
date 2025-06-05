@@ -1,11 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgkt0l0j3pphw"]
+[gd_scene load_steps=9 format=3 uid="uid://bgkt0l0j3pphw"]
 
 [ext_resource type="Script" uid="uid://cmqku14vthiwc" path="res://bridge_paths/bridge_path_winter.gd" id="1_bdajv"]
 [ext_resource type="Texture2D" uid="uid://deiwvgplpib53" path="res://Assets/Sprites/bridge_path-sheet.png" id="1_f0x36"]
-[ext_resource type="Texture2D" uid="uid://b4wf1wmehmpjq" path="res://Assets/Sprites/brifge_riddle2.png" id="3_plkfg"]
+[ext_resource type="Texture2D" uid="uid://bc2occvxo6iel" path="res://Assets/Sprites/bridge_riddle.png" id="3_bdajv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ar0j5"]
 size = Vector2(20, 194)
+
+[sub_resource type="Animation" id="Animation_ar0j5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_f0x36"]
 resource_name = "fall"
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "values": [0.0, 1.5708]
 }
 
-[sub_resource type="Animation" id="Animation_ar0j5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdajv"]
 _data = {
 &"RESET": SubResource("Animation_ar0j5"),
@@ -45,13 +45,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf2f5"]
-size = Vector2(35, 14.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mir52"]
-size = Vector2(32.75, 16.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x88vx"]
-size = Vector2(32.5, 17.5)
+size = Vector2(35, 26.25)
 
 [node name="bridge_path_winter" type="Node2D"]
 script = ExtResource("1_bdajv")
@@ -72,45 +66,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_bdajv")
 }
 
-[node name="key_yellow" type="Area2D" parent="."]
+[node name="key" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="key_yellow"]
-position = Vector2(-215.875, -178)
-scale = Vector2(1.20556, 1.35714)
-texture = ExtResource("3_plkfg")
+[node name="Sprite2D" type="Sprite2D" parent="key"]
+position = Vector2(-104, -168)
+scale = Vector2(1.27925, 1.35714)
+texture = ExtResource("3_bdajv")
 region_enabled = true
-region_rect = Rect2(0, 0, 45, 21)
+region_rect = Rect2(16, 40, 35, 17)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key_yellow"]
-position = Vector2(-216.5, -175)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
+position = Vector2(-106, -168)
 shape = SubResource("RectangleShape2D_kf2f5")
 
-[node name="key_blue" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="key_blue"]
-position = Vector2(-139, -175)
-scale = Vector2(1.21111, 1.3)
-texture = ExtResource("3_plkfg")
-region_enabled = true
-region_rect = Rect2(55, 21, 45, 15)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key_blue"]
-position = Vector2(-147, -174)
-shape = SubResource("RectangleShape2D_mir52")
-
-[node name="key_green" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="key_green"]
-position = Vector2(-80, -179)
-scale = Vector2(1.11111, 1.27778)
-texture = ExtResource("3_plkfg")
-region_enabled = true
-region_rect = Rect2(53, 1, 36, 18)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key_green"]
-position = Vector2(-84, -175)
-shape = SubResource("RectangleShape2D_x88vx")
-
-[connection signal="input_event" from="key_yellow" to="." method="_on_key_yellow_input_event"]
-[connection signal="input_event" from="key_blue" to="." method="_on_key_blue_input_event"]
-[connection signal="input_event" from="key_green" to="." method="_on_key_green_input_event"]
+[connection signal="input_event" from="key" to="." method="_on_key_yellow_input_event"]

@@ -25,13 +25,15 @@ texture = ExtResource("1_te8fy")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 33.0
-offset_top = 501.0
-offset_right = 1120.0
-offset_bottom = 599.0
-theme_override_colors/font_color = Color(0.810598, 0.615532, 0.049782, 1)
+offset_top = 485.0
+offset_right = 1116.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0.805397, 0.569353, 0.234189, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = SubResource("FontVariation_cs2f7")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "
 "
+autowrap_mode = 2
