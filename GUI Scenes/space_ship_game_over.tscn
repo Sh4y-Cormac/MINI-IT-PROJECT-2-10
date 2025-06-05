@@ -139,6 +139,4 @@ max_distance = 100000.0
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="Panel/Restart" to="." method="_on_restart_mouse_entered"]
-[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
 [connection signal="mouse_entered" from="Panel/Quit" to="." method="_on_quit_mouse_entered"]
-[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]

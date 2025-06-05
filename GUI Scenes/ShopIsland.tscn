@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=34 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_13hmj"]
 [ext_resource type="Script" uid="uid://bdo6ruhfgugth" path="res://GUI Scenes/shop_island.gd" id="1_dr1pm"]
@@ -18,7 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]
-[ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="19_t8j5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulm3l"]
 texture = ExtResource("1_13hmj")
@@ -454,8 +453,6 @@ _data = {
 &"bag_animation": SubResource("Animation_dg8pe")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcwrm"]
-
 [node name="ShopIsland" type="Node2D"]
 script = ExtResource("1_dr1pm")
 
@@ -620,13 +617,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_t8j5p")
 }
 speed_scale = 4.0
-
-[node name="killzone" parent="." instance=ExtResource("19_t8j5p")]
-position = Vector2(302, 428)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(13, 16)
-shape = SubResource("WorldBoundaryShape2D_bcwrm")
 
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
