@@ -950,7 +950,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = -118.0

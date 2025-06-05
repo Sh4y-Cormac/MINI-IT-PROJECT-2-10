@@ -33,4 +33,5 @@ func start_minigame():
 	PhysicsServer2D.set_active(true)
 	
 	var spaceshooter = preload("res://GUI Scenes/SpaceShooterWindow.tscn").instantiate()
+	
 	get_tree().current_scene.add_child(spaceshooter)
