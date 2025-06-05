@@ -81,6 +81,15 @@ func _on_customise_button_pressed() -> void:
 	$"Main Buttons/Load Button".disabled = true
 	$"Settings Button".disabled = true
 
+func _on_load_button_pressed() -> void:
+	$"Enter Sound Effect".play()
+	await $"Enter Sound Effect".finished
+	show_animation("load")
+	$"Main Buttons/Start Button".disabled = true
+	$"Main Buttons/Customise Button".disabled = true
+	$"Main Buttons/Load Button".disabled = true
+	$"Settings Button".disabled = true
+
 
 func _on_customize_save_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()
@@ -106,11 +115,14 @@ func _on_customize_exit_button_pressed() -> void:
 	$"Settings Button".disabled = false
 
 
-func _on_credits_button_mouse_entered() -> void:
+
+func _on_load_exit_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()
 
-
-func _on_credits_button_pressed() -> void:
+func _on_load_exit_button_pressed() -> void:
 	$"Enter Sound Effect".play()
-	await $"Enter Sound Effect".finished
-	Functions.load_screen_to_scene("res://GUI Scenes/credit_scene.tscn")
+	hide_animation("load")
+	$"Main Buttons/Start Button".disabled = false
+	$"Main Buttons/Customise Button".disabled = false
+	$"Main Buttons/Load Button".disabled = false
+	$"Settings Button".disabled = false

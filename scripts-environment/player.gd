@@ -46,6 +46,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
+	
+	await get_tree().create_timer(0.05).timeout
+	var is_alive = Global.playerAlive
+	if is_alive == false:
+		handle_death_animation()
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
