@@ -68,7 +68,11 @@ func _process(delta):
 				dialogue_count += 1
 			elif dialogue_count == 17:
 				start_dialogue("You're the only one who can turn this around.")
-				
+	
+				await wait_for_typing_done()
+				await get_tree().create_timer(5.0).timeout
+				get_tree().change_scene_to_file("res://cutscene/cutscene_2_vid.tscn")
+	
 			else:
 				print("No more dialogue.")
 
@@ -96,3 +100,7 @@ func skip_typing():
 	is_typing = false
 	current_text = full_text
 	dialogue_label.text = full_text
+	
+func wait_for_typing_done():
+	while is_typing:
+		await get_tree().process_frame
