@@ -1,13 +1,11 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
-const FALLSPEED = 60
+@onready var playerbody = Global.playerBody
 
 func _on_body_entered(body: Node2D) -> void:
-	Global.playerAlive = false
-	print(Global.playerAlive)
 	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
+	playerbody.queue_free()
 	timer.start()
 	
 	
