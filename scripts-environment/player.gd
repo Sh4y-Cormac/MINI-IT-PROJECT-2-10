@@ -36,10 +36,14 @@ var health_min = 0
 var can_take_damage: bool
 var dead: bool 
 
+var skin = Global.playerSkin
+
+
 func _ready() -> void:
 	Global.playerBody = self
 	Global.playerAlive = true
-	
+	print(skin)
+	select_skin(skin)
 	current_attack = false
 	dead = false
 	can_take_damage = true
@@ -111,6 +115,21 @@ func _physics_process(delta: float) -> void:
 		handle_movement_animation(direction)
 		check_hitbox()	
 	move_and_slide()
+
+func select_skin(skin): #selects the skin based on the input of the customize button
+	if skin == 0:
+		pass
+	elif skin == 1:
+		pass
+	elif skin == 2:
+		pass
+	elif skin == 3:
+		pass
+	elif skin == 4:
+		pass
+	else:
+		print("skin error detected")
+
 
 #checks hitboxes for ALL enemies, refer to this block to add new enemies' damage values
 func check_hitbox():

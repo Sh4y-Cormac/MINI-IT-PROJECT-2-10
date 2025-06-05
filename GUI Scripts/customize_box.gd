@@ -23,6 +23,10 @@ func _ready() -> void:
 	
 func update_portrait(index):
 	char_potrait.texture = characters[index]
+	
+	## ADDED CODE HERE
+	var character_skin = index
+	Global.playerSkin = index
 
 func _set_selection():
 	await get_tree().create_timer(0.01).timeout
