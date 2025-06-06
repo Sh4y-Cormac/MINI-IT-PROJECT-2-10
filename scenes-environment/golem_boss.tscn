@@ -231,7 +231,7 @@ radius = 12.0
 radius = 13.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w84fn"]
-radius = 14.5086
+radius = 12.0
 
 [node name="golem_boss" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -258,8 +258,10 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_bc8dd")
 
 [node name="GolemDealDamageArea" type="Area2D" parent="."]
+position = Vector2(24, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GolemDealDamageArea"]
+position = Vector2(-24, -1)
 shape = SubResource("CircleShape2D_w84fn")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
