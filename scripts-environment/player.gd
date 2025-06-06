@@ -56,7 +56,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
-	
+	Global.playerHitbox = $PlayerHitbox
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
