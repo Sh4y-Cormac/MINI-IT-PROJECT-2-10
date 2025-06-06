@@ -216,7 +216,6 @@ func _is_item_allowed(item, slotNode):
 func _on_button_pressed() -> void:
 	$"../../audio/Enter Sound Effect".play()
 	$".".visible = false
-	stats_window.visible = false
 
 func _on_button_mouse_entered() -> void:
 	$"../../audio/Hovering Sound Effect".play()
@@ -229,3 +228,8 @@ func _on_inventory_gui_mouse_entered() -> void:
 func _on_inventory_gui_mouse_exited() -> void:
 	onInventory = false
 	
+
+func _input(event):
+	if event.is_action_pressed("toggle_inventory"):
+		visible = not visible
+		stats_window.visible = visible

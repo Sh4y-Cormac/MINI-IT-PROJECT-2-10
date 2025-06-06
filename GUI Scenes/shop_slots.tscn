@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nqepyobxgl4t" path="res://Assets/Images/Panel.png" id="1_gfmxd"]
 
 [node name="Shop Slots" type="PanelContainer"]
-offset_right = 265.0
+offset_right = 208.0
 offset_bottom = 187.0
 script = ExtResource("1_60fch")
 

@@ -217,11 +217,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Stats Window" parent="Inventory GUI/CanvasLayer" instance=ExtResource("7_dj775")]
-offset_left = 734.0
-offset_top = -65.0
-offset_right = -9.0
-offset_bottom = -6.0
-mouse_filter = 2
+offset_left = 676.0
+offset_top = -11.0
+offset_right = 88.0
+offset_bottom = -90.0
 
 [node name="EXPBar" type="ProgressBar" parent="Inventory GUI/CanvasLayer"]
 z_index = 1
