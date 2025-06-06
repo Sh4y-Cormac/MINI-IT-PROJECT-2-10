@@ -57,6 +57,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
 	Global.playerHitbox = $PlayerHitbox
+	 
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -116,7 +117,7 @@ func _physics_process(delta: float) -> void:
 					attack_type = "longsword"
 			
 				set_damage(attack_type)
-				handle_attack_animation(attack_type) ##NOTE: MIGHT NEED TO CHANGE THIS DUE TO HAVING DIFFERENT ATTACK NAMES FOR DIFFERENT SKINS
+				handle_attack_animation(attack_type)
 			
 		handle_movement_animation(direction)
 		check_hitbox()	
@@ -166,17 +167,19 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
 	var damage: int
+	var enemyAttackCooldown: float ##dependent on how long the animation is so that the attack doesnt double during the enemy's attack
 	if hitbox_areas:
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is RobotEnemy:
 			damage = Global.robotDamageAmount
 		elif hitbox.get_parent() is GolemBoss:
 			damage = Global.golemDamageAmount
+			enemyAttackCooldown = float(1.25)
 			
 	if can_take_damage:
-		take_damage(damage)
+		take_damage(damage, enemyAttackCooldown)
 
-func take_damage(damage):
+func take_damage(damage, enemyAttackCooldown):
 	if damage != 0:
 		if health > 0:
 			health -= damage
@@ -185,7 +188,7 @@ func take_damage(damage):
 				health = 0
 				dead = true
 				handle_death_animation()
-			take_damage_cooldown(1.0)
+			take_damage_cooldown(enemyAttackCooldown)
 
 ## Runs code when the player dies
 func handle_death_animation():
