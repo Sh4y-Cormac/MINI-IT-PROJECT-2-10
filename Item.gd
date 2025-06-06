@@ -1,13 +1,12 @@
 extends Resource
 class_name Item
 
-var gold = 10000
 
 @export var name: String
 @export var title : String
-@export var icon : CompressedTexture2D
+@export var icon : Texture2D
 @export_multiline var description : String
-@export var price : String
+@export var price : int
 @export_enum("Armor", "Weapon", "Card") var type: String
 
 @export var is_regen_card: bool = false

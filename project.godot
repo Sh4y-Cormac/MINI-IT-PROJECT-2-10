@@ -21,6 +21,8 @@ Functions="*res://GUI Scripts/functions.gd"
 NavigationManager="*res://navigation_manager.gd"
 Global="*res://Global.gd"
 GlobalState="*res://cutscene/global_state.gd"
+ShopSystem="*res://GUI Scenes/shop_system.tscn"
+Inventory="*res://GUI Scenes/inventory.tscn"
 
 [display]
 
