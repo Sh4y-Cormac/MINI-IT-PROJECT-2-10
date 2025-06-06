@@ -144,7 +144,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"deal_damage",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,7 @@ script = ExtResource("1_bc8dd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itede")
-animation = &"death"
+animation = &"deal_damage"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -265,3 +265,4 @@ shape = SubResource("CircleShape2D_w84fn")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="GolemHitbox" to="." method="_on_golem_hitbox_area_entered"]
+[connection signal="area_entered" from="GolemDealDamageArea" to="." method="_on_golem_deal_damage_area_area_entered"]
