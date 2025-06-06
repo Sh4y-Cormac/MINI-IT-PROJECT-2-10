@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs2pp83xjyjqs"]
+[gd_scene load_steps=10 format=3 uid="uid://bs2pp83xjyjqs"]
 
 [ext_resource type="Script" uid="uid://dceubbryswir4" path="res://GUI Scripts/gameover.gd" id="1_j1v4w"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_oahll"]
+[ext_resource type="AudioStream" uid="uid://cs4fvkq0u7p5" path="res://Assets/Audio & Sound Effects/game over sfx.mp3" id="3_j1v4w"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="3_sc0ap"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_0my3a"]
 
@@ -142,6 +143,7 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
+stream = ExtResource("3_j1v4w")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
@@ -163,6 +165,7 @@ bus = &"SFX"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 clip_contents = true
+layout_mode = 0
 offset_left = -118.0
 offset_top = -50.0
 offset_right = 1257.0

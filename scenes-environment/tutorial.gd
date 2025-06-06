@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		Global.gameStarted = false
 		SceneTransitionAnimation.play("fade_in")
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://GUI Scenes/StartMenu.tscn")
+		get_tree().change_scene_to_file("res://GUI Scenes/gameover.tscn")
 
 
 func _on_bag_icon_button_mouse_entered() -> void:
