@@ -124,7 +124,12 @@ func _physics_process(delta: float) -> void:
 
 func select_skin(skin): #selects the skin based on the input of the customize button
 	if skin == 0:
-		pass
+		runAnim = str("run_0")
+		idleAnim = str("idle_0")
+		jumpAnim = str("jump_0")
+		longswordAttackAnim = str("longsword_attack")
+		shortswordAttackAnim = str("shortsword_attack")
+		deathAnim = str("death_0")
 	elif skin == 1:
 		runAnim = str("run_1")
 		idleAnim = str("idle_1")
@@ -133,11 +138,26 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 		shortswordAttackAnim = str("shortsword_attack")
 		deathAnim = str("death_1")
 	elif skin == 2:
-		pass
+		runAnim = str("run_2")
+		idleAnim = str("idle_2")
+		jumpAnim = str("jump_2")
+		longswordAttackAnim = str("longsword_attack")
+		shortswordAttackAnim = str("shortsword_attack")
+		deathAnim = str("death_2")
 	elif skin == 3:
-		pass
+		runAnim = str("run_3")
+		idleAnim = str("idle_3")
+		jumpAnim = str("jump_3")
+		longswordAttackAnim = str("longsword_attack")
+		shortswordAttackAnim = str("shortsword_attack")
+		deathAnim = str("death_3")
 	elif skin == 4:
-		pass
+		runAnim = str("run_4")
+		idleAnim = str("idle_4")
+		jumpAnim = str("jump_4")
+		longswordAttackAnim = str("longsword_attack")
+		shortswordAttackAnim = str("shortsword_attack")
+		deathAnim = str("death_4")
 	else:
 		print("skin error detected")
 
