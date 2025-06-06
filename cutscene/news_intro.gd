@@ -1,5 +1,7 @@
 extends Control
+signal finished
 
 func _ready():
-	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://cutscene/cutscene1.tscn")
+	# main animasi/video/news intro
+	await get_tree().create_timer(3.0).timeout  # adjust ikut panjang clip
+	emit_signal("finished")

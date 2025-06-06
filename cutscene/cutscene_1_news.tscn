@@ -9,9 +9,11 @@ base_font = ExtResource("2_yxrjt")
 
 [node name="cutscene_1_news" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_cs2f7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -23,11 +25,16 @@ offset_bottom = 677.0
 texture = ExtResource("1_te8fy")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 485.0
-offset_right = 1116.0
-offset_bottom = 633.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 490.0
+offset_right = -15.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.805397, 0.569353, 0.234189, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 4
