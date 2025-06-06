@@ -101,7 +101,13 @@ func take_damage(damage):
 	print(str(self), "current health is: ", health)
 
 func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
-	if area == Global.playerHitbox:
-		is_dealing_damage = true
-		await get_tree().create_timer(0.8).timeout
-		is_dealing_damage = false
+	if !dead:
+		if area == Global.playerHitbox:
+			is_dealing_damage = true
+			await get_tree().create_timer(0.8).timeout
+			is_dealing_damage = false
+	
+		
+		
+		
+	
