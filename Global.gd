@@ -9,6 +9,7 @@ var playerBody: CharacterBody2D
 var player_weapon_equip: bool
 var playerDamageZone: Area2D
 var playerDamageAmount: int
+var playerHitbox: Area2D
 var playerGold: int #amount of gold player has
 var playerAlive: bool
 var playerSkin: int #what skin the player has. Will determine the animations and stuff

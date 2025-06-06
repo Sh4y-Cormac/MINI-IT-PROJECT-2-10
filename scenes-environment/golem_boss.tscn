@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://kp81lm4hqsdm"]
+[gd_scene load_steps=39 format=3 uid="uid://kp81lm4hqsdm"]
 
 [ext_resource type="Script" uid="uid://d2ji12bmbrfj8" path="res://scenes-environment/golem_boss.gd" id="1_bc8dd"]
 [ext_resource type="Texture2D" uid="uid://4da70t4ld5ln" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_AttackB.png" id="2_bc8dd"]
@@ -233,15 +233,18 @@ radius = 13.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_w84fn"]
 radius = 12.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc8dd"]
+size = Vector2(345.5, 194.25)
+
 [node name="golem_boss" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_layer = 2
-collision_mask = 3
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_bc8dd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itede")
-animation = &"death"
+animation = &"deal_damage"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -264,5 +267,14 @@ position = Vector2(24, 1)
 position = Vector2(-24, -1)
 shape = SubResource("CircleShape2D_w84fn")
 
+[node name="EnemyChaseRegion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyChaseRegion"]
+position = Vector2(-0.25, -73.5)
+shape = SubResource("RectangleShape2D_bc8dd")
+
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="GolemHitbox" to="." method="_on_golem_hitbox_area_entered"]
+[connection signal="area_entered" from="GolemDealDamageArea" to="." method="_on_golem_deal_damage_area_area_entered"]
+[connection signal="area_entered" from="EnemyChaseRegion" to="." method="_on_enemy_chase_region_area_entered"]
+[connection signal="area_exited" from="EnemyChaseRegion" to="." method="_on_enemy_chase_region_area_exited"]

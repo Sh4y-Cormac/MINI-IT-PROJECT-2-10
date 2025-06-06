@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name GolemBoss
 
 const speed = 30
-var is_enemy_chase: bool = true
+var is_enemy_chase: bool = false
 
 var health = 200
 var health_max = 200
@@ -24,7 +24,10 @@ var player_in_area = false
 
 var droppedGold = 500
 
+@onready var enemy_chase_region: Area2D = $EnemyChaseRegion
+
 func _process(delta: float) -> void:
+	
 	Global.golemDamageAmount = damage_to_deal
 	Global.golemDamageZone = $GolemDealDamageArea
 	player = Global.playerBody
@@ -68,6 +71,8 @@ func handle_animation():
 		animated_sprite.play("death")
 		await get_tree().create_timer(0.2).timeout
 		handle_death()
+	elif !dead and is_dealing_damage:
+		animated_sprite.play("deal_damage")
 
 func handle_death():
 	Global.playerGold += droppedGold
@@ -97,3 +102,19 @@ func take_damage(damage):
 		health = health_min
 		dead = true
 	print(str(self), "current health is: ", health)
+
+
+func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
+	if area == Global.playerHitbox:
+		is_dealing_damage = true
+		await get_tree().create_timer(1.0).timeout
+		is_dealing_damage = false
+
+
+func _on_enemy_chase_region_area_entered(area: Area2D) -> void:
+	if area == Global.playerBody:
+		is_enemy_chase = true
+
+func _on_enemy_chase_region_area_exited(area: Area2D) -> void:
+	if area == Global.playerBody:
+		is_enemy_chase = false
