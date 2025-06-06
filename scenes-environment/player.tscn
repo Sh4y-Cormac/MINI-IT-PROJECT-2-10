@@ -118,6 +118,11 @@ region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fam07"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"death_0",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k6ryg")
@@ -138,12 +143,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_hn5l6")
 }],
 "loop": false,
-"name": &"death",
+"name": &"death_1",
 "speed": 10.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"death_0",
+"name": &"idle_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -160,12 +165,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_n41w7")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_1",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"idle_0",
+"name": &"jump_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -173,12 +178,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_fam07")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"jump_1",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"jump_0",
+"name": &"longsword_attack_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -207,12 +212,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_wxjgg")
 }],
 "loop": false,
-"name": &"longsword_attack",
+"name": &"longsword_attack_1",
 "speed": 10.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"longsword_attack_0",
+"name": &"run_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -223,12 +228,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_6n7lb")
 }],
 "loop": true,
-"name": &"run",
+"name": &"run_1",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"run_0",
+"name": &"shortsword_attack_0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -248,13 +253,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_2lnsl")
 }],
 "loop": false,
-"name": &"shortsword_attack",
+"name": &"shortsword_attack_1",
 "speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"shortsword_attack_0",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
@@ -278,7 +278,7 @@ position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
-animation = &"shortsword_attack_0"
+animation = &"shortsword_attack_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)

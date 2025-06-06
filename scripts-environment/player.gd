@@ -126,12 +126,12 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 	if skin == 0:
 		pass
 	elif skin == 1:
-		runAnim = str("run")
-		idleAnim = str("idle")
-		jumpAnim = str("jump")
+		runAnim = str("run_1")
+		idleAnim = str("idle_1")
+		jumpAnim = str("jump_1")
 		longswordAttackAnim = str("longsword_attack")
 		shortswordAttackAnim = str("shortsword_attack")
-		deathAnim = str("death")
+		deathAnim = str("death_1")
 	elif skin == 2:
 		pass
 	elif skin == 3:
@@ -210,9 +210,10 @@ func toggle_flip_sprite(direction):
 #when making attack anims, make sure to put _attack behind it.
 func handle_attack_animation(attack_type):
 	if current_attack:
-		var skinVariation = grab_skin()
-		print(skinVariation)
-		var animation = str(attack_type, "_attack")
+		var skinIndex = grab_skin()
+		var skinNumber = str("_", skinIndex)
+		print(skinNumber)
+		var animation = str(attack_type, "_attack", skinNumber)
 		animated_sprite.play(animation)
 		toggle_damage_collisions(attack_type)
 
