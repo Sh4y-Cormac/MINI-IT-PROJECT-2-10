@@ -221,6 +221,7 @@ offset_left = 676.0
 offset_top = -11.0
 offset_right = 88.0
 offset_bottom = -90.0
+mouse_filter = 2
 
 [node name="EXPBar" type="ProgressBar" parent="Inventory GUI/CanvasLayer"]
 z_index = 1
