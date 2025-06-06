@@ -265,3 +265,4 @@ shape = SubResource("CircleShape2D_w84fn")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="GolemHitbox" to="." method="_on_golem_hitbox_area_entered"]
+[connection signal="area_entered" from="GolemDealDamageArea" to="." method="_on_golem_deal_damage_area_area_entered"]
