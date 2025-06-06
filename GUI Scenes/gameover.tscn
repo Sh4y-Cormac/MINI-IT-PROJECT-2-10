@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=3 uid="uid://bs2pp83xjyjqs"]
+
+[ext_resource type="Script" uid="uid://dceubbryswir4" path="res://GUI Scripts/gameover.gd" id="1_j1v4w"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_oahll"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="3_sc0ap"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="4_0my3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rotv4"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_oahll"]
+resource_name = "Fade In"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j1v4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sc0ap"]
+_data = {
+&"Fade In": SubResource("Animation_oahll"),
+&"RESET": SubResource("Animation_j1v4w")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1v4w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -82.0
+offset_right = 225.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rotv4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -89.5
+offset_right = 125.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oahll")
+theme_override_font_sizes/font_size = 40
+text = "RESTART"
+
+[node name="ReturnToMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oahll")
+theme_override_font_sizes/font_size = 40
+text = "RETURN TO MENU"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oahll")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 63.0
+offset_right = 760.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.487756, 1.02879e-06, 3.36915e-07, 1)
+theme_override_fonts/font = ExtResource("1_oahll")
+theme_override_font_sizes/font_size = 70
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 164.0
+offset_right = 810.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.878757, 0.899674, 2.69532e-06, 1)
+theme_override_fonts/font = ExtResource("1_oahll")
+theme_override_font_sizes/font_size = 30
+text = "You died! Better luck next time!"
+horizontal_alignment = 1
+
+[node name="audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+process_mode = 3
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("3_sc0ap")
+volume_db = 5.0
+max_distance = 10000.0
+bus = &"SFX"
+
+[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-74, 218)
+stream = ExtResource("4_0my3a")
+max_distance = 100000.0
+bus = &"SFX"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+clip_contents = true
+offset_left = -118.0
+offset_top = -50.0
+offset_right = 1257.0
+offset_bottom = 719.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sc0ap")
+}
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
