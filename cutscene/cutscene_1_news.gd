@@ -10,8 +10,18 @@ var typing_speed := 0.03
 var dialogue_count = 0
 
 func _ready():
-	start_dialogue("Breaking news: Chaos erupts worldwide as an\nunknown force invades Earth.")
-	dialogue_count = 1
+		await play_news_intro()
+		start_dialogue("Breaking news: Chaos erupts worldwide as an\nunknown force invades Earth.")
+		dialogue_count = 1
+		
+func play_news_intro():
+	var news_scene = load("res://cutscene/news_intro.tscn").instantiate()
+	add_child(news_scene)
+
+	await news_scene.ready
+	await get_tree().create_timer(3.0).timeout 
+
+	news_scene.queue_free()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -70,7 +80,7 @@ func _process(delta):
 				start_dialogue("You're the only one who can turn this around.")
 	
 				await wait_for_typing_done()
-				await get_tree().create_timer(5.0).timeout
+				await get_tree().create_timer(3.0).timeout
 				get_tree().change_scene_to_file("res://cutscene/cutscene_2_vid.tscn")
 	
 			else:
