@@ -509,6 +509,7 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_pressed"]
 [connection signal="body_entered" from="Shop Area" to="Shop Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Shop Area" to="Shop Area" method="_on_body_exited"]
 
 [editable path="player"]
 [editable path="CanvasLayer/Shop GUI"]
