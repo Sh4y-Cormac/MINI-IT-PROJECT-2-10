@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmv4btr16i8uu"]
 
-[ext_resource type="VideoStream" path="res://cutscene/scene.ogv" id="1_6bujh"]
+[ext_resource type="VideoStream" path="res://cutscene/scene_edit.ogv" id="1_6bujh"]
 
 [node name="cutscene2_vid" type="Node2D"]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_left = -637.0
+offset_left = -643.0
 offset_top = -360.0
-offset_right = 643.0
+offset_right = 641.0
 offset_bottom = 360.0
 stream = ExtResource("1_6bujh")
 autoplay = true
