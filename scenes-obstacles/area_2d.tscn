@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2nws7bukujlg"]
+
+[ext_resource type="Texture2D" uid="uid://bm74mpwtrl7a1" path="res://Assets/Sprites/spikes.png" id="1_2n162"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjfsd"]
+size = Vector2(49, 21)
+
+[node name="spike2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2n162")
+region_enabled = true
+region_rect = Rect2(0, 9, 49, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_pjfsd")
