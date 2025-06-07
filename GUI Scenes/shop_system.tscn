@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbwfb048uxawj"]
+[gd_scene load_steps=10 format=3 uid="uid://cbwfb048uxawj"]
 
 [ext_resource type="Script" uid="uid://dkwpv7jrwlroj" path="res://GUI Scripts/shop_system.gd" id="1_hqgji"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="2_541tc"]
-[ext_resource type="Resource" uid="uid://yvfr0qu7hq15" path="res://Resources/Items/Short_sword.tres" id="3_nh1hd"]
+[ext_resource type="Resource" uid="uid://hu5mdn8qfk2t" path="res://Resources/Items/Apple_Slice.tres" id="3_g10fd"]
 [ext_resource type="Resource" uid="uid://o5y71qjh1wss" path="res://Resources/Items/Apple.tres" id="4_nh1hd"]
+[ext_resource type="Resource" uid="uid://b0yfi4l4ynoyr" path="res://Resources/Items/Blue_Popsicle.tres" id="5_isk4u"]
+[ext_resource type="Resource" uid="uid://bkggtsv0vx7fu" path="res://Resources/Items/Green_Popsicle.tres" id="6_gucsc"]
+[ext_resource type="Resource" uid="uid://df6oq57v3ynv7" path="res://Resources/Items/IceCream1.tres" id="7_mg3hc"]
+[ext_resource type="Resource" uid="uid://cex0rhcpowmlr" path="res://Resources/Items/IceCream2.tres" id="8_8mr1u"]
+[ext_resource type="Resource" uid="uid://bbmap67f0sfxc" path="res://Resources/Items/Coffee.tres" id="9_l01tj"]
 
 [node name="ShopSystem" type="Control" node_paths=PackedStringArray("shop_container")]
 layout_mode = 3
@@ -13,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hqgji")
-shop_items = Array[ExtResource("2_541tc")]([ExtResource("3_nh1hd"), ExtResource("4_nh1hd"), null, null, null, null])
+shop_items = Array[ExtResource("2_541tc")]([ExtResource("3_g10fd"), ExtResource("4_nh1hd"), ExtResource("5_isk4u"), ExtResource("6_gucsc"), ExtResource("7_mg3hc"), ExtResource("8_8mr1u"), ExtResource("9_l01tj")])
 shop_container = NodePath("UI/Panel/ScrollContainer/ShopInventory")
 
 [node name="UI" type="CanvasLayer" parent="."]

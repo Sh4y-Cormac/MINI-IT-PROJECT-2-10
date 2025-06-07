@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cex0rhcpowmlr"]
+
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_5teb2"]
+[ext_resource type="Texture2D" uid="uid://cjdah8il5pf8k" path="res://Assets/Images/icecream_1scoop.png" id="1_vxla3"]
+
+[resource]
+script = ExtResource("1_5teb2")
+name = "Sweet IceCream"
+title = "Sweet IceCream"
+icon = ExtResource("1_vxla3")
+description = ""
+price = 5
+type = ""
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
+inventarSlot = ""
+InventarPosition = 0
+is_lifesteal_card = false
+lifesteal_percent = 0.0
+stat_name = ""
+effect_type = "flat"
+value = 0.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"
