@@ -1,11 +1,16 @@
-extends Area2D
+extends Node2D
 
-func _on_spike_body_entered(body):
-	if body.name == "player":  
-		if Global.playerHealth > 0:
-			Global.playerHealth -= 1
-			print("Player hit spike! Health now:", Global.playerHealth)
+@onready var spike1_timer = $spike1/Timer
+@onready var collision_shape = $spike1/CollisionShape2D
+var player_reference: Node2D = null
 
-			if Global.playerHealth <= 0:
-				Global.playerAlive = false
-				print("Player died!")
+func _on_spike_1_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.name == "player":
+		var col = body.get_node_or_null("CollisionShape2D")
+		if col:
+			col.queue_free()
+		spike1_timer.start()
+
+func _on_timer_timeout() -> void:
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()

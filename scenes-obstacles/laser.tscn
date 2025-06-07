@@ -47,7 +47,7 @@ rotation = 2.33477
 shape = SubResource("RectangleShape2D_j2scx")
 
 [node name="Timer" type="Timer" parent="laserkill"]
-wait_time = 0.8
+wait_time = 3.0
 one_shot = true
 
 [connection signal="body_shape_entered" from="laserkill" to="." method="_on_laserkill_body_shape_entered"]

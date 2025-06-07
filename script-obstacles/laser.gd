@@ -4,10 +4,11 @@ extends Node2D
 @onready var line = $Line2D
 @onready var laser_sfx = $laser_sfx
 @onready var lasertimer = $laserkill/Timer
-
+	
 func _ready():
 	hide_laser()
 	_start_laser_loop()
+	lasertimer.wait_time = 3.0 
 
 func _start_laser_loop():
 	randomize()
@@ -33,22 +34,24 @@ func hide_laser():
 	ray.enabled = false
 	line.visible = false
 	$laserkill.monitoring = false
-	
+
 func check_for_hit():
 	if ray.is_colliding():
 		var hit = ray.get_collider()
 		if hit and hit.name == "player":
 			var col = hit.get_node_or_null("CollisionShape2D")
 			if col:
-				col.disabled = true  # Disable collision
-			lasertimer.start()
-
+				col.disabled = true 
+			Global.take_damage()
+			
 func _on_laserkill_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "player":
 		var col = body.get_node_or_null("CollisionShape2D")
 		if col:
 			col.queue_free()
+		Global.take_damage()
 		lasertimer.start()
+		
 
 func _on_timer_timeout() -> void:
 		Engine.time_scale = 1.0
