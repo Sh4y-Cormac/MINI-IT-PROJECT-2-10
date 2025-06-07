@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dj5j5w6mw8xcv" path="res://space sprite/space_bg1.png" id="4_3a1q2"]
 [ext_resource type="Texture2D" uid="uid://cvy1yd4eblmdm" path="res://space sprite/space_bg2.png" id="5_ls7sh"]
 [ext_resource type="Texture2D" uid="uid://cl1xg8cl5qy6f" path="res://space sprite/space_bg3.png" id="6_0mnoc"]
-[ext_resource type="PackedScene" uid="uid://c380pt0w5lq1g" path="res://scenes-obstacles/spikes_space.tscn" id="7_ls7sh"]
+[ext_resource type="PackedScene" uid="uid://c380pt0w5lq1g" path="res://scenes-obstacles/spikes/spikes_space.tscn" id="7_ls7sh"]
 [ext_resource type="PackedScene" uid="uid://cg30f4111qwxg" path="res://scenes-obstacles/saw_space.tscn" id="8_dm4un"]
 [ext_resource type="PackedScene" uid="uid://ecl677uxq2vd" path="res://scenes-obstacles/laser_ver_1_space.tscn" id="9_4dl7w"]
 [ext_resource type="PackedScene" uid="uid://76d8o4gnabdo" path="res://scenes-obstacles/platform_spacever_1.tscn" id="10_dggii"]

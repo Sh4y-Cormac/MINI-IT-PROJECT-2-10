@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=39 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_bb13u"]
 [ext_resource type="PackedScene" uid="uid://cbd0ov7ogyucj" path="res://scenes-obstacles/platform_level_1.tscn" id="2_ax42v"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="7_fn2ot"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="9_qyluh"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="10_qtdfb"]
+[ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_wao5v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_bb13u")
@@ -723,3 +724,38 @@ skew = 0.0541052
 
 [node name="bridge_path_city" parent="." instance=ExtResource("10_qtdfb")]
 position = Vector2(9832, -926)
+
+[node name="spike" type="Node" parent="."]
+
+[node name="spike2" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(1190, -31)
+
+[node name="spike3" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(2050, 1)
+
+[node name="spike4" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(2808, -47)
+
+[node name="spike5" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(2809, -207)
+
+[node name="spike6" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(3915, -175)
+
+[node name="spike7" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(5265, -120)
+
+[node name="spike8" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(6311, -240)
+
+[node name="spike9" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(7540, -361)
+
+[node name="spike10" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(7905, -335)
+
+[node name="spike11" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(8740, -543)
+
+[node name="spike12" parent="spike" instance=ExtResource("12_wao5v")]
+position = Vector2(9313, -719)
