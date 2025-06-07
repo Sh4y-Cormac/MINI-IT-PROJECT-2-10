@@ -1095,8 +1095,6 @@ radius = 16.0
 height = 64.0
 
 [node name="player" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
 
