@@ -259,6 +259,8 @@ animations = [{
 radius = 8.0
 
 [node name="Bat" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jp0fn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

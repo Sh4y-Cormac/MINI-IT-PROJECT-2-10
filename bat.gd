@@ -13,13 +13,14 @@ var min_health = 0
 var is_enemy_chase: bool
 
 var player: CharacterBody2D
+var player_in_area = false
 
 var dead: bool = false
 var taking_damage: bool = false
 var damage_to_deal = 10
 var is_dealing_damage: bool = false
 
-var knockback_force = 200
+var knockback_force = -20
 var is_roaming: bool = true
 
 
@@ -28,18 +29,21 @@ func _ready():
 	
 	
 func _process(delta):
+	player = Global.playerBody
 	move(delta)
 	handle_animation()
 	move_and_slide()
 
 func move(delta):
 	if !dead:
-		if is_enemy_chase:
-			player = Global.playerBody
+		if is_enemy_chase and !taking_damage:
 			velocity = position.direction_to(player.position) * speed
 			dir.x = abs(velocity.x) / velocity.x 
 		elif !is_enemy_chase:
 			velocity += dir * speed * delta
+		elif taking_damage:
+			var knockback_dir = position.direction_to(player.position) * knockback_force
+			velocity.x = knockback_dir.x
 		is_roaming = true
 	elif dead:
 		velocity.x = 0
