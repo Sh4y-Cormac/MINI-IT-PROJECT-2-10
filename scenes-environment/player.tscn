@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bgp0tm5qk2kmc" path="res://scenes-player-movement/player-sprites/skin type 4/death_animation_4_Sheet.png" id="6_mjm18"]
 [ext_resource type="Texture2D" uid="uid://bp20ga0b3y7q4" path="res://scenes-player-movement/player-sprites/skin type 3/idle_animation_3_Sheet.png" id="9_prqfj"]
 [ext_resource type="Texture2D" uid="uid://co3ltp4ktqmm3" path="res://scenes-player-movement/player-sprites/skin type 4/idle_animation_4_Sheet.png" id="11_hkra5"]
-[ext_resource type="PackedScene" uid="uid://c4vjsgvie4hqg" path="res://scenes-player-movement/health_bar.tscn" id="16_hkra5"]
+[ext_resource type="PackedScene" uid="uid://dos0au4c7fyjj" path="res://scenes-player-movement/health_bar.tscn" id="16_hkra5"]
 
 [sub_resource type="Curve" id="Curve_kq5nu"]
 _data = [Vector2(0.00535714, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.375247), -1.89708, 0.0, 0, 0]
@@ -1095,8 +1095,6 @@ radius = 16.0
 height = 64.0
 
 [node name="player" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_kq5nu")
 

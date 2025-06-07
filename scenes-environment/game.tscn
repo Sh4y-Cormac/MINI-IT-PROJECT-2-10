@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=57 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -26,11 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="PackedScene" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
-[ext_resource type="PackedScene" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
+[ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -120,7 +121,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_trtic"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/1 = SubResource("TileSetAtlasSource_ca42v")
 sources/0 = SubResource("TileSetAtlasSource_0o6od")
 sources/3 = SubResource("TileSetAtlasSource_ftps5")
@@ -558,6 +559,9 @@ shape = SubResource("RectangleShape2D_ujqrk")
 
 [node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
 position = Vector2(784, -5)
+
+[node name="Bat" parent="." instance=ExtResource("32_4at0j")]
+position = Vector2(392, 0)
 
 [node name="portal" parent="." instance=ExtResource("31_4at0j")]
 position = Vector2(5393, -32)

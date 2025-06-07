@@ -30,7 +30,7 @@ var jump_count = 0
 var attack_type: String
 var current_attack: bool 
 
-var health = 100
+var health = Global.playerHealth
 var health_max = 100
 var health_min = 0
 var can_take_damage: bool
@@ -48,6 +48,7 @@ var shortswordAttackAnim: String
 func _ready() -> void:
 	Global.playerBody = self
 	Global.playerAlive = true
+	
 	print(skin)
 	select_skin(skin)
 	current_attack = false
@@ -167,19 +168,19 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
 	var damage: int
-	var enemyAttackCooldown: float ##dependent on how long the animation is so that the attack doesnt double during the enemy's attack
+	var strikeFrame: float ##the exact frame of the strike
 	if hitbox_areas:
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is RobotEnemy:
 			damage = Global.robotDamageAmount
 		elif hitbox.get_parent() is GolemBoss:
 			damage = Global.golemDamageAmount
-			enemyAttackCooldown = float(1.25)
+			strikeFrame = float(0.4)
 			
 	if can_take_damage:
-		take_damage(damage, enemyAttackCooldown)
+		take_damage(damage, strikeFrame)
 
-func take_damage(damage, enemyAttackCooldown):
+func take_damage(damage, strikeFrame):
 	if damage != 0:
 		if health > 0:
 			health -= damage
@@ -188,7 +189,7 @@ func take_damage(damage, enemyAttackCooldown):
 				health = 0
 				dead = true
 				handle_death_animation()
-			take_damage_cooldown(enemyAttackCooldown)
+			take_damage_cooldown(3.0)
 
 ## Runs code when the player dies
 func handle_death_animation():

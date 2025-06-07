@@ -274,3 +274,6 @@ frame_progress = 0.803866
 shape = SubResource("CircleShape2D_jp0fn")
 
 [node name="DirectionTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

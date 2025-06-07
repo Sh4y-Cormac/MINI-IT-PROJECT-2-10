@@ -48,6 +48,7 @@ func _on_start_button_pressed() -> void:
 	await $"Enter Sound Effect".finished
 	Global.gameStarted = true
 	Global.playerGold = 0
+	Global.playerHealth = 100
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:
