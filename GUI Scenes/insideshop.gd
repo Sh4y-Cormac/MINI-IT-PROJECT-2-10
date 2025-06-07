@@ -35,7 +35,3 @@ func start_minigame():
 	var spaceshooter = preload("res://GUI Scenes/SpaceShooterWindow.tscn").instantiate()
 	
 	get_tree().current_scene.add_child(spaceshooter)
-
-
-func _on_shop_area_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.

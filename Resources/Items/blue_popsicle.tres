@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://byrbr1h0npe7n"]
+
+[ext_resource type="Texture2D" uid="uid://d04tg3p322reg" path="res://Assets/Images/popsicle_blue.png" id="1_3hb06"]
+[ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_ex6ka"]
+
+[resource]
+script = ExtResource("1_ex6ka")
+name = "Blue Popsicle"
+title = "Blue Popsicle"
+icon = ExtResource("1_3hb06")
+description = "Increase speed by 1.5"
+price = "$ 5"
+type = ""
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
+inventarSlot = ""
+InventarPosition = 0
+is_lifesteal_card = false
+lifesteal_percent = 0.0
+stat_name = ""
+effect_type = "flat"
+value = 0.0
+metadata/_custom_type_script = "uid://b05mrq30fldgf"

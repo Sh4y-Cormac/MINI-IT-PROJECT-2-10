@@ -16,7 +16,7 @@ enum MODE {
 }
 
 var mode : MODE = MODE.OFF:
-	set(value):
+	set(value): 
 		mode = value
 		
 		if value == MODE.OFF:
@@ -33,12 +33,7 @@ func _ready():
 func buy(item : Item):
 	if item == null:
 		return false
-	
-	if item.price > gold:
-		return false
-	
-	gold -= item.price
-	return true
+
 
 func free_previous_slot():
 	for slot in shop_container.get_children():
