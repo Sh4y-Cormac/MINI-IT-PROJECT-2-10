@@ -168,19 +168,19 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
 	var damage: int
-	var enemyAttackCooldown: float ##dependent on how long the animation is so that the attack doesnt double during the enemy's attack
+	var strikeFrame: float ##the exact frame of the strike
 	if hitbox_areas:
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is RobotEnemy:
 			damage = Global.robotDamageAmount
 		elif hitbox.get_parent() is GolemBoss:
 			damage = Global.golemDamageAmount
-			enemyAttackCooldown = float(2.00)
+			strikeFrame = float(0.4)
 			
 	if can_take_damage:
-		take_damage(damage, enemyAttackCooldown)
+		take_damage(damage, strikeFrame)
 
-func take_damage(damage, enemyAttackCooldown):
+func take_damage(damage, strikeFrame):
 	if damage != 0:
 		if health > 0:
 			health -= damage
@@ -189,7 +189,7 @@ func take_damage(damage, enemyAttackCooldown):
 				health = 0
 				dead = true
 				handle_death_animation()
-			take_damage_cooldown(enemyAttackCooldown)
+			take_damage_cooldown(3.0)
 
 ## Runs code when the player dies
 func handle_death_animation():
@@ -206,7 +206,6 @@ func handle_death_animation():
 
 
 func take_damage_cooldown(wait_time):
-	print("the wait time is", wait_time)
 	can_take_damage = false
 	await get_tree().create_timer(wait_time).timeout
 	can_take_damage = true

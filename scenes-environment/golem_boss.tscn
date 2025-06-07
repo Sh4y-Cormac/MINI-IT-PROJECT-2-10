@@ -243,6 +243,8 @@ script = ExtResource("1_bc8dd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itede")
 animation = &"deal_damage"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -271,6 +273,7 @@ offset_top = 16.5
 offset_right = 33.0
 offset_bottom = 22.5
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="GolemHitbox" to="." method="_on_golem_hitbox_area_entered"]
 [connection signal="area_entered" from="GolemDealDamageArea" to="." method="_on_golem_deal_damage_area_area_entered"]
