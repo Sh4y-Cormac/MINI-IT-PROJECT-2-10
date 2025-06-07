@@ -134,10 +134,12 @@ sources/0 = SubResource("TileSetAtlasSource_sxwcb")
 resource_name = "gold"
 script/source = "extends Label
 
+@onready var label: Label = $\".\"
 
+var goldAmount = Global.playerGold
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = \"Gold : \" + \"10000\"
+	label.text = \"Gold : \" + str(goldAmount)
 	
 "
 

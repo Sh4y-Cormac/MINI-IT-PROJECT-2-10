@@ -3,9 +3,12 @@ extends Control
 @export var description : NinePatchRect
 var selected_item : Item
 
-var gold : int = 5
+var gold = Global.playerGold
+
+
 
 func _ready():
+	gold += 100
 	$"NinePatchRect/Coins Display/Label".text = "Gold: " + str(gold)
 
 
