@@ -34,11 +34,7 @@ func buy(item : Item):
 	if item == null:
 		return false
 	
-	if item.price > gold:
-		return false
-	
-	gold -= item.price
-	return true
+
 
 func free_previous_slot():
 	for slot in shop_container.get_children():

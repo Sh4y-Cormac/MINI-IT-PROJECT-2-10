@@ -3,8 +3,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		Shop.mode = Shop.MODE.ON
+		$"../Animations/ShopAnimation".play("Shop_Show")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "player":
-		Shop.mode = Shop.MODE.OFF
+		$"../Animations/ShopAnimation".play("Shop_Hide")
