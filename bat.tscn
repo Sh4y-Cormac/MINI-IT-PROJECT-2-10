@@ -263,7 +263,7 @@ script = ExtResource("1_jp0fn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1sitj")
-animation = &"hurt"
+animation = &"death"
 
 [node name="AnimatedSprite2DEffects" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c1403")
