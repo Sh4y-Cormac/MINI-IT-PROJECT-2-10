@@ -13,7 +13,7 @@ var playerHitbox: Area2D
 var playerGold: int #amount of gold player has
 var playerAlive: bool
 var playerSkin: int #what skin the player has. Will determine the animations and stuff
-var playerHealth: int = 5 #
+var playerHealth: int #the health of the player
 
 ## Entity Values
 var robotDamageZone: Area2D

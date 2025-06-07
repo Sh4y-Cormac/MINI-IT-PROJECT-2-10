@@ -30,7 +30,7 @@ var jump_count = 0
 var attack_type: String
 var current_attack: bool 
 
-var health = 100
+var health = Global.playerHealth
 var health_max = 100
 var health_min = 0
 var can_take_damage: bool
@@ -48,6 +48,7 @@ var shortswordAttackAnim: String
 func _ready() -> void:
 	Global.playerBody = self
 	Global.playerAlive = true
+	
 	print(skin)
 	select_skin(skin)
 	current_attack = false
@@ -174,7 +175,7 @@ func check_hitbox():
 			damage = Global.robotDamageAmount
 		elif hitbox.get_parent() is GolemBoss:
 			damage = Global.golemDamageAmount
-			enemyAttackCooldown = float(1.25)
+			enemyAttackCooldown = float(2.00)
 			
 	if can_take_damage:
 		take_damage(damage, enemyAttackCooldown)
@@ -205,6 +206,7 @@ func handle_death_animation():
 
 
 func take_damage_cooldown(wait_time):
+	print("the wait time is", wait_time)
 	can_take_damage = false
 	await get_tree().create_timer(wait_time).timeout
 	can_take_damage = true

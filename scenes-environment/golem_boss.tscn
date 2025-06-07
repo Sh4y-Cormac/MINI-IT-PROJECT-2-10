@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://psm2g4g8krli" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Hit_2.png" id="4_o0vea"]
 [ext_resource type="Texture2D" uid="uid://c1qvvfo1vitvt" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Idle.png" id="5_y0aru"]
 [ext_resource type="Texture2D" uid="uid://de8w3f3cw825a" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Run.png" id="6_huyww"]
-[ext_resource type="PackedScene" uid="uid://c4vjsgvie4hqg" path="res://scenes-player-movement/health_bar.tscn" id="7_w84fn"]
+[ext_resource type="PackedScene" uid="uid://dos0au4c7fyjj" path="res://scenes-player-movement/health_bar.tscn" id="7_w84fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq6bc"]
 atlas = ExtResource("2_bc8dd")
