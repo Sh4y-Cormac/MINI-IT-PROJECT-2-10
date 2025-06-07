@@ -157,7 +157,6 @@ offset_top = 8.0
 offset_right = 186.0
 offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("3_77pke")
-text = "Gold: 10000"
 horizontal_alignment = 1
 
 [node name="Shop Label" type="Label" parent="NinePatchRect"]
