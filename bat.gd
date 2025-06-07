@@ -15,14 +15,19 @@ var is_enemy_chase: bool
 var player: CharacterBody2D
 
 func _ready():
-	is_enemy_chase = false
+	is_enemy_chase = true
+	
 	
 func _process(delta):
 	move(delta)
 	handle_animation()
 
 func move(delta):
-	if !is_enemy_chase:
+	if is_enemy_chase:
+		player = Global.playerBody
+		velocity = position.direction_to(player.position) * speed
+		dir.x = abs(velocity.x) / velocity.x 
+	elif !is_enemy_chase:
 		velocity += dir * speed * delta
 	move_and_slide()
 
