@@ -38,9 +38,22 @@ func take_damage():
 	if health > 0:
 		health -= 1
 		update_heart_display()
+		print("Player took damage. Remaining health:", health)
 		if health == 0:
 			print("Player dead")
+			start_death_sequence()
+		
+func start_death_sequence():
+	var timer = Timer.new()
+	timer.wait_time = 1.0
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "_on_death_timer_timeout"))
+	add_child(timer)
+	timer.start()
 			
+func _on_death_timer_timeout():
+	get_tree().reload_current_scene()
+	
 func update_heart_display():
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = i < health

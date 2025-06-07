@@ -5,7 +5,6 @@ extends Node2D
 var player_reference: Node2D = null
 
 func _on_spike_2_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	
 	if body.name == "player":
 		var col = body.get_node_or_null("CollisionShape2D")
 		if col:
@@ -15,3 +14,7 @@ func _on_spike_2_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
+
+func _on_spike_2_body_entered(body: Node2D) -> void:
+	if body.name == "player":
+		Global.take_damage()
