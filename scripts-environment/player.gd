@@ -33,8 +33,8 @@ var current_attack: bool
 var health = Global.playerHealth
 var health_max = 100
 var health_min = 0
-var can_take_damage: bool
-var dead: bool 
+var can_take_damage: bool 
+var dead: bool
 
 var skin = Global.playerSkin
 
@@ -54,6 +54,8 @@ func _ready() -> void:
 	current_attack = false
 	dead = false
 	can_take_damage = true
+	
+	health = Global.playerHealth ##PH
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone

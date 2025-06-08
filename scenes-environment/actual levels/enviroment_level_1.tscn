@@ -1,7 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
-[ext_resource type="Script" uid="uid://cutg3onws676s" path="res://enviroment_level_1.gd" id="1_hgogn"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
 [ext_resource type="Texture2D" uid="uid://bm74mpwtrl7a1" path="res://Assets/Sprites/spikes.png" id="3_hgogn"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="4_n8efx"]
@@ -13,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="10_6olwm"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="11_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
+
+[sub_resource type="GDScript" id="GDScript_c64ec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_c64ec")
@@ -523,7 +524,7 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qyluh"]
 
 [node name="enviroment_level1" type="Node2D"]
-script = ExtResource("1_hgogn")
+script = SubResource("GDScript_c64ec")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
