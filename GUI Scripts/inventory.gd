@@ -42,6 +42,7 @@ func apply_stat_cards(base: Dictionary, cards: Array) -> Dictionary:
 var inventoryDict = {}
 var items = [
 	"res://Resources/Items/Short_sword.tres",
+	"res://Resources/Items/Long_sword.tres",
 	"res://Resources/Items/Sharpness.tres",
 	"res://Resources/Items/Atk_up.tres",
 	#"res://Resources/Items/Hp up.tres",   
