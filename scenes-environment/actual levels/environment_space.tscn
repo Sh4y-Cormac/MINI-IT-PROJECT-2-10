@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=51 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dc5oj4efja2ly" path="res://bridge_paths/bridge_path.tscn" id="13_xfo35"]
 [ext_resource type="PackedScene" uid="uid://c3w3vac8o1vcu" path="res://space sprite/streetlight.tscn" id="14_obqkt"]
 [ext_resource type="PackedScene" uid="uid://bi2xjv8sqe58d" path="res://scenes-obstacles/space_block.tscn" id="15_t7e7v"]
+[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_qeno3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -936,3 +937,7 @@ position = Vector2(14592, -1840)
 
 [node name="space_block14" parent="spaceblock" instance=ExtResource("15_t7e7v")]
 position = Vector2(14620, -1840)
+
+[node name="PlayerHealthBar" type="CanvasLayer" parent="."]
+
+[node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("16_qeno3")]

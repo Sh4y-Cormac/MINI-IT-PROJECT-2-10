@@ -1,16 +1,8 @@
 extends Node2D
 
-@onready var laser1_timer = $laserver1_killzone/laser1_timer
-@onready var collision_shape = $laserver1_killzone/CollisionShape2D
-var player_reference: Node2D = null
+var spike_damage = 10
 
 func _on_laserver_1_killzone_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		var col = body.get_node_or_null("CollisionShape2D")
-		if col:
-			col.queue_free()
-		laser1_timer.start()
-
-func _on_laser_1_timer_timeout() -> void:
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
+		if body.has_method("take_damage"):
+			body.take_damage(spike_damage, 0)

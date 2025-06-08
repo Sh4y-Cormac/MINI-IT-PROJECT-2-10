@@ -97,8 +97,4 @@ position = Vector2(-0.499999, -33.5)
 scale = Vector2(1.21875, 2.67188)
 shape = SubResource("RectangleShape2D_ts0wp")
 
-[node name="laser2_timer" type="Timer" parent="laserver2_killzone"]
-one_shot = true
-
 [connection signal="body_entered" from="laserver2_killzone" to="." method="_on_laserver_2_killzone_body_entered"]
-[connection signal="timeout" from="laserver2_killzone/laser2_timer" to="." method="_on_laser_2_timer_timeout"]
