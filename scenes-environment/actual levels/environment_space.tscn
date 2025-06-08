@@ -1015,16 +1015,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="space_block" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1296, -82)
+position = Vector2(1296, -81)
 
 [node name="space_block2" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1332, -82)
+position = Vector2(1332, -81)
 
 [node name="space_block3" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1368, -82)
+position = Vector2(1368, -81)
 
 [node name="space_block4" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1404, -82)
-
-[node name="space_block5" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1440, -82)
+position = Vector2(1404, -81)
