@@ -1104,7 +1104,7 @@ position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fam07")
-animation = &"death_3"
+animation = &"shortsword_attack_4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -1123,9 +1123,7 @@ disabled = true
 shape = SubResource("CapsuleShape2D_pv6nf")
 
 [node name="HealthBar" parent="." instance=ExtResource("16_hkra5")]
-offset_left = -28.0
-offset_top = 35.0
-offset_right = 29.0
-offset_bottom = 45.0
+offset_top = 37.0
+offset_bottom = 47.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

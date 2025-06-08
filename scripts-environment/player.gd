@@ -195,6 +195,7 @@ func take_damage(damage, strikeFrame):
 func handle_death_animation():
 	print("player has died!")
 	$CollisionShape2D.position.y = 5
+	velocity.x = 0
 	animated_sprite.play(deathAnim)
 	await get_tree().create_timer(0.6).timeout
 	$Camera2D.zoom.x = 4

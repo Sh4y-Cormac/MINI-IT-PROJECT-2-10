@@ -92,6 +92,7 @@ func _on_golem_hitbox_area_entered(area: Area2D) -> void:
 	var damage = Global.playerDamageAmount
 	if area == Global.playerDamageZone:
 		take_damage(damage)
+		await get_tree().create_timer(0.4).timeout
 		
 func take_damage(damage):
 	health -= damage
