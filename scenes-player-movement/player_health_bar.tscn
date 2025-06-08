@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bin5hxqh76q8r"]
+
+[ext_resource type="Script" uid="uid://f422fymi803f" path="res://scenes-player-movement/player_health_bar.gd" id="1_lrliy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oic22"]
+bg_color = Color(0.823529, 0.141176, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrliy"]
+bg_color = Color(0, 0.72549, 0, 1)
+
+[node name="player_health_bar" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 619.0
+offset_right = -778.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_oic22")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lrliy")
+show_percentage = false
+script = ExtResource("1_lrliy")

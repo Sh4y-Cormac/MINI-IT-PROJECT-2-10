@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var icetimer = $Sprite2D/ice_kill/ice_timer
+var spike_damage = 10
 
 func _on_ice_kill_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		var col = body.get_node_or_null("CollisionShape2D")
-		if col:
-			col.queue_free()
+		if body.has_method("take_damage"):
+			body.take_damage(spike_damage, 0)
 		icetimer.start()
 
 
