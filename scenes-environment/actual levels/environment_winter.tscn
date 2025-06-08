@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=51 format=3 uid="uid://dbabbvhfx8i07"]
 
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
 [ext_resource type="Texture2D" uid="uid://dei6ulpbuxppq" path="res://winter sprite/winter_tilesets2.png" id="2_56k3b"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://d0o3qkcka8qs5" path="res://scenes-obstacles/ice_winter.tscn" id="11_ao63x"]
 [ext_resource type="PackedScene" uid="uid://bd1g5ayqykp23" path="res://scenes-obstacles/iceblock_winter'.tscn" id="12_qf1ar"]
 [ext_resource type="PackedScene" uid="uid://bgkt0l0j3pphw" path="res://bridge_paths/bridge_path_winter.tscn" id="13_papdo"]
+[ext_resource type="Script" uid="uid://cpttuy8laseh2" path="res://health_bar.gd" id="14_h7yxt"]
 [ext_resource type="PackedScene" uid="uid://bsmb5ecq85xc5" path="res://scenes-obstacles/spikes/spikes.tscn" id="14_sny1q"]
+[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="15_4pxjt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
 texture = ExtResource("1_rdn6o")
@@ -1075,41 +1077,136 @@ position = Vector2(11816, -1528)
 [node name="bridge_path_winter" parent="." instance=ExtResource("13_papdo")]
 position = Vector2(12550, -1544)
 
-[node name="spikes" parent="." instance=ExtResource("14_sny1q")]
+[node name="HealthBar" type="CanvasLayer" parent="."]
+script = ExtResource("14_h7yxt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthBar"]
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 212.0
+offset_bottom = 41.0
+
+[node name="heart" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart2" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart2"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart3" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart3"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart4" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart4"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart5" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart5"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart6" type="TextureRect" parent="HealthBar/HBoxContainer"]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart6"]
+position = Vector2(10.5, 18)
+scale = Vector2(2.9375, 3.25)
+texture = ExtResource("15_4pxjt")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="spikes" type="Node" parent="."]
+
+[node name="spikes1" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(366, -73)
 
-[node name="spikes2" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes2" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(1212, -153)
 
-[node name="spikes3" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes3" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(2986, -537)
 
-[node name="spikes4" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes4" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(3403, -793)
 
-[node name="spikes5" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes5" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(3558, -793)
 
-[node name="spikes6" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes6" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(4249, -313)
 
-[node name="spikes7" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes7" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(3968, -313)
 
-[node name="spikes8" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes8" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(4831, -1193)
 
-[node name="spikes9" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes9" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(6246, -969)
 
-[node name="spikes10" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes10" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(9149, -1353)
 
-[node name="spikes11" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes11" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(9263, -1353)
 
-[node name="spikes12" parent="." instance=ExtResource("14_sny1q")]
+[node name="spikes12" parent="spikes" instance=ExtResource("14_sny1q")]
 position = Vector2(9365, -1353)
+
+[node name="iceblock_winter\'" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(440, -57)
+
+[node name="iceblock_winter\'2" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(456, -57)
+
+[node name="iceblock_winter\'3" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(472, -57)
+
+[node name="iceblock_winter\'4" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(488, -57)
+
+[node name="iceblock_winter\'5" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(504, -57)
+
+[node name="iceblock_winter\'6" parent="." instance=ExtResource("12_qf1ar")]
+position = Vector2(520, -57)
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]

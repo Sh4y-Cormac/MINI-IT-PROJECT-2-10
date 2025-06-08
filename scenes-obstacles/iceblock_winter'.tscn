@@ -17,13 +17,14 @@ texture_filter = 1
 texture = ExtResource("2_gupje")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D_A" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5luvj")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
 
 [node name="CollisionShape2D_B" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -6.5)

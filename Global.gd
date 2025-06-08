@@ -24,8 +24,8 @@ var golemDamageAmount: int
 ## Player Health
 
 var playerHealth: int = 100
-var health: int = 5
-var max_health: int = 5
+var health: int = 6
+var max_health: int = 6
 var hearts_list: Array[TextureRect] = []
 
 func setup_hearts(hearts_parent):

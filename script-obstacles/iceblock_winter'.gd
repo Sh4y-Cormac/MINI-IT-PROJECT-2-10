@@ -7,9 +7,9 @@ func _ready():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player" and !is_triggered:
-		is_triggered = true
+		is_triggered = true	
 		start_collapse()
-
+		
 func start_collapse():
 	print("Collapse started")
 	await get_tree().create_timer(0.3).timeout

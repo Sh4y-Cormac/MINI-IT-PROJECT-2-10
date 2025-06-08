@@ -10,6 +10,8 @@ func _on_spike_killzone_body_entered(body: Node2D) -> void:
 		var col = body.get_node_or_null("CollisionShape2D")
 		if col:
 			col.queue_free()
+		if body.name == "player":
+			Global.take_damage()
 		spike_timer.start()
 
 func _on_timer_timeout() -> void:
