@@ -27,9 +27,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		falling_player = body
 		fall_velocity = 0
 		
-		if body.name == "player":
-			Global.take_damage()
-		
 		fireballtimer.start()
 		
 func _on_timer_timeout() -> void:

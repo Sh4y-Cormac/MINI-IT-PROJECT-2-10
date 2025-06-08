@@ -14,8 +14,3 @@ func _on_spike_1_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
-
-
-func _on_spike_1_body_entered(body: Node2D) -> void:
-	if body.name == "player":
-		Global.take_damage()

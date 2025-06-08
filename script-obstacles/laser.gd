@@ -42,14 +42,13 @@ func check_for_hit():
 			var col = hit.get_node_or_null("CollisionShape2D")
 			if col:
 				col.disabled = true 
-			Global.take_damage()
+			lasertimer.start()
 			
 func _on_laserkill_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "player":
 		var col = body.get_node_or_null("CollisionShape2D")
 		if col:
 			col.queue_free()
-		Global.take_damage()
 		lasertimer.start()
 		
 

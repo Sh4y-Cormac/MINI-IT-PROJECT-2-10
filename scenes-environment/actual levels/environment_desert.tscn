@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=31 format=3 uid="uid://d4kg8q6yhdrrb"]
 
 [ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
@@ -17,8 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dxaw3pk3bv5x5" path="res://scenes-obstacles/tumbleweed_desert.tscn" id="15_c5uka"]
 [ext_resource type="PackedScene" uid="uid://bw13krssj2q6j" path="res://bridge_paths/bridge_path_desert.tscn" id="16_6y8io"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="17_tqbsk"]
-[ext_resource type="Script" uid="uid://cpttuy8laseh2" path="res://health_bar.gd" id="18_7jhca"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="19_lo03u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teku7"]
 texture = ExtResource("2_1epuf")
@@ -626,80 +624,5 @@ position = Vector2(7939, -859)
 
 [node name="spike14" parent="spike" instance=ExtResource("17_tqbsk")]
 position = Vector2(9386, -779)
-
-[node name="HealthBar" type="CanvasLayer" parent="."]
-script = ExtResource("18_7jhca")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HealthBar"]
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 212.0
-offset_bottom = 41.0
-
-[node name="heart" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart2" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart2"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart3" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart3"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart4" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart4"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart5" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart5"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart6" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(14, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart6"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("19_lo03u")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 
 [connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]

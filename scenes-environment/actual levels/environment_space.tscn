@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=50 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
@@ -15,8 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dc5oj4efja2ly" path="res://bridge_paths/bridge_path.tscn" id="13_xfo35"]
 [ext_resource type="PackedScene" uid="uid://c3w3vac8o1vcu" path="res://space sprite/streetlight.tscn" id="14_obqkt"]
 [ext_resource type="PackedScene" uid="uid://bi2xjv8sqe58d" path="res://scenes-obstacles/space_block.tscn" id="15_t7e7v"]
-[ext_resource type="Script" uid="uid://cpttuy8laseh2" path="res://health_bar.gd" id="16_3ae8p"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_020gk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -938,90 +936,3 @@ position = Vector2(14592, -1840)
 
 [node name="space_block14" parent="spaceblock" instance=ExtResource("15_t7e7v")]
 position = Vector2(14620, -1840)
-
-[node name="HealthBar" type="CanvasLayer" parent="."]
-script = ExtResource("16_3ae8p")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HealthBar"]
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 212.0
-offset_bottom = 41.0
-
-[node name="heart" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart2" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart2"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart3" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart3"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart4" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart4"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart5" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart5"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart6" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(14, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart6"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("17_020gk")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="space_block" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1296, -81)
-
-[node name="space_block2" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1332, -81)
-
-[node name="space_block3" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1368, -81)
-
-[node name="space_block4" parent="." instance=ExtResource("15_t7e7v")]
-position = Vector2(1404, -81)
