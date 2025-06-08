@@ -1,18 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvfnfsw52as5t"]
+[gd_scene load_steps=8 format=3 uid="uid://cvfnfsw52as5t"]
 
-[ext_resource type="Texture2D" uid="uid://bwj5ohfjvsyk6" path="res://Assets/Sprites/portal.png" id="1_id3a0"]
+[ext_resource type="Script" uid="uid://d0m7pt36fd0w" path="res://scenes-environment/portal.gd" id="1_l25eu"]
+[ext_resource type="Texture2D" uid="uid://ej3hcq2pwh85" path="res://Assets/Portal/portal-highlight.png" id="2_5qo2c"]
+[ext_resource type="Texture2D" uid="uid://c8ti2ded3tw5f" path="res://Assets/Portal/portal.png" id="3_w5bfp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwtok"]
+atlas = ExtResource("2_5qo2c")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36yy8"]
+atlas = ExtResource("3_w5bfp")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkh0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwtok")
+}],
+"loop": true,
+"name": &"highlighted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36yy8")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkls"]
-size = Vector2(55, 88)
+size = Vector2(64, 96)
 
 [node name="portal" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_id3a0")
+script = ExtResource("1_l25eu")
+
+[node name="intruction" type="RichTextLabel" parent="."]
+offset_left = -86.5
+offset_top = 5.0
+offset_right = 86.5
+offset_bottom = 28.0
+theme_override_font_sizes/normal_font_size = 12
+text = "Hold F to interact"
+fit_content = true
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -48)
+sprite_frames = SubResource("SpriteFrames_tkh0v")
+animation = &"normal"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, -48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 3)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_hqkls")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

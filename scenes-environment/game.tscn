@@ -549,6 +549,7 @@ position = Vector2(970, 16)
 position = Vector2(4875, 116)
 
 [node name="StartGameDetector" type="Area2D" parent="."]
+visible = false
 position = Vector2(881, 33)
 collision_layer = 3
 collision_mask = 3
@@ -560,13 +561,13 @@ position = Vector2(4512, -39)
 shape = SubResource("RectangleShape2D_ujqrk")
 
 [node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
-position = Vector2(784, -5)
+position = Vector2(4519, 8)
 
 [node name="Bat" parent="." instance=ExtResource("32_4at0j")]
 position = Vector2(392, 0)
 
 [node name="portal" parent="." instance=ExtResource("31_4at0j")]
-position = Vector2(5393, -32)
+position = Vector2(5392, 63)
 
 [node name="Chest" parent="." instance=ExtResource("33_wic44")]
 position = Vector2(442, -161)
