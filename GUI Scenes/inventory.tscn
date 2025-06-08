@@ -127,6 +127,7 @@ offset_bottom = 199.0
 theme_override_constants/v_separation = 3
 
 [node name="Slot 1" parent="Inventory GUI/Equipment" instance=ExtResource("3_w243r")]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
 [node name="Equipment_2" type="GridContainer" parent="Inventory GUI"]
@@ -138,6 +139,7 @@ offset_bottom = 333.0
 theme_override_constants/v_separation = 3
 
 [node name="Slot 1" parent="Inventory GUI/Equipment_2" instance=ExtResource("3_w243r")]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 itemResource = ExtResource("4_rr30h")
 
@@ -150,6 +152,7 @@ offset_bottom = 331.0
 theme_override_constants/v_separation = 3
 
 [node name="Slot 1" parent="Inventory GUI/Equipment_3" instance=ExtResource("3_w243r")]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 itemResource = ExtResource("5_ji5u1")
 
