@@ -1,44 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://8xfcx48xnobu"]
+[gd_scene load_steps=5 format=3 uid="uid://8xfcx48xnobu"]
 
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
-[ext_resource type="Texture2D" uid="uid://b6djevmq5uanm" path="res://Assets/Images/newgui.png" id="2_w243r"]
+[ext_resource type="Script" uid="uid://dj577los5nwds" path="res://GUI Scripts/grid_container.gd" id="2_0f2y5"]
+[ext_resource type="Resource" uid="uid://df6oq57v3ynv7" path="res://Resources/Items/IceCream1.tres" id="3_le8ii"]
 [ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scenes/inventory_slot.tscn" id="3_w243r"]
-[ext_resource type="Resource" uid="uid://mo3hvmwkdtsc" path="res://Resources/Items/Short_sword.tres" id="4_rr30h"]
-[ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
-[ext_resource type="Resource" uid="uid://cu11jadjuxooa" path="res://Resources/Items/Long_sword.tres" id="5_ji5u1"]
-[ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
-[ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="7_dj775"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj775"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jr73w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr30h"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ji5u1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgs8n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg4rd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo8w5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsuan"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unkn6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bttqd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8g3m6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj775"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr73w"]
-bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
-
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" node_paths=PackedStringArray("inventory")]
 show_behind_parent = true
 layout_mode = 3
 anchors_preset = 15
@@ -47,205 +14,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y0k1r")
+inventory = NodePath("UI/GridContainer")
 
-[node name="Inventory GUI" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -486.5
-offset_top = -222.0
-offset_right = 486.5
-offset_bottom = 222.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_w243r")
+columns = 4
+script = ExtResource("2_0f2y5")
 
-[node name="BagSlot" type="GridContainer" parent="Inventory GUI"]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 48.0
-offset_right = 294.0
-offset_bottom = 419.0
-theme_override_constants/h_separation = -7
-theme_override_constants/v_separation = 4
-columns = 3
+[node name="Slot" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
+layout_mode = 2
+item = ExtResource("3_le8ii")
+amount = 3
 
-[node name="Slot 1" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot2" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 2" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot3" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 3" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot4" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 4" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot5" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 5" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot6" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 6" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot7" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 7" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot8" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 8" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot9" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 9" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot10" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 10" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot11" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 11" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
+[node name="Slot12" parent="UI/GridContainer" instance=ExtResource("3_w243r")]
 layout_mode = 2
 
-[node name="Slot 12" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
-layout_mode = 2
-
-[node name="Slot 13" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
-layout_mode = 2
-
-[node name="Slot 14" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
-layout_mode = 2
-
-[node name="Slot 15" parent="Inventory GUI/BagSlot" instance=ExtResource("3_w243r")]
-layout_mode = 2
-
-[node name="Equipment" type="GridContainer" parent="Inventory GUI"]
-layout_mode = 0
-offset_left = 609.5
-offset_top = 129.0
-offset_right = 699.5
-offset_bottom = 199.0
-theme_override_constants/v_separation = 3
-
-[node name="Slot 1" parent="Inventory GUI/Equipment" instance=ExtResource("3_w243r")]
-layout_mode = 2
-
-[node name="Equipment_2" type="GridContainer" parent="Inventory GUI"]
-layout_mode = 0
-offset_left = 608.5
-offset_top = 263.0
-offset_right = 698.5
-offset_bottom = 333.0
-theme_override_constants/v_separation = 3
-
-[node name="Slot 1" parent="Inventory GUI/Equipment_2" instance=ExtResource("3_w243r")]
-layout_mode = 2
-itemResource = ExtResource("4_rr30h")
-
-[node name="Equipment_3" type="GridContainer" parent="Inventory GUI"]
-layout_mode = 0
-offset_left = 385.5
-offset_top = 261.0
-offset_right = 475.5
-offset_bottom = 331.0
-theme_override_constants/v_separation = 3
-
-[node name="Slot 1" parent="Inventory GUI/Equipment_3" instance=ExtResource("3_w243r")]
-layout_mode = 2
-itemResource = ExtResource("5_ji5u1")
-
-[node name="Character Display" type="MarginContainer" parent="Inventory GUI"]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 0
-offset_left = 439.5
-offset_top = 134.0
-offset_right = 651.5
-offset_bottom = 340.0
-
-[node name="TextureRect" type="TextureRect" parent="Inventory GUI/Character Display"]
-layout_mode = 2
-texture = ExtResource("5_5k12h")
-expand_mode = 1
-
-[node name="TrashCan" type="MarginContainer" parent="Inventory GUI"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 0
-offset_left = 778.5
-offset_top = 358.0
-offset_right = 846.5
-offset_bottom = 415.0
-
-[node name="Trash Icon" type="TextureRect" parent="Inventory GUI/TrashCan"]
-layout_mode = 2
-texture = ExtResource("6_0msnl")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="Exit Button" type="TextureRect" parent="Inventory GUI"]
-layout_mode = 0
-offset_left = 882.5
-offset_top = 366.0
-offset_right = 930.5
-offset_bottom = 406.0
-texture = ExtResource("6_w243r")
-expand_mode = 1
-
-[node name="Button" type="Button" parent="Inventory GUI/Exit Button"]
-layout_mode = 0
-offset_right = 48.0
-offset_bottom = 40.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj775")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jr73w")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_rr30h")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ji5u1")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bgs8n")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pg4rd")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qo8w5")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wsuan")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_unkn6")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bttqd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8g3m6")
-
-[node name="LevelUpAnnouncement" type="Label" parent="Inventory GUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 0.5
-offset_top = -11.5
-offset_right = 1.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Stats Window" parent="Inventory GUI" instance=ExtResource("7_dj775")]
-layout_mode = 1
-offset_left = 600.5
-offset_top = -159.0
-offset_right = 137.5
-offset_bottom = 88.0
-mouse_filter = 2
-
-[node name="EXPBar" type="ProgressBar" parent="Inventory GUI"]
-z_index = 1
-custom_minimum_size = Vector2(0, -1)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -82.5
-offset_top = 57.0
-offset_right = 237.5
-offset_bottom = 67.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_dj775")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jr73w")
-value = 20.0
-show_percentage = false
-metadata/_edit_use_anchors_ = true
-
-[connection signal="mouse_entered" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_entered"]
-[connection signal="mouse_exited" from="Inventory GUI" to="." method="_on_inventory_gui_mouse_exited"]
-[connection signal="mouse_entered" from="Inventory GUI/Exit Button/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Inventory GUI/Exit Button/Button" to="." method="_on_button_pressed"]
+[connection signal="equip" from="UI/GridContainer" to="." method="_on_grid_container_equip"]
