@@ -5,6 +5,7 @@ func _on_restart_mouse_entered() -> void:
 
 func set_score(value):
 	$Panel/GoldEarnedLabel.text = "Gold Earned: " + str(value)
+	Global.playerGold += value
 
 
 func _on_quit_mouse_entered() -> void:
