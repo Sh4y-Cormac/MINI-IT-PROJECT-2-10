@@ -183,7 +183,7 @@ func _drop_data(at_position, dragslotnode):
 
 func get_slot_node_position(position):
 	
-	var allslotnodes = (bagcontainer.get_children() + ArmorSlot.get_children() + WeaponSlot1.get_children() + WeaponSlot2.get_children())
+	var allslotnodes = (bagcontainer.get_children() + ArmorSlot.get_children())
 	
 	for node in allslotnodes:
 		var noderect = node.get_global_rect()
