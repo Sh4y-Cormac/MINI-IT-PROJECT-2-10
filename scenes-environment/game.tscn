@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=59 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -26,13 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
+[ext_resource type="Texture2D" uid="uid://dyis0ubansx3c" path="res://Assets/Card Sprite/mini armor plate.png" id="24_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
-[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
+[ext_resource type="PackedScene" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
+[ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -366,9 +367,10 @@ centered = false
 offset = Vector2(0, -400)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-116, -95)
 texture = ExtResource("6_p57ef")
 centered = false
-offset = Vector2(1152, -400)
+offset = Vector2(1268, -305)
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("7_vtaks")
@@ -461,6 +463,10 @@ theme_override_font_sizes/font_size = 25
 script = SubResource("GDScript_ysgvo")
 
 [node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = -3.0
 
 [node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(-55, 97)
@@ -505,6 +511,18 @@ offset_right = 1.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CardSymbol" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CardSymbol"]
+layout_mode = 2
+texture = ExtResource("24_vbdjg")
 
 [node name="audio" type="Node" parent="."]
 

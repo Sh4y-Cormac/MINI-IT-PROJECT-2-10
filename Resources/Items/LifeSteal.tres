@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://rgn483q55pu8"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://rgn483q55pu8"]
 
 [ext_resource type="Texture2D" uid="uid://ckram20bcfcw8" path="res://Assets/Card Sprite/Life Steal.png" id="1_0ays0"]
+[ext_resource type="Texture2D" uid="uid://bwvacg6pd81lp" path="res://Assets/Card Sprite/mini lifesteal.png" id="1_2i4h1"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_iq15c"]
 
 [resource]
@@ -9,8 +10,9 @@ name = "LifeSteal"
 title = "LifeSteal"
 icon = ExtResource("1_0ays0")
 description = "Gain 2 % hp of the damage dealt"
-price = ""
+price = 0
 type = "Card"
+card_icon = ExtResource("1_2i4h1")
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://uqnm2c4v3bl2"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://uqnm2c4v3bl2"]
 
+[ext_resource type="Texture2D" uid="uid://bujl5uv8dqgli" path="res://Assets/Card Sprite/mini regeneration.png" id="1_ar58j"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_e7eeb"]
 [ext_resource type="Texture2D" uid="uid://cq14ys0xuvune" path="res://Assets/Card Sprite/Regeneration.png" id="1_x6rlh"]
 
@@ -9,13 +10,16 @@ name = "Regeneration"
 title = "Regeneration"
 icon = ExtResource("1_x6rlh")
 description = "Heals 5 hp every 3 seconds"
-price = ""
+price = 0
 type = "Card"
+card_icon = ExtResource("1_ar58j")
 is_regen_card = true
 regen_amount = 5.0
 regen_interval = 3.0
 inventarSlot = "BagSlot"
 InventarPosition = -1
+is_lifesteal_card = false
+lifesteal_percent = 0.0
 stat_name = ""
 effect_type = "flat"
 value = 0.0

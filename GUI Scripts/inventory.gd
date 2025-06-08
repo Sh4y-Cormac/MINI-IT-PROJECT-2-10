@@ -8,8 +8,27 @@ signal dropOut
 @onready var WeaponSlot2 = $"Inventory GUI/Equipment_3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 @onready var stats_window: Control = $"Inventory GUI/Stats Window"
+@onready var card_symbol: HBoxContainer = $"../CardSymbol"
+@export var card_icon: Texture
 
+func update_card_ui():
+	var cards = get_active_cards()
+	var container = $"../CardSymbol"
 
+	
+	for child in container.get_children():
+		child.queue_free()
+		
+	for card in cards:
+		if card.card_icon:
+			var icon = TextureRect.new()
+			icon.texture = card.card_icon
+			icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			icon.custom_minimum_size = Vector2(32, 32)  
+			icon.tooltip_text = card.name
+			container.add_child(icon)
+		
 func get_base_stats() -> Dictionary:
 	return{
 		"hp": stats_window.hp,
@@ -72,6 +91,9 @@ func _ready():
 	
 	stats_window.connect("leveled_up", Callable(self, "update_buffed_stats"))
 	update_buffed_stats()
+	
+	await get_tree().process_frame
+	update_card_ui()
 
 	
 func apply_regen_cards():
@@ -139,7 +161,19 @@ func add_item(item: Item):
 	item.InventarPosition = _get_next_empty_bag_slot()
 	
 	item.add(item.resource_path)
+	
+	if item.InventarPosition < 0:
+		print("Inventory full!")
+		return
 
+	for slot in inventoryDict["BagSlot"].get_children():
+		var slotNumber = int(slot.name.split("Slot")[1])
+		if slotNumber == item.InventarPosition:
+			slot.set_new_data(item)
+			break
+	
+	update_buffed_stats()
+	update_card_ui()
 
 func _get_drag_data(at_position):
 	var dragslotnode = get_slot_node_position(at_position)

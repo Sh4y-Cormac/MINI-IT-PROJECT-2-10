@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bcy26wmoa3j68"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bcy26wmoa3j68"]
 
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_8q4oa"]
+[ext_resource type="Texture2D" uid="uid://c6tv7q4q7jppq" path="res://Assets/Card Sprite/mini hp up.png" id="1_c47xu"]
 [ext_resource type="Texture2D" uid="uid://doeri1a5us1y4" path="res://Assets/Card Sprite/HP up.png" id="1_enwuq"]
 
 [resource]
@@ -9,8 +10,9 @@ name = "HP up"
 title = "HP up"
 icon = ExtResource("1_enwuq")
 description = "+20 hp "
-price = ""
+price = 0
 type = "Card"
+card_icon = ExtResource("1_c47xu")
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0
