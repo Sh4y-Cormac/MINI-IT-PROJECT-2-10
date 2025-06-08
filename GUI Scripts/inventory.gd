@@ -7,7 +7,7 @@ signal dropOut
 @onready var WeaponSlot1 = $"Inventory GUI/Equipment_2"
 @onready var WeaponSlot2 = $"Inventory GUI/Equipment_3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
-@onready var stats_window: Control = $"Inventory GUI/CanvasLayer/Stats Window"
+@onready var stats_window: Control = $"Inventory GUI/Stats Window"
 
 
 func get_base_stats() -> Dictionary:
@@ -54,6 +54,7 @@ var items = [
 var onInventory = false
 
 func _ready():
+	stats_window.visible = true
 	inventoryDict = {
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
@@ -225,7 +226,7 @@ func _on_button_mouse_entered() -> void:
 
 func _on_inventory_gui_mouse_entered() -> void:
 	onInventory = true
-	stats_window.visible = true
+
 
 func _on_inventory_gui_mouse_exited() -> void:
 	onInventory = false

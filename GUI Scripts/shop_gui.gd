@@ -3,13 +3,9 @@ extends Control
 @export var description : NinePatchRect
 var selected_item : Item
 
-var gold = Global.playerGold
 
-
-
-func _ready():
-	gold += 100
-	$"NinePatchRect/Coins Display/Label".text = "Gold: " + str(gold)
+func _process(delta: float) -> void:
+	update_gold_label()
 
 
 func set_description(item : Item):
@@ -22,11 +18,11 @@ func set_description(item : Item):
 
 	
 func update_gold_label():
-	$"NinePatchRect/Coins Display/Label".text = "Gold: " + str(gold)
+	$"NinePatchRect/Coins Display/Label".text = "Gold: " + str(Global.playerGold)
 
 func _on_buy_pressed() -> void:
-	if selected_item and gold >= selected_item.price:
-		gold -= selected_item.price
+	if selected_item and Global.playerGold >= selected_item.price:
+		Global.playerGold -= selected_item.price
 		update_gold_label()
 		print("Bought:", selected_item.title)
 	else:
