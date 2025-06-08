@@ -183,9 +183,10 @@ func check_hitbox():
 		take_damage(damage, strikeFrame)
 
 func take_damage(damage, strikeFrame):
-	if damage != 0:
+	if damage != 0 and not dead and can_take_damage:
 		if health > 0:
 			health -= damage
+			Global.playerHealth = health 
 			print("player health :", health)
 			if health <= 0:
 				health = 0

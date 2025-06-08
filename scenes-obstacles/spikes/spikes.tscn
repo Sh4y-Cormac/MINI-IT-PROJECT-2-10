@@ -19,9 +19,5 @@ region_rect = Rect2(64, 14, 42, 18)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike1"]
 shape = SubResource("RectangleShape2D_i76ps")
 
-[node name="Timer" type="Timer" parent="spike1"]
-one_shot = true
-
 [connection signal="body_entered" from="spike1" to="." method="_on_spike_1_body_entered"]
 [connection signal="body_shape_entered" from="spike1" to="." method="_on_spike_1_body_shape_entered"]
-[connection signal="timeout" from="spike1/Timer" to="." method="_on_timer_timeout"]
