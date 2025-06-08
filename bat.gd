@@ -15,7 +15,7 @@ var is_enemy_chase: bool
 var player: CharacterBody2D
 
 func _ready():
-	is_enemy_chase = true
+	is_enemy_chase = false
 	
 	
 func _process(delta):

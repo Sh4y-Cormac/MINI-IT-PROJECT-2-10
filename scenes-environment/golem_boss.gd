@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name GolemBoss
 
 const speed = 30
-var is_enemy_chase: bool = true
+var is_enemy_chase: bool = false
 
 var health = 200
 var health_max = 200
