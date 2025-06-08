@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scenes/inventory_slot.tscn" id="3_w243r"]
 [ext_resource type="Resource" uid="uid://mo3hvmwkdtsc" path="res://Resources/Items/Short_sword.tres" id="4_rr30h"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
-[ext_resource type="Resource" uid="uid://yvfr0qu7hq15" path="res://Resources/Items/Long_sword.tres" id="5_ji5u1"]
+[ext_resource type="Resource" uid="uid://cu11jadjuxooa" path="res://Resources/Items/Long_sword.tres" id="5_ji5u1"]
 [ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="7_dj775"]
