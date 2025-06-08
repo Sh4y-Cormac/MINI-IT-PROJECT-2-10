@@ -33,8 +33,8 @@ var current_attack: bool
 var health = Global.playerHealth
 var health_max = 100
 var health_min = 0
-var can_take_damage: bool
-var dead: bool 
+var can_take_damage: bool 
+var dead: bool
 
 var skin = Global.playerSkin
 
@@ -54,6 +54,8 @@ func _ready() -> void:
 	current_attack = false
 	dead = false
 	can_take_damage = true
+	
+	health = Global.playerHealth ##PH
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
@@ -181,9 +183,10 @@ func check_hitbox():
 		take_damage(damage, strikeFrame)
 
 func take_damage(damage, strikeFrame):
-	if damage != 0:
+	if damage != 0 and not dead and can_take_damage:
 		if health > 0:
 			health -= damage
+			Global.playerHealth = health 
 			print("player health :", health)
 			if health <= 0:
 				health = 0

@@ -26,13 +26,13 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
-[ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
-[ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
+[ext_resource type="PackedScene" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
+[ext_resource type="PackedScene" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" path="res://scenes-environment/robot_enemy.tscn" id="29_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
+[ext_resource type="PackedScene" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")

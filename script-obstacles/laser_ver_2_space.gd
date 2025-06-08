@@ -4,14 +4,11 @@ extends Node2D
 @onready var collision_shape = $laserver2_killzone/CollisionShape2D
 var player_reference: Node2D = null
 
-
 func _on_laserver_2_killzone_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		var col = body.get_node_or_null("CollisionShape2D")
 		if col:
 			col.queue_free()
-		if body.name == "player":
-			Global.take_damage()
 		laser2_timer.start()
 		
 

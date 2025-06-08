@@ -20,10 +20,5 @@ region_rect = Rect2(0, 9, 49, 24)
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_pjfsd")
 
-[node name="Timer" type="Timer" parent="spike2"]
-wait_time = 3.0
-one_shot = true
-
 [connection signal="body_entered" from="spike2" to="." method="_on_spike_2_body_entered"]
 [connection signal="body_shape_entered" from="spike2" to="." method="_on_spike_2_body_shape_entered"]
-[connection signal="timeout" from="spike2/Timer" to="." method="_on_timer_timeout"]

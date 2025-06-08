@@ -1,7 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=40 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
-[ext_resource type="Script" uid="uid://cutg3onws676s" path="res://enviroment_level_1.gd" id="1_hgogn"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
 [ext_resource type="Texture2D" uid="uid://bm74mpwtrl7a1" path="res://Assets/Sprites/spikes.png" id="3_hgogn"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="4_n8efx"]
@@ -13,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="10_6olwm"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="11_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="13_ymgvw"]
-[ext_resource type="Script" uid="uid://cpttuy8laseh2" path="res://health_bar.gd" id="14_n8efx"]
+
+[sub_resource type="GDScript" id="GDScript_c64ec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_c64ec")
@@ -525,7 +524,7 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qyluh"]
 
 [node name="enviroment_level1" type="Node2D"]
-script = ExtResource("1_hgogn")
+script = SubResource("GDScript_c64ec")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -763,78 +762,3 @@ position = Vector2(8740, -543)
 
 [node name="spike12" parent="spike" instance=ExtResource("12_1wad2")]
 position = Vector2(9313, -719)
-
-[node name="HealthBar" type="CanvasLayer" parent="."]
-script = ExtResource("14_n8efx")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HealthBar"]
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 212.0
-offset_bottom = 41.0
-
-[node name="heart" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart2" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart2"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart3" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart3"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart4" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart4"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart5" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart5"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="heart6" type="TextureRect" parent="HealthBar/HBoxContainer"]
-custom_minimum_size = Vector2(14, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar/HBoxContainer/heart6"]
-position = Vector2(10.5, 18)
-scale = Vector2(2.9375, 3.25)
-texture = ExtResource("13_ymgvw")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
