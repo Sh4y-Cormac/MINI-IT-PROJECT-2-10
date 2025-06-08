@@ -542,6 +542,9 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_3dlyc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mlxjd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g0f6a")
 
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("13_dg8pe")]
+visible = false
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(84, 27.5)
 scale = Vector2(2.3125, 2.1875)
@@ -577,8 +580,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_t2yil")
 theme_override_styles/fill = SubResource("StyleBoxFlat_us43i")
 value = 20.0
 show_percentage = false
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("13_dg8pe")]
 
 [node name="audio" type="Node" parent="."]
 

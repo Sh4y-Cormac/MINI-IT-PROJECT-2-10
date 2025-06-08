@@ -399,6 +399,9 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_t126v")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_pxy7y")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kr45k")
 
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("9_kr45k")]
+visible = false
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(84, 27.5)
 scale = Vector2(2.3125, 2.1875)
@@ -443,8 +446,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_top = -624.0
 offset_bottom = -624.0
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("9_kr45k")]
 
 [node name="Shop Area" type="Area2D" parent="."]
 position = Vector2(456, 8)
