@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=60 format=3 uid="uid://dbabbvhfx8i07"]
 
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
 [ext_resource type="Texture2D" uid="uid://dei6ulpbuxppq" path="res://winter sprite/winter_tilesets2.png" id="2_56k3b"]
@@ -12,9 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://fyv6ike8qc5p" path="res://scenes-obstacles/water_winter.tscn" id="10_yrhxr"]
 [ext_resource type="PackedScene" uid="uid://d0o3qkcka8qs5" path="res://scenes-obstacles/ice_winter.tscn" id="11_ao63x"]
 [ext_resource type="PackedScene" uid="uid://bd1g5ayqykp23" path="res://scenes-obstacles/iceblock_winter'.tscn" id="12_qf1ar"]
-[ext_resource type="PackedScene" uid="uid://bgkt0l0j3pphw" path="res://bridge_paths/bridge_path_winter.tscn" id="13_papdo"]
 [ext_resource type="PackedScene" uid="uid://bsmb5ecq85xc5" path="res://scenes-obstacles/spikes/spikes.tscn" id="14_sny1q"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="15_56k3b"]
+[ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="15_h7yxt"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="16_mpnc5"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="17_j8371"]
+[ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="18_0p3cn"]
+[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="19_yrhxr"]
+[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="20_ao63x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
 texture = ExtResource("1_rdn6o")
@@ -507,6 +512,31 @@ _data = {
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_robrw"]
+
+[sub_resource type="GDScript" id="GDScript_qf1ar"]
+resource_name = "gold"
+script/source = "extends Label
+
+@onready var label: Label = $\".\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var goldAmount = Global.playerGold
+	var text = \"Gold : \" + str(goldAmount)
+	self.text = text
+	print(Global.playerGold)
+	
+	
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_papdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sny1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e45w6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dwd5"]
 
 [node name="environment_winter" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-2304.0]
@@ -1027,9 +1057,6 @@ position = Vector2(11800, -1528)
 [node name="iceblock_winter\'10b" parent="iceblock" instance=ExtResource("12_qf1ar")]
 position = Vector2(11816, -1528)
 
-[node name="bridge_path_winter" parent="." instance=ExtResource("13_papdo")]
-position = Vector2(12550, -1544)
-
 [node name="spikes" type="Node" parent="."]
 
 [node name="spikes1" parent="spikes" instance=ExtResource("14_sny1q")]
@@ -1071,6 +1098,67 @@ position = Vector2(9365, -1353)
 [node name="PlayerHealthBar" type="CanvasLayer" parent="."]
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("15_56k3b")]
+
+[node name="bridge_path_T" parent="." instance=ExtResource("15_h7yxt")]
+position = Vector2(12639, -1442)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("16_mpnc5")
+theme_override_font_sizes/font_size = 25
+script = SubResource("GDScript_qf1ar")
+
+[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("17_j8371")]
+
+[node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(-55, 97)
+scale = Vector2(1.75, 1.71875)
+texture = ExtResource("18_0p3cn")
+offset = Vector2(47.5035, -1.63266)
+hframes = 7
+vframes = 2
+
+[node name="Bag Icon Button" type="Button" parent="CanvasLayer/Bag Icon"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.5035
+offset_top = -9.63266
+offset_right = 39.5035
+offset_bottom = -9.63266
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_papdo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sny1q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e45w6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7dwd5")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("19_yrhxr")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(84, 27.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("20_ao63x")
+
+[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = -11.5
+offset_right = 1.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]

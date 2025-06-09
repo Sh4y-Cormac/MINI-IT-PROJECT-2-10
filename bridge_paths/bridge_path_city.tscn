@@ -1,50 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dknhlq2thq25b"]
+[gd_scene load_steps=4 format=3 uid="uid://dknhlq2thq25b"]
 
 [ext_resource type="Script" uid="uid://dd8sr0bsh2dgt" path="res://bridge_paths/bridge_path_city.gd" id="1_urpbc"]
 [ext_resource type="Texture2D" uid="uid://deiwvgplpib53" path="res://Assets/Sprites/bridge_path-sheet.png" id="2_7xcil"]
-[ext_resource type="Texture2D" uid="uid://bc2occvxo6iel" path="res://Assets/Sprites/bridge_riddle.png" id="2_urpbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyyca"]
 size = Vector2(20, 195.5)
-
-[sub_resource type="Animation" id="Animation_eas2c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_qyyca"]
-resource_name = "fall"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.65),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.5708]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hk70"]
-_data = {
-&"RESET": SubResource("Animation_eas2c"),
-&"fall": SubResource("Animation_qyyca")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eas2c"]
 
 [node name="bridge_path_city" type="Node2D"]
 script = ExtResource("1_urpbc")
@@ -53,29 +13,12 @@ script = ExtResource("1_urpbc")
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="bridge_city"]
-position = Vector2(12, -12)
+position = Vector2(-74, -73)
+rotation = 1.5708
 scale = Vector2(1, 1.014)
 texture = ExtResource("2_7xcil")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bridge_city"]
 position = Vector2(1, -87)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_qyyca")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="bridge_city"]
-libraries = {
-&"": SubResource("AnimationLibrary_1hk70")
-}
-
-[node name="red" type="Area2D" parent="."]
-
-[node name="Sprite_red" type="Sprite2D" parent="red"]
-position = Vector2(-76, -169)
-texture = ExtResource("2_urpbc")
-region_enabled = true
-region_rect = Rect2(18, 0, 27, 32)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="red"]
-position = Vector2(-75, -169)
-shape = SubResource("CircleShape2D_eas2c")
-
-[connection signal="input_event" from="red" to="." method="_on_red_input_event"]
