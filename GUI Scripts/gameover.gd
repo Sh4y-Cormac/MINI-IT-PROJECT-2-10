@@ -4,6 +4,7 @@ func _ready():
 	$AnimationPlayer.play("Fade In")
 
 func _on_restart_button_mouse_entered() -> void:
+	
 	$"audio/Hovering Sound Effect".play()
 	
 func _on_return_to_menu_mouse_entered() -> void:
@@ -18,6 +19,7 @@ func _on_quit_button_mouse_entered() -> void:
 func _on_restart_button_pressed() -> void:
 	$"audio/Enter Sound Effect".play()
 	await $"audio/Enter Sound Effect".finished
+	Global.playerHealth = 100
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 
