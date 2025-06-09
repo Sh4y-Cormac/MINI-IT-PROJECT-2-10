@@ -49,6 +49,7 @@ func _on_start_button_pressed() -> void:
 	Global.gameStarted = true
 	Global.playerGold = 100
 	Global.playerHealth = 100
+	Global.level = 0
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:

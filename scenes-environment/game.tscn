@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=57 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
-[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
+[ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -306,9 +306,6 @@ func _process(delta: float) -> void:
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o6od"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqrk"]
-size = Vector2(79, 43)
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ysgvo")
 
@@ -546,18 +543,6 @@ position = Vector2(970, 16)
 [node name="StaticBody2D" parent="doors" instance=ExtResource("29_ujqrk")]
 position = Vector2(4875, 116)
 
-[node name="StartGameDetector" type="Area2D" parent="."]
-visible = false
-position = Vector2(881, 33)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartGameDetector"]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(4512, -39)
-shape = SubResource("RectangleShape2D_ujqrk")
-
 [node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
 position = Vector2(4519, 8)
 
@@ -583,4 +568,3 @@ position = Vector2(1061, -353)
 [connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]
-[connection signal="body_entered" from="StartGameDetector" to="." method="_on_start_game_detector_body_entered"]

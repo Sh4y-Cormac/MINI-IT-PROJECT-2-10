@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				open_chest()
 				is_chest_open = true
+				hovering = false
 	elif is_chest_open:
 		animated_sprite_2d.play("open")
 		instruction.visible = false
@@ -32,9 +33,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("player has been detected")
 		if !is_chest_open:
-			print("chest has not been opened")
 			hovering = true
 			instruction.visible = true
 

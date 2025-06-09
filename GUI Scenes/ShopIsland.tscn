@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="3_jaque"]
 [ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="4_13hmj"]
 [ext_resource type="Texture2D" uid="uid://dndegqxdlnqdc" path="res://Assets/Sprites/TX Village Props.png" id="4_pttj7"]
-[ext_resource type="Texture2D" uid="uid://bwj5ohfjvsyk6" path="res://Assets/Sprites/portal.png" id="5_ulm3l"]
 [ext_resource type="Texture2D" uid="uid://c56eys5f5ph5p" path="res://Assets/Images/Dogs.png" id="7_v43vc"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="10_d48jl"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="11_6it1p"]
@@ -18,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]
+[ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="19_t8j5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulm3l"]
 texture = ExtResource("1_13hmj")
@@ -457,6 +457,9 @@ _data = {
 [node name="ShopIsland" type="Node2D"]
 script = ExtResource("1_dr1pm")
 
+[node name="portal" parent="." instance=ExtResource("19_t8j5p")]
+position = Vector2(503, 32)
+
 [node name="SpawnPosition" type="Marker2D" parent="."]
 position = Vector2(1912, -178)
 
@@ -492,11 +495,6 @@ scale = Vector2(6.06771, 5.19136)
 texture = ExtResource("3_jaque")
 centered = false
 offset = Vector2(0, -1048)
-
-[node name="Portal" type="Sprite2D" parent="."]
-position = Vector2(139, -5)
-scale = Vector2(0.152, 0.198)
-texture = ExtResource("5_ulm3l")
 
 [node name="Dog" type="Sprite2D" parent="."]
 position = Vector2(1779, -144)

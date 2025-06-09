@@ -268,10 +268,10 @@ position = Vector2(-24, -1)
 shape = SubResource("CircleShape2D_w84fn")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_w84fn")]
-offset_left = -33.0
+offset_left = -44.5
 offset_top = 16.5
-offset_right = 33.0
-offset_bottom = 22.5
+offset_right = 44.5
+offset_bottom = 25.5
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

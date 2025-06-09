@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=33 format=3 uid="uid://d4kg8q6yhdrrb"]
 
-[ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
+[ext_resource type="Script" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
 [ext_resource type="Texture2D" uid="uid://dt44y2ee2o5d2" path="res://Assets/tilemap/desert_tilemaps2.png" id="3_7jhca"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="4_lo03u"]
@@ -17,7 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dxaw3pk3bv5x5" path="res://scenes-obstacles/tumbleweed_desert.tscn" id="15_c5uka"]
 [ext_resource type="PackedScene" uid="uid://bw13krssj2q6j" path="res://bridge_paths/bridge_path_desert.tscn" id="16_6y8io"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="17_tqbsk"]
-[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="18_1epuf"]
+[ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="18_1epuf"]
+[ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="19_7jhca"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teku7"]
 texture = ExtResource("2_1epuf")
@@ -639,5 +640,8 @@ position = Vector2(9386, -779)
 [node name="PlayerHealthBar" type="CanvasLayer" parent="."]
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("18_1epuf")]
+
+[node name="portal" parent="." instance=ExtResource("19_7jhca")]
+position = Vector2(424, -65)
 
 [connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]

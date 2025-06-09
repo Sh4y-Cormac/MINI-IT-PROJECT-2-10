@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=42 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bp5qfi5iwebic" path="res://scenes-obstacles/laser.tscn" id="10_6olwm"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="11_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
-[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
+[ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
+[ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
 
@@ -778,3 +779,6 @@ position = Vector2(9313, -719)
 [node name="PlayerHealthBar" type="CanvasLayer" parent="."]
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("13_ymgvw")]
+
+[node name="portal" parent="." instance=ExtResource("14_hgogn")]
+position = Vector2(1382, -44)
