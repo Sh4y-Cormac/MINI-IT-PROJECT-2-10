@@ -4,8 +4,6 @@ signal dropOut
 
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var ArmorSlot = $"Inventory GUI/Equipment"
-@onready var WeaponSlot1 = $"Inventory GUI/Equipment_2"
-@onready var WeaponSlot2 = $"Inventory GUI/Equipment_3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 @onready var stats_window: Control = $"Inventory GUI/Stats Window"
 
@@ -58,8 +56,6 @@ func _ready():
 	inventoryDict = {
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
-		"Equipment1": WeaponSlot1,
-		"Equipment2": WeaponSlot2
 	}
 	
 	await get_tree().process_frame
