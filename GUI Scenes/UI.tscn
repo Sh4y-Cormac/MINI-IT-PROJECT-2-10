@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://bg7jesqspvh4h"]
+
+[ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="1_g7y7g"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_mjwfr"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="3_5gv2j"]
+[ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="4_2nkan"]
+[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="5_hqny6"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="7_smwk4"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="8_ab0nr"]
+
+[sub_resource type="GDScript" id="GDScript_tv5em"]
+resource_name = "gold"
+script/source = "extends Label
+
+@onready var label: Label = $\".\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var goldAmount = Global.playerGold
+	var text = \"Gold : \" + str(goldAmount)
+	self.text = text
+	print(Global.playerGold)
+	
+	
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74xek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pnog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkh2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qot1q"]
+
+[sub_resource type="Animation" id="Animation_kahc7"]
+resource_name = "bag_animation"
+length = 1.3333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/Bag Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbjit"]
+_data = {
+&"bag_animation": SubResource("Animation_kahc7")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_g7y7g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 192.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("2_mjwfr")
+theme_override_font_sizes/font_size = 25
+script = SubResource("GDScript_tv5em")
+
+[node name="PauseMeny" parent="." instance=ExtResource("3_5gv2j")]
+
+[node name="Bag Icon" type="Sprite2D" parent="."]
+position = Vector2(-54, 82)
+scale = Vector2(1.75, 1.71875)
+texture = ExtResource("4_2nkan")
+offset = Vector2(47.5035, -1.63266)
+hframes = 7
+vframes = 2
+
+[node name="Bag Icon Button" type="Button" parent="Bag Icon"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.5035
+offset_top = -9.63266
+offset_right = 39.5035
+offset_bottom = -9.63266
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_74xek")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4pnog")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tkh2i")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qot1q")
+
+[node name="Inventory" parent="." instance=ExtResource("5_hqny6")]
+visible = false
+
+[node name="LevelUpAnnouncement" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = -11.5
+offset_right = 1.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+process_mode = 3
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("7_smwk4")
+volume_db = 5.0
+max_distance = 10000.0
+bus = &"SFX"
+
+[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-74, 218)
+stream = ExtResource("8_ab0nr")
+max_distance = 100000.0
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cbjit")
+}
+speed_scale = 4.0
+
+[connection signal="mouse_entered" from="Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
+[connection signal="mouse_exited" from="Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
+[connection signal="pressed" from="Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]

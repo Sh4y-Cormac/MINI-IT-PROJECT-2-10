@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=45 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -17,15 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://0es8capo4h3u" path="res://Assets/Sprites/middleground2.png" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="8_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ruhyb4x44eju" path="res://Assets/Sprites/green.png" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://bg7jesqspvh4h" path="res://GUI Scenes/UI.tscn" id="9_ujqrk"]
 [ext_resource type="Texture2D" uid="uid://uknhwgtn0to6" path="res://Assets/Sprites/water.png" id="10_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="14_18nrj"]
-[ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="15_18nrj"]
-[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="16_ca42v"]
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
-[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
@@ -244,68 +240,6 @@ _data = {
 &"move2": SubResource("Animation_ftps5")
 }
 
-[sub_resource type="Animation" id="Animation_e1j6l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Bag Icon:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_3v0pm"]
-resource_name = "bag_animation"
-length = 1.3333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Bag Icon:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhx41"]
-_data = {
-&"RESET": SubResource("Animation_e1j6l"),
-&"bag_animation": SubResource("Animation_3v0pm")
-}
-
-[sub_resource type="GDScript" id="GDScript_ysgvo"]
-resource_name = "gold"
-script/source = "extends Label
-
-@onready var label: Label = $\".\"
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var goldAmount = Global.playerGold
-	var text = \"Gold : \" + str(goldAmount)
-	self.text = text
-	print(Global.playerGold)
-	
-	
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ci8an"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubas8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb0tt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o6od"]
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ysgvo")
 
@@ -320,6 +254,8 @@ tile_set = SubResource("TileSet_trtic")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(147, 32)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_ujqrk")]
 
 [node name="killzone" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(-12, 448)
@@ -439,70 +375,6 @@ texture = ExtResource("10_kvpfn")
 centered = false
 offset = Vector2(1152, 248)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_bhx41")
-}
-speed_scale = 3.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 11.0
-offset_top = 48.0
-offset_right = 192.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
-theme_override_fonts/font = ExtResource("14_18nrj")
-theme_override_font_sizes/font_size = 25
-script = SubResource("GDScript_ysgvo")
-
-[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
-
-[node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(-55, 97)
-scale = Vector2(1.75, 1.71875)
-texture = ExtResource("15_18nrj")
-offset = Vector2(47.5035, -1.63266)
-hframes = 7
-vframes = 2
-
-[node name="Bag Icon Button" type="Button" parent="CanvasLayer/Bag Icon"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 39.5035
-offset_top = -9.63266
-offset_right = 39.5035
-offset_bottom = -9.63266
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ci8an")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ubas8")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kb0tt")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0o6od")
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_3v0pm")]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(84, 27.5)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("17_ci8an")
-
-[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 0.5
-offset_top = -11.5
-offset_right = 1.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
@@ -564,7 +436,3 @@ position = Vector2(1061, -353)
 [node name="PlayerHealthBar" type="CanvasLayer" parent="."]
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("34_vbdjg")]
-
-[connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]

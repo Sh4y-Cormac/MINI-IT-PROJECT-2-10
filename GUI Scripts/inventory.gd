@@ -212,12 +212,13 @@ func _is_item_allowed(item, slotNode):
 
 
 func _on_button_pressed() -> void:
-	$"../../audio/Enter Sound Effect".play()
+	$"../audio/Enter Sound Effect".play()
+	await $"../audio/Enter Sound Effect".finished
 	$".".visible = false
 	stats_window.visible = false
 
 func _on_button_mouse_entered() -> void:
-	$"../../audio/Hovering Sound Effect".play()
+	$"../audio/Hovering Sound Effect".play()
 
 
 func _on_inventory_gui_mouse_entered() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=20 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_13hmj"]
 [ext_resource type="Script" uid="uid://bdo6ruhfgugth" path="res://GUI Scenes/shop_island.gd" id="1_dr1pm"]
@@ -8,12 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="4_13hmj"]
 [ext_resource type="Texture2D" uid="uid://dndegqxdlnqdc" path="res://Assets/Sprites/TX Village Props.png" id="4_pttj7"]
 [ext_resource type="Texture2D" uid="uid://c56eys5f5ph5p" path="res://Assets/Images/Dogs.png" id="7_v43vc"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="10_d48jl"]
-[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="11_6it1p"]
-[ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="12_yvn7a"]
-[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="13_dg8pe"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="14_t8j5p"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="15_bcwrm"]
+[ext_resource type="PackedScene" uid="uid://bg7jesqspvh4h" path="res://GUI Scenes/UI.tscn" id="13_tuql4"]
 [ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]
@@ -369,32 +364,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ulm3l")
 sources/4 = SubResource("TileSetAtlasSource_8pjuw")
 
-[sub_resource type="GDScript" id="GDScript_lo1pf"]
-resource_name = "gold"
-script/source = "extends Label
-
-@onready var label: Label = $\".\"
-
-var goldAmount = Global.playerGold
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	label.text = \"Gold : \" + str(goldAmount)
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hqus"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dlyc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlxjd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0f6a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2yil"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.27451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us43i"]
-bg_color = Color(0.0890308, 0.67376, 0.754513, 1)
-
 [sub_resource type="Animation" id="Animation_pttj7"]
 resource_name = "Dog_Sleep"
 length = 0.6333
@@ -431,27 +400,6 @@ tracks/0/keys = {
 _data = {
 &"Dog_Sleep": SubResource("Animation_pttj7"),
 &"RESET": SubResource("Animation_8pjuw")
-}
-
-[sub_resource type="Animation" id="Animation_dg8pe"]
-resource_name = "bag_animation"
-length = 1.3333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Bag Icon:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8j5p"]
-_data = {
-&"bag_animation": SubResource("Animation_dg8pe")
 }
 
 [node name="ShopIsland" type="Node2D"]
@@ -503,82 +451,6 @@ texture = ExtResource("7_v43vc")
 flip_h = true
 hframes = 7
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 11.0
-offset_top = 48.0
-offset_right = 192.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
-theme_override_fonts/font = ExtResource("10_d48jl")
-theme_override_font_sizes/font_size = 25
-script = SubResource("GDScript_lo1pf")
-
-[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("11_6it1p")]
-
-[node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(-55, 97)
-scale = Vector2(1.75, 1.71875)
-texture = ExtResource("12_yvn7a")
-offset = Vector2(47.5035, -1.63266)
-hframes = 7
-vframes = 2
-
-[node name="Bag Icon Button" type="Button" parent="CanvasLayer/Bag Icon"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 39.5035
-offset_top = -9.63266
-offset_right = 39.5035
-offset_bottom = -9.63266
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2hqus")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_3dlyc")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mlxjd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g0f6a")
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("13_dg8pe")]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(84, 27.5)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("14_t8j5p")
-
-[node name="Stats Window" parent="CanvasLayer" instance=ExtResource("15_bcwrm")]
-
-[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 0.5
-offset_top = -11.5
-offset_right = 1.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EXPBar" type="ProgressBar" parent="CanvasLayer"]
-z_index = 1
-custom_minimum_size = Vector2(0, -1)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -45.0
-offset_right = 327.0
-offset_bottom = -35.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_t2yil")
-theme_override_styles/fill = SubResource("StyleBoxFlat_us43i")
-value = 20.0
-show_percentage = false
-
 [node name="audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
@@ -611,12 +483,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_cr8pq")
 }
 
-[node name="BagAnimation" type="AnimationPlayer" parent="animation"]
-libraries = {
-&"": SubResource("AnimationLibrary_t8j5p")
-}
-speed_scale = 4.0
-
-[connection signal="mouse_entered" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]
+[node name="CanvasLayer" parent="." instance=ExtResource("13_tuql4")]
