@@ -23,3 +23,5 @@ autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
