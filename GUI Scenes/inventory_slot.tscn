@@ -1,40 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6h40evjkb501"]
+[gd_scene load_steps=2 format=3 uid="uid://c6h40evjkb501"]
 
 [ext_resource type="Script" uid="uid://d2p2klhx4s5le" path="res://GUI Scripts/inventory_slot.gd" id="1_2oepo"]
-[ext_resource type="Texture2D" uid="uid://bawpsw37qlwmp" path="res://Assets/Images/popsicle_green.png" id="2_rtsvn"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_f6t0t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_skt5k"]
-atlas = ExtResource("2_rtsvn")
-
-[node name="Slot 1" type="Button"]
+[node name="Slot 1" type="TextureRect"]
 custom_minimum_size = Vector2(90, 70)
-offset_right = 90.0
-offset_bottom = 70.0
-text = "item"
+expand_mode = 1
 script = ExtResource("1_2oepo")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -35.0
-offset_right = 35.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_skt5k")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 90.0
-offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("3_f6t0t")
-theme_override_font_sizes/font_size = 20
-text = "99"
-horizontal_alignment = 2
