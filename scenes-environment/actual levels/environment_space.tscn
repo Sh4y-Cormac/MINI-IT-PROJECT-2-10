@@ -17,10 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="16_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_qeno3"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="17_3tb6i"]
+[ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="17_kwkbn"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="18_kwkbn"]
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="19_y3w4j"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="20_dlvk7"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="21_uxmvn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -947,6 +947,7 @@ position = Vector2(14620, -1840)
 position = Vector2(18673, -2114)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("17_kwkbn")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 11.0
@@ -985,11 +986,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_1y4h1")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("20_dlvk7")]
 visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(84, 27.5)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("21_uxmvn")
 
 [node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
 anchors_preset = 8

@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bsmb5ecq85xc5" path="res://scenes-obstacles/spikes/spikes.tscn" id="14_sny1q"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="15_56k3b"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="15_h7yxt"]
+[ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="16_j8371"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="16_mpnc5"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="17_j8371"]
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="18_0p3cn"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="19_yrhxr"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="20_ao63x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
 texture = ExtResource("1_rdn6o")
@@ -1103,6 +1103,7 @@ position = Vector2(9365, -1353)
 position = Vector2(12639, -1442)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("16_j8371")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 11.0
@@ -1141,11 +1142,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7dwd5")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("19_yrhxr")]
 visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(84, 27.5)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("20_ao63x")
 
 [node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
 anchors_preset = 8

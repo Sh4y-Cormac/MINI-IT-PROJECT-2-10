@@ -14,11 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
+[ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="15_3rusg"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="15_k07r5"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="16_3rusg"]
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="17_e76em"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="18_6olwm"]
-[ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="19_3rusg"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
 
@@ -788,6 +788,7 @@ position = Vector2(9310, -711)
 position = Vector2(1362, -9)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("15_3rusg")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 11.0
@@ -826,11 +827,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_4aqih")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("18_6olwm")]
 visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(84, 27.5)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("19_3rusg")
 
 [node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
