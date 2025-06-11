@@ -21,7 +21,7 @@ var player: CharacterBody2D
 var player_in_area: bool = false
 
 
-var knockback_force = -200
+var knockback_force = -30
 var is_roaming: bool = true
 
 func _ready():
