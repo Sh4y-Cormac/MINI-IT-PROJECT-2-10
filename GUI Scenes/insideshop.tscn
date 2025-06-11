@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=26 format=3 uid="uid://bkxacktrcdo7t"]
 
 [ext_resource type="Script" uid="uid://b4khxb37t87ry" path="res://GUI Scenes/insideshop.gd" id="1_pq4d1"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="3_mx4nm"]
 [ext_resource type="Script" uid="uid://hl6vqijph7i3" path="res://GUI Scenes/area_2d.gd" id="5_6ttlq"]
 [ext_resource type="Texture2D" uid="uid://jrpb4dfo067m" path="res://Assets/Images/Orc Dealer.png" id="5_gu718"]
+[ext_resource type="Script" uid="uid://dc6r6kyfe7tim" path="res://GUI Scripts/space_shooter_minigame_button.gd" id="5_kr45k"]
 [ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="13_6qaus"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="13_t126v"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="14_6qaus"]
@@ -15,20 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]
 [ext_resource type="Texture2D" uid="uid://bhidfwjqjyv3e" path="res://Assets/Images/Arcade Machine.png" id="18_aphbl"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aphbl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6jjc"]
-bg_color = Color(0.383766, 0.713862, 0.861362, 1)
-shadow_color = Color(0.986752, 0.986752, 0.986752, 0.6)
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aphbl"]
-bg_color = Color(0.471377, 0.770299, 0.907989, 1)
-shadow_color = Color(0.986752, 0.986752, 0.986752, 0.6)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0pw0"]
-bg_color = Color(0.305882, 0.639216, 0.784314, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qaus"]
+size = Vector2(36, 28)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxwcb"]
 texture = ExtResource("1_vgxvw")
@@ -278,17 +267,12 @@ position = Vector2(230.375, -21)
 scale = Vector2(1.43644, 1.625)
 texture = ExtResource("18_aphbl")
 
-[node name="ArcadeMachine" type="Button" parent="ArcadeMachine"]
-z_index = 100
-offset_left = -13.0
-offset_top = -16.0
-offset_right = 11.0
-offset_bottom = 1.0
-focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_aphbl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d6jjc")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_aphbl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x0pw0")
+[node name="SpaceShooterMinigameButton" type="Area2D" parent="."]
+position = Vector2(229, -33)
+script = ExtResource("5_kr45k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShooterMinigameButton"]
+shape = SubResource("RectangleShape2D_6qaus")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_27drf")
@@ -379,8 +363,7 @@ layer = 2
 
 [node name="PauseMeny" parent="CanvasLayer3" instance=ExtResource("14_pxy7y")]
 
-[connection signal="mouse_entered" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_mouse_entered"]
-[connection signal="pressed" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_pressed"]
+[connection signal="mouse_entered" from="SpaceShooterMinigameButton" to="SpaceShooterMinigameButton" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_pressed"]
 [connection signal="body_entered" from="Shop Area" to="Shop Area" method="_on_body_entered"]
