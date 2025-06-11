@@ -54,7 +54,7 @@ chest_items = Array[Dictionary]([{}, {}, {}, {}, {}])
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_4e70r")
-animation = &"closed"
+animation = &"open"
 
 [node name="Area2D" type="Area2D" parent="."]
 

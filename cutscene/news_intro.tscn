@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3j45mwscelvs"]
 
-[ext_resource type="VideoStream" path="res://cutscene/news.ogv" id="1_dl0e1"]
+[ext_resource type="VideoStream" uid="uid://etpd6rnaevm3" path="res://cutscene/news.ogv" id="1_dl0e1"]
 [ext_resource type="Script" uid="uid://bvhrxp8es5pt2" path="res://cutscene/news_intro.gd" id="1_jsu7v"]
 
 [node name="news_intro" type="Control"]
@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_jsu7v")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
 offset_left = -634.0
 offset_top = -355.0
 offset_right = 630.0
@@ -22,3 +23,5 @@ autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

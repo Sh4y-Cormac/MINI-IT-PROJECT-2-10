@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scenes/inventory_slot.tscn" id="3_w243r"]
 [ext_resource type="Resource" uid="uid://yvfr0qu7hq15" path="res://Resources/Items/Short_sword.tres" id="4_rr30h"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
-[ext_resource type="Resource" uid="uid://cu11jadjuxooa" path="res://Resources/Items/Long_sword.tres" id="5_ji5u1"]
+[ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="5_ji5u1"]
 [ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="7_dj775"]
@@ -138,10 +138,11 @@ offset_right = 698.5
 offset_bottom = 333.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 1" parent="Inventory GUI/Equipment_2" instance=ExtResource("3_w243r")]
-custom_minimum_size = Vector2(80, 80)
+[node name="TextureRect" type="TextureRect" parent="Inventory GUI/Equipment_2"]
 layout_mode = 2
-itemResource = ExtResource("4_rr30h")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_rr30h")
 
 [node name="Equipment_3" type="GridContainer" parent="Inventory GUI"]
 layout_mode = 0
@@ -151,10 +152,11 @@ offset_right = 475.5
 offset_bottom = 331.0
 theme_override_constants/v_separation = 3
 
-[node name="Slot 1" parent="Inventory GUI/Equipment_3" instance=ExtResource("3_w243r")]
-custom_minimum_size = Vector2(80, 80)
+[node name="TextureRect" type="TextureRect" parent="Inventory GUI/Equipment_3"]
 layout_mode = 2
-itemResource = ExtResource("5_ji5u1")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_ji5u1")
 
 [node name="Character Display" type="MarginContainer" parent="Inventory GUI"]
 custom_minimum_size = Vector2(20, 0)

@@ -46,7 +46,7 @@ func _process(delta):
 				start_dialogue("Unknown: Warrior, I hope you are listening to me right now. You must stop them before it's too late.")
 				dialogue_count +=1
 			elif dialogue_count == 10:
-				start_dialogue("Unknown: There are five locations... each crawling with enemies.")
+				start_dialogue("Unknown: There are five locations... each crawling with enemies\nand traps that can decrease your health..")
 				dialogue_count +=1
 			elif dialogue_count == 11:
 				start_dialogue("Unknown: You must travel to each place and stop the enemy before they plunge the world into chaos.")
@@ -55,20 +55,18 @@ func _process(delta):
 				start_dialogue("Unknown: But beware — at every location, a powerful boss awaits. Only by defeating them can you hope to end this nightmare.")
 				dialogue_count +=1
 			elif dialogue_count == 13:
-				start_dialogue("Unknown: Before facing each boss, there is a special object.\nYou must interact with it to unlock the path forward.")
+				start_dialogue("Unknown: The fate of everything rests on your shoulders now. Your journey to the right is the only path to end this war..*kzzt— BEEP —connection lost...*.")
 				dialogue_count +=1
 			elif dialogue_count == 14:
-				start_dialogue("Unknown: The fate of everything rests on your shoulders now. Your journey to the right is the only path to end this war..*kzzt— BEEP —connection lost...*")
+				start_dialogue("Seems like we’ve lost his connection...")
 				dialogue_count +=1
 			elif dialogue_count == 15:
-				start_dialogue("Seems like we’ve lost his connection...")
-				dialogue_count += 1
-			elif dialogue_count == 16:
 				start_dialogue("To the warrior out there — if you’re still listening... we need you. The enemy is getting stronger, and people are losing hope.")
 				dialogue_count += 1
-			elif dialogue_count == 17:
-				start_dialogue("You're the only one who can turn this around.")
-	
+			elif dialogue_count == 16:
+				start_dialogue("You're the only one who can turn this around..")
+				
+				
 				await wait_for_typing_done()
 				await get_tree().create_timer(3.0).timeout
 				get_tree().change_scene_to_file("res://cutscene/cutscene_2_vid.tscn")

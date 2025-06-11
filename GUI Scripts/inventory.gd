@@ -4,8 +4,6 @@ signal dropOut
 
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var ArmorSlot = $"Inventory GUI/Equipment"
-@onready var WeaponSlot1 = $"Inventory GUI/Equipment_2"
-@onready var WeaponSlot2 = $"Inventory GUI/Equipment_3"
 @onready var trashcan = $"Inventory GUI/TrashCan"
 @onready var stats_window: Control = $"Inventory GUI/Stats Window"
 @onready var card_symbol: HBoxContainer = $"../CardSymbol"
@@ -111,8 +109,6 @@ func _ready():
 	inventoryDict = {
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
-		"Equipment1": WeaponSlot1,
-		"Equipment2": WeaponSlot2
 	}
 	
 	await get_tree().process_frame
@@ -284,12 +280,13 @@ func _is_item_allowed(item, slotNode):
 
 
 func _on_button_pressed() -> void:
-	$"../../audio/Enter Sound Effect".play()
+	$"../audio/Enter Sound Effect".play()
+	await $"../audio/Enter Sound Effect".finished
 	$".".visible = false
 	stats_window.visible = false
 
 func _on_button_mouse_entered() -> void:
-	$"../../audio/Hovering Sound Effect".play()
+	$"../audio/Hovering Sound Effect".play()
 
 
 func _on_inventory_gui_mouse_entered() -> void:

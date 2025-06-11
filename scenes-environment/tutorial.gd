@@ -29,10 +29,3 @@ func _on_bag_icon_button_pressed() -> void:
 	$"audio/Enter Sound Effect".play()
 	await $"audio/Enter Sound Effect".finished
 	$CanvasLayer/Inventory.visible = true
-
-
-func _on_start_game_detector_body_entered(body: Node2D) -> void:
-	if body is Player:
-		SceneTransitionAnimation.play("fade_in")
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://GUI Scenes/ShopIsland.tscn")
