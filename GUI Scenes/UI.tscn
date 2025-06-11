@@ -142,4 +142,3 @@ speed_scale = 4.0
 [connection signal="pressed" from="Bag Icon/Bag Icon Button" to="." method="_on_bag_icon_button_pressed"]
 
 [editable path="Inventory"]
-[editable path="Inventory/Inventory GUI/Stats Window"]
