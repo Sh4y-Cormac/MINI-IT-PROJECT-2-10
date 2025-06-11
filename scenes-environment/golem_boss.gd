@@ -25,6 +25,7 @@ var player_in_area = false
 var droppedGold = 500
 
 func _process(delta: float) -> void:
+	
 	Global.golemDamageAmount = damage_to_deal
 	Global.golemDamageZone = $GolemDealDamageArea
 	player = Global.playerBody
@@ -92,7 +93,7 @@ func _on_golem_hitbox_area_entered(area: Area2D) -> void:
 	var damage = Global.playerDamageAmount
 	if area == Global.playerDamageZone:
 		take_damage(damage)
-		await get_tree().create_timer(0.4).timeout
+		
 		
 func take_damage(damage):
 	health -= damage
@@ -106,5 +107,5 @@ func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
 	if !dead:
 		if area == Global.playerHitbox:
 			is_dealing_damage = true
-			await get_tree().create_timer(0.8).timeout
+			await get_tree().create_timer(1).timeout
 			is_dealing_damage = false
