@@ -7,6 +7,7 @@ var centre : Vector2
 
 
 func _ready():
+	Ui.hide()
 	$AnimationPlayer.play("Fade In")
 	centre = Vector2(get_viewport_rect().size.x/100, get_viewport_rect().size.y/100)
 

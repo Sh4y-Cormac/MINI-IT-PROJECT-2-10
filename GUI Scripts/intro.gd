@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Ui.hide()
 	$AnimationPlayer.play("Fade in")
 	await get_tree().create_timer(4).timeout
 	$AnimationPlayer.play("Typewriter")
