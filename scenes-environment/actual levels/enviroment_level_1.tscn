@@ -785,7 +785,7 @@ position = Vector2(9310, -711)
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("13_ymgvw")]
 
 [node name="portal" parent="." instance=ExtResource("14_hgogn")]
-position = Vector2(1362, -9)
+position = Vector2(10925, -907)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("15_3rusg")
