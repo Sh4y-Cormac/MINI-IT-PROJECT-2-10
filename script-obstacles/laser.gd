@@ -5,7 +5,7 @@ extends Node2D
 @onready var laser_sfx = $laser_sfx
 @onready var lasertimer = $laserkill/Timer
 
-var spike_damage = 10
+var laser_damage = 10
 	
 func _ready():
 	hide_laser()
@@ -42,12 +42,12 @@ func check_for_hit():
 		var hit = ray.get_collider()
 		if hit and hit.name == "player":
 			if hit.has_method("take_damage"):
-				hit.take_damage(spike_damage, 0)
+				hit.take_damage(laser_damage)
 			
 func _on_laserkill_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "player":
 		if body.has_method("take_damage"):
-			body.take_damage(spike_damage, 0)
+			body.take_damage(laser_damage)
 		
 
 	
