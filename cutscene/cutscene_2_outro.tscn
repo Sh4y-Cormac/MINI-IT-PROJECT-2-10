@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3ijymim5anqj"]
 
-[ext_resource type="VideoStream" path="res://cutscene/cutscene_outro.ogv" id="1_n7gpo"]
+[ext_resource type="VideoStream" uid="uid://bpcexffr1kde1" path="res://cutscene/cutscene_outro.ogv" id="1_n7gpo"]
 
 [node name="cutscene2_outro" type="Control"]
 layout_mode = 3
