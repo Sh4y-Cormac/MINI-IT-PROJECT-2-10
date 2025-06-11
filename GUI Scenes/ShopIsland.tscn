@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cixwt7eo83l8t" path="res://GUI Scenes/door.tscn" id="4_13hmj"]
 [ext_resource type="Texture2D" uid="uid://dndegqxdlnqdc" path="res://Assets/Sprites/TX Village Props.png" id="4_pttj7"]
 [ext_resource type="Texture2D" uid="uid://c56eys5f5ph5p" path="res://Assets/Images/Dogs.png" id="7_v43vc"]
-[ext_resource type="PackedScene" uid="uid://bg7jesqspvh4h" path="res://GUI Scenes/UI.tscn" id="13_tuql4"]
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="13_tuql4"]
 [ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]

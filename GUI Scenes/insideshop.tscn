@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://hl6vqijph7i3" path="res://GUI Scenes/area_2d.gd" id="5_6ttlq"]
 [ext_resource type="Texture2D" uid="uid://jrpb4dfo067m" path="res://Assets/Images/Orc Dealer.png" id="5_gu718"]
 [ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="13_6qaus"]
-[ext_resource type="PackedScene" uid="uid://bg7jesqspvh4h" path="res://GUI Scenes/UI.tscn" id="13_t126v"]
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="13_t126v"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="14_6qaus"]
 [ext_resource type="AudioStream" uid="uid://c5tljf2w2c2uo" path="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3" id="15_aphbl"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]

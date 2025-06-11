@@ -1,6 +1,25 @@
 extends CanvasLayer
 
 
+enum MODE {
+	ON,
+	OFF
+}
+
+var mode : MODE = MODE.OFF:
+	set(value):
+		mode = value
+		
+		if value == MODE.OFF:
+			$".".hide()
+			
+		elif value == MODE.ON:
+			$".".show()
+			
+func _ready():
+	$".".hide()
+
+
 func _on_bag_icon_button_mouse_entered() -> void:
 	$"audio/Hovering Sound Effect".play()
 	$AnimationPlayer.play("bag_animation")

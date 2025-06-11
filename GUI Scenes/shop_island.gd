@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Ui.MODE.ON
 	$animation/DogAnimation.play("Dog_Sleep")
 
 

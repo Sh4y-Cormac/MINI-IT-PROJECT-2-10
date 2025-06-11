@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	Ui.MODE.ON
 	$Animations/OrgAnimation.play("org_animation")
 
 func _on_bag_icon_button_mouse_entered() -> void:
