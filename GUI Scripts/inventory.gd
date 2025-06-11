@@ -15,20 +15,54 @@ func update_card_ui():
 	var cards = get_active_cards()
 	var container = $"../CardSymbol"
 
-	
 	for child in container.get_children():
 		child.queue_free()
 		
-	for card in cards:
+	var card_counts := {}
+	for slot in bagcontainer.get_children():
+		var item = slot.itemResource
+		if item and item.type == "Card":
+			var key = item.resource_path 
+			if card_counts.has(key):
+				card_counts[key]["count"] += 1
+			else:
+				card_counts[key] = {"item": item, "count": 1}
+
+	for entry in card_counts.values():
+		var card = entry["item"]
+		var count = entry["count"]
+		
 		if card.card_icon:
 			var icon = TextureRect.new()
 			icon.texture = card.card_icon
 			icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
 			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			icon.custom_minimum_size = Vector2(32, 32)  
+			icon.custom_minimum_size = Vector2(32, 32)
 			icon.tooltip_text = card.name
 			container.add_child(icon)
-		
+
+			if count > 1:
+				var label = Label.new()
+				label.text = "x" + str(count)
+				label.add_theme_color_override("font_color", Color.WHITE)
+				label.add_theme_font_size_override("font_size", 12)
+				label.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+				label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+				label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+				icon.add_child(label)
+
+func get_active_card_counts() -> Dictionary:
+	var counts := {}
+	for slot in bagcontainer.get_children():
+		var item = slot.itemResource
+		if item and item.type == "Card":
+			var id = item.resource_path  
+			if counts.has(id):
+				counts[id]["count"] += 1
+			else:
+				counts[id] = {"item": item, "count": 1}
+	return counts
+	
 func get_base_stats() -> Dictionary:
 	return{
 		"hp": stats_window.hp,
@@ -62,10 +96,10 @@ var inventoryDict = {}
 var items = [
 	"res://Resources/Items/Short_sword.tres",
 	"res://Resources/Items/Long_sword.tres",
-	"res://Resources/Items/Sharpness.tres",
+	#"res://Resources/Items/Sharpness.tres",
 	"res://Resources/Items/Atk_up.tres",
 	#"res://Resources/Items/Hp up.tres",   
-	"res://Resources/Items/Armor Plate.tres",
+	#"res://Resources/Items/Armor Plate.tres",
 	#"res://Resources/Items/Hp potions.tres",
 	#"res://Resources/Items/Regeneration.tres",
 	#"res://Resources/Items/LifeSteal.tres",

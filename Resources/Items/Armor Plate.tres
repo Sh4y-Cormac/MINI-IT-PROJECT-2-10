@@ -13,6 +13,7 @@ description = "+10 % hp "
 price = 0
 type = "Card"
 card_icon = ExtResource("1_txoji")
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

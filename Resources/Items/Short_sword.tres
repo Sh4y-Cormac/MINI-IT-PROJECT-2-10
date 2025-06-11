@@ -11,6 +11,7 @@ icon = ExtResource("1_eh0qa")
 description = ""
 price = 0
 type = "Weapon"
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

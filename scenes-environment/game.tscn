@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=58 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -26,13 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="17_3v0pm"]
 [ext_resource type="Texture2D" uid="uid://c2hbocg766yk6" path="res://Assets/Images/h1.png" id="17_ci8an"]
-[ext_resource type="Texture2D" uid="uid://dyis0ubansx3c" path="res://Assets/Card Sprite/mini armor plate.png" id="24_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
+[ext_resource type="PackedScene" uid="uid://dhxdwpdm6ofbl" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 [ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
@@ -522,7 +521,6 @@ grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/CardSymbol"]
 layout_mode = 2
-texture = ExtResource("24_vbdjg")
 
 [node name="audio" type="Node" parent="."]
 

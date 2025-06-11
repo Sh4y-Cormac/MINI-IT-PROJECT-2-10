@@ -13,6 +13,7 @@ description = "Heals 5 hp every 3 seconds"
 price = 0
 type = "Card"
 card_icon = ExtResource("1_ar58j")
+drop_chance = 1.0
 is_regen_card = true
 regen_amount = 5.0
 regen_interval = 3.0
