@@ -17,7 +17,7 @@ var mode : MODE = MODE.OFF:
 			$".".show()
 			
 func _ready():
-	$".".hide()
+	pass
 
 
 func _on_bag_icon_button_mouse_entered() -> void:
