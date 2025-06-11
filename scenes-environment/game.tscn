@@ -243,6 +243,32 @@ _data = {
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ysgvo")
 
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bat2" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(1436, -507)
+
+[node name="Bat3" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(1754, -555)
+
+[node name="Bat4" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(2318, -610)
+
+[node name="Bat5" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(3165, -525)
+
+[node name="Bat6" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(4004, -498)
+
+[node name="Bat7" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(1684, 77)
+
+[node name="Bat8" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(2406, 30)
+
+[node name="Bat" parent="Enemies" instance=ExtResource("32_4at0j")]
+position = Vector2(1030, -539)
+
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("2_uokai")]
 visible = false
 top_level = true
@@ -417,9 +443,6 @@ position = Vector2(4875, 116)
 
 [node name="golem_boss" parent="." instance=ExtResource("31_ftps5")]
 position = Vector2(4519, 8)
-
-[node name="Bat" parent="." instance=ExtResource("32_4at0j")]
-position = Vector2(392, 0)
 
 [node name="portal" parent="." instance=ExtResource("31_4at0j")]
 position = Vector2(5392, 63)

@@ -33,6 +33,7 @@ func _process(delta):
 	player = Global.playerBody
 	Global.batDamageAmount = damage_to_deal
 	Global.batDamageZone = $BatDealDamageArea
+	
 	move(delta)
 	handle_animation()
 	move_and_slide()
@@ -48,6 +49,8 @@ func move(delta):
 			var knockback_dir = position.direction_to(player.position) * knockback_force
 			velocity.x = knockback_dir.x
 		is_roaming = true
+	elif dead:
+		velocity.x = 0
 	
 
 func _on_direction_timer_timeout() -> void:
