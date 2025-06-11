@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=28 format=3 uid="uid://bkxacktrcdo7t"]
 
 [ext_resource type="Script" uid="uid://b4khxb37t87ry" path="res://GUI Scenes/insideshop.gd" id="1_pq4d1"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://p8a145kemlr7" path="res://GUI Scenes/shop_gui.tscn" id="13_6qaus"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="13_t126v"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="14_6qaus"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_pxy7y"]
 [ext_resource type="AudioStream" uid="uid://c5tljf2w2c2uo" path="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3" id="15_aphbl"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]
 [ext_resource type="Texture2D" uid="uid://bhidfwjqjyv3e" path="res://Assets/Images/Arcade Machine.png" id="18_aphbl"]
@@ -312,7 +313,7 @@ collision_mask = 7
 position = Vector2(0, -63)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 
 [node name="Shop GUI" parent="CanvasLayer" instance=ExtResource("13_6qaus")]
 anchors_preset = 8
@@ -372,6 +373,11 @@ max_distance = 100000.0
 bus = &"SFX"
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("13_t126v")]
+layer = 2
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="PauseMeny" parent="CanvasLayer3" instance=ExtResource("14_pxy7y")]
 
 [connection signal="mouse_entered" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_mouse_entered"]
 [connection signal="pressed" from="ArcadeMachine/ArcadeMachine" to="." method="_on_arcade_machine_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=56 format=3 uid="uid://dbabbvhfx8i07"]
 
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
 [ext_resource type="Texture2D" uid="uid://dei6ulpbuxppq" path="res://winter sprite/winter_tilesets2.png" id="2_56k3b"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmb5ecq85xc5" path="res://scenes-obstacles/spikes/spikes.tscn" id="14_sny1q"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="15_56k3b"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="15_h7yxt"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="15_j8371"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="20_mpnc5"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="21_j8371"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="22_ao63x"]
@@ -1074,6 +1075,8 @@ position = Vector2(9365, -1353)
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("15_56k3b")]
 
+[node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("15_j8371")]
+
 [node name="bridge_path_T" parent="." instance=ExtResource("15_h7yxt")]
 position = Vector2(12639, -1442)
 
@@ -1105,6 +1108,7 @@ max_distance = 100000.0
 bus = &"SFX"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("20_mpnc5")]
+layer = 2
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]

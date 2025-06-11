@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=47 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="11_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_3rusg"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="20_bq5ki"]
@@ -314,6 +315,21 @@ _data = {
 &"move up down": SubResource("Animation_4sf3p")
 }
 
+[sub_resource type="Animation" id="Animation_3rusg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3676, 6)]
+}
+
 [sub_resource type="Animation" id="Animation_k07r5"]
 resource_name = "moving"
 length = 1.5
@@ -329,21 +345,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(3676, 6), Vector2(3678, -238)]
-}
-
-[sub_resource type="Animation" id="Animation_3rusg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3676, 6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e76em"]
@@ -748,6 +749,8 @@ position = Vector2(9307, -694)
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("13_ymgvw")]
 
+[node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("14_3rusg")]
+
 [node name="portal" parent="." instance=ExtResource("14_hgogn")]
 position = Vector2(11666, -907)
 
@@ -776,3 +779,4 @@ max_distance = 100000.0
 bus = &"SFX"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("18_k07r5")]
+layer = 2
