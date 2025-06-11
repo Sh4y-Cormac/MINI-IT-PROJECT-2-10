@@ -100,7 +100,6 @@ func take_damage(damage):
 	if health <= health_min:
 		health = health_min
 		dead = true
-	print(str(self), "current health is: ", health)
 
 func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
 	var animated_sprite = $AnimatedSprite2D

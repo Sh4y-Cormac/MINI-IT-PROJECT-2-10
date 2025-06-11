@@ -52,7 +52,7 @@ func open_chest():
 		Global.playerGold += 100
 		can_give_gold = false
 	elif !can_give_gold:
-		print("gold has been given")
+		pass
 
 	is_chest_open = true
 	animated_sprite_2d.play("open")
