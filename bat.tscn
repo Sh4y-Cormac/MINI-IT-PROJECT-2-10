@@ -1,11 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://ix1a2kgp0dww"]
+[gd_scene load_steps=38 format=3 uid="uid://ix1a2kgp0dww"]
 
 [ext_resource type="Texture2D" uid="uid://drl5scx61nmiy" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Bat/Bat_Attack.png" id="1_3tecl"]
 [ext_resource type="Script" uid="uid://clyqhvu0phd2s" path="res://bat.gd" id="1_jp0fn"]
 [ext_resource type="Texture2D" uid="uid://cbx6c12wk7nyi" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Bat/Bat_Death.png" id="2_jp0fn"]
+[ext_resource type="PackedScene" uid="uid://dos0au4c7fyjj" path="res://scenes-player-movement/health_bar.tscn" id="2_ulak1"]
 [ext_resource type="Texture2D" uid="uid://bubutg0rf3otb" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Bat/Bat_Fly.png" id="3_ulak1"]
 [ext_resource type="Texture2D" uid="uid://c03m5evi173j5" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Bat/Bat_Hit.png" id="4_0pjmi"]
-[ext_resource type="Texture2D" uid="uid://dqgvxhuhpyt7m" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Bat/Bat_Attack_FX.png" id="5_5s65s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1e43q"]
 atlas = ExtResource("1_3tecl")
@@ -219,56 +219,29 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tkp0"]
-atlas = ExtResource("5_5s65s")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytmf4"]
-atlas = ExtResource("5_5s65s")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5lbf"]
-atlas = ExtResource("5_5s65s")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r60bd"]
-atlas = ExtResource("5_5s65s")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c1403"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8tkp0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytmf4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5lbf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r60bd")
-}],
-"loop": false,
-"name": &"attack_effects",
-"speed": 10.0
-}]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_jp0fn"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tecl"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ulak1"]
+radius = 9.0
+
 [node name="Bat" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jp0fn")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_ulak1")]
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 17.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1sitj")
-animation = &"hurt"
-
-[node name="AnimatedSprite2DEffects" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_c1403")
-animation = &"attack_effects"
-frame_progress = 0.803866
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jp0fn")
@@ -276,4 +249,16 @@ shape = SubResource("CircleShape2D_jp0fn")
 [node name="DirectionTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="BatHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatHitbox"]
+shape = SubResource("CircleShape2D_3tecl")
+
+[node name="BatDealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatDealDamageArea"]
+shape = SubResource("CircleShape2D_ulak1")
+
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
+[connection signal="area_entered" from="BatHitbox" to="." method="_on_bat_hitbox_area_entered"]
+[connection signal="area_entered" from="BatDealDamageArea" to="." method="_on_bat_deal_damage_area_area_entered"]

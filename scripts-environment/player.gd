@@ -170,24 +170,24 @@ func select_skin(skin): #selects the skin based on the input of the customize bu
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
 	var damage: int
-	var strikeFrame: float ##the exact frame of the strike
 	if hitbox_areas:
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is RobotEnemy:
 			damage = Global.robotDamageAmount
 		elif hitbox.get_parent() is GolemBoss:
 			damage = Global.golemDamageAmount
-			strikeFrame = float(0.4)
+		elif hitbox.get_parent() is BatEnemy:
+			damage = Global.batDamageAmount
+			
 			
 	if can_take_damage:
-		take_damage(damage, strikeFrame)
+		take_damage(damage)
 
-func take_damage(damage, strikeFrame):
+func take_damage(damage):
 	if damage != 0 and not dead and can_take_damage:
 		if health > 0:
 			health -= damage
 			Global.playerHealth = health 
-			print("player health :", health)
 			if health <= 0:
 				health = 0
 				dead = true
@@ -196,7 +196,6 @@ func take_damage(damage, strikeFrame):
 
 ## Runs code when the player dies
 func handle_death_animation():
-	print("player has died!")
 	$CollisionShape2D.position.y = 5
 	velocity.x = 0
 	animated_sprite.play(deathAnim)

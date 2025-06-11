@@ -32,5 +32,8 @@ var robotDamageAmount: int
 var golemDamageZone: Area2D
 var golemDamageAmount: int
 
+var batDamageZone: Area2D
+var batDamageAmount: int
+
 # Player Health
 var playerHealth := 100
