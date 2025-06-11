@@ -1,7 +1,11 @@
 extends Node2D
 
+@export var inventory: Control
+@export var chest_items: Array[Dictionary] = []
 @onready var instruction: RichTextLabel = $intruction
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
 
 var player = Global.playerBody
 var is_chest_open: bool 
@@ -13,7 +17,7 @@ func _ready() -> void:
 	instruction.visible = false
 	is_chest_open = false
 	hovering = false
-	
+	#inventory = get_tree().get_root().get_node($"../CanvasLayer/Inventory")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -50,6 +54,19 @@ func open_chest():
 	elif !can_give_gold:
 		print("gold has been given")
 
+	is_chest_open = true
+	animated_sprite_2d.play("open")
+	instruction.visible = false
+	
+	
+	if inventory:
+		for item in chest_items:
+			var roll = randf()
+			if roll <= item.drop_chance:
+				inventory.add_item(item)
+				print("Added item:", item.name, "(rolled", roll, ")")
+			else:
+				print("Did NOT add item:", item.name, "(rolled", roll, ")")
 	##NOTE FOR AIMAN: This is where you will add code to put the item into inventory.
 	pass 
 

@@ -11,6 +11,7 @@ icon = ExtResource("1_0qot2")
 description = "Increase speed by x1.5"
 price = 10
 type = ""
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

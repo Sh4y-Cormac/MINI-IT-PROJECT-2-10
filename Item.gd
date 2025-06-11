@@ -9,6 +9,9 @@ var gold = 10000
 @export_multiline var description : String
 @export var price : int
 @export_enum("Armor", "Weapon", "Card") var type: String
+@export var card_icon: Texture
+
+@export_range(0.0, 1.0) var drop_chance: float = 1.0
 
 @export var is_regen_card: bool = false
 @export var regen_amount: float = 0.0

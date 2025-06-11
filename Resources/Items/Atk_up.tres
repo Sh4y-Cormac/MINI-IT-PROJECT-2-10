@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cmaqfaggp7i6v"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cmaqfaggp7i6v"]
 
 [ext_resource type="Texture2D" uid="uid://et22h0f3ye08" path="res://Assets/Card Sprite/Atk up.png" id="1_a8x2v"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_eoga4"]
+[ext_resource type="Texture2D" uid="uid://ba71wpb0r01xu" path="res://Assets/Card Sprite/mini atk up.png" id="1_nf8gk"]
 
 [resource]
 script = ExtResource("1_eoga4")
@@ -9,10 +10,17 @@ name = "Atk Up"
 title = "Atk Up"
 icon = ExtResource("1_a8x2v")
 description = "+5 atk boost"
-price = ""
+price = 0
 type = "Card"
+card_icon = ExtResource("1_nf8gk")
+drop_chance = 1.0
+is_regen_card = false
+regen_amount = 0.0
+regen_interval = 1.0
 inventarSlot = "BagSlot"
 InventarPosition = -1
+is_lifesteal_card = false
+lifesteal_percent = 0.0
 stat_name = "atk"
 effect_type = "flat"
 value = 5.0

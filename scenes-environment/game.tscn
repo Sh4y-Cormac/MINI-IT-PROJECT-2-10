@@ -27,8 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
-[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
+[ext_resource type="PackedScene" uid="uid://dhxdwpdm6ofbl" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
+[ext_resource type="PackedScene" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
 texture = ExtResource("2_kb0tt")
@@ -299,9 +299,10 @@ centered = false
 offset = Vector2(0, -400)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-116, -95)
 texture = ExtResource("6_p57ef")
 centered = false
-offset = Vector2(1152, -400)
+offset = Vector2(1268, -305)
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("7_vtaks")
@@ -374,6 +375,85 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("10_kvpfn")
 centered = false
 offset = Vector2(1152, 248)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bhx41")
+}
+speed_scale = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("14_18nrj")
+theme_override_font_sizes/font_size = 25
+script = SubResource("GDScript_ysgvo")
+
+[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("16_ca42v")]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = -3.0
+
+[node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(-55, 97)
+scale = Vector2(1.75, 1.71875)
+texture = ExtResource("15_18nrj")
+offset = Vector2(47.5035, -1.63266)
+hframes = 7
+vframes = 2
+
+[node name="Bag Icon Button" type="Button" parent="CanvasLayer/Bag Icon"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.5035
+offset_top = -9.63266
+offset_right = 39.5035
+offset_bottom = -9.63266
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ci8an")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ubas8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kb0tt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0o6od")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_3v0pm")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(84, 27.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("17_ci8an")
+
+[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = -11.5
+offset_right = 1.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardSymbol" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CardSymbol"]
+layout_mode = 2
 
 [node name="audio" type="Node" parent="."]
 

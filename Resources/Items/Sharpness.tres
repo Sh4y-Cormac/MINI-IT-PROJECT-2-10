@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bqlpxbfk2xlnu"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bqlpxbfk2xlnu"]
 
+[ext_resource type="Texture2D" uid="uid://le5cfbeh0jvh" path="res://Assets/Card Sprite/mini sharpness.png" id="1_okhtp"]
 [ext_resource type="Texture2D" uid="uid://bolarxepsob5t" path="res://Assets/Card Sprite/sharpness.png" id="1_p8igj"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="1_sk1ij"]
 
@@ -9,8 +10,10 @@ name = "Sharpness"
 title = "Sharpness"
 icon = ExtResource("1_p8igj")
 description = "+10% attack boost"
-price = "100"
+price = 0
 type = "Card"
+card_icon = ExtResource("1_okhtp")
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

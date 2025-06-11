@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://mo3hvmwkdtsc"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://yvfr0qu7hq15"]
 
 [ext_resource type="Texture2D" uid="uid://ecxivkxy4rny" path="res://Assets/Images/Short_Sword.png" id="1_eh0qa"]
 [ext_resource type="Script" uid="uid://b05mrq30fldgf" path="res://Item.gd" id="2_37dta"]
@@ -10,7 +10,8 @@ title = "Offense"
 icon = ExtResource("1_eh0qa")
 description = ""
 price = 0
-type = ""
+type = "Weapon"
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0
