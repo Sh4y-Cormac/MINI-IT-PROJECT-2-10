@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=56 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
@@ -16,11 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bi2xjv8sqe58d" path="res://scenes-obstacles/space_block.tscn" id="15_t7e7v"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="16_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_qeno3"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="17_3tb6i"]
-[ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="17_kwkbn"]
-[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="18_kwkbn"]
-[ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="19_y3w4j"]
-[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="20_dlvk7"]
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="21_3tb6i"]
+[ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="22_kwkbn"]
+[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="23_uxmvn"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="24_r6axw"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="25_xfo35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -609,31 +609,6 @@ _data = {
 &"updown1": SubResource("Animation_4ya5j")
 }
 
-[sub_resource type="GDScript" id="GDScript_r6axw"]
-resource_name = "gold"
-script/source = "extends Label
-
-@onready var label: Label = $\".\"
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var goldAmount = Global.playerGold
-	var text = \"Gold : \" + str(goldAmount)
-	self.text = text
-	print(Global.playerGold)
-	
-	
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xfo35"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obqkt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7e7v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1y4h1"]
-
 [node name="environment_space" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -946,56 +921,31 @@ position = Vector2(14620, -1840)
 [node name="bridge_path_T" parent="." instance=ExtResource("16_3ae8p")]
 position = Vector2(18673, -2114)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("17_kwkbn")
+[node name="portal" parent="." instance=ExtResource("22_kwkbn")]
+position = Vector2(21081, -2512)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 11.0
-offset_top = 48.0
-offset_right = 192.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
-theme_override_fonts/font = ExtResource("17_3tb6i")
-theme_override_font_sizes/font_size = 25
-script = SubResource("GDScript_r6axw")
+[node name="audio" type="Node" parent="."]
 
-[node name="PauseMeny" parent="CanvasLayer" instance=ExtResource("18_kwkbn")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+process_mode = 3
+stream = ExtResource("23_uxmvn")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
 
-[node name="Bag Icon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(-55, 97)
-scale = Vector2(1.75, 1.71875)
-texture = ExtResource("19_y3w4j")
-offset = Vector2(47.5035, -1.63266)
-hframes = 7
-vframes = 2
-
-[node name="Bag Icon Button" type="Button" parent="CanvasLayer/Bag Icon"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 39.5035
-offset_top = -9.63266
-offset_right = 39.5035
-offset_bottom = -9.63266
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xfo35")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_obqkt")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_t7e7v")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1y4h1")
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("20_dlvk7")]
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
 visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("24_r6axw")
+volume_db = 5.0
+max_distance = 10000.0
+bus = &"SFX"
 
-[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 0.5
-offset_top = -11.5
-offset_right = 1.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-74, 218)
+stream = ExtResource("25_xfo35")
+max_distance = 100000.0
+bus = &"SFX"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("21_3tb6i")]
