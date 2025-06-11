@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=65 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="19_y3w4j"]
 [ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="20_dlvk7"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="22_kwkbn"]
+[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="23_uxmvn"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="24_r6axw"]
+[ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="25_xfo35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -1003,3 +1006,27 @@ grow_vertical = 2
 
 [node name="portal" parent="." instance=ExtResource("22_kwkbn")]
 position = Vector2(21081, -2512)
+
+[node name="audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
+process_mode = 3
+stream = ExtResource("23_uxmvn")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("24_r6axw")
+volume_db = 5.0
+max_distance = 10000.0
+bus = &"SFX"
+
+[node name="Hovering Sound Effect" type="AudioStreamPlayer2D" parent="audio"]
+visible = false
+position = Vector2(-74, 218)
+stream = ExtResource("25_xfo35")
+max_distance = 100000.0
+bus = &"SFX"
