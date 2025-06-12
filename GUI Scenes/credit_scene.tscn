@@ -69,7 +69,7 @@ anchor_bottom = 0.5
 offset_left = -853.0
 offset_top = 376.0
 offset_right = 854.0
-offset_bottom = 1844.0
+offset_bottom = 1885.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -238,6 +238,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_odel2")
 theme_override_font_sizes/font_size = 30
 text = "Aisyah - Created each character (Handrawn)"
+horizontal_alignment = 1
+
+[node name="SpecialThanks6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_odel2")
+theme_override_font_sizes/font_size = 30
+text = "Umar - create start menu music"
 horizontal_alignment = 1
 
 [node name="SpecialThanks3" type="Label" parent="VBoxContainer"]

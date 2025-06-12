@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_3rusg"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
+[ext_resource type="AudioStream" uid="uid://cjhjymohbci5p" path="res://Assets/Audio & Sound Effects/City BackGround Music.mp3" id="16_e76em"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="20_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="20_e76em"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
@@ -768,7 +768,7 @@ position = Vector2(11666, -907)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("20_bq5ki")
+stream = ExtResource("16_e76em")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"

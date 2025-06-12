@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes-environment/platform.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dufa73x151hf2" path="res://Assets/Grassland Sprites/underground.png" id="4_kmpqe"]
 [ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://dtuuvj81xanno" path="res://Assets/Grassland Sprites/water.png" id="5_ujqrk"]
 [ext_resource type="Texture2D" uid="uid://d3n8gipsaoqse" path="res://Assets/Sprites/background.png" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bs3g7n82y3k7p" path="res://Assets/Grassland Sprites/herbs.png" id="6_uokai"]
@@ -22,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://cgsbo0pinsl4t" path="res://scenes-environment/slime.tscn" id="16_rysoc"]
+[ext_resource type="AudioStream" uid="uid://ds2wwtj25t7pm" path="res://Assets/Audio & Sound Effects/Grassland BackGround Music.mp3" id="21_uokai"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
@@ -407,7 +407,7 @@ offset = Vector2(1152, 248)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("5_iywne")
+stream = ExtResource("21_uokai")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"

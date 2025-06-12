@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c36apy1ruoftq"
+path="res://.godot/imported/Space Background Music.mp3-234505e511bf493c8047add6a591449c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio & Sound Effects/Space Background Music.mp3"
+dest_files=["res://.godot/imported/Space Background Music.mp3-234505e511bf493c8047add6a591449c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
