@@ -24,6 +24,7 @@ var levels: Array = [
 	"res://GUI Scenes/ShopIsland.tscn",
 	"res://scenes-environment/actual levels/environment_space.tscn",
 ]
+var difficulty: float
 
 ## Entity Values
 var robotDamageZone: Area2D
