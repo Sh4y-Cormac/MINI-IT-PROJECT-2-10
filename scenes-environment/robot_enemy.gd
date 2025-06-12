@@ -114,5 +114,5 @@ func take_damage(damage):
 	taking_damage = true
 	if health <0:
 		health = 0
-		dead = true
+		dead = true	
 	print(str(self), "current health is ", health)
