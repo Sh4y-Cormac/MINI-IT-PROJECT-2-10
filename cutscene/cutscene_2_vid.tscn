@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmv4btr16i8uu"]
+[gd_scene load_steps=3 format=3 uid="uid://bmv4btr16i8uu"]
 
-[ext_resource type="VideoStream" path="res://cutscene/scene_edit.ogv" id="1_6bujh"]
+[ext_resource type="VideoStream" uid="uid://brroorxwruqlk" path="res://cutscene/scene_edit.ogv" id="1_6bujh"]
+[ext_resource type="Script" uid="uid://cmd0d36v53ceo" path="res://cutscene/cutscene_2_vid.gd" id="1_hatvr"]
 
 [node name="cutscene2_vid" type="Node2D"]
+script = ExtResource("1_hatvr")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_left = -643.0

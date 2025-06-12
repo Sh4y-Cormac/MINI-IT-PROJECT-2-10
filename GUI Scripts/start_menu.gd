@@ -52,6 +52,12 @@ func _on_start_button_pressed() -> void:
 	Global.playerHealth = 100
 	Global.level = 0
 	Global.difficulty = 1
+	
+	var news_intro_scene = preload("res://cutscene/news_intro.tscn").instantiate()
+	get_tree().current_scene.add_child(news_intro_scene)
+	await news_intro_scene.finished
+	news_intro_scene.queue_free()
+
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:
