@@ -113,8 +113,3 @@ func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
 			is_dealing_damage = true
 			await get_tree().create_timer(1).timeout
 			is_dealing_damage = false
-
-func difficulty_health_increase():
-	var difficulty = Global.difficulty
-	health = health * difficulty
-	health_max = health_max * difficulty

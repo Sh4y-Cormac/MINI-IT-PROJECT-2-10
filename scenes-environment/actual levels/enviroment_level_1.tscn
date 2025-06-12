@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=48 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
 [ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="20_bq5ki"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="20_e76em"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
 
@@ -780,3 +781,10 @@ bus = &"SFX"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("18_k07r5")]
 layer = 2
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bat" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(484, -212)
+
+[node name="Boss" type="Node" parent="."]
