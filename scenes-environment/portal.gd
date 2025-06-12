@@ -36,10 +36,14 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		hovering = false
 
 func teleport():
-	var teleport_location = levels[level]
-	print("teleport location is, ", teleport_location)
-	add_level()
-	get_tree().change_scene_to_file(teleport_location)
+	if level < 8:
+		var teleport_location = levels[level]
+		add_level()
+		get_tree().change_scene_to_file(teleport_location)
+	elif level <= 8:
+		var teleport_location = levels[0]
+		reset_level()
+		get_tree().change_scene_to_file(teleport_location)
 	
 func handle_animation():
 	if hovering:
@@ -49,3 +53,7 @@ func handle_animation():
 
 func add_level():
 	Global.level += 1
+	Global.difficulty += 0.05
+	
+func reset_level():
+	Global.level = 0
