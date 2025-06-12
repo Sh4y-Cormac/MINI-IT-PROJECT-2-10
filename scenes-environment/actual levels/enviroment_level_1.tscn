@@ -22,6 +22,15 @@
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
+script/source = "extends Node2D
+
+
+func _process(delta: float) -> void:
+	if !Global.playerAlive:
+		Global.gameStarted = false
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(\"res://GUI Scenes/gameover.tscn\")
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_c64ec")

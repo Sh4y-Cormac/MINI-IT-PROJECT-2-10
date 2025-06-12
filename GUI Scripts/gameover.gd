@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	Ui.hide()
 	$AnimationPlayer.play("Fade In")
 
 func _on_restart_button_mouse_entered() -> void:
