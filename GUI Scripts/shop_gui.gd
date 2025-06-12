@@ -24,7 +24,8 @@ func _on_buy_pressed() -> void:
 	if selected_item and Global.playerGold >= selected_item.price:
 		Global.playerGold -= selected_item.price
 		update_gold_label()
-		print("Bought:", selected_item.title)
+		InventoryManager.add_item(selected_item.duplicate())
+		
 	else:
 		print("Not enough gold!")
 
