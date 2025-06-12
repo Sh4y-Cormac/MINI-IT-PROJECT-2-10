@@ -70,8 +70,8 @@ func _process(delta):
 				
 				await wait_for_typing_done()
 				await get_tree().create_timer(3.0).timeout
+				Global.next_scene_after_cutscene = "res://scenes-environment/game.tscn"
 				get_tree().change_scene_to_file("res://cutscene/cutscene_2_vid.tscn")
-	
 	
 			else:
 				print("No more dialogue.")
