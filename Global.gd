@@ -38,3 +38,6 @@ var batDamageAmount: int
 
 # Player Health
 var playerHealth := 100
+
+#cutscene intro
+var next_scene_after_cutscene: String = ""
