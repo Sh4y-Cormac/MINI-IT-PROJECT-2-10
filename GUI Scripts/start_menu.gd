@@ -52,9 +52,7 @@ func _on_start_button_pressed() -> void:
 	Global.playerHealth = 100
 	Global.level = 0
 	
-	var news_intro_scene = preload("res://cutscene/news_intro.tscn").instantiate()
-	get_tree().current_scene.get_parent().add_child(news_intro_scene)
-	get_tree().current_scene.queue_free()
+	get_tree().change_scene_to_file("res://cutscene/news_intro.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()

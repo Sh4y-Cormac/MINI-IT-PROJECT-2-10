@@ -5,5 +5,4 @@ extends Control
 func _ready():
 	video_player.play()
 	await video_player.finished
-
 	Functions.load_screen_to_scene(Global.next_scene_after_cutscene)
