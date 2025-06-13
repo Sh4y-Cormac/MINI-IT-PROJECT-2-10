@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_b3t0q")
+origin_path = ""
 name = "Coffee"
 title = "Coffee"
 icon = ExtResource("1_xmx15")

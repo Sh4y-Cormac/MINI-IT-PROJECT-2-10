@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_5teb2")
+origin_path = ""
 name = "Sweet IceCream"
 title = "Sweet IceCream"
 icon = ExtResource("1_vxla3")

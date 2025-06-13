@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_eiwwi")
+origin_path = ""
 name = "Healing Apple"
 title = "Apple"
 icon = ExtResource("1_jnbht")
