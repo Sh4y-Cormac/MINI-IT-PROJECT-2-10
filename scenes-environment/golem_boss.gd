@@ -79,6 +79,9 @@ func handle_animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
+	
+	## NOTE FOR AISYAH, this is where you can put your code for when the boss dies.
+	
 	self.queue_free()
 	
 

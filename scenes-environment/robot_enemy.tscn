@@ -205,8 +205,8 @@ size = Vector2(22, 33)
 size = Vector2(24, 35)
 
 [node name="robotEnemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_02dxi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
