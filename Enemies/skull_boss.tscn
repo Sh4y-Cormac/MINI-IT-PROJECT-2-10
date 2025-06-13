@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://7yprytxykj5t"]
+
+[ext_resource type="Texture2D" uid="uid://cfaqjpej5g8p2" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Idle.png" id="1_vdwuq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjryi"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w042q"]
+atlas = ExtResource("1_vdwuq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtdl5"]
+atlas = ExtResource("1_vdwuq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toa7c"]
+atlas = ExtResource("1_vdwuq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sojy"]
+atlas = ExtResource("1_vdwuq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8soi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w042q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtdl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toa7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sojy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SkullBoss" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_qjryi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o8soi")
+frame = 3
+frame_progress = 0.15295
