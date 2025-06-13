@@ -82,6 +82,9 @@ func animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
+	
+	var cutscene_scene = preload("res://cutscene/cutscene_2_outro.tscn")
+	get_tree().change_scene_to_packed(cutscene_scene)
 	self.queue_free()
 	
 func _on_timer_timeout() -> void:
