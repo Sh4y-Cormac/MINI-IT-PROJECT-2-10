@@ -113,19 +113,15 @@ var items = [
 var onInventory = false
 
 func _ready():
-	
-	InventoryManager.register_inventory(self)
-#	stats_window.visible = true
 	inventoryDict = {
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
 	}
+	InventoryManager.register_inventory(self)
 	
 #	await get_tree().process_frame
 #	apply_regen_cards()
-	
 
-	_refresh_ui()
 
 #	await get_tree().process_frame
 	
@@ -150,7 +146,7 @@ func _ready():
 #		if item and item.is_lifesteal_card:
 #			print("Lifesteal card found:", item.name)
 #			return item.lifesteal_percent
-	return 0.0
+#	return 0.0
 	
 #func update_buffed_stats():
 #	var cards = get_active_cards()

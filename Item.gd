@@ -1,7 +1,8 @@
 extends Resource
 class_name Item
 
-var gold = 10000
+
+@export var origin_path: String = ""
 
 @export var name: String
 @export var title : String
