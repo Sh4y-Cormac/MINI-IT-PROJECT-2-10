@@ -205,13 +205,13 @@ size = Vector2(22, 33)
 size = Vector2(24, 35)
 
 [node name="robotEnemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_02dxi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgt13")
-animation = &"death"
+animation = &"attack"
 
 [node name="AttackAnims" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -246,3 +246,4 @@ offset_bottom = 30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="RobotHitbox" to="." method="_on_robot_hitbox_area_entered"]
+[connection signal="area_entered" from="RobotDealDamageArea" to="." method="_on_robot_deal_damage_area_area_entered"]
