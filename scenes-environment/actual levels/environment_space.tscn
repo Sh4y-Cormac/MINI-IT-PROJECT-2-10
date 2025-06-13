@@ -1,7 +1,7 @@
 [gd_scene load_steps=59 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
-[ext_resource type="Script" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
+[ext_resource type="Script" uid="uid://cgbxpdthesniq" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="4_020gk"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="16_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="16_kwkbn"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_qeno3"]
-[ext_resource type="AudioStream" uid="uid://c36apy1ruoftq" path="res://Assets/Audio & Sound Effects/Space Background Music.mp3" id="20_y3w4j"]
+[ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="20_dlvk7"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="21_3tb6i"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="22_kwkbn"]
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="24_dlvk7"]
@@ -934,7 +934,7 @@ position = Vector2(21081, -2512)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("20_y3w4j")
+stream = ExtResource("20_dlvk7")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
