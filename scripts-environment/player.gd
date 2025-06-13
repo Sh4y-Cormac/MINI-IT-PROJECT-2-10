@@ -2,8 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var walk_speed = 200.0
-@export var run_speed = 400.0
+var playerSpeedScaling = Global.playerSpeedScaling
+var playerDamageScaling = Global.playerDamageScaling
+
+
+var walk_speed : int
+var run_speed : int
+var shortsword_damage : int
+var longsword_damage : int
 @export_range(0,1) var acceleration = 0.2
 @export_range(0,1) var deceleration = 0.2
 
@@ -31,7 +37,7 @@ var attack_type: String
 var current_attack: bool 
 
 var health = Global.playerHealth
-var health_max = 100
+var health_max = Global.playerMaxHealth
 var health_min = 0
 var can_take_damage: bool 
 var dead: bool
@@ -60,7 +66,18 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
 	Global.playerHitbox = $PlayerHitbox
-	 
+	
+	# these values are to increase health, damage and speed of player, called every frame to detect changes.
+	Global.playerSpeed = playerSpeedScaling
+	Global.playerDamage = playerDamageScaling
+	Global.playerMaxHealth = health_max
+	
+	walk_speed = 200.0 + playerSpeedScaling
+	run_speed = 400.0 + playerSpeedScaling
+	
+	shortsword_damage = 10.0 + playerDamageScaling
+	longsword_damage = 25.0 + playerDamageScaling
+	
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta

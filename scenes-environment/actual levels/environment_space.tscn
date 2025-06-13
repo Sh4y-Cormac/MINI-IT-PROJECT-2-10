@@ -1,7 +1,7 @@
 [gd_scene load_steps=59 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
-[ext_resource type="Script" uid="uid://cgbxpdthesniq" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
+[ext_resource type="Script" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="4_020gk"]

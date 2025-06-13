@@ -36,8 +36,13 @@ var golemDamageAmount: int
 var batDamageZone: Area2D
 var batDamageAmount: int
 
-# Player Health
-var playerHealth := 100
+
+var playerHealth : int 
+
+# Player Attributes : to increase the values, just add int values to it in the code. Everything should work fine.
+var playerSpeedScaling : int
+var playerDamageScaling : int
+var playerMaxHealth : int
 
 #cutscene intro
 var next_scene_after_cutscene: String = ""

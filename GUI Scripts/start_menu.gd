@@ -52,6 +52,7 @@ func _on_start_button_pressed() -> void:
 	Global.playerHealth = 100
 	Global.level = 0
 	Global.difficulty = 1
+	Global.playerMaxHealth = 100
 
 	get_tree().change_scene_to_file("res://cutscene/news_intro.tscn")
 
