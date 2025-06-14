@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsilx7i0v6oma"]
+[gd_scene load_steps=12 format=3 uid="uid://dsilx7i0v6oma"]
 
 [ext_resource type="Script" uid="uid://dqcf8j8oow75s" path="res://cutscene/cutscene_1_news.gd" id="1_cs2f7"]
 [ext_resource type="Texture2D" uid="uid://c5sjmdytv3ff5" path="res://cutscene/img/cutscene1_news.png" id="1_te8fy"]
 [ext_resource type="FontFile" uid="uid://cumt7bfqpoxeo" path="res://cutscene/Retro Gaming.ttf" id="2_yxrjt"]
 [ext_resource type="AudioStream" uid="uid://dln0qmfa7n0g" path="res://cutscene/background_news.ogg" id="4_avqd6"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="5_nnutg"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="6_gwfyq"]
 
 [sub_resource type="FontVariation" id="FontVariation_cs2f7"]
 base_font = ExtResource("2_yxrjt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwfyq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrqf8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suaar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70jjx"]
 
 [node name="cutscene_1_news" type="Control"]
 layout_mode = 3
@@ -50,3 +60,35 @@ autowrap_mode = 2
 stream = ExtResource("4_avqd6")
 volume_db = 10.0
 autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 40.0
+offset_right = 178.0
+offset_bottom = 115.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_colors/font_pressed_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_fonts/font = ExtResource("5_nnutg")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gwfyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hrqf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_suaar")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_70jjx")
+text = "SKIP
+"
+
+[node name="Enter Sound Effect" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(-98, 285)
+stream = ExtResource("6_gwfyq")
+volume_db = 5.0
+bus = &"SFX"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
