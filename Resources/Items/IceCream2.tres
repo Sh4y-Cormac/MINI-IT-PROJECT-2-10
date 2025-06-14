@@ -10,7 +10,8 @@ global_function_name = "icecream2"
 name = "Sweet IceCream"
 title = "Sweet IceCream"
 icon = ExtResource("1_vxla3")
-description = "Increase speed by x2 for 20 seconds"
+description = "Increase speed by x2 for 15
+ seconds"
 price = 15
 type = ""
 drop_chance = 1.0
