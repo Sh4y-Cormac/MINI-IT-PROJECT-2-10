@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("1_eoga4")
+origin_path = ""
+global_function_name = ""
 name = "Atk Up"
 title = "Atk Up"
 icon = ExtResource("1_a8x2v")

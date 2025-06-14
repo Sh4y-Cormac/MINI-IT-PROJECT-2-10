@@ -82,4 +82,6 @@ func icecream2():
 	playerSpeedScaling /= 2
 
 func coffee():
-	pass
+	availableJumps += 1
+	await get_tree().create_timer(10.0).timeout  
+	availableJumps -= 1

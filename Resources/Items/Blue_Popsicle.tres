@@ -10,7 +10,8 @@ global_function_name = "blue_popsicle"
 name = "Blue Popsicle"
 title = "Blue Popsicle"
 icon = ExtResource("1_g6wt6")
-description = "Increase damage by x1.5"
+description = "Increase damage by x1.5 for 10 seconds
+"
 price = 10
 type = ""
 drop_chance = 1.0
