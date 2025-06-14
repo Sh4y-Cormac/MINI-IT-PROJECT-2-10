@@ -29,3 +29,7 @@ class_name Item
 @export var stat_name: String = ""       # e.g. "atk", "hp"
 @export_enum("flat", "percent", "passive") var effect_type: String = "flat"
 @export var value: float = 0.0
+
+
+func use():
+	print("test.")
