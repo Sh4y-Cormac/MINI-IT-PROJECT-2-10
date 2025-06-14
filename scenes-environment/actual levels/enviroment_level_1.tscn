@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=51 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_3rusg"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="15_1wad2"]
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="16_6olwm"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
@@ -762,6 +763,27 @@ position = Vector2(9307, -694)
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("13_ymgvw")]
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("14_3rusg")]
+
+[node name="LevelUpAnnouncement" type="Label" parent="PlayerHealthBar"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="PlayerHealthBar" instance=ExtResource("15_1wad2")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
 
 [node name="portal" parent="." instance=ExtResource("14_hgogn")]
 position = Vector2(11666, -907)

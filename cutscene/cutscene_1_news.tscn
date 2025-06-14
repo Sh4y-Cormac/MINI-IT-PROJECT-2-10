@@ -71,12 +71,13 @@ offset_bottom = 115.0
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_colors/font_hover_pressed_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_colors/font_focus_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_colors/font_pressed_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("5_nnutg")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gwfyq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_hrqf8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_suaar")

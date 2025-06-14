@@ -84,6 +84,7 @@ offset_right = 39.5035
 offset_bottom = -9.63266
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_74xek")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_4pnog")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tkh2i")
