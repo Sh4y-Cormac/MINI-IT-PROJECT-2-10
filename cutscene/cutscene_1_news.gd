@@ -102,5 +102,6 @@ func skip_typing():
 	dialogue_label.text = full_text
 	
 func wait_for_typing_done():
+	await get_tree().process_frame
 	while is_typing:
 		await get_tree().process_frame
