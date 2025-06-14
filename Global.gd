@@ -36,6 +36,8 @@ var golemDamageAmount: int
 var batDamageZone: Area2D
 var batDamageAmount: int
 
+var skullDamageZone: Area2D
+var skullDamageAmount: int
 
 var playerHealth : int 
 
@@ -43,6 +45,7 @@ var playerHealth : int
 var playerSpeedScaling : int
 var playerDamageScaling : int
 var playerMaxHealth : int
+var availableJumps: int
 
 #cutscene intro
 var next_scene_after_cutscene: String = ""
