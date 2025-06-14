@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=27 format=3 uid="uid://bkxacktrcdo7t"]
 
 [ext_resource type="Script" uid="uid://b4khxb37t87ry" path="res://GUI Scenes/insideshop.gd" id="1_pq4d1"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_pxy7y"]
 [ext_resource type="AudioStream" uid="uid://c5tljf2w2c2uo" path="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3" id="15_aphbl"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]
+[ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_6qaus"]
 [ext_resource type="Texture2D" uid="uid://bhidfwjqjyv3e" path="res://Assets/Images/Arcade Machine.png" id="18_aphbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qaus"]
@@ -362,6 +363,8 @@ layer = 2
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="PauseMeny" parent="CanvasLayer3" instance=ExtResource("14_pxy7y")]
+
+[node name="player_health_bar" parent="CanvasLayer3" instance=ExtResource("16_6qaus")]
 
 [connection signal="mouse_entered" from="SpaceShooterMinigameButton" to="SpaceShooterMinigameButton" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_mouse_entered"]
