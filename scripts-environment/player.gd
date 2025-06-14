@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
-var playerSpeedScaling = Global.playerSpeedScaling
-var playerDamageScaling = Global.playerDamageScaling
-
-
+var playerSpeedScaling: int
+var playerDamageScaling: int
 var walk_speed : int
 var run_speed : int
 var shortsword_damage : int
 var longsword_damage : int
+
+
 @export_range(0,1) var acceleration = 0.2
 @export_range(0,1) var deceleration = 0.2
 
@@ -37,7 +37,7 @@ var attack_type: String
 var current_attack: bool 
 
 var health = Global.playerHealth
-var health_max = Global.playerMaxHealth
+var health_max : int
 var health_min = 0
 var can_take_damage: bool 
 var dead: bool
@@ -60,17 +60,16 @@ func _ready() -> void:
 	current_attack = false
 	dead = false
 	can_take_damage = true
-	
-	health = Global.playerHealth ##PH
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
 	Global.playerHitbox = $PlayerHitbox
 	
-	# these values are to increase health, damage and speed of player, called every frame to detect changes.
-	Global.playerSpeed = playerSpeedScaling
-	Global.playerDamage = playerDamageScaling
-	Global.playerMaxHealth = health_max
+	var playerSpeedScaling = Global.playerSpeedScaling
+	var playerDamageScaling = Global.playerDamageScaling
+	var playerMaxHealthScaling = Global.playerMaxHealth
+	
+	health_max = 100 + playerMaxHealthScaling
 	
 	walk_speed = 200.0 + playerSpeedScaling
 	run_speed = 400.0 + playerSpeedScaling
@@ -286,9 +285,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func set_damage(attack_type):
 	var current_damage_to_deal: int
 	if attack_type == "shortsword":
-		current_damage_to_deal = 10
+		current_damage_to_deal = shortsword_damage
 	elif attack_type == "longsword":
-		current_damage_to_deal = 25
+		current_damage_to_deal = longsword_damage
 	Global.playerDamageAmount = current_damage_to_deal
 
 #this function's whole purpose is to return the 'index' of the skin so that i know which attack anim to use because the attack anim is different for each skin
