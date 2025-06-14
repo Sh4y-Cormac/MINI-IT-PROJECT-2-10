@@ -1,6 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=63 format=3 uid="uid://dbabbvhfx8i07"]
 
-[ext_resource type="Script" uid="uid://dyooxof6gyass" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
+[ext_resource type="Script" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
 [ext_resource type="Texture2D" uid="uid://dei6ulpbuxppq" path="res://winter sprite/winter_tilesets2.png" id="2_56k3b"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_h7yxt"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="24_papdo"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="25_papdo"]
 [ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="26_sny1q"]
+[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="28_e45w6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
 texture = ExtResource("1_rdn6o")
@@ -1242,6 +1243,36 @@ position = Vector2(9431, -1344)
 
 [node name="Heal Chest" parent="Heal Chests" instance=ExtResource("26_sny1q")]
 position = Vector2(4751, -1184)
+
+[node name="Stats" type="CanvasLayer" parent="."]
+
+[node name="Stats Window" parent="Stats" instance=ExtResource("28_e45w6")]
+visible = false
+offset_left = -430.0
+offset_top = -296.0
+offset_right = -435.0
+offset_bottom = -296.0
+
+[node name="LevelUpAnnouncement" type="Label" parent="Stats"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="Stats" instance=ExtResource("17_sny1q")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]
