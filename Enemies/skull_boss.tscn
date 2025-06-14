@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://7yprytxykj5t"]
+[gd_scene load_steps=37 format=3 uid="uid://7yprytxykj5t"]
 
 [ext_resource type="Texture2D" uid="uid://de8xppe2uw5cp" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Fly.png" id="1_rtdl5"]
 [ext_resource type="Script" uid="uid://cxcngnu2ybvxf" path="res://Enemies/skull_boss.gd" id="1_toa7c"]
 [ext_resource type="Texture2D" uid="uid://cfaqjpej5g8p2" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Idle.png" id="1_vdwuq"]
 [ext_resource type="Texture2D" uid="uid://xikghfcngemi" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Death.png" id="2_toa7c"]
 [ext_resource type="Texture2D" uid="uid://bmq5h2qh2k588" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Hit.png" id="3_6sojy"]
+[ext_resource type="PackedScene" uid="uid://dos0au4c7fyjj" path="res://scenes-player-movement/health_bar.tscn" id="6_6sojy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjryi"]
 radius = 6.0
@@ -141,7 +142,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3qbdq")
 }],
 "loop": false,
-"name": &"attack",
+"name": &"deal_damage",
 "speed": 10.0
 }, {
 "frames": [{
@@ -229,7 +230,7 @@ shape = SubResource("CircleShape2D_qjryi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o8soi")
-animation = &"move"
+animation = &"deal_damage"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -245,3 +246,13 @@ position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkullDealDamageArea"]
 shape = SubResource("CircleShape2D_o8soi")
+
+[node name="HealthBar" parent="." instance=ExtResource("6_6sojy")]
+offset_left = -34.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 16.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="SkullHitbox" to="." method="_on_skull_hitbox_area_entered"]
+[connection signal="area_entered" from="SkullDealDamageArea" to="." method="_on_skull_deal_damage_area_area_entered"]

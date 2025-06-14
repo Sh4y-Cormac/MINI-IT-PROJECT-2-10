@@ -45,6 +45,7 @@ var playerHealth : int
 var playerSpeedScaling : int
 var playerDamageScaling : int
 var playerMaxHealth : int
+var availableJumps: int
 
 #cutscene intro
 var next_scene_after_cutscene: String = ""

@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=47 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://doo5drn1yrnv3" path="res://scenes-environment/tutorial.gd" id="1_ysgvo"]
+[ext_resource type="PackedScene" uid="uid://7yprytxykj5t" path="res://Enemies/skull_boss.tscn" id="2_ftps5"]
 [ext_resource type="Texture2D" uid="uid://difkxk022cxvg" path="res://Assets/Grassland Sprites/woodenplatforms.png" id="2_kb0tt"]
 [ext_resource type="PackedScene" uid="uid://dxcb8iehcebon" path="res://GUI Scenes/scene_transition_animation.tscn" id="2_uokai"]
 [ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes-environment/platform.tscn" id="3_lnu2h"]
@@ -243,6 +244,9 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ysgvo")
+
+[node name="SkullBoss" parent="." instance=ExtResource("2_ftps5")]
+position = Vector2(572, 12)
 
 [node name="Enemies" type="Node" parent="."]
 

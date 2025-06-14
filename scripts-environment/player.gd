@@ -68,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	var playerSpeedScaling = Global.playerSpeedScaling
 	var playerDamageScaling = Global.playerDamageScaling
 	var playerMaxHealthScaling = Global.playerMaxHealth
+	var availableJumps = Global.availableJumps
 	
 	health_max = 100 + playerMaxHealthScaling
 	
@@ -86,7 +87,7 @@ func _physics_process(delta: float) -> void:
 	if !dead: 
 
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and (jump_count < 2 or is_on_wall()):
+		if Input.is_action_just_pressed("jump") and (jump_count < availableJumps or is_on_wall()):
 			jump_count += 1
 			velocity.y = jump_force
 	
