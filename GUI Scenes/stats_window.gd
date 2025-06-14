@@ -33,8 +33,6 @@ signal leveled_up
 @onready var exp_bar: ProgressBar = $"../ExpBar"
 @onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
 
-
-
 # == Lifecycle ==
 func _ready() -> void:
 	
