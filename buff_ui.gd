@@ -2,7 +2,7 @@ extends HBoxContainer
 
 @export var icon_scene: PackedScene  
 
-func set_cards(cards: Array[Resource]):
+func update_icons(cards: Array[Resource]):
 	# Count duplicates
 	var card_counts := {}
 	for card in cards:

@@ -35,7 +35,7 @@ signal leveled_up
 
 # == Lifecycle ==
 func _ready() -> void:
-	
+	BuffManager.connect("buffs_updated", Callable(self, "update_stats_display"))
 	update_stats()
 	visible = false
 

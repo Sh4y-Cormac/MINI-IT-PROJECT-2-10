@@ -83,6 +83,18 @@ func animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
+	give_random_card()
+	
+	
+func give_random_card():
+	if Global.available_buff_cards.is_empty():
+		return
+	
+	var random_index = randi() % Global.available_buff_cards.size()
+	var random_card = Global.available_buff_cards[random_index]
+	
+	BuffManager.add_card(random_card)
+	print("Card given:", random_card.name)
 	
 	var cutscene_scene = preload("res://cutscene/cutscene_2_outro.tscn")
 	get_tree().change_scene_to_packed(cutscene_scene)

@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://dqwhe515njstg" path="res://buff_icon.tscn" id="2_t45lq"]
 
 [node name="BuffUI" type="HBoxContainer"]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 40.0
+grow_horizontal = 0
 script = ExtResource("1_osjpy")
 icon_scene = ExtResource("2_t45lq")
