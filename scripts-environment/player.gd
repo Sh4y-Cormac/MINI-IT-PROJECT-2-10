@@ -202,6 +202,8 @@ func check_hitbox():
 			damage = Global.skullDamageAmount
 		elif hitbox.get_parent() is CrabBoss:
 			damage = Global.crabDamageAmount
+		elif hitbox.get_parent() is SlimeEnemy:
+			damage = Global.slimeDamageAmount
 			
 			
 	if can_take_damage:

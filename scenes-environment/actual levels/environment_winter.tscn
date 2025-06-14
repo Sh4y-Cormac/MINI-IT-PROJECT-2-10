@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=59 format=3 uid="uid://dbabbvhfx8i07"]
 
 [ext_resource type="Script" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="20_mpnc5"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="21_j8371"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="23_qf1ar"]
+[ext_resource type="PackedScene" uid="uid://dbe1blejn8xq6" path="res://Enemies/slime_boss.tscn" id="23_yrhxr"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="24_ao63x"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="24_papdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
@@ -1111,6 +1113,95 @@ bus = &"SFX"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("20_mpnc5")]
 layer = 2
+
+[node name="Boss" type="Node" parent="."]
+
+[node name="slime_boss" parent="Boss" instance=ExtResource("23_yrhxr")]
+position = Vector2(13566, -1574)
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boss"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss/StaticBody2D"]
+polygon = PackedVector2Array(12739, -1536, 14336, -1536, 14328, -1855, 12762, -1869, 12738, -1587, 12738, -1551, 12721, -1553, 12717, -1913, 14372, -1896, 14371, -1512, 14060, -1492, 13523, -1495, 12989, -1497, 12724, -1508, 12724, -1537)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bat" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(466, -212)
+
+[node name="Bat2" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(1147, -313)
+
+[node name="Bat3" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(1717, -440)
+
+[node name="Bat4" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(2484, -623)
+
+[node name="Bat5" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(3055, -551)
+
+[node name="Bat6" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(3563, -886)
+
+[node name="Bat7" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(4119, -930)
+
+[node name="Bat8" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(4627, -1145)
+
+[node name="Bat9" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(4258, -403)
+
+[node name="Bat10" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(4472, -442)
+
+[node name="Bat11" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(4568, -525)
+
+[node name="Bat12" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(5459, -716)
+
+[node name="Bat13" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(5648, -1361)
+
+[node name="Bat14" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(6587, -936)
+
+[node name="Bat15" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(7376, -1271)
+
+[node name="Bat16" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(8132, -1271)
+
+[node name="Bat17" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(8461, -1273)
+
+[node name="Bat18" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(8979, -1517)
+
+[node name="Bat19" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(9698, -1525)
+
+[node name="Bat20" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(10820, -1702)
+
+[node name="Bat21" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(11652, -1852)
+
+[node name="Bat22" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(12114, -1636)
+
+[node name="Bat23" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(12313, -1661)
+
+[node name="Bat24" parent="Enemies" instance=ExtResource("24_ao63x")]
+position = Vector2(12247, -1601)
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]
