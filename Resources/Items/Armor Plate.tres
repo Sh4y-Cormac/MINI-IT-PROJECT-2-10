@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("1_csgpi")
+origin_path = ""
+global_function_name = ""
 name = "Armor Plate"
 title = "Armor Plate"
 icon = ExtResource("1_nfkjc")

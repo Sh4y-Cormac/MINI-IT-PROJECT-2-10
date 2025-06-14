@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("1_sk1ij")
+origin_path = ""
+global_function_name = ""
 name = "Sharpness"
 title = "Sharpness"
 icon = ExtResource("1_p8igj")

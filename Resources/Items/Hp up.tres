@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("1_8q4oa")
+origin_path = ""
+global_function_name = ""
 name = "HP up"
 title = "HP up"
 icon = ExtResource("1_enwuq")

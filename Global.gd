@@ -27,6 +27,14 @@ var levels: Array = [
 	"res://scenes-environment/actual levels/environment_space.tscn",
 ]
 # WAN ADDED THIS
+var available_buff_cards := [
+	preload("res://Resources/Items/Sharpness.tres"),
+	preload("res://Resources/Items/Atk_up.tres"),
+	preload("res://Resources/Items/Armor Plate.tres"),
+	preload("res://Resources/Items/Hp up.tres"),
+	preload("res://Resources/Items/Regeneration.tres"),
+	preload("res://Resources/Items/LifeSteal.tres")
+]
 var player_exp: int = 0
 var player_level: int = 1
 var exp_max: int = 100

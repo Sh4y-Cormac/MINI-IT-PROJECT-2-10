@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=52 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -26,11 +26,13 @@
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
 [ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="30_ftps5"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
+[ext_resource type="PackedScene" uid="uid://baolpm4k1bw6t" path="res://buff_manager.tscn" id="30_x8m41"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
+[ext_resource type="PackedScene" uid="uid://3yqe0bktebya" path="res://buff_ui.tscn" id="31_ibk3w"]
 [ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="31_wic44"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://b7q7o7n3nd05h" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
+[ext_resource type="PackedScene" uid="uid://dqwhe515njstg" path="res://buff_icon.tscn" id="32_hxiw1"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="33_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
@@ -459,9 +461,14 @@ position = Vector2(5392, 63)
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("30_uokai")]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="buffs" type="CanvasLayer" parent="."]
 
-[node name="BuffDisplay" parent="CanvasLayer2" instance=ExtResource("32_wic44")]
+[node name="BuffManager" parent="buffs" instance=ExtResource("30_x8m41")]
+visible = false
+
+[node name="BuffUI" parent="buffs" instance=ExtResource("31_ibk3w")]
+
+[node name="BuffIcon" parent="buffs" instance=ExtResource("32_hxiw1")]
 
 [node name="Stats" type="CanvasLayer" parent="."]
 
