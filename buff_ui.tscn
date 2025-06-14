@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3yqe0bktebya"]
+
+[ext_resource type="Script" uid="uid://bsr8cv4pdugnd" path="res://buff_ui.gd" id="1_osjpy"]
+[ext_resource type="PackedScene" uid="uid://dqwhe515njstg" path="res://buff_icon.tscn" id="2_t45lq"]
+
+[node name="BuffUI" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_osjpy")
+icon_scene = ExtResource("2_t45lq")

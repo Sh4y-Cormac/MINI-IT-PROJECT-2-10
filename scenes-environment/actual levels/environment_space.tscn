@@ -1,7 +1,7 @@
-[gd_scene load_steps=60 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=61 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
-[ext_resource type="Script" uid="uid://cgbxpdthesniq" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
+[ext_resource type="Script" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="4_020gk"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="24_dlvk7"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="24_r6axw"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="25_xfo35"]
+[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="26_r6axw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -993,3 +994,33 @@ polygon = PackedVector2Array(-276.25, 20, -275.75, -56.75, -208.25, -88, -92.25,
 [node name="robotEnemy" parent="Boss" instance=ExtResource("24_dlvk7")]
 position = Vector2(20292, -2588)
 scale = Vector2(4, 4)
+
+[node name="Stats" type="CanvasLayer" parent="."]
+
+[node name="Stats Window" parent="Stats" instance=ExtResource("26_r6axw")]
+visible = false
+offset_left = -430.0
+offset_top = -296.0
+offset_right = -435.0
+offset_bottom = -296.0
+
+[node name="LevelUpAnnouncement" type="Label" parent="Stats"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="Stats" instance=ExtResource("18_uxmvn")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
