@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_video_stream_player_finished() -> void:
-	Functions.load_screen_to_scene("res://GUI Scripts/gameover.gd")
+	get_tree().change_scene_to_file("res://scenes-environment/game.tscn")
