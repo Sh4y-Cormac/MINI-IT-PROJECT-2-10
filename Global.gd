@@ -49,3 +49,33 @@ var availableJumps: int
 
 #cutscene intro
 var next_scene_after_cutscene: String = ""
+
+
+func apple():
+	playerHealth = min(playerHealth + 100 , 100)
+
+func apple_slice():
+	playerHealth = min(playerHealth + 50 , 100)
+
+func blue_popsicle():
+	playerDamageScaling *= 1.5
+	await get_tree().create_timer(10.0).timeout
+	playerDamageScaling /= 1.5
+	
+func green_popsicle():
+	playerDamageScaling *= 2
+	await get_tree().create_timer(15.0).timeout
+	playerDamageScaling /= 2
+
+func icecream1():
+	playerSpeedScaling *= 1.5
+	await get_tree().create_timer(10.0).timeout
+	playerSpeedScaling /= 1.5
+
+func icecream2():
+	playerSpeedScaling *= 2
+	await get_tree().create_timer(15.0).timeout
+	playerSpeedScaling /= 2
+
+func coffee():
+	pass

@@ -3,6 +3,7 @@ class_name Item
 
 
 @export var origin_path: String = ""
+@export var global_function_name: String = ""
 
 @export var name: String
 @export var title : String
@@ -32,4 +33,11 @@ class_name Item
 
 
 func use():
-	print("test.")
+	if global_function_name != "":
+		if Global.has_method(global_function_name):
+			Global.call(global_function_name)
+			print("Used:", title)
+		else:
+			print("No function found:", global_function_name)
+	else:
+		print(title, "has no effect")
