@@ -34,6 +34,11 @@ func _process(delta: float) -> void:
 	Global.golemDamageZone = $GolemDealDamageArea
 	player = Global.playerBody
 	
+	if Global.playerAlive:
+		is_enemy_chase = true
+	if !Global.playerAlive:
+		is_enemy_chase = false
+		
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		velocity.x = 0
@@ -79,9 +84,6 @@ func handle_animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
-	
-	## NOTE FOR AISYAH, this is where you can put your code for when the boss dies.
-	
 	self.queue_free()
 	
 
