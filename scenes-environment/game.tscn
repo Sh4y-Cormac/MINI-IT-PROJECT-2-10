@@ -466,6 +466,7 @@ position = Vector2(5392, 63)
 [node name="Stats" type="CanvasLayer" parent="."]
 
 [node name="Stats Window" parent="Stats" instance=ExtResource("33_vbdjg")]
+visible = false
 offset_left = -430.0
 offset_top = -296.0
 offset_right = -435.0
