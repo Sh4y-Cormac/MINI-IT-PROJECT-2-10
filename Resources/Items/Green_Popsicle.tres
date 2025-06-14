@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_pc8e4")
 origin_path = ""
-global_function_name = ""
+global_function_name = "green_popsicle"
 name = "Green Popsicle"
 title = "Green Popsicle"
 icon = ExtResource("1_ib2w8")
