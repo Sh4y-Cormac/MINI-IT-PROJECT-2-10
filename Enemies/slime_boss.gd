@@ -84,7 +84,18 @@ func handle_animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
+	give_random_card()
 	self.queue_free()
+	
+func give_random_card():
+	if Global.available_buff_cards.is_empty():
+		return
+	
+	var random_index = randi() % Global.available_buff_cards.size()
+	var random_card = Global.available_buff_cards[random_index]
+	
+	BuffManager.add_card(random_card)
+	print("Card given:", random_card.name)
 	
 func _on_timer_timeout() -> void:
 	$Timer.wait_time = choose([1.0,1.5,2.0])

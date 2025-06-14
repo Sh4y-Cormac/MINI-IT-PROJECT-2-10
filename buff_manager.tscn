@@ -1,12 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://baolpm4k1bw6t"]
+[gd_scene load_steps=2 format=3 uid="uid://baolpm4k1bw6t"]
 
 [ext_resource type="Script" uid="uid://chvcuvmwv3w68" path="res://buff_manager.gd" id="1_mw4yb"]
-[ext_resource type="PackedScene" uid="uid://3yqe0bktebya" path="res://buff_ui.tscn" id="2_s0g8d"]
-[ext_resource type="PackedScene" uid="uid://dqwhe515njstg" path="res://buff_icon.tscn" id="3_j1hka"]
 
 [node name="BuffManager" type="Node2D"]
 script = ExtResource("1_mw4yb")
-
-[node name="BuffUI" parent="." instance=ExtResource("2_s0g8d")]
-
-[node name="BuffIcon" parent="." instance=ExtResource("3_j1hka")]

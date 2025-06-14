@@ -5,7 +5,7 @@ class_name GolemBoss
 const speed = 30
 var is_enemy_chase: bool = true
 
-var health = 1
+var health = 200
 var health_max = 200
 var health_min = 0
 
@@ -86,7 +86,7 @@ func handle_death():
 	Global.playerGold += droppedGold
 	give_random_card()
 	self.queue_free()
-
+	
 	
 func give_random_card():
 	if Global.available_buff_cards.is_empty():
