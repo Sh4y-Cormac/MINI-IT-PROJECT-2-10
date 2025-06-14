@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1qslm2ws1vck"]
+[gd_scene load_steps=23 format=3 uid="uid://c1qslm2ws1vck"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_13hmj"]
 [ext_resource type="Script" uid="uid://bdo6ruhfgugth" path="res://GUI Scenes/shop_island.gd" id="1_dr1pm"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="13_tuql4"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_c54hw"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="15_d48jl"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="16_6it1p"]
 [ext_resource type="AudioStream" uid="uid://dgp85y6x6xlue" path="res://Assets/Audio & Sound Effects/Shop Island Theme.mp3" id="16_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="17_t8j5p"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="18_bcwrm"]
@@ -493,3 +494,24 @@ layer = 2
 [node name="PauseMeny" parent="CanvasLayer2" instance=ExtResource("14_c54hw")]
 
 [node name="player_health_bar" parent="CanvasLayer2" instance=ExtResource("15_d48jl")]
+
+[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="CanvasLayer2" instance=ExtResource("16_6it1p")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136

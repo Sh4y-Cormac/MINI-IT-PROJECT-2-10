@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkxacktrcdo7t"]
+[gd_scene load_steps=28 format=3 uid="uid://bkxacktrcdo7t"]
 
 [ext_resource type="Script" uid="uid://b4khxb37t87ry" path="res://GUI Scenes/insideshop.gd" id="1_pq4d1"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_ujdir"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c5tljf2w2c2uo" path="res://Assets/Audio & Sound Effects/Shop Soundtrack.mp3" id="15_aphbl"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="15_gu718"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="16_6qaus"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="17_gu718"]
 [ext_resource type="Texture2D" uid="uid://bhidfwjqjyv3e" path="res://Assets/Images/Arcade Machine.png" id="18_aphbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qaus"]
@@ -365,6 +366,27 @@ layer = 2
 [node name="PauseMeny" parent="CanvasLayer3" instance=ExtResource("14_pxy7y")]
 
 [node name="player_health_bar" parent="CanvasLayer3" instance=ExtResource("16_6qaus")]
+
+[node name="LevelUpAnnouncement" type="Label" parent="CanvasLayer3"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="CanvasLayer3" instance=ExtResource("17_gu718")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
 
 [connection signal="mouse_entered" from="SpaceShooterMinigameButton" to="SpaceShooterMinigameButton" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/Shop GUI/NinePatchRect/Exit Button/Button" to="CanvasLayer/Shop GUI" method="_on_button_mouse_entered"]

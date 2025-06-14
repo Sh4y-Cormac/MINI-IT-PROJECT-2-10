@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=42 format=3 uid="uid://d4kg8q6yhdrrb"]
 
 [ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
@@ -19,14 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="18_1epuf"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="18_8jcjb"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="19_7jhca"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="19_fnud8"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="19_lo03u"]
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="21_8jcjb"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="23_ryhlw"]
-[ext_resource type="PackedScene" path="res://Enemies/crab_boss.tscn" id="25_qxmxu"]
+[ext_resource type="PackedScene" uid="uid://dcong7rex4at7" path="res://Enemies/crab_boss.tscn" id="25_qxmxu"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="25_xpncv"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="26_fnud8"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="26_xpncv"]
-[ext_resource type="PackedScene" path="res://scenes-core-gameplay/heal_chest.tscn" id="27_fnud8"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="27_fnud8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teku7"]
 texture = ExtResource("2_1epuf")
@@ -542,6 +543,27 @@ position = Vector2(9386, -779)
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("18_8jcjb")]
 
+[node name="LevelUpAnnouncement" type="Label" parent="PlayerHealthBar"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -11.5
+offset_right = 3.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="PlayerHealthBar" instance=ExtResource("19_fnud8")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
+
 [node name="portal" parent="." instance=ExtResource("19_7jhca")]
 position = Vector2(12278, -1009)
 
@@ -607,213 +629,5 @@ position = Vector2(9589, -656)
 position = Vector2(3696, -575)
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Bat" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(625, -372)
-script = null
-
-[node name="Bat2" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(1073, -454)
-script = null
-
-[node name="Bat3" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(1785, -465)
-script = null
-
-[node name="Bat4" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(2421, -415)
-script = null
-
-[node name="Bat5" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(3299, -626)
-script = null
-
-[node name="Bat6" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(3943, -660)
-script = null
-
-[node name="Bat7" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(4740, -550)
-script = null
-
-[node name="Bat8" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(5576, -576)
-script = null
-
-[node name="Bat9" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(6476, -544)
-script = null
-
-[node name="Bat10" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(7349, -684)
-script = null
-
-[node name="Bat11" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(8235, -914)
-script = null
-
-[node name="Bat12" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(9306, -995)
-script = null
-
-[node name="Bat13" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(10267, -1121)
-script = null
-
-[node name="Bat14" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(10370, -1126)
-script = null
-
-[node name="Bat15" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(10339, -1070)
-script = null
-
-[node name="Bat16" parent="Enemies"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(10333, -1181)
-script = null
 
 [connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]
