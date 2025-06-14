@@ -39,11 +39,11 @@ func teleport():
 	if level < 8:
 		var teleport_location = levels[level]
 		add_level()
-		get_tree().change_scene_to_file(teleport_location)
+		Functions.load_screen_to_scene(teleport_location)
 	elif level <= 8:
 		var teleport_location = levels[0]
 		reset_level()
-		get_tree().change_scene_to_file(teleport_location)
+		Functions.load_screen_to_scene(teleport_location)
 	
 func handle_animation():
 	if hovering:
