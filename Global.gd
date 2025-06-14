@@ -68,7 +68,7 @@ var availableJumps: int ## amount of jumps player will have, double,triple,quad 
 #cutscene intro
 var next_scene_after_cutscene: String = ""
 
-
+#Luqman did this
 func apple():
 	playerHealth = min(playerHealth + 100 , 100)
 
