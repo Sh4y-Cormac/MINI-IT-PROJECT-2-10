@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=49 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -27,7 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
+[ext_resource type="PackedScene" uid="uid://drqh16ci3ivmr" path="res://expbar.tscn" id="31_wic44"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://bat.tscn" id="32_4at0j"]
+[ext_resource type="PackedScene" uid="uid://de5juevxtn8s3" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
+[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="33_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
@@ -463,3 +466,42 @@ position = Vector2(1061, -353)
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("34_vbdjg")]
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("30_uokai")]
+
+[node name="EXPbar" type="CanvasLayer" parent="."]
+
+[node name="ExpBar" parent="EXPbar" instance=ExtResource("31_wic44")]
+anchor_left = 0.012
+anchor_top = 0.92
+anchor_right = 0.325
+anchor_bottom = 0.941
+offset_left = 1.176
+offset_top = -0.160034
+offset_right = -0.400024
+offset_bottom = 0.231995
+
+[node name="Buff Icons" type="CanvasLayer" parent="."]
+
+[node name="BuffDisplay" parent="Buff Icons" instance=ExtResource("32_wic44")]
+
+[node name="Stats" type="CanvasLayer" parent="."]
+
+[node name="Stats Window" parent="Stats" instance=ExtResource("33_vbdjg")]
+visible = false
+offset_left = -430.0
+offset_top = -296.0
+offset_right = -435.0
+offset_bottom = -296.0
+
+[node name="LevelUpAnnouncement" type="Label" parent="Stats"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2

@@ -5,10 +5,9 @@ signal dropOut
 @onready var bagcontainer = $"Inventory GUI/BagSlot"
 @onready var ArmorSlot = $"Inventory GUI/Equipment"
 @onready var trashcan = $"Inventory GUI/TrashCan"
-#@onready var stats_window: Control = $"Inventory GUI/Stats Window"
+@onready var stats_window: Control = $"Inventory GUI/Stats Window"
 #@onready var card_symbol: HBoxContainer = $"../CardSymbol"
 #@export var card_icon: Texture
-
 
 #func update_card_ui():
 #	var cards = get_active_cards()
@@ -62,12 +61,12 @@ signal dropOut
 #				counts[id] = {"item": item, "count": 1}
 #	return counts
 	
-#func get_base_stats() -> Dictionary:
-#	return{
-#		"hp": stats_window.hp,
-#		"atk": stats_window.atk,
-#		"def": stats_window.def
-#	}
+func get_base_stats() -> Dictionary:
+	return{
+		"hp": stats_window.hp,
+		"atk": stats_window.atk,
+		"def": stats_window.def
+	}
 
 #func get_active_cards() -> Array:
 #	var cards = []
@@ -106,34 +105,20 @@ var items = [
 var onInventory = false
 
 func _ready():
-#	stats_window.visible = true
+	stats_window.visible = true
 	inventoryDict = {
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
 	}
 	
 #	await get_tree().process_frame
-#	apply_regen_cards()
+
 	
 
 	_refresh_ui()
 
 #	await get_tree().process_frame
-	
-#	stats_window.connect("leveled_up", Callable(self, "update_buffed_stats"))
-#	update_buffed_stats()
-	
-#	await get_tree().process_frame
-#	update_card_ui()
 
-	
-#func apply_regen_cards():
-#	for slot in bagcontainer.get_children():
-#		var item = slot.itemResource
-#		if item and item.is_regen_card:
-#			stats_window.apply_regen_card(item)
-#			print("Regen card applied:", item.name)
-#			break  # Only apply one regen card (optional)
 			
 #func get_lifesteal_percent() -> float:
 #	for slot in bagcontainer.get_children():
@@ -142,19 +127,6 @@ func _ready():
 #			print("Lifesteal card found:", item.name)
 #			return item.lifesteal_percent
 	return 0.0
-	
-#func update_buffed_stats():
-#	var cards = get_active_cards()
-#	print("Active cards:", cards)
-#	
-#	var base = get_base_stats()
-#	print("Base stats:", base)
-#	
-#	var final_stats = apply_stat_cards(base, cards)
-#	print("Final stats after buffs:", final_stats)
-#	
-#	stats_window.update_stats_display(final_stats)
-#	stats_window.set_lifesteal(get_lifesteal_percent())
 
 func _get_next_empty_bag_slot() -> int:
 	for slot in bagcontainer.get_children():
@@ -203,8 +175,6 @@ func add_item(item: Item):
 			slot.set_new_data(item)
 			break
 	
-	#update_buffed_stats()
-	#update_card_ui()
 
 func _get_drag_data(at_position):
 	var dragslotnode = get_slot_node_position(at_position)
@@ -284,7 +254,7 @@ func _on_button_pressed() -> void:
 	$"../audio/Enter Sound Effect".play()
 	await $"../audio/Enter Sound Effect".finished
 	$".".visible = false
-	#stats_window.visible = false
+	stats_window.visible = false
 
 func _on_button_mouse_entered() -> void:
 	$"../audio/Hovering Sound Effect".play()

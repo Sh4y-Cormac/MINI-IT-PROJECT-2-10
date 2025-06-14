@@ -5,7 +5,6 @@ var atk = 10
 var def = 5
 var level = 1
 @warning_ignore("shadowed_global_identifier")
-var exp = 0 
 var exp_max = level * 100
 var max_hp = 100 
 var max_atk = 10
@@ -34,14 +33,23 @@ signal leveled_up
 @onready var label_atk: Label = $NinePatchRect/Atk/Label_ATK
 @onready var label_def: Label = $NinePatchRect/Def/Label_DEF
 @onready var label_lvl: Label = $NinePatchRect/LVL/Label_LVL
-@onready var exp_bar: ProgressBar = $"../EXPBar"
+@onready var exp_bar: ProgressBar = $EXPbar/ExpBar
 @onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
 
 
+
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.connect("stats_updated", Callable(self, "update_stats_display"))
 	update_stats()
 	visible = false
+
+func _on_buffs_updated(final_stats: Dictionary):
+	hp = int(final_stats["hp"])
+	atk = int(final_stats["atk"])
+	def = int(final_stats["def"])
+	update_stats()
 	
 func apply_regen_card(card):
 	has_regen = true
@@ -86,15 +94,29 @@ func update_stats():
 
 	if exp_bar:
 		exp_bar.max_value = exp_max
-		exp_bar.value = exp
+		exp_bar.value = Global.player_exp
 		
 	
 func gain_exp(amount:int):
-	exp += amount
-	while exp >= exp_max:
-		exp -= exp_max
+	Global.player_exp += amount
+	
+	var leveled_up = false 
+	while Global.player_exp >= exp_max:
+		Global.player_exp -= exp_max
 		level_up()
-	update_stats()
+		leveled_up = true 
+		
+	if not leveled_up:
+		update_stats()
+		
+	Global.emit_signal("stats_updated",{
+			"hp": hp,
+			"atk": atk,
+			"def": def,
+			"level": level,
+			"exp": Global.player_exp,
+			"exp_max": exp_max} )
+
 	
 func level_up():
 	level += 1
@@ -113,6 +135,19 @@ func level_up():
 	show_stat_gains()
 	show_level_up_message("Level Up! %d" % level)
 	print("Level Up! %d" % level)
+	
+	update_stats()
+	
+	var current_stats_dict = {
+		"hp": hp,
+		"atk": atk,
+		"def": def,
+		"level": level,
+		"exp": Global.player_exp,
+		"exp_max": exp_max
+	}
+	Global.emit_signal("stats_updated", current_stats_dict)
+	
 	emit_signal("leveled_up")
 	
 func show_stat_gains():
@@ -165,6 +200,6 @@ func _process(delta: float) -> void:
 		regen_timer += delta
 		if regen_timer >= regen_interval:
 			var healed = regen_amount
-			hp = min(hp + healed, max_hp)  # ✅ Clamp heal
+			hp = min(hp + healed, max_hp)  
 			update_stats()
 			regen_timer = 0.0
