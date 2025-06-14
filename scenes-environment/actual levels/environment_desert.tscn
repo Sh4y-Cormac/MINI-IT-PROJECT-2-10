@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=42 format=3 uid="uid://d4kg8q6yhdrrb"]
 
 [ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
@@ -630,35 +630,5 @@ position = Vector2(9589, -656)
 position = Vector2(3696, -575)
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Stats" type="CanvasLayer" parent="."]
-
-[node name="Stats Window" parent="Stats" instance=ExtResource("29_pr588")]
-visible = false
-offset_left = -430.0
-offset_top = -296.0
-offset_right = -435.0
-offset_bottom = -296.0
-
-[node name="LevelUpAnnouncement" type="Label" parent="Stats"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3.5
-offset_top = -11.5
-offset_right = 3.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-
-[node name="ExpBar" parent="Stats" instance=ExtResource("19_fnud8")]
-offset_left = -13.8
-offset_top = 14.744
-offset_right = -17.528
-offset_bottom = 15.136
 
 [connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]
