@@ -26,8 +26,8 @@ func _on_restart_button_pressed() -> void:
 	Global.level = 0
 	Global.difficulty = 1
 	Global.playerMaxHealth = 100
-	Global.playerSpeedScaling = 0
-	Global.playerDamageScaling = 0
+	Global.playerSpeedScaling = 1
+	Global.playerDamageScaling = 1
 	Global.availableJumps = 2
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
