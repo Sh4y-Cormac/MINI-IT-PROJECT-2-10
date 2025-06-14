@@ -464,11 +464,10 @@ position = Vector2(5392, 63)
 [node name="buffs" type="CanvasLayer" parent="."]
 
 [node name="BuffManager" parent="buffs" instance=ExtResource("30_x8m41")]
-visible = false
-
-[node name="BuffUI" parent="buffs" instance=ExtResource("31_ibk3w")]
 
 [node name="BuffIcon" parent="buffs" instance=ExtResource("32_hxiw1")]
+
+[node name="BuffUI" parent="buffs" instance=ExtResource("31_ibk3w")]
 
 [node name="Stats" type="CanvasLayer" parent="."]
 
@@ -515,3 +514,5 @@ position = Vector2(2156, 128)
 
 [node name="Chest" parent="Gold Chest" instance=ExtResource("33_wic44")]
 position = Vector2(1061, -353)
+
+[node name="buffui" type="CanvasLayer" parent="."]

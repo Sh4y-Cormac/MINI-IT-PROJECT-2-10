@@ -84,7 +84,6 @@ func handle_animation():
 
 func handle_death():
 	Global.playerGold += droppedGold
-	#aimans codes 
 	give_random_card()
 	self.queue_free()
 
