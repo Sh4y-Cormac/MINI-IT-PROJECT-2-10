@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="21_6olwm"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
 [ext_resource type="PackedScene" uid="uid://7yprytxykj5t" path="res://Enemies/skull_boss.tscn" id="22_bq5ki"]
-[ext_resource type="PackedScene" path="res://scenes-core-gameplay/heal_chest.tscn" id="23_1wad2"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="23_1wad2"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
 script/source = "extends Node2D
