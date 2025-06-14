@@ -194,6 +194,8 @@ func check_hitbox():
 			damage = Global.golemDamageAmount
 		elif hitbox.get_parent() is BatEnemy:
 			damage = Global.batDamageAmount
+		elif hitbox.get_parent() is SkullEnemy:
+			damage = Global.skullDamageAmount
 			
 			
 	if can_take_damage:

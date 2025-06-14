@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://7yprytxykj5t"]
+[gd_scene load_steps=36 format=3 uid="uid://7yprytxykj5t"]
 
 [ext_resource type="Texture2D" uid="uid://de8xppe2uw5cp" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Fly.png" id="1_rtdl5"]
+[ext_resource type="Script" uid="uid://cxcngnu2ybvxf" path="res://Enemies/skull_boss.gd" id="1_toa7c"]
 [ext_resource type="Texture2D" uid="uid://cfaqjpej5g8p2" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Idle.png" id="1_vdwuq"]
 [ext_resource type="Texture2D" uid="uid://xikghfcngemi" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Death.png" id="2_toa7c"]
 [ext_resource type="Texture2D" uid="uid://bmq5h2qh2k588" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Skull/Bones_SingleSkull_Hit.png" id="3_6sojy"]
@@ -94,22 +95,6 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ml307"]
 atlas = ExtResource("3_6sojy")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w042q"]
-atlas = ExtResource("1_vdwuq")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rtdl5"]
-atlas = ExtResource("1_vdwuq")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_toa7c"]
-atlas = ExtResource("1_vdwuq")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6sojy"]
-atlas = ExtResource("1_vdwuq")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo2m2"]
@@ -213,23 +198,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w042q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rtdl5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_toa7c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6sojy")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_uo2m2")
 }, {
 "duration": 1.0,
@@ -246,7 +214,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sojy"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o8soi"]
+radius = 8.0
+
 [node name="SkullBoss" type="CharacterBody2D"]
+script = ExtResource("1_toa7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -255,5 +230,18 @@ shape = SubResource("CircleShape2D_qjryi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o8soi")
 animation = &"move"
-frame = 2
-frame_progress = 0.916666
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SkullHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkullHitbox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_6sojy")
+
+[node name="SkullDealDamageArea" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkullDealDamageArea"]
+shape = SubResource("CircleShape2D_o8soi")

@@ -26,6 +26,7 @@ var droppedGold = 100
 
 func _ready() -> void:
 	is_enemy_chasing = true
+	difficulty_health_increase()
 	
 func _process(delta: float) -> void:
 	Global.robotDamageAmount = damage_to_deal
@@ -118,3 +119,8 @@ func _on_robot_deal_damage_area_area_entered(area: Area2D) -> void:
 			is_dealing_damage = true
 			await get_tree().create_timer(1).timeout
 			is_dealing_damage = false
+
+func difficulty_health_increase():
+	var difficulty = Global.difficulty
+	health = health * difficulty
+	health_max = health_max * difficulty

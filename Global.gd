@@ -36,6 +36,8 @@ var golemDamageAmount: int
 var batDamageZone: Area2D
 var batDamageAmount: int
 
+var skullDamageZone: Area2D
+var skullDamageAmount: int
 
 var playerHealth : int 
 
