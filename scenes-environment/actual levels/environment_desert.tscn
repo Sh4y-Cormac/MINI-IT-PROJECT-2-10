@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=42 format=3 uid="uid://d4kg8q6yhdrrb"]
 
 [ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="25_xpncv"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="26_fnud8"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="26_xnm38"]
+[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="26_xpncv"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="27_fnud8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teku7"]
 texture = ExtResource("2_1epuf")
@@ -588,6 +590,22 @@ position = Vector2(11705, -1028)
 scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 4
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="Chest" parent="Chests" instance=ExtResource("26_xpncv")]
+position = Vector2(448, -96)
+
+[node name="Chest2" parent="Chests" instance=ExtResource("26_xpncv")]
+position = Vector2(2861, -97)
+
+[node name="Chest3" parent="Chests" instance=ExtResource("26_xpncv")]
+position = Vector2(9589, -656)
+
+[node name="Heal Chests" type="Node" parent="."]
+
+[node name="Heal Chest" parent="Heal Chests" instance=ExtResource("27_fnud8")]
+position = Vector2(3696, -575)
 
 [node name="Enemies" type="Node" parent="."]
 

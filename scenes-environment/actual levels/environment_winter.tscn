@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dbabbvhfx8i07"]
+[gd_scene load_steps=61 format=3 uid="uid://dbabbvhfx8i07"]
 
 [ext_resource type="Script" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://dbe1blejn8xq6" path="res://Enemies/slime_boss.tscn" id="23_yrhxr"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="24_ao63x"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="24_papdo"]
+[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="25_papdo"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="26_sny1q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gv1"]
 texture = ExtResource("1_rdn6o")
@@ -1202,6 +1204,22 @@ position = Vector2(12313, -1661)
 
 [node name="Bat24" parent="Enemies" instance=ExtResource("24_ao63x")]
 position = Vector2(12247, -1601)
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="Chest" parent="Chests" instance=ExtResource("25_papdo")]
+position = Vector2(1657, -224)
+
+[node name="Chest2" parent="Chests" instance=ExtResource("25_papdo")]
+position = Vector2(4714, -304)
+
+[node name="Chest3" parent="Chests" instance=ExtResource("25_papdo")]
+position = Vector2(9431, -1344)
+
+[node name="Heal Chests" type="Node" parent="."]
+
+[node name="Heal Chest" parent="Heal Chests" instance=ExtResource("26_sny1q")]
+position = Vector2(4751, -1184)
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Area2D" to="player" method="_on_area_2d_body_exited"]
