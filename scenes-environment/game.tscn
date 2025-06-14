@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=47 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="21_uokai"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="30_ftps5"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
@@ -449,17 +450,30 @@ position = Vector2(4519, 8)
 [node name="portal" parent="." instance=ExtResource("31_4at0j")]
 position = Vector2(5392, 63)
 
-[node name="Chest3" parent="." instance=ExtResource("33_wic44")]
-position = Vector2(3555, -96)
-
-[node name="Chest2" parent="." instance=ExtResource("33_wic44")]
-position = Vector2(2156, 128)
-
-[node name="Chest" parent="." instance=ExtResource("33_wic44")]
-position = Vector2(1061, -353)
-
 [node name="PlayerHealthBar" type="CanvasLayer" parent="."]
 
 [node name="player_health_bar" parent="PlayerHealthBar" instance=ExtResource("34_vbdjg")]
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("30_uokai")]
+
+[node name="Heal Chest" type="Node" parent="."]
+
+[node name="Heal Chest" parent="Heal Chest" instance=ExtResource("30_ftps5")]
+position = Vector2(435, 63)
+
+[node name="Heal Chest2" parent="Heal Chest" instance=ExtResource("30_ftps5")]
+position = Vector2(574, 64)
+
+[node name="Heal Chest3" parent="Heal Chest" instance=ExtResource("30_ftps5")]
+position = Vector2(699, 63)
+
+[node name="Gold Chest" type="Node" parent="."]
+
+[node name="Chest3" parent="Gold Chest" instance=ExtResource("33_wic44")]
+position = Vector2(3555, -96)
+
+[node name="Chest2" parent="Gold Chest" instance=ExtResource("33_wic44")]
+position = Vector2(2156, 128)
+
+[node name="Chest" parent="Gold Chest" instance=ExtResource("33_wic44")]
+position = Vector2(1061, -353)
