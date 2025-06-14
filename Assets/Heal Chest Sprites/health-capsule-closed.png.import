@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wsxcrhcv8ycr"
-path="res://.godot/imported/Rat_Ability.png-0e32ccbe1366d16f9bb47794fd475847.ctex"
+uid="uid://x6vgvjx201wi"
+path="res://.godot/imported/health-capsule-closed.png-f326991a03a76444407879d855d48e33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Rat/Rat_Ability.png"
-dest_files=["res://.godot/imported/Rat_Ability.png-0e32ccbe1366d16f9bb47794fd475847.ctex"]
+source_file="res://Assets/Heal Chest Sprites/health-capsule-closed.png"
+dest_files=["res://.godot/imported/health-capsule-closed.png-f326991a03a76444407879d855d48e33.ctex"]
 
 [params]
 

@@ -70,7 +70,8 @@ func _physics_process(delta: float) -> void:
 	var playerMaxHealthScaling = Global.playerMaxHealth
 	var availableJumps = Global.availableJumps
 	
-	health_max = 100 + playerMaxHealthScaling
+	health_max = Global.playerMaxHealth
+	health = Global.playerHealth
 	
 	walk_speed = 200.0 * playerSpeedScaling
 	run_speed = 400.0 * playerSpeedScaling
@@ -132,7 +133,8 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
 				current_attack = true
 				
-				print("run speed: ", run_speed, "walk_speed", walk_speed)
+				print("health is: ", health)
+				print("max health is: ",health_max )
 				
 				if Input.is_action_just_pressed("left_mouse"):
 					attack_type = "shortsword"
@@ -202,6 +204,8 @@ func check_hitbox():
 			damage = Global.skullDamageAmount
 		elif hitbox.get_parent() is CrabBoss:
 			damage = Global.crabDamageAmount
+		elif hitbox.get_parent() is SlimeEnemy:
+			damage = Global.slimeDamageAmount
 			
 			
 	if can_take_damage:

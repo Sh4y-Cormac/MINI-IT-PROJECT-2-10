@@ -23,6 +23,7 @@ func _on_restart_button_pressed() -> void:
 	Global.gameStarted = true
 	Global.playerGold = 100
 	Global.playerHealth = 100
+	Global.playerMaxHealth = 100
 	Global.level = 0
 	Global.difficulty = 1
 	Global.playerMaxHealth = 100

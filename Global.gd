@@ -51,6 +51,9 @@ var skullDamageAmount: int
 var crabDamageZone: Area2D
 var crabDamageAmount: int
 
+var slimeDamageZone: Area2D
+var slimeDamageAmount: int
+
 
 var playerHealth : int 
 
