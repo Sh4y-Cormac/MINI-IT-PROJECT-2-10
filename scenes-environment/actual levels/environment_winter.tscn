@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://dbabbvhfx8i07"]
 
-[ext_resource type="Script" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
+[ext_resource type="Script" uid="uid://dyooxof6gyass" path="res://scripts-environment/environment_winter.gd" id="1_0p3cn"]
 [ext_resource type="Texture2D" uid="uid://cor1cexxp2ngm" path="res://winter sprite/winter_tilemaps.png" id="1_rdn6o"]
 [ext_resource type="Texture2D" uid="uid://dei6ulpbuxppq" path="res://winter sprite/winter_tilesets2.png" id="2_56k3b"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_h7yxt"]
