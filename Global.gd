@@ -39,6 +39,10 @@ var batDamageAmount: int
 var skullDamageZone: Area2D
 var skullDamageAmount: int
 
+var crabDamageZone: Area2D
+var crabDamageAmount: int
+
+
 var playerHealth : int 
 
 # Player Attributes : to increase the values, just add int values to it in the code. Everything should work fine.
