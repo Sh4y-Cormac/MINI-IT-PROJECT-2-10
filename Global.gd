@@ -55,13 +55,15 @@ var slimeDamageZone: Area2D
 var slimeDamageAmount: int
 
 
-var playerHealth : int 
+var playerHealth : int ## LIVE PLAYER HEALTH, meaning that whatever changes here it will change for the player in real-time
 
-# Player Attributes : to increase the values, just add int values to it in the code. Everything should work fine.
-var playerSpeedScaling : int
-var playerDamageScaling : int
-var playerMaxHealth : int
-var availableJumps: int
+var flatDamageAddition: int ## ADDS a FLAT VALUE (INTEGER) of damage to the total damage, affecting longsword and shortsword
+var flatSpeedAddition: int ## ADDS a FLAT VALUE (INTEGER) of speed to the total speed, affecting walking and running
+
+var playerSpeedScaling : int ## a MULTIPLIER of speed, e.g if speed is 20, it will multiply by playerSpeedScaling 
+var playerDamageScaling : int ## a MULTIPLIER of damage
+var playerMaxHealth : int ## MAXIMUM AVAILABLE HEALTH, not current health, items will only heal up to this point
+var availableJumps: int ## amount of jumps player will have, double,triple,quad jumps
 
 #cutscene intro
 var next_scene_after_cutscene: String = ""

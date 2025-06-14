@@ -69,15 +69,17 @@ func _physics_process(delta: float) -> void:
 	var playerDamageScaling = Global.playerDamageScaling
 	var playerMaxHealthScaling = Global.playerMaxHealth
 	var availableJumps = Global.availableJumps
+	var FlatDamageValue = Global.flatDamageAddition
+	var FlatSpeedValue = Global.flatSpeedAddition
 	
 	health_max = Global.playerMaxHealth
 	health = Global.playerHealth
 	
-	walk_speed = 200.0 * playerSpeedScaling
-	run_speed = 400.0 * playerSpeedScaling
+	walk_speed = 200.0 * playerSpeedScaling + FlatSpeedValue
+	run_speed = 400.0 * playerSpeedScaling + FlatSpeedValue
 	
-	shortsword_damage = 10.0 * playerDamageScaling
-	longsword_damage = 25.0 * playerDamageScaling
+	shortsword_damage = 10.0 * playerDamageScaling + FlatDamageValue
+	longsword_damage = 25.0 * playerDamageScaling + FlatDamageValue
 	
 	# Add the gravity
 	if not is_on_floor():
