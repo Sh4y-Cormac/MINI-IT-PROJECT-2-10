@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://d4kg8q6yhdrrb"]
+[gd_scene load_steps=40 format=3 uid="uid://d4kg8q6yhdrrb"]
 
 [ext_resource type="Script" uid="uid://d3cb7sewfs82l" path="res://scripts-environment/environment_desert.gd" id="1_xdwx0"]
 [ext_resource type="Texture2D" uid="uid://dbotcuui4dcou" path="res://Assets/tilemap/desert_tilemaps1.png" id="2_1epuf"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dcong7rex4at7" path="res://Enemies/crab_boss.tscn" id="25_qxmxu"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="25_xpncv"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="26_fnud8"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="26_xnm38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teku7"]
 texture = ExtResource("2_1epuf")
@@ -587,5 +588,55 @@ position = Vector2(11705, -1028)
 scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 4
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bat" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(625, -372)
+
+[node name="Bat2" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(1073, -454)
+
+[node name="Bat3" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(1785, -465)
+
+[node name="Bat4" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(2421, -415)
+
+[node name="Bat5" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(3299, -626)
+
+[node name="Bat6" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(3943, -660)
+
+[node name="Bat7" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(4740, -550)
+
+[node name="Bat8" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(5576, -576)
+
+[node name="Bat9" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(6476, -544)
+
+[node name="Bat10" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(7349, -684)
+
+[node name="Bat11" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(8235, -914)
+
+[node name="Bat12" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(9306, -995)
+
+[node name="Bat13" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(10267, -1121)
+
+[node name="Bat14" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(10370, -1126)
+
+[node name="Bat15" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(10339, -1070)
+
+[node name="Bat16" parent="Enemies" instance=ExtResource("26_xnm38")]
+position = Vector2(10333, -1181)
 
 [connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]
