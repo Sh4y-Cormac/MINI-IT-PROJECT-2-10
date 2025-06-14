@@ -258,7 +258,7 @@ func _on_button_pressed() -> void:
 	$"../audio/Enter Sound Effect".play()
 	await $"../audio/Enter Sound Effect".finished
 	$".".visible = false
-	stats_window.visible = false
+	stats_window.visible = true
 
 func _on_button_mouse_entered() -> void:
 	$"../audio/Hovering Sound Effect".play()
