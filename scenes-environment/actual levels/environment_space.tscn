@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ctn78jlf4tmws"]
+[gd_scene load_steps=62 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
 [ext_resource type="Script" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
@@ -25,6 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="24_r6axw"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="25_uxmvn"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="25_xfo35"]
+[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="26_xfo35"]
+[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="27_obqkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -1058,3 +1060,19 @@ position = Vector2(18746, -2488)
 
 [node name="Bat28" parent="Enemies" instance=ExtResource("25_uxmvn")]
 position = Vector2(18796, -2586)
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="Chest" parent="Chests" instance=ExtResource("26_xfo35")]
+position = Vector2(1570, -97)
+
+[node name="Chest2" parent="Chests" instance=ExtResource("26_xfo35")]
+position = Vector2(3567, -111)
+
+[node name="Chest3" parent="Chests" instance=ExtResource("26_xfo35")]
+position = Vector2(11058, -592)
+
+[node name="Heal Chests" type="Node" parent="."]
+
+[node name="Heal Chest" parent="Heal Chests" instance=ExtResource("27_obqkt")]
+position = Vector2(18539, -2576)
