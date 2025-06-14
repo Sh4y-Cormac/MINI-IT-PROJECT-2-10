@@ -35,6 +35,7 @@ class_name Item
 func use():
 	if global_function_name != "":
 		if Global.has_method(global_function_name):
+			print("the global function name is: ", global_function_name)
 			Global.call(global_function_name)
 			print("Used:", title)
 		else:

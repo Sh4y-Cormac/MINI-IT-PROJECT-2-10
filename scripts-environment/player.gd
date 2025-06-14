@@ -72,11 +72,11 @@ func _physics_process(delta: float) -> void:
 	
 	health_max = 100 + playerMaxHealthScaling
 	
-	walk_speed = 200.0 + playerSpeedScaling
-	run_speed = 400.0 + playerSpeedScaling
+	walk_speed = 200.0 * playerSpeedScaling
+	run_speed = 400.0 * playerSpeedScaling
 	
-	shortsword_damage = 10.0 + playerDamageScaling
-	longsword_damage = 25.0 + playerDamageScaling
+	shortsword_damage = 10.0 * playerDamageScaling
+	longsword_damage = 25.0 * playerDamageScaling
 	
 	# Add the gravity
 	if not is_on_floor():
@@ -131,6 +131,9 @@ func _physics_process(delta: float) -> void:
 		if !current_attack:
 			if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
 				current_attack = true
+				
+				print("run speed: ", run_speed, "walk_speed", walk_speed)
+				
 				if Input.is_action_just_pressed("left_mouse"):
 					attack_type = "shortsword"
 				elif Input.is_action_just_pressed("right_mouse"):
@@ -213,7 +216,7 @@ func take_damage(damage):
 				health = 0
 				dead = true
 				handle_death_animation()
-			take_damage_cooldown(3.0)
+			take_damage_cooldown(1.5)
 
 ## Runs code when the player dies
 func handle_death_animation():
