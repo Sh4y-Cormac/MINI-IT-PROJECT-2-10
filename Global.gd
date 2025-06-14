@@ -68,32 +68,32 @@ var availableJumps: int ## amount of jumps player will have, double,triple,quad 
 #cutscene intro
 var next_scene_after_cutscene: String = ""
 
-
+#Luqman did this
 func apple():
-	playerHealth = min(playerHealth + 100 , 100)
+	playerHealth = playerHealth + 100
 
 func apple_slice():
-	playerHealth = min(playerHealth + 50 , 100)
+	playerHealth = playerHealth + 50
 
 func blue_popsicle():
-	playerDamageScaling *= 1.5
+	playerDamageScaling *= 2
 	await get_tree().create_timer(10.0).timeout
-	playerDamageScaling /= 1.5
+	playerDamageScaling /= 2
 	
 func green_popsicle():
-	playerDamageScaling *= 2
+	playerDamageScaling *= 3
 	await get_tree().create_timer(15.0).timeout
-	playerDamageScaling /= 2
+	playerDamageScaling /= 3
 
 func icecream1():
-	playerSpeedScaling *= 1.5
+	playerSpeedScaling *= 2
 	await get_tree().create_timer(10.0).timeout
-	playerSpeedScaling /= 1.5
+	playerSpeedScaling /= 2
 
 func icecream2():
-	playerSpeedScaling *= 2
+	playerSpeedScaling *= 3
 	await get_tree().create_timer(15.0).timeout
-	playerSpeedScaling /= 2
+	playerSpeedScaling /= 3
 
 func coffee():
 	availableJumps += 1

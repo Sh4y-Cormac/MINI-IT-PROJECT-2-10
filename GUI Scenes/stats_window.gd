@@ -33,10 +33,9 @@ signal leveled_up
 @onready var exp_bar: ProgressBar = $"../ExpBar"
 @onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
 
-
-
 # == Lifecycle ==
 func _ready() -> void:
+	
 	update_stats()
 	visible = false
 
@@ -113,9 +112,9 @@ func show_stat_gains():
 	print(msg)
 
 # == Input (Debug) ==
-func _input(event):
-	if event.is_action_pressed("test_gain_exp"):
-		gain_exp(50)
+#func _input(event):
+	#if event.is_action_pressed("test_gain_exp"):
+		#gain_exp(50)
 
 # == Level Up Announcement ==
 func show_level_up_message(text: String):

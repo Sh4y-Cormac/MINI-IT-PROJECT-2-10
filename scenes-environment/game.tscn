@@ -460,9 +460,9 @@ position = Vector2(5392, 63)
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("30_uokai")]
 
-[node name="Buff Icons" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="BuffDisplay" parent="Buff Icons" instance=ExtResource("32_wic44")]
+[node name="BuffDisplay" parent="CanvasLayer2" instance=ExtResource("32_wic44")]
 
 [node name="Stats" type="CanvasLayer" parent="."]
 
