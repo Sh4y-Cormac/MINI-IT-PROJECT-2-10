@@ -23,7 +23,6 @@ Global="*res://Global.gd"
 GlobalState="*res://cutscene/global_state.gd"
 Shop="*res://GUI Scenes/shop_system.tscn"
 Ui="*res://GUI Scenes/UI.tscn"
-StatsWindow="*res://GUI Scripts/stats_window.gd"
 BuffManager="*res://buff_manager.gd"
 InventoryManager="*res://inventory_manager.gd"
 

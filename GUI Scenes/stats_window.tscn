@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bicf0iglcglr"]
+[gd_scene load_steps=4 format=3 uid="uid://bicf0iglcglr"]
 
-[ext_resource type="Script" uid="uid://cd62k6ka1gglm" path="res://GUI Scripts/stats_window.gd" id="1_l0r8f"]
+[ext_resource type="Script" uid="uid://cd62k6ka1gglm" path="res://GUI Scenes/stats_window.gd" id="1_l0r8f"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_l0r8f"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="3_l0r8f"]
 
 [node name="Stats Window" type="Control"]
 layout_mode = 3
@@ -147,8 +148,20 @@ theme_override_font_sizes/font_size = 30
 text = "1"
 horizontal_alignment = 1
 
+[node name="ExpBar" parent="NinePatchRect" instance=ExtResource("3_l0r8f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 4.0
+offset_bottom = 27.0
+grow_vertical = 1
+
 [node name="LevelUpAnnouncement" type="Label" parent="NinePatchRect"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -156,9 +169,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = 1.98744
+offset_top = -20.0
+offset_right = 2.98744
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2

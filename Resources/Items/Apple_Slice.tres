@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_g2xci")
 origin_path = ""
-global_function_name = "apple_slice"
+global_function_name = ""
 name = "Apple Slice"
 title = "Apple Slice"
 icon = ExtResource("1_u4xus")

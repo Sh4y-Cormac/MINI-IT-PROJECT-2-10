@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://drqh16ci3ivmr"]
+[gd_scene load_steps=4 format=3 uid="uid://bliy5ba270al8"]
 
 [ext_resource type="Script" uid="uid://6lay1ba20807" path="res://exp_bar.gd" id="2_u8brd"]
 
@@ -24,14 +24,3 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qi8fh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u8brd")
 show_percentage = false
 script = ExtResource("2_u8brd")
-
-[node name="control" type="Control" parent="."]
-layout_mode = 1
-anchor_top = 0.86
-anchor_right = 0.325
-anchor_bottom = 0.883
-offset_left = 1.0
-offset_top = -0.280029
-offset_right = -0.400024
-offset_bottom = -0.184021
-grow_vertical = 2

@@ -27,9 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
-[ext_resource type="PackedScene" uid="uid://drqh16ci3ivmr" path="res://expbar.tscn" id="31_wic44"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="31_wic44"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://de5juevxtn8s3" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
+[ext_resource type="PackedScene" uid="uid://b7q7o7n3nd05h" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="33_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
@@ -467,18 +467,6 @@ position = Vector2(1061, -353)
 
 [node name="PauseMeny" parent="PlayerHealthBar" instance=ExtResource("30_uokai")]
 
-[node name="EXPbar" type="CanvasLayer" parent="."]
-
-[node name="ExpBar" parent="EXPbar" instance=ExtResource("31_wic44")]
-anchor_left = 0.012
-anchor_top = 0.92
-anchor_right = 0.325
-anchor_bottom = 0.941
-offset_left = 1.176
-offset_top = -0.160034
-offset_right = -0.400024
-offset_bottom = 0.231995
-
 [node name="Buff Icons" type="CanvasLayer" parent="."]
 
 [node name="BuffDisplay" parent="Buff Icons" instance=ExtResource("32_wic44")]
@@ -486,7 +474,6 @@ offset_bottom = 0.231995
 [node name="Stats" type="CanvasLayer" parent="."]
 
 [node name="Stats Window" parent="Stats" instance=ExtResource("33_vbdjg")]
-visible = false
 offset_left = -430.0
 offset_top = -296.0
 offset_right = -435.0
@@ -494,14 +481,14 @@ offset_bottom = -296.0
 
 [node name="LevelUpAnnouncement" type="Label" parent="Stats"]
 modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -11.5
-offset_right = 0.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 143.0
+offset_top = 24.0
+offset_right = 150.0
+offset_bottom = 47.0
+size_flags_horizontal = 0
+
+[node name="ExpBar" parent="Stats" instance=ExtResource("31_wic44")]
+offset_left = -13.8
+offset_top = 14.744
+offset_right = -17.528
+offset_bottom = 15.136
