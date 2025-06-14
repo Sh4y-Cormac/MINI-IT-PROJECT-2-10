@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bicf0iglcglr"]
+[gd_scene load_steps=4 format=3 uid="uid://bicf0iglcglr"]
 
-[ext_resource type="Script" uid="uid://cd62k6ka1gglm" path="res://GUI Scripts/stats_window.gd" id="1_l0r8f"]
+[ext_resource type="Script" uid="uid://cd62k6ka1gglm" path="res://GUI Scenes/stats_window.gd" id="1_l0r8f"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_l0r8f"]
+[ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="3_l0r8f"]
 
 [node name="Stats Window" type="Control"]
 layout_mode = 3
@@ -30,13 +31,13 @@ offset_bottom = 2.20001
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.172
-anchor_top = 0.29
-anchor_right = 0.5
-anchor_bottom = 0.37
-offset_left = 3.276
-offset_top = 5.11
-offset_right = 6.50002
-offset_bottom = 6.83
+anchor_top = 0.308
+anchor_right = 0.44
+anchor_bottom = 0.392
+offset_left = 3.18128
+offset_top = 0.171982
+offset_right = -0.0990601
+offset_bottom = 0.127991
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "HP "
@@ -62,12 +63,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.17
 anchor_top = 0.397
-anchor_right = 0.511
-anchor_bottom = 0.485
-offset_left = 0.109993
+anchor_right = 0.433
+anchor_bottom = 0.474
+offset_left = 0.411728
 offset_top = -3.07701
-offset_right = 0.912979
-offset_bottom = 0.11499
+offset_right = 0.207504
+offset_bottom = -0.0340118
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "Atk "
@@ -93,12 +94,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.175
 anchor_top = 0.485
-anchor_right = 0.5
-anchor_bottom = 0.571
-offset_left = 0.0250015
+anchor_right = 0.426
+anchor_bottom = 0.569
+offset_left = 0.335602
 offset_top = 0.11499
-offset_right = 1.5
-offset_bottom = 0.18898
+offset_right = 0.11409
+offset_bottom = 0.0709991
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "Def "
@@ -122,13 +123,13 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.177
-anchor_top = 0.601
-anchor_right = 0.506
-anchor_bottom = 0.698
-offset_left = 0.19101
-offset_top = -0.0410156
-offset_right = -0.00201416
-offset_bottom = 0.182007
+anchor_top = 0.585
+anchor_right = 0.429
+anchor_bottom = 0.685
+offset_left = 0.50515
+offset_top = 0.0149841
+offset_right = -0.131592
+offset_bottom = -0.085022
 theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "LVL "
@@ -146,3 +147,31 @@ theme_override_fonts/font = ExtResource("2_l0r8f")
 theme_override_font_sizes/font_size = 30
 text = "1"
 horizontal_alignment = 1
+
+[node name="ExpBar" parent="NinePatchRect" instance=ExtResource("3_l0r8f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 4.0
+offset_bottom = 27.0
+grow_vertical = 1
+
+[node name="LevelUpAnnouncement" type="Label" parent="NinePatchRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.98744
+offset_top = -20.0
+offset_right = 2.98744
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
