@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhpdjmbprjvoi" path="res://GUI Scripts/UI.gd" id="1_g7y7g"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_mjwfr"]
 [ext_resource type="Texture2D" uid="uid://cornu1fk0i68o" path="res://Assets/Images/LeatherBag1.png" id="4_2nkan"]
-[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scenes/inventory.tscn" id="5_hqny6"]
+[ext_resource type="PackedScene" uid="uid://8xfcx48xnobu" path="res://GUI Scripts/GUI Scenes/inventory.tscn" id="5_hqny6"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="7_smwk4"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="8_ab0nr"]
 

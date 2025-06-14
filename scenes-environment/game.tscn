@@ -1,10 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=50 format=4 uid="uid://cuy4tkenth6pa"]
+=======
+[gd_scene load_steps=51 format=4 uid="uid://cuy4tkenth6pa"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://doo5drn1yrnv3" path="res://scenes-environment/tutorial.gd" id="1_ysgvo"]
 [ext_resource type="Texture2D" uid="uid://difkxk022cxvg" path="res://Assets/Grassland Sprites/woodenplatforms.png" id="2_kb0tt"]
-[ext_resource type="PackedScene" uid="uid://dxcb8iehcebon" path="res://GUI Scenes/scene_transition_animation.tscn" id="2_uokai"]
+[ext_resource type="PackedScene" uid="uid://dxcb8iehcebon" path="res://GUI Scripts/GUI Scenes/scene_transition_animation.tscn" id="2_uokai"]
 [ext_resource type="PackedScene" uid="uid://cj011aio3ek0q" path="res://scenes-environment/platform.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dufa73x151hf2" path="res://Assets/Grassland Sprites/underground.png" id="4_kmpqe"]
 [ext_resource type="PackedScene" uid="uid://sn8tvakgm06r" path="res://scenes-environment/killzone.tscn" id="4_lbhrr"]
@@ -16,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://0es8capo4h3u" path="res://Assets/Sprites/middleground2.png" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://b27ps8s44ndel" path="res://Assets/Sprites/air.png" id="8_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ruhyb4x44eju" path="res://Assets/Sprites/green.png" id="9_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="9_ujqrk"]
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scripts/GUI Scenes/UI.tscn" id="9_ujqrk"]
 [ext_resource type="Texture2D" uid="uid://uknhwgtn0to6" path="res://Assets/Sprites/water.png" id="10_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="11_bt5mj"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="12_e1j6l"]
@@ -24,15 +28,16 @@
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="21_uokai"]
 [ext_resource type="PackedScene" uid="uid://byhi50i48ibis" path="res://scenes-environment/downable_platform.tscn" id="25_0o6od"]
 [ext_resource type="PackedScene" uid="uid://c5giydp6dvecv" path="res://scenes-environment/granddoor.tscn" id="29_ujqrk"]
-[ext_resource type="PackedScene" uid="uid://biei7bjqctp8l" path="res://scenes-core-gameplay/heal_chest.tscn" id="30_ftps5"]
-[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="30_uokai"]
+[ext_resource type="PackedScene" uid="uid://cmb6en0ucdtad" path="res://GUI Scripts/GUI Scenes/buff_UI.tscn" id="30_817mt"]
+[ext_resource type="PackedScene" path="res://scenes-core-gameplay/heal_chest.tscn" id="30_ftps5"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scripts/GUI Scenes/pause_menu.tscn" id="30_uokai"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="31_4at0j"]
 [ext_resource type="PackedScene" uid="uid://kp81lm4hqsdm" path="res://scenes-environment/golem_boss.tscn" id="31_ftps5"]
 [ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="31_wic44"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="32_4at0j"]
-[ext_resource type="PackedScene" uid="uid://b7q7o7n3nd05h" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="33_vbdjg"]
+[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scripts/GUI Scenes/stats_window.tscn" id="33_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
+[ext_resource type="PackedScene" uid="uid://baolpm4k1bw6t" path="res://GUI Scripts/GUI Scenes/buff_manager.tscn" id="34_817mt"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o6od"]
@@ -461,7 +466,7 @@ position = Vector2(5392, 63)
 
 [node name="Buff Icons" type="CanvasLayer" parent="."]
 
-[node name="BuffDisplay" parent="Buff Icons" instance=ExtResource("32_wic44")]
+[node name="BuffUI" parent="Buff Icons" instance=ExtResource("30_817mt")]
 
 [node name="Stats" type="CanvasLayer" parent="."]
 
@@ -508,3 +513,7 @@ position = Vector2(2156, 128)
 
 [node name="Chest" parent="Gold Chest" instance=ExtResource("33_wic44")]
 position = Vector2(1061, -353)
+
+[node name="Buffmanager" type="Node" parent="."]
+
+[node name="BuffManager" parent="Buffmanager" instance=ExtResource("34_817mt")]

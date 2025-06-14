@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cixwt7eo83l8t"]
 
-[ext_resource type="Script" uid="uid://b2g3ooiunks2u" path="res://GUI Scenes/door.gd" id="1_fcllb"]
+[ext_resource type="Script" uid="uid://b2g3ooiunks2u" path="res://GUI Scripts/GUI Scenes/door.gd" id="1_fcllb"]
 [ext_resource type="Texture2D" uid="uid://csw5x2ocjcme6" path="res://Assets/Images/doors.png" id="1_h7tad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcllb"]

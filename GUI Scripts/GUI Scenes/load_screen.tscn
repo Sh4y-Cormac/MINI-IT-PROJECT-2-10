@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c31vy36jqspow"]
 
-[ext_resource type="Script" uid="uid://cu3ss8odp6cwi" path="res://GUI Scripts/load_screen.gd" id="1_1v8in"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_mcanp"]
+[ext_resource type="Script" uid="uid://cu3ss8odp6cwi" path="res://GUI Scripts/load_screen.gd" id="1_nq8uc"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="2_nxi1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v8in"]
 bg_color = Color(0, 0, 0, 1)
@@ -44,7 +44,7 @@ _data = {
 }
 
 [node name="Load Screen" type="CanvasLayer"]
-script = ExtResource("1_1v8in")
+script = ExtResource("1_nq8uc")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -71,7 +71,7 @@ offset_top = 26.0
 offset_right = 63.0
 offset_bottom = 86.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_mcanp")
+theme_override_fonts/font = ExtResource("2_nxi1d")
 theme_override_font_sizes/font_size = 50
 text = "TIPS :"
 
@@ -82,7 +82,7 @@ offset_left = 87.0
 offset_top = 86.0
 offset_right = 1066.0
 offset_bottom = 149.0
-theme_override_fonts/font = ExtResource("2_mcanp")
+theme_override_fonts/font = ExtResource("2_nxi1d")
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 
@@ -99,7 +99,7 @@ offset_right = 121.0
 offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_mcanp")
+theme_override_fonts/normal_font = ExtResource("2_nxi1d")
 theme_override_font_sizes/normal_font_size = 50
 text = "LOADING...."
 scroll_active = false

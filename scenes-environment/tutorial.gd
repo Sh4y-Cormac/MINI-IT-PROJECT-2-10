@@ -7,7 +7,10 @@ extends Node2D
 func _ready() -> void:
 	SceneTransitionAnimation.get_parent().get_node("ColorRect").color.a = 255
 	SceneTransitionAnimation.play("fade_out")
-
+	
+	#i dunno if this will work
+	Global.buff_manager = $Buffmanager/BuffManager
+	Global.buff_ui = $"Buff Icons/BuffUI"
 
 func _process(delta: float) -> void:
 	if !Global.playerAlive:

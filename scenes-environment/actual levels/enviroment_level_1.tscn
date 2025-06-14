@@ -13,11 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="11_bq5ki"]
 [ext_resource type="PackedScene" uid="uid://x6b57bt6xqqu" path="res://scenes-obstacles/spikes/spike2.tscn" id="12_1wad2"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
-[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_3rusg"]
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scripts/GUI Scenes/pause_menu.tscn" id="14_3rusg"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
 [ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="15_1wad2"]
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="16_6olwm"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
+=======
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scripts/GUI Scenes/UI.tscn" id="18_k07r5"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="20_e76em"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="21_6olwm"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]

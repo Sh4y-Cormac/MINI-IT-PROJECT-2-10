@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://baolpm4k1bw6t"]
 
-[ext_resource type="Script" uid="uid://chvcuvmwv3w68" path="res://buff_manager.gd" id="1_mw4yb"]
+[ext_resource type="Script" uid="uid://chvcuvmwv3w68" path="res://GUI Scripts/buff_manager.gd" id="1_mw4yb"]
 
 [node name="BuffManager" type="Node2D"]
 script = ExtResource("1_mw4yb")

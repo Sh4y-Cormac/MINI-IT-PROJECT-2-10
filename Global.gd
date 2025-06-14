@@ -27,6 +27,8 @@ var levels: Array = [
 	"res://scenes-environment/actual levels/environment_space.tscn",
 ]
 # WAN ADDED THIS
+var buff_manager: Node = null
+var buff_ui: Node = null
 var player_exp: int = 0
 var player_level: int = 1
 var exp_max: int = 100

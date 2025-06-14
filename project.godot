@@ -22,8 +22,9 @@ NavigationManager="*res://navigation_manager.gd"
 Global="*res://Global.gd"
 GlobalState="*res://cutscene/global_state.gd"
 Shop="*res://GUI Scenes/shop_system.tscn"
-Ui="*res://GUI Scenes/UI.tscn"
-BuffManager="*res://buff_manager.gd"
+Ui="*res://GUI Scripts/GUI Scenes/UI.tscn"
+BuffManager="*res://GUI Scripts/buff_manager.gd"
+<<<<<<<HEADStatsWindow="res://GUI Scenes/stats_window.gd"
 InventoryManager="*res://inventory_manager.gd"
 
 [display]

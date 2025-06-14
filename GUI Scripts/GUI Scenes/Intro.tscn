@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://d08a2dsdqdhyl"]
 
-[ext_resource type="Script" uid="uid://x05mfdvhj0m3" path="res://GUI Scripts/intro.gd" id="1_420r8"]
-[ext_resource type="Texture2D" uid="uid://cm1q220fauk0m" path="res://Assets/Images/Background.png" id="2_jep0s"]
-[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_jep0s"]
-[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="4_sjhys"]
-[ext_resource type="Script" uid="uid://cbjyn756gnuax" path="res://GUI Scripts/audio_stream_player_2d.gd" id="5_0aahw"]
+[ext_resource type="Script" uid="uid://x05mfdvhj0m3" path="res://GUI Scripts/intro.gd" id="1_8mv01"]
+[ext_resource type="Texture2D" uid="uid://cm1q220fauk0m" path="res://Assets/Images/Background.png" id="2_mvqym"]
+[ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_tmmnl"]
+[ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="4_pbars"]
+[ext_resource type="Script" uid="uid://cbjyn756gnuax" path="res://GUI Scripts/audio_stream_player_2d.gd" id="5_1hjr0"]
 
 [sub_resource type="Animation" id="Animation_hc4ph"]
 resource_name = "Fade in"
@@ -94,12 +94,12 @@ _data = {
 }
 
 [node name="Intro" type="Node2D"]
-script = ExtResource("1_420r8")
+script = ExtResource("1_8mv01")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(606, 346)
 scale = Vector2(0.840625, 0.873148)
-texture = ExtResource("2_jep0s")
+texture = ExtResource("2_mvqym")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -113,7 +113,7 @@ offset_right = 978.0
 offset_bottom = 346.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_jep0s")
+theme_override_fonts/normal_font = ExtResource("3_tmmnl")
 theme_override_font_sizes/normal_font_size = 70
 text = "A Game By Group 2 - 10"
 horizontal_alignment = 1
@@ -132,7 +132,7 @@ offset_right = 796.0
 offset_bottom = 614.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/normal_font = ExtResource("3_jep0s")
+theme_override_fonts/normal_font = ExtResource("3_tmmnl")
 theme_override_font_sizes/normal_font_size = 35
 text = "Press \"Space\" to skip...."
 fit_content = true
@@ -151,5 +151,5 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_sjhys")
-script = ExtResource("5_0aahw")
+stream = ExtResource("4_pbars")
+script = ExtResource("5_1hjr0")

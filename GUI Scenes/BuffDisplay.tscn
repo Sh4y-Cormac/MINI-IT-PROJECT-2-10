@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7q7o7n3nd05h"]
-
-[ext_resource type="Script" uid="uid://edxaicccs6ig" path="res://GUI Scenes/buff_display.gd" id="1_jpia5"]
-
-[node name="BuffDisplay" type="HBoxContainer"]
-script = ExtResource("1_jpia5")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2

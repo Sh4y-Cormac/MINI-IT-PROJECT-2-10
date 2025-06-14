@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1nqbev5hvpsl" path="res://GUI Scripts/spaceshipwindow.gd" id="1_b0wcw"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_bdmmy"]
 [ext_resource type="Texture2D" uid="uid://dh6ltr6mty71e" path="res://Assets/Images/Box_Orange_Square.png" id="1_k8sv5"]
-[ext_resource type="PackedScene" uid="uid://bgfhwdfy73kb2" path="res://GUI Scenes/space_shooter.tscn" id="1_vgk7d"]
+[ext_resource type="PackedScene" uid="uid://bgfhwdfy73kb2" path="res://GUI Scripts/GUI Scenes/space_shooter.tscn" id="1_vgk7d"]
 [ext_resource type="Texture2D" uid="uid://dsqd71b7hjn5d" path="res://Assets/Images/darkPurple.png" id="2_awpnu"]
 [ext_resource type="Script" uid="uid://gmu4ga4b0jpq" path="res://GUI Scripts/parallax_background.gd" id="5_wifu4"]
 

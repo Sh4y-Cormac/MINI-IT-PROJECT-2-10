@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmb6en0ucdtad"]
+
+[ext_resource type="Script" uid="uid://cv11cxr715keo" path="res://GUI Scripts/buff_ui.gd" id="1_1r0q0"]
+
+[node name="BuffUI" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+alignment = 2
+script = ExtResource("1_1r0q0")
+
+[node name="Atk Up" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="HP Up" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Armor Plate" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Sharpness" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="lifesteal" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="regeneration" type="TextureRect" parent="."]
+layout_mode = 2

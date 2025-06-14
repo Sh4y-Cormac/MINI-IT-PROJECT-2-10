@@ -30,13 +30,14 @@ signal leveled_up
 @onready var label_atk: Label = $NinePatchRect/Atk/Label_ATK
 @onready var label_def: Label = $NinePatchRect/Def/Label_DEF
 @onready var label_lvl: Label = $NinePatchRect/LVL/Label_LVL
-@onready var exp_bar: ProgressBar = $"../ExpBar"
 @onready var level_up_announcement: Label = $"../LevelUpAnnouncement"
+@onready var exp_bar: ProgressBar = $"../ExpBar"
 
 
 
 # == Lifecycle ==
 func _ready() -> void:
+	Global.buff_manager.connect("buffs_updated", Callable(self, "update_stats_display"))
 	update_stats()
 	visible = false
 

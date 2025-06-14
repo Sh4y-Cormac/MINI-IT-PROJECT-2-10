@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co8bl3fqwcla0" path="res://GUI Scripts/shop_gui.gd" id="1_4ba3t"]
 [ext_resource type="Texture2D" uid="uid://dm45j3omdyggb" path="res://Assets/Images/Brown GUI.png" id="1_jtdgj"]
-[ext_resource type="PackedScene" uid="uid://bci5cpqqlsnb4" path="res://GUI Scenes/shop_slots.tscn" id="2_eclht"]
+[ext_resource type="PackedScene" uid="uid://bci5cpqqlsnb4" path="res://GUI Scripts/GUI Scenes/shop_slots.tscn" id="2_eclht"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="3_77pke"]
 [ext_resource type="Texture2D" uid="uid://nqepyobxgl4t" path="res://Assets/Images/Panel.png" id="3_g5vqq"]
 [ext_resource type="Resource" uid="uid://hu5mdn8qfk2t" path="res://Resources/Items/Apple_Slice.tres" id="6_2deip"]

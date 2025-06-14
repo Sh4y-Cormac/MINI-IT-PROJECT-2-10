@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dprtna1spqt7x"]
+
+[ext_resource type="Script" uid="uid://c7mjkjpocux55" path="res://GUI Scripts/buff_icon.gd" id="1_2xy7g"]
+
+[node name="BuffIcon" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2xy7g")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

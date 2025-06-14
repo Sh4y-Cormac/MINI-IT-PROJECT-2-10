@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d0hu5o4xhb7lr" path="res://GUI Scripts/inventory.gd" id="1_y0k1r"]
 [ext_resource type="Texture2D" uid="uid://b6djevmq5uanm" path="res://Assets/Images/newgui.png" id="2_w243r"]
-[ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scenes/inventory_slot.tscn" id="3_w243r"]
+[ext_resource type="PackedScene" uid="uid://c6h40evjkb501" path="res://GUI Scripts/GUI Scenes/inventory_slot.tscn" id="3_w243r"]
 [ext_resource type="Texture2D" uid="uid://ecxivkxy4rny" path="res://Assets/Images/Short_Sword.png" id="4_rr30h"]
 [ext_resource type="Texture2D" uid="uid://dvfiam707k3iq" path="res://Assets/Sprites/Character 2.png" id="5_5k12h"]
 [ext_resource type="Texture2D" uid="uid://cyxow5ljlpbu2" path="res://Assets/Images/swords.png" id="5_ji5u1"]
 [ext_resource type="Texture2D" uid="uid://c86025usjuvvc" path="res://Assets/Images/TrashCan.png" id="6_0msnl"]
 [ext_resource type="Texture2D" uid="uid://b6kgjlph3qwed" path="res://Assets/Images/Exit Icon.png" id="6_w243r"]
-[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="7_dj775"]
+[ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scripts/GUI Scenes/stats_window.tscn" id="7_dj775"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj775"]
 

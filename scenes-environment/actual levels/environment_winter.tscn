@@ -16,10 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://bsmb5ecq85xc5" path="res://scenes-obstacles/spikes/spikes.tscn" id="14_sny1q"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="15_56k3b"]
 [ext_resource type="PackedScene" uid="uid://dknhlq2thq25b" path="res://bridge_paths/bridge_path_city.tscn" id="15_h7yxt"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="15_j8371"]
 [ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="17_sny1q"]
+=======
+[ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scripts/GUI Scenes/pause_menu.tscn" id="15_j8371"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="19_0p3cn"]
-[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="20_mpnc5"]
+[ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scripts/GUI Scenes/UI.tscn" id="20_mpnc5"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="21_j8371"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="23_qf1ar"]
 [ext_resource type="PackedScene" uid="uid://dbe1blejn8xq6" path="res://Enemies/slime_boss.tscn" id="23_yrhxr"]
