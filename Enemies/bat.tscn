@@ -229,8 +229,8 @@ radius = 9.0
 radius = 9.0
 
 [node name="Bat" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_jp0fn")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_ulak1")]

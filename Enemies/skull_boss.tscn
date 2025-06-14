@@ -219,9 +219,11 @@ animations = [{
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8soi"]
-radius = 8.0
+radius = 9.0
 
 [node name="SkullBoss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_toa7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -249,9 +251,9 @@ shape = SubResource("CircleShape2D_o8soi")
 
 [node name="HealthBar" parent="." instance=ExtResource("6_6sojy")]
 offset_left = -34.0
-offset_top = 10.0
+offset_top = 11.0
 offset_right = 34.0
-offset_bottom = 16.0
+offset_bottom = 14.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="SkullHitbox" to="." method="_on_skull_hitbox_area_entered"]
