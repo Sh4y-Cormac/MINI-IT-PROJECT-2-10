@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cuy4tkenth6pa"]
+[gd_scene load_steps=51 format=4 uid="uid://cuy4tkenth6pa"]
 
 [ext_resource type="Texture2D" uid="uid://2cd8kysuqmda" path="res://Assets/Sprites/tileSetRedone2.png" id="1_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="1_uwrxv"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bliy5ba270al8" path="res://expbar.tscn" id="31_wic44"]
 [ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="32_4at0j"]
 [ext_resource type="PackedScene" uid="uid://b7q7o7n3nd05h" path="res://GUI Scenes/BuffDisplay.tscn" id="32_wic44"]
+[ext_resource type="Script" uid="uid://cr1irqx1rgt8w" path="res://scenes-environment/level_indicator.gd" id="33_817mt"]
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="33_vbdjg"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="33_wic44"]
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="34_vbdjg"]
@@ -492,6 +493,14 @@ offset_left = -13.8
 offset_top = 14.744
 offset_right = -17.528
 offset_bottom = 15.136
+
+[node name="LevelIndicator" type="Label" parent="Stats"]
+offset_left = 18.0
+offset_top = 568.0
+offset_right = 58.0
+offset_bottom = 591.0
+text = "Level :"
+script = ExtResource("33_817mt")
 
 [node name="Heal Chest" type="Node" parent="."]
 
