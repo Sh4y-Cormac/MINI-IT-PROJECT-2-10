@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource("1_eiwwi")
+origin_path = ""
+global_function_name = "apple"
 name = "Healing Apple"
 title = "Apple"
 icon = ExtResource("1_jnbht")

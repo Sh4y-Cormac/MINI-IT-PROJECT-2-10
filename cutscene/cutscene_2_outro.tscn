@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3ijymim5anqj"]
+[gd_scene load_steps=3 format=3 uid="uid://d3ijymim5anqj"]
 
 [ext_resource type="VideoStream" uid="uid://bpcexffr1kde1" path="res://cutscene/cutscene_outro.ogv" id="1_n7gpo"]
+[ext_resource type="Script" uid="uid://bhdetkiekku7b" path="res://cutscene/cutscene_2_outro.gd" id="1_t14tj"]
 
 [node name="cutscene2_outro" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t14tj")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
@@ -23,3 +25,6 @@ expand = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

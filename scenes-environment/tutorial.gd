@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 
 func _on_bag_icon_button_mouse_entered() -> void:
-	$"audio/Hovering Sound Effect".play()
+	$"audio/Hovering Sound Effect".play() 
 	$AnimationPlayer.play("bag_animation")
 
 func _on_bag_icon_button_mouse_exited() -> void:

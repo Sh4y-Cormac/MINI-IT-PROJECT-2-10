@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jjrlxr66ucri"
+path="res://.godot/imported/Winter Background Musci.mp3-07cb2a2fa5fe08c5684e3a7c9edcdfb3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3"
+dest_files=["res://.godot/imported/Winter Background Musci.mp3-07cb2a2fa5fe08c5684e3a7c9edcdfb3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

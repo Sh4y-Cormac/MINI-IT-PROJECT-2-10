@@ -5,12 +5,15 @@
 
 [resource]
 script = ExtResource("1_b3t0q")
+origin_path = ""
+global_function_name = "coffee"
 name = "Coffee"
 title = "Coffee"
 icon = ExtResource("1_xmx15")
-description = "Jump higher"
+description = "Jump higher for 10 seconds"
 price = 20
 type = ""
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

@@ -5,12 +5,15 @@
 
 [resource]
 script = ExtResource("1_5teb2")
+origin_path = ""
+global_function_name = "icecream2"
 name = "Sweet IceCream"
 title = "Sweet IceCream"
 icon = ExtResource("1_vxla3")
-description = "Increase speed by x2"
+description = "Increase speed by x2 for 2 seconds"
 price = 15
 type = ""
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

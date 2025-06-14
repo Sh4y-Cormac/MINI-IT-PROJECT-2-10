@@ -13,15 +13,17 @@ grow_vertical = 2
 script = ExtResource("1_jsu7v")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_left = -634.0
-offset_top = -355.0
-offset_right = 630.0
-offset_bottom = 349.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("1_dl0e1")
 autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
 
 [node name="Timer" type="Timer" parent="."]

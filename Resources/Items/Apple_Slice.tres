@@ -5,12 +5,15 @@
 
 [resource]
 script = ExtResource("1_g2xci")
+origin_path = ""
+global_function_name = "apple_slice"
 name = "Apple Slice"
 title = "Apple Slice"
 icon = ExtResource("1_u4xus")
 description = "Heal you by 50%"
 price = 2
 type = ""
+drop_chance = 1.0
 is_regen_card = false
 regen_amount = 0.0
 regen_interval = 1.0

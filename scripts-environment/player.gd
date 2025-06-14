@@ -2,8 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var walk_speed = 200.0
-@export var run_speed = 400.0
+var playerSpeedScaling: int
+var playerDamageScaling: int
+var walk_speed : int
+var run_speed : int
+var shortsword_damage : int
+var longsword_damage : int
+
+
 @export_range(0,1) var acceleration = 0.2
 @export_range(0,1) var deceleration = 0.2
 
@@ -31,7 +37,7 @@ var attack_type: String
 var current_attack: bool 
 
 var health = Global.playerHealth
-var health_max = 100
+var health_max : int
 var health_min = 0
 var can_take_damage: bool 
 var dead: bool
@@ -54,13 +60,24 @@ func _ready() -> void:
 	current_attack = false
 	dead = false
 	can_take_damage = true
-	
-	health = Global.playerHealth ##PH
 
 func _physics_process(delta: float) -> void:
 	Global.playerDamageZone = deal_damage_zone
 	Global.playerHitbox = $PlayerHitbox
-	 
+	
+	var playerSpeedScaling = Global.playerSpeedScaling
+	var playerDamageScaling = Global.playerDamageScaling
+	var playerMaxHealthScaling = Global.playerMaxHealth
+	var availableJumps = Global.availableJumps
+	
+	health_max = 100 + playerMaxHealthScaling
+	
+	walk_speed = 200.0 * playerSpeedScaling
+	run_speed = 400.0 * playerSpeedScaling
+	
+	shortsword_damage = 10.0 * playerDamageScaling
+	longsword_damage = 25.0 * playerDamageScaling
+	
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -70,7 +87,7 @@ func _physics_process(delta: float) -> void:
 	if !dead: 
 
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and (jump_count < 2 or is_on_wall()):
+		if Input.is_action_just_pressed("jump") and (jump_count < availableJumps or is_on_wall()):
 			jump_count += 1
 			velocity.y = jump_force
 	
@@ -114,6 +131,9 @@ func _physics_process(delta: float) -> void:
 		if !current_attack:
 			if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
 				current_attack = true
+				
+				print("run speed: ", run_speed, "walk_speed", walk_speed)
+				
 				if Input.is_action_just_pressed("left_mouse"):
 					attack_type = "shortsword"
 				elif Input.is_action_just_pressed("right_mouse"):
@@ -178,6 +198,10 @@ func check_hitbox():
 			damage = Global.golemDamageAmount
 		elif hitbox.get_parent() is BatEnemy:
 			damage = Global.batDamageAmount
+		elif hitbox.get_parent() is SkullEnemy:
+			damage = Global.skullDamageAmount
+		elif hitbox.get_parent() is CrabBoss:
+			damage = Global.crabDamageAmount
 			
 			
 	if can_take_damage:
@@ -192,7 +216,7 @@ func take_damage(damage):
 				health = 0
 				dead = true
 				handle_death_animation()
-			take_damage_cooldown(3.0)
+			take_damage_cooldown(1.5)
 
 ## Runs code when the player dies
 func handle_death_animation():
@@ -269,9 +293,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func set_damage(attack_type):
 	var current_damage_to_deal: int
 	if attack_type == "shortsword":
-		current_damage_to_deal = 10
+		current_damage_to_deal = shortsword_damage
 	elif attack_type == "longsword":
-		current_damage_to_deal = 25
+		current_damage_to_deal = longsword_damage
 	Global.playerDamageAmount = current_damage_to_deal
 
 #this function's whole purpose is to return the 'index' of the skin so that i know which attack anim to use because the attack anim is different for each skin

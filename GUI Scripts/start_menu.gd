@@ -51,7 +51,13 @@ func _on_start_button_pressed() -> void:
 	Global.playerGold = 100
 	Global.playerHealth = 100
 	Global.level = 0
-	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
+	Global.difficulty = 1
+	Global.playerMaxHealth = 100
+	Global.playerSpeedScaling = 1
+	Global.playerDamageScaling = 1
+	Global.availableJumps = 2
+
+	get_tree().change_scene_to_file("res://cutscene/news_intro.tscn")
 
 func _on_option_exit_button_mouse_entered() -> void:
 	$"Hovering Sound Effect".play()

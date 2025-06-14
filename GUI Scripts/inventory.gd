@@ -94,8 +94,15 @@ var inventoryDict = {}
 var items = [
 	"res://Resources/Items/Short_sword.tres",
 	"res://Resources/Items/Long_sword.tres",
+	"res://Resources/Items/Apple.tres",
+	"res://Resources/Items/Apple_Slice.tres",
+	"res://Resources/Items/Blue_Popsicle.tres",
+	"res://Resources/Items/Coffee.tres",
+	"res://Resources/Items/Green_Popsicle.tres",
+	"res://Resources/Items/IceCream1.tres",
+	"res://Resources/Items/IceCream2.tres"
 	#"res://Resources/Items/Sharpness.tres",
-	"res://Resources/Items/Atk_up.tres",
+	#"res://Resources/Items/Atk_up.tres",
 	#"res://Resources/Items/Hp up.tres",   
 	#"res://Resources/Items/Armor Plate.tres",
 	#"res://Resources/Items/Hp potions.tres",
@@ -110,12 +117,11 @@ func _ready():
 		"BagSlot": bagcontainer,
 		"Equipment": ArmorSlot,
 	}
+	InventoryManager.register_inventory(self)
 	
 #	await get_tree().process_frame
 
-	
 
-	_refresh_ui()
 
 #	await get_tree().process_frame
 
@@ -162,9 +168,7 @@ func _refresh_ui():
 func add_item(item: Item):
 	item.inventarSlot = "BagSlot"
 	item.InventarPosition = _get_next_empty_bag_slot()
-	
-	item.add(item.resource_path)
-	
+
 	if item.InventarPosition < 0:
 		print("Inventory full!")
 		return

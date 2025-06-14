@@ -1,5 +1,7 @@
 extends Control
 
+signal finished
+
 @onready var dialogue_label: Label = $Label
 
 var full_text := ""
@@ -66,9 +68,9 @@ func _process(delta):
 			elif dialogue_count == 16:
 				start_dialogue("You're the only one who can turn this around..")
 				
-				
 				await wait_for_typing_done()
 				await get_tree().create_timer(3.0).timeout
+				Global.next_scene_after_cutscene = "res://scenes-environment/game.tscn"
 				get_tree().change_scene_to_file("res://cutscene/cutscene_2_vid.tscn")
 	
 			else:
@@ -100,5 +102,6 @@ func skip_typing():
 	dialogue_label.text = full_text
 	
 func wait_for_typing_done():
+	await get_tree().process_frame
 	while is_typing:
 		await get_tree().process_frame

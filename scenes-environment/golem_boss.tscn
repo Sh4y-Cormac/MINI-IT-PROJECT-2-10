@@ -1,10 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://kp81lm4hqsdm"]
+[gd_scene load_steps=34 format=3 uid="uid://kp81lm4hqsdm"]
 
 [ext_resource type="Script" uid="uid://d2ji12bmbrfj8" path="res://scenes-environment/golem_boss.gd" id="1_bc8dd"]
 [ext_resource type="Texture2D" uid="uid://4da70t4ld5ln" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_AttackB.png" id="2_bc8dd"]
 [ext_resource type="Texture2D" uid="uid://dyxw5vxll27at" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_ArmorBreak.png" id="3_w84fn"]
 [ext_resource type="Texture2D" uid="uid://psm2g4g8krli" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Hit_2.png" id="4_o0vea"]
-[ext_resource type="Texture2D" uid="uid://c1qvvfo1vitvt" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Idle.png" id="5_y0aru"]
 [ext_resource type="Texture2D" uid="uid://de8w3f3cw825a" path="res://scenes-player-movement/enemy-sprites/Enemy_Galore_I/Golem/Armored/Golem_Armor_Run.png" id="6_huyww"]
 [ext_resource type="PackedScene" uid="uid://dos0au4c7fyjj" path="res://scenes-player-movement/health_bar.tscn" id="7_w84fn"]
 
@@ -83,22 +82,6 @@ region = Rect2(256, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vsypc"]
 atlas = ExtResource("4_o0vea")
 region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hff5k"]
-atlas = ExtResource("5_y0aru")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jynti"]
-atlas = ExtResource("5_y0aru")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vn1v"]
-atlas = ExtResource("5_y0aru")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_45vlh"]
-atlas = ExtResource("5_y0aru")
-region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fil72"]
 atlas = ExtResource("6_huyww")
@@ -192,23 +175,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hff5k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jynti")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5vn1v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_45vlh")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_fil72")
 }, {
 "duration": 1.0,
@@ -249,8 +215,6 @@ offset_bottom = 25.5
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itede")
 animation = &"deal_damage"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1

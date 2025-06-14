@@ -33,6 +33,7 @@ var exp_max: int = 100
 
 signal stats_updated(stats: Dictionary)
 signal level_up
+var difficulty: float
 
 ## Entity Values
 var robotDamageZone: Area2D
@@ -44,8 +45,55 @@ var golemDamageAmount: int
 var batDamageZone: Area2D
 var batDamageAmount: int
 
-# Player Health
-var playerHealth := 100
+var skullDamageZone: Area2D
+var skullDamageAmount: int
+
+var crabDamageZone: Area2D
+var crabDamageAmount: int
+
+
+var playerHealth : int 
+
+# Player Attributes : to increase the values, just add int values to it in the code. Everything should work fine.
+var playerSpeedScaling : int
+var playerDamageScaling : int
+var playerMaxHealth : int
+var availableJumps: int
+
+#cutscene intro
+var next_scene_after_cutscene: String = ""
+
+
+func apple():
+	playerHealth = min(playerHealth + 100 , 100)
+
+func apple_slice():
+	playerHealth = min(playerHealth + 50 , 100)
+
+func blue_popsicle():
+	playerDamageScaling *= 1.5
+	await get_tree().create_timer(10.0).timeout
+	playerDamageScaling /= 1.5
+	
+func green_popsicle():
+	playerDamageScaling *= 2
+	await get_tree().create_timer(15.0).timeout
+	playerDamageScaling /= 2
+
+func icecream1():
+	playerSpeedScaling *= 1.5
+	await get_tree().create_timer(10.0).timeout
+	playerSpeedScaling /= 1.5
+
+func icecream2():
+	playerSpeedScaling *= 2
+	await get_tree().create_timer(15.0).timeout
+	playerSpeedScaling /= 2
+
+func coffee():
+	availableJumps += 1
+	await get_tree().create_timer(10.0).timeout  
+	availableJumps -= 1
 
 
 #WAN ALSO ADDED THIS

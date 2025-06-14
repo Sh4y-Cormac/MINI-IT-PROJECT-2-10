@@ -1,7 +1,9 @@
 extends Resource
 class_name Item
 
-var gold = 10000
+
+@export var origin_path: String = ""
+@export var global_function_name: String = ""
 
 @export var name: String
 @export var title : String
@@ -28,3 +30,15 @@ var gold = 10000
 @export var stat_name: String = ""       # e.g. "atk", "hp"
 @export_enum("flat", "percent", "passive") var effect_type: String = "flat"
 @export var value: float = 0.0
+
+
+func use():
+	if global_function_name != "":
+		if Global.has_method(global_function_name):
+			print("the global function name is: ", global_function_name)
+			Global.call(global_function_name)
+			print("Used:", title)
+		else:
+			print("No function found:", global_function_name)
+	else:
+		print(title, "has no effect")

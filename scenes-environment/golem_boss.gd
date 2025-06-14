@@ -24,12 +24,21 @@ var player_in_area = false
 
 var droppedGold = 500
 
+func _ready() -> void:
+	difficulty_health_increase()
+
+
 func _process(delta: float) -> void:
 	
 	Global.golemDamageAmount = damage_to_deal
 	Global.golemDamageZone = $GolemDealDamageArea
 	player = Global.playerBody
 	
+	if Global.playerAlive:
+		is_enemy_chase = true
+	if !Global.playerAlive:
+		is_enemy_chase = false
+		
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		velocity.x = 0
@@ -109,3 +118,8 @@ func _on_golem_deal_damage_area_area_entered(area: Area2D) -> void:
 			is_dealing_damage = true
 			await get_tree().create_timer(1).timeout
 			is_dealing_damage = false
+
+func difficulty_health_increase():
+	var difficulty = Global.difficulty
+	health = health * difficulty
+	health_max = health_max * difficulty

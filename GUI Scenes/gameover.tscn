@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs2pp83xjyjqs"]
+[gd_scene load_steps=11 format=3 uid="uid://bs2pp83xjyjqs"]
 
 [ext_resource type="Script" uid="uid://dceubbryswir4" path="res://GUI Scripts/gameover.gd" id="1_j1v4w"]
 [ext_resource type="FontFile" uid="uid://e2r65gh5axk0" path="res://Assets/Fonts/PixelifySans.ttf" id="1_oahll"]
@@ -11,6 +11,8 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1v4w"]
 
 [sub_resource type="Animation" id="Animation_oahll"]
 resource_name = "Fade In"
@@ -100,18 +102,21 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_oahll")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1v4w")
 text = "RESTART"
 
 [node name="ReturnToMenu" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_oahll")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1v4w")
 text = "RETURN TO MENU"
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_oahll")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1v4w")
 text = "QUIT"
 
 [node name="Label" type="Label" parent="."]

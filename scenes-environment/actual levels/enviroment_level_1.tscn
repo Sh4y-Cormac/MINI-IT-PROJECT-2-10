@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=50 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -15,12 +15,24 @@
 [ext_resource type="PackedScene" uid="uid://bin5hxqh76q8r" path="res://scenes-player-movement/player_health_bar.tscn" id="13_ymgvw"]
 [ext_resource type="PackedScene" uid="uid://bd37f8q70m0gh" path="res://GUI Scenes/pause_menu.tscn" id="14_3rusg"]
 [ext_resource type="PackedScene" uid="uid://cvfnfsw52as5t" path="res://scenes-environment/portal.tscn" id="14_hgogn"]
+[ext_resource type="AudioStream" uid="uid://jjrlxr66ucri" path="res://Assets/Audio & Sound Effects/Winter Background Musci.mp3" id="16_6olwm"]
 [ext_resource type="PackedScene" uid="uid://ccs5fpwgxogct" path="res://GUI Scenes/UI.tscn" id="18_k07r5"]
-[ext_resource type="AudioStream" uid="uid://dh0cjtggqcel1" path="res://Assets/Audio & Sound Effects/The Voyager - Background Music.mp3" id="20_bq5ki"]
+[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="20_e76em"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
+[ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="21_6olwm"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
+[ext_resource type="PackedScene" uid="uid://7yprytxykj5t" path="res://Enemies/skull_boss.tscn" id="22_bq5ki"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
+script/source = "extends Node2D
+
+
+func _process(delta: float) -> void:
+	if !Global.playerAlive:
+		Global.gameStarted = false
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(\"res://GUI Scenes/gameover.tscn\")
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2yfn"]
 texture = ExtResource("1_c64ec")
@@ -758,7 +770,7 @@ position = Vector2(11666, -907)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="audio"]
 process_mode = 3
-stream = ExtResource("20_bq5ki")
+stream = ExtResource("16_6olwm")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
@@ -780,3 +792,94 @@ bus = &"SFX"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("18_k07r5")]
 layer = 2
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bat" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(484, -212)
+
+[node name="Bat2" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(914, -219)
+
+[node name="Bat3" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(1454, -307)
+
+[node name="Bat4" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(2036, -294)
+
+[node name="Bat5" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(2599, -302)
+
+[node name="Bat6" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(3229, -215)
+
+[node name="Bat7" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(3843, -320)
+
+[node name="Bat8" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(4389, -206)
+
+[node name="Bat9" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(4956, -286)
+
+[node name="Bat10" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(5506, -237)
+
+[node name="Bat11" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(6072, -394)
+
+[node name="Bat12" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(6671, -390)
+
+[node name="Bat13" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(7335, -387)
+
+[node name="Bat14" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(7865, -432)
+
+[node name="Bat15" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(8326, -562)
+
+[node name="Bat16" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(8862, -763)
+
+[node name="Bat17" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(9305, -897)
+
+[node name="Bat18" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(9716, -981)
+
+[node name="Bat19" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(9760, -992)
+
+[node name="Bat20" parent="Enemies" instance=ExtResource("20_e76em")]
+position = Vector2(9746, -949)
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="Chest" parent="Chests" instance=ExtResource("21_6olwm")]
+position = Vector2(639, -10)
+
+[node name="Chest2" parent="Chests" instance=ExtResource("21_6olwm")]
+position = Vector2(5324, -85)
+
+[node name="Chest3" parent="Chests" instance=ExtResource("21_6olwm")]
+position = Vector2(6061, -90)
+
+[node name="Chest4" parent="Chests" instance=ExtResource("21_6olwm")]
+position = Vector2(9679, -1195)
+
+[node name="Boss" type="Node" parent="."]
+
+[node name="SkullBoss" parent="Boss" instance=ExtResource("22_bq5ki")]
+position = Vector2(10877, -979)
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boss"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss/StaticBody2D"]
+polygon = PackedVector2Array(10062, -907, 11783, -907, 11784, -1465, 10079, -1470, 10063, -931, 10012, -933, 10016, -1558, 11811, -1535, 11833, -1492, 11837, -1040, 11828, -894, 11807, -854, 10871, -838, 10034, -849, 10042, -911)
