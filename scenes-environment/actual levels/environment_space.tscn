@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=3 uid="uid://ctn78jlf4tmws"]
 
 [ext_resource type="Texture2D" uid="uid://dsvh7rn2oegbc" path="res://space sprite/environment_space.png" id="1_sqsl2"]
-[ext_resource type="Script" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
+[ext_resource type="Script" uid="uid://cgbxpdthesniq" path="res://scripts-environment/environment_space.gd" id="1_y3w4j"]
 [ext_resource type="Texture2D" uid="uid://gytwb6q7y7eu" path="res://space sprite/environment_space2.png" id="2_qeno3"]
 [ext_resource type="PackedScene" uid="uid://bdhhdxl3b04v4" path="res://scenes-environment/player.tscn" id="3_3ae8p"]
 [ext_resource type="PackedScene" uid="uid://p5sk3yd0umo4" path="res://scenes-environment/death_point.tscn" id="4_020gk"]
@@ -25,11 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b1palfvwh5ykp" path="res://scenes-environment/robot_enemy.tscn" id="24_dlvk7"]
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="24_r6axw"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="25_xfo35"]
-
-[ext_resource type="PackedScene" uid="uid://ix1a2kgp0dww" path="res://Enemies/bat.tscn" id="26_r6axw"]
-
 [ext_resource type="PackedScene" uid="uid://bicf0iglcglr" path="res://GUI Scenes/stats_window.tscn" id="26_r6axw"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnoc"]
 texture = ExtResource("1_sqsl2")
@@ -999,66 +995,6 @@ polygon = PackedVector2Array(-276.25, 20, -275.75, -56.75, -208.25, -88, -92.25,
 position = Vector2(20292, -2588)
 scale = Vector2(4, 4)
 
-
-[node name="Enemies" type="Node" parent="."]
-
-[node name="Bat" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(796, -300)
-
-[node name="Bat2" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(1675, -532)
-
-[node name="Bat3" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(2687, -695)
-
-[node name="Bat4" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(3551, -671)
-
-[node name="Bat5" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(4597, -892)
-
-[node name="Bat6" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(5464, -763)
-
-[node name="Bat7" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(6189, -816)
-
-[node name="Bat8" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(7126, -699)
-
-[node name="Bat9" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(8172, -863)
-
-[node name="Bat10" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(9162, -871)
-
-[node name="Bat11" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(10218, -728)
-
-[node name="Bat12" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(11170, -1034)
-
-[node name="Bat13" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(12324, -920)
-
-[node name="Bat14" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(13159, -1602)
-
-[node name="Bat15" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(14498, -2118)
-
-[node name="Bat16" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(15946, -2302)
-
-[node name="Bat17" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(18268, -2331)
-
-[node name="Bat18" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(18411, -2327)
-
-[node name="Bat19" parent="Enemies" instance=ExtResource("26_r6axw")]
-position = Vector2(18328, -2274)
-
 [node name="Stats" type="CanvasLayer" parent="."]
 
 [node name="Stats Window" parent="Stats" instance=ExtResource("26_r6axw")]
@@ -1088,4 +1024,3 @@ offset_left = -13.8
 offset_top = 14.744
 offset_right = -17.528
 offset_bottom = 15.136
-
