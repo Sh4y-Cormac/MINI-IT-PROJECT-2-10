@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dwbhplfmb5gak"]
+[gd_scene load_steps=50 format=3 uid="uid://dwbhplfmb5gak"]
 
 [ext_resource type="Texture2D" uid="uid://ddvmci3yd8sww" path="res://Assets/tilemap/tilemap-stage1-sheet.png" id="1_c64ec"]
 [ext_resource type="Texture2D" uid="uid://cugfrfiky7bqa" path="res://Assets/tilemap/tilemap-stage 1.2.png" id="2_ymgvw"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dse6av8yddelc" path="res://Assets/Audio & Sound Effects/Enter Sound Effect.mp3" id="21_1wad2"]
 [ext_resource type="PackedScene" uid="uid://ct0dgcr24sovi" path="res://scenes-core-gameplay/chest.tscn" id="21_6olwm"]
 [ext_resource type="AudioStream" uid="uid://y82t3c6u0wrh" path="res://Assets/Audio & Sound Effects/Click sound.mp3" id="22_4aqih"]
+[ext_resource type="PackedScene" uid="uid://7yprytxykj5t" path="res://Enemies/skull_boss.tscn" id="22_bq5ki"]
 
 [sub_resource type="GDScript" id="GDScript_c64ec"]
 script/source = "extends Node2D
@@ -244,7 +245,7 @@ texture = ExtResource("3_hgogn")
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.41732, -8, 2.69788, 8, -8, 8, -8, -1.25901)
 
 [sub_resource type="TileSet" id="TileSet_ax42v"]
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_d2yfn")
 sources/1 = SubResource("TileSetAtlasSource_qtdfb")
@@ -867,3 +868,18 @@ position = Vector2(6061, -90)
 
 [node name="Chest4" parent="Chests" instance=ExtResource("21_6olwm")]
 position = Vector2(9679, -1195)
+
+[node name="Boss" type="Node" parent="."]
+
+[node name="SkullBoss" parent="Boss" instance=ExtResource("22_bq5ki")]
+position = Vector2(10877, -979)
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boss"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss/StaticBody2D"]
+polygon = PackedVector2Array(10062, -907, 11783, -907, 11784, -1465, 10079, -1470, 10063, -931, 10012, -933, 10016, -1558, 11811, -1535, 11833, -1492, 11837, -1040, 11828, -894, 11807, -854, 10871, -838, 10034, -849, 10042, -911)

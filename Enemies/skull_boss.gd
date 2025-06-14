@@ -6,14 +6,14 @@ class_name SkullEnemy
 @onready var skull_deal_damage_area: Area2D = $SkullDealDamageArea
 
 
-const speed = 30
+const speed = 60
 var is_enemy_chasing: bool
 var dir: Vector2
 var player: CharacterBody2D
 var is_dealing_damage: bool = false
 
-var health = 200
-var health_max = 200
+var health = 300
+var health_max = 300
 var health_min = 0 
 const gravity = 900 
 
@@ -21,7 +21,7 @@ var dead: bool = false
 var taking_damage: bool = false
 var is_roaming: bool
 var damage_to_deal = 20
-var knockback_force = -200
+var knockback_force = -20
 var droppedGold = 500
 
 func _ready() -> void:
