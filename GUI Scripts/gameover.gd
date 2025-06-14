@@ -30,6 +30,8 @@ func _on_restart_button_pressed() -> void:
 	Global.playerSpeedScaling = 1
 	Global.playerDamageScaling = 1
 	Global.availableJumps = 2
+	Global.flatDamageAddition = 0
+	Global.flatSpeedAddition = 0
 	Functions.load_screen_to_scene("res://scenes-environment/game.tscn")
 
 
